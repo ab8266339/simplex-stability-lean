@@ -1,0 +1,12 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalProcrustes.lean:21:36: warning: This simp argument is unused:
+  real_inner_self_eq_norm_sq
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.trace, gram_apply,̵ ̵r̵e̵a̵l̵_̵i̵n̵n̵e̵r̵_̵s̵e̵l̵f̵_̵e̵q̵_̵n̵o̵r̵m̵_̵s̵q̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.Geometry.global_procrustesSq_centeredRoot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_procrustesSq_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_recombine_act' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_procrustesEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_polar_alignment' depends on axioms: [propext, Classical.choice, Quot.sound]

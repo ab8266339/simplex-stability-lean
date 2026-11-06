@@ -1,0 +1,719 @@
+\section{Proof of the channel transitions}\label{ap:transitions}
+
+This appendix proves the scalar and integral assertions underlying
+Theorems~\ref{thm:ordered-switches} and~\ref{thm:triangular-switch}.
+Fix an integer \(m\ge3\) and put \(\alpha=(m-1)/m\).
+For \(c\in\R\), let
+\begin{gather*}
+ \phi(c)=(2\pi)^{-1/2}e^{-c^2/2},\qquad
+ \Phi(c)=\int_{-\infty}^{c}\phi(s)\,ds,\\
+ q(c)=\frac{\phi(c)}{\Phi(c)},\qquad
+ h(c)=c+q(c),\qquad \sigma(c)=1-q(c)h(c).
+\end{gather*}
+These functions are smooth because \(0<\Phi(c)<1\).
+For \(\mu\in\R\), define
+\begin{equation}\label{sc:tilted-law}
+ w_{m,\mu}(c)=e^{\mu c}\phi(c)^2\Phi(c)^{m-2},\qquad
+ Z_m(\mu)=\int_{\R}w_{m,\mu}(c)\,dc,\qquad
+ p_{m,\mu}(c)=\frac{w_{m,\mu}(c)}{Z_m(\mu)} .
+\end{equation}
+The density is positive and has Gaussian tails; in particular
+\(0<Z_m(\mu)<\infty\). Write
+\[
+ a_m(\mu)=\E_{m,\mu}[h^2],\qquad
+ b_m(\mu)=\E_{m,\mu}[\sigma],\qquad
+ H_m(\mu)=\E_{m,\mu}[h].
+\]
+We omit \(m\) when it is fixed. The channel parameter of
+Section~\ref{sec:new-results} is \(\lambda>0\), and
+\(\mu=\lambda/\sqrt{\alpha}\).
+The endpoint \(\mu=0\) is used only for the continuous family of these
+normalized moments. Define
+\begin{equation}\label{sc:normalized-curvatures}
+ L_0(m,a)=\frac{(m-1)a}{m},\qquad
+ L_1(m,a,b)=\frac{a+(m-2)b}{2},\qquad
+ L_\perp(m)=\frac{m-1}{2}.
+\end{equation}
+Their relation to the unnormalized decoding curvatures is recorded in
+Subsection~\ref{sc:sub9}.
+
+
+\subsection{Scalar differential identities}\label{sc:sub1}
+
+\begin{lemma}\label{sc:lemma1.1}
+\(q'=-qh\), \(h'=\sigma\), and \(\sigma'=q(h^2-\sigma)\).
+
+\end{lemma}
+\begin{proof}
+Since \(\phi'=-c\phi\),
+\[
+q'=\frac{\phi'\Phi-\phi^2}{\Phi^2}=-q\Bigl(c+\frac{\phi}{\Phi}\Bigr)=-qh.
+\]
+Then \(h'=1+q'=1-qh=\sigma\), and
+\[
+\sigma'=-q'h-qh'=q h\cdot h-q\sigma=q(h^2-\sigma).
+\]
+
+\end{proof}
+
+\begin{lemma}\label{sc:lemma1.2}
+For every real \(c\), one has \(h(c)>0\) and \(0<\sigma(c)<1\). In particular \(h\) and \(h^2\) are strictly increasing, and \(q\) is strictly decreasing. Also
+\[
+0<h(c)\le \max(c,0)+\sqrt{2/\pi},
+\]
+with equality on the right at \(c=0\).
+
+\end{lemma}
+\begin{proof}
+Let \(g\) be standard normal and let \(Y\) be the law of \(c+g\) conditioned on \(c+g>0\). The conditioning event has probability \(\Phi(c)\in(0,1)\), and the conditional law is supported on \((0,\infty)\) with a non-degenerate absolutely continuous distribution, so its mean is positive and its variance is positive and finite. Write \(Z=c+g\), so \(Z\) has density \(\phi(z-c)\) and \(P(Z>0)=\Phi(c)\). The substitution \(u=z-c\) and the identity \((\phi)'=-u\phi\) give
+\[
+\E[Z\mathbf 1_{Z>0}]=\int_{-c}^{\infty}(u+c)\phi(u)\,du=\phi(c)+c\Phi(c),
+\]
+because \(\int_{-c}^{\infty}u\phi(u)\,du=\phi(c)\). Dividing by \(\Phi(c)\) produces \(\E[Y]=c+q(c)=h(c)\). For the second moment, \(u^2\phi(u)=\phi(u)-(u\phi(u))'\) and \([u\phi(u)]_{-c}^{\infty}=c\phi(c)\), so \(\int_{-c}^{\infty}u^2\phi=\Phi(c)-c\phi(c)\). Adding \(\int_{-c}^{\infty}(2cu+c^2)\phi=2c\phi(c)+c^2\Phi(c)\) yields
+\[
+\E[Z^2\mathbf 1_{Z>0}]=\Phi(c)(1+c^2)+c\phi(c),
+\]
+hence \(\E[Y^2]=1+c^2+cq(c)=1+ch(c)\). Therefore \(\mathrm{Var}(Y)=1+ch-h^2\). The identity \(h=c+q\) turns the right-hand side into \(1-qh=\sigma\). Thus \(h>0\) and \(\sigma>0\). Since \(q>0\) and \(h>0\), one has \(qh>0\), so \(\sigma<1\).
+
+Now \(h'=\sigma>0\), so \(h\) is strictly increasing, and \((h^2)'=2h\sigma>0\). Also \(q'=-qh<0\), so \(q\) is strictly decreasing. Therefore \(h(c)<h(0)\) for \(c<0\) and \(q(c)\le q(0)\) for \(c\ge 0\). The value \(h(0)=q(0)=\phi(0)/\Phi(0)=\sqrt{2/\pi}\) gives the stated bound.
+
+\end{proof}
+
+\subsection{The zero-locus derivatives}\label{sc:sub2}
+
+Define the scalar functions
+\[
+F(c)=h(c)^2-\sigma(c),\qquad D(c)=\sigma+\sigma^2-(1-\sigma)h^2.
+\]
+Both are smooth. The chain rule and Lemma~\ref{sc:lemma1.1} give, at every \(c\),
+\[
+F'=2h\sigma-q F.
+\]
+In particular, on the locus \(F=0\),
+\[
+F'=2h\sigma>0,
+\]
+because \(h>0\) and \(\sigma>0\).
+
+For \(D\), use \(q=(1-\sigma)/h\), which is the rearrangement of \(\sigma=1-qh\). Then
+\[
+\sigma'=\frac{(1-\sigma)(h^2-\sigma)}{h},\qquad (h^2)'=2h\sigma.
+\]
+Writing \(s=\sigma(c)\) and \(x=h(c)^2\) at a fixed \(c\),
+\begin{equation}
+\label{sc:Dprime-expr}
+D'(c)=\frac{(1-s)(x-s)}{h}\,(1+2s+x)-2hs(1-s).
+\end{equation}
+This is an identity of smooth functions, obtained by the chain rule, not by differentiating a remainder.
+
+\begin{lemma}[positivity at a zero]\label{sc:lemma2.1}
+Let \(h,s\in\R\) satisfy \(0<h\), \(0<s<1\), and
+\[
+s+s^2-(1-s)h^2=0.
+\]
+Then \(x=h^2\) equals \(s(1+s)/(1-s)\), and the right-hand side of \eqref{sc:Dprime-expr} equals
+\[
+\frac{4s^3}{h(1-s)}>0.
+\]
+Thus, whenever \(D(c)=0\), one has \(D'(c)>0\).
+
+\end{lemma}
+\begin{proof}
+The constraint solves as \(x=s(1+s)/(1-s)\). Then
+\[
+x-s=\frac{2s^2}{1-s},\qquad \sigma'\text{ coefficient}=\frac{1-s}{h}\cdot\frac{2s^2}{1-s}=\frac{2s^2}{h}.
+\]
+Substitute \(x\) into \(1+2s+x\):
+\[
+1+2s+x=\frac{(1+2s)(1-s)+s(1+s)}{1-s}=\frac{1+2s-s^2}{1-s}.
+\]
+The expression \eqref{sc:Dprime-expr} becomes
+\begin{align*}
+&\frac{2s^2}{h}\cdot\frac{1+2s-s^2}{1-s}-2hs(1-s)\\
+&\qquad=\frac{2s^2(1+2s-s^2)-2h^2 s(1-s)^2}{h(1-s)}.
+\end{align*}
+The relation \(h^2=s(1+s)/(1-s)\) gives \(h^2(1-s)^2=s(1+s)(1-s)=s(1-s^2)\), so the second numerator term is \(2s^2(1-s^2)\). The numerator collapses to
+\[
+2s^2\bigl(1+2s-s^2-1+s^2\bigr)=4s^3.
+\]
+Hence the expression equals \(4s^3/(h(1-s))\). The hypotheses \(h>0\) and \(0<s<1\) make this positive.
+
+\end{proof}
+
+
+The same computation with no constraint shows the sign identity used later for the ratio:
+\[
+\Bigl(\frac{h^2}{\sigma}\Bigr)'=\frac{h\,D}{\sigma^2}.
+\]
+Indeed, with \(x=h^2\) and \(s=\sigma\),
+\[
+\Bigl(\frac{x}{s}\Bigr)'=\frac{x's-xs'}{s^2},\qquad x'=2hs,\qquad s'=\frac{(1-s)(x-s)}{h},
+\]
+and clearing the positive factor \(h\) produces the numerator \(hD\) if and only if
+\[
+2s^2-(1-s)(x-s)=s+s^2-(1-s)x,
+\]
+which is an algebraic identity. Thus, wherever \(D>0\), the ratio \(h^2/\sigma\) is strictly increasing. The sign of \(D\) is proved in Subsection~\ref{sc:sub4}, after the tail expansion.
+
+\subsection{Mills expansion with a bounded remainder}\label{sc:sub3}
+
+For \(t>0\) the left-tail Mills ratio is
+\[
+M(t)=\frac{\Phi(-t)}{\phi(t)}=\int_0^\infty\exp(-tv-v^2/2)\,dv.
+\]
+The substitution \(s=tv\) gives the Laplace representation,
+\[
+M(t)=t^{-1}\int_0^\infty e^{-s}\exp\bigl(-s^2/(2t^2)\bigr)\,ds.
+\]
+At \(c=-t\) one has \(q(-t)=1/M(t)\) and \(h(-t)=1/M(t)-t\).
+
+\begin{lemma}[explicit Taylor remainder]\label{sc:lemma3.1}
+Let \(n\ge1\) be an integer and let \(t>0\). Then
+\[
+M(t)=\sum_{k=0}^{n-1}(-1)^k\frac{(2k)!}{k!\,2^k}\,t^{-(2k+1)}+\theta_n(t),
+\]
+where
+\[
+|\theta_n(t)|\le\frac{(2n)!}{n!\,2^n\,t^{2n+1}}.
+\]
+In particular, for \(n=5\),
+\[
+M(t)=t^{-1}-t^{-3}+3t^{-5}-15t^{-7}+105t^{-9}+\theta_5(t),
+\]
+with \(|\theta_5(t)|\le 945\,t^{-11}\). The remainder is not differentiated anywhere below.
+
+\end{lemma}
+\begin{proof}
+For \(x>0\) the Lagrange remainder after the terms of degree \(0,\ldots,n-1\) in \(e^{-x}\) has absolute value at most \(x^n/n!\), because it equals \((-1)^n e^{-\xi}x^n/n!\) for some \(\xi\in(0,x)\) and \(e^{-\xi}\le1\); at \(x=0\) the remainder is zero. Insert \(x=s^2/(2t^2)\), integrate against \(e^{-s}\) on \((0,\infty)\), and use \(\int_0^\infty e^{-s}s^{2n}\,ds=(2n)!\). Dividing by \(t\) gives the bound on \(\theta_n\). The coefficient of \(t^{-(2k+1)}\) is \((-1)^k(2k)!/(k!2^k)\). For \(k\le 4\) these coefficients are \(1,-1,3,-15,105\), and the \(n=5\) bound is \(10!/(120\cdot 32)=945\).
+
+\end{proof}
+
+
+Set \(u=t^{-2}\). For every \(t>0\),
+\begin{equation}
+\label{sc:M-factor}
+M(t)=t^{-1}\bigl(1-u+3u^2-15u^3+105u^4+r(t)\bigr),
+\end{equation}
+where \(|r(t)|\le 945\,u^5\). Write \(a_0(u)=-u+3u^2-15u^3+105u^4\) and \(a(t)=a_0(u)+r(t)\), so the factor in parentheses is \(1+a(t)\).
+
+\begin{lemma}[algebraic inversion on a far ray]\label{sc:lemma3.2}
+There exist a finite \(T_0\ge 1\) and a finite positive constant \(C_h\) such that for every \(t\ge T_0\),
+\begin{equation}
+\label{sc:h-exp}
+h(-t)=t^{-1}-2t^{-3}+10t^{-5}-74t^{-7}+\rho_h(t),
+\qquad |\rho_h(t)|\le C_h\,t^{-9}.
+\end{equation}
+The coefficient \(-74\) is required later. Stopping the expansion of \(h\) at \(O(t^{-7})\) does not determine the coefficient of \(t^{-6}\) in \(\sigma\).
+
+\end{lemma}
+\begin{proof}
+As \(u\to 0\), \(a_0(u)\to 0\) and \(r(t)\to 0\). Choose a finite \(T_0\ge 1\) such that \(t\ge T_0\) implies both \(|a_0(u)|\le 1/4\) and \(|r(t)|\le 1/4\). Then \(|a(t)|\le 1/2\) and \(|a_0(u)|\le 1/2\), so \(1+a(t)\ge 1/2\) and \(q(-t)=t/(1+a(t))\) is well-defined. In particular
+\[
+h(-t)=t\Bigl(\frac{1}{1+a(t)}-1\Bigr).
+\]
+On the compact interval \(0\le u\le T_0^{-2}\) one has \(|a_0(u)|\le 1/2\), so \(g(u)=(1+a_0(u))^{-1}\) is smooth there. The recurrence below computes the Taylor coefficients of \(g\) at \(0\), because it is the Cauchy product for the reciprocal of the polynomial \(1+a_0\). Lagrange's theorem in the variable \(u\), through degree \(4\), then gives a remainder bounded by a constant times \(u^5\): the fifth derivative of \(g\) is continuous on that compact interval. The recurrence \(b_0=1\) and \(b_n=-\sum_{j=1}^n a_j b_{n-j}\) for the coefficients of \((1+a_0)^{-1}\), with \(a_1=-1\), \(a_2=3\), \(a_3=-15\), \(a_4=105\), gives
+\begin{align*}
+b_1&=1,\\
+b_2&=-(-1+3)=-2,\\
+b_3&=-(2+3-15)=10,\\
+b_4&=-(-10-6-15+105)=-74.
+\end{align*}
+Thus
+\[
+(1+a_0)^{-1}=1+u-2u^2+10u^3-74u^4+O(u^5),
+\]
+where the \(O(u^5)\) on \(t\ge T_0\) is the Lagrange remainder of \(g\). Both \(a_0(u)\) and \(a(t)\) lie in \([-1/2,1/2]\), and so does the segment between them. On that segment the derivative of \((1+z)^{-1}\) has absolute value at most \(4\), so the mean value theorem gives
+\[
+\bigl|(1+a)^{-1}-(1+a_0)^{-1}\bigr|\le 4|r(t)|\le 3780\,u^5.
+\]
+Thus the same expansion holds for \((1+a)^{-1}\), with a possibly larger finite constant. Multiplying by \(t\) and subtracting \(t\) produces \eqref{sc:h-exp}. No derivative of \(\rho_h\) is taken.
+
+\end{proof}
+
+\begin{lemma}\label{sc:lemma3.3}
+There exist a finite \(T_1\ge T_0\) and finite positive constants \(C_\sigma,C_F,C_D\) such that for every \(t\ge T_1\),
+\begin{align*}
+\sigma(-t)&=t^{-2}-6t^{-4}+50t^{-6}+\rho_\sigma(t),
+&|\rho_\sigma|&\le C_\sigma t^{-8},\\[4pt]
+F(-t)&=2t^{-4}+\rho_F(t),
+&|\rho_F|&\le C_F t^{-6},\\[4pt]
+D(-t)&=4t^{-6}+\rho_D(t),
+&|\rho_D|&\le C_D t^{-8}.
+\end{align*}
+In particular there exists a finite \(T_*\) such that \(F(-t)>0\) and \(D(-t)>0\) for all \(t\ge T_*\).
+
+\end{lemma}
+\begin{proof}
+Retain \(t\ge T_0\) and write \(H=th(-t)\), so Lemma~\ref{sc:lemma3.2} says
+\[
+H=1-2u+10u^2-74u^3+\tilde\rho,\qquad |\tilde\rho|\le C_h u^4.
+\]
+Set \(H_1=H-1=-2u+10u^2-74u^3+\tilde\rho\). From \(q=t+h=t(1+uH)\) and \(\sigma=1-qh\),
+\[
+qh=H+uH^2,\qquad \sigma=1-H-uH^2=-H_1-u-2uH_1-uH_1^2.
+\]
+Expand, using only products of series and the bound on \(\tilde\rho\). The terms through \(u^3\) are
+\begin{align*}
+-H_1&=2u-10u^2+74u^3+O(u^4),\\
+-2uH_1&=4u^2-20u^3+O(u^4),\\
+H_1^2&=4u^2-40u^3+O(u^4),\\
+-uH_1^2&=-4u^3+O(u^4).
+\end{align*}
+Adding and using \(-u\) gives
+\[
+\sigma=u-6u^2+50u^3+O(u^4).
+\]
+The summand \(74u^3\) comes from the coefficient \(-74\) in \(h\). It is the reason that coefficient must be kept. The symbol \(O(u^4)\) denotes a remainder bounded by a constant times \(u^4\) for \(t\ge T_0\); the constant exists because it is a finite combination of \(C_h\) and the absolute values of the displayed coefficients. This is the expansion of \(\sigma\).
+
+Next, \(h^2=uH^2=u(1+2H_1+H_1^2)\). Through order \(u^3\),
+\[
+h^2=u-4u^2+24u^3+O(u^4).
+\]
+The coefficient \(24\) uses \(h\) only through \(t^{-5}\). Subtracting the expansion of \(\sigma\),
+\[
+F=h^2-\sigma=2u^2+O(u^3)=2t^{-4}+O(t^{-6}).
+\]
+The leading coefficient \(2\) requires \(h\) through its \(10t^{-5}\) term, which fixes the coefficient \(-6t^{-4}\) in \(\sigma\). Choose the constant \(C_F\) from this \(O(t^{-6})\).
+
+For \(D\), square the expansion of \(\sigma\):
+\[
+\sigma^2=u^2-12u^3+O(u^4),
+\]
+so \(\sigma+\sigma^2=u-5u^2+38u^3+O(u^4)\). Also
+\[
+(1-\sigma)h^2=u-5u^2+34u^3+O(u^4),
+\]
+where the coefficient \(34\) is \(24+4+6\), coming from \(h^2\), from \((-\,u)(-4u^2)\), and from \((6u^2)(u)\). Therefore
+\[
+D=4u^3+O(u^4)=4t^{-6}+O(t^{-8}).
+\]
+The leading coefficient \(4\) uses the coefficient \(50\) in \(\sigma\), hence uses the coefficient \(-74\) in \(h\). The constant \(C_D\) exists for the same reason as \(C_F\).
+
+Finally \(F(-t)\ge t^{-4}(2-C_F t^{-2})\) for \(t\ge T_1\), and \(D(-t)\ge t^{-6}(4-C_D t^{-2})\) for \(t\ge T_1\). Any
+\[
+T_*>\max\bigl(T_1,\sqrt{C_F},\sqrt{C_D/4}\bigr)
+\]
+is a finite cutoff on which both functions are positive. The value of \(T_*\) is not required.
+
+\end{proof}
+
+\subsection{First-zero argument}\label{sc:sub4}
+
+\begin{lemma}\label{sc:lemma4.1}
+Let \(f\in C^1(\R)\). Suppose there is a finite \(c_0\) such that \(f>0\) on \((-\infty,c_0]\), and suppose \(f'(c)>0\) whenever \(f(c)=0\). Then \(f>0\) on \(\R\).
+
+\end{lemma}
+\begin{proof}
+If the set \(E=\{c:f(c)\le 0\}\) is empty, there is nothing to prove. Otherwise \(c_*=\inf E\) is finite and \(c_*>c_0\). Continuity gives \(f(c_*)=0\), while \(f>0\) on \((-\infty,c_*)\). Differentiability gives
+\[
+f(c_*-\varepsilon)=-\varepsilon f'(c_*)+o(\varepsilon).
+\]
+The hypothesis \(f'(c_*)>0\) makes the right-hand side negative for small \(\varepsilon>0\), contradicting positivity on the left. The remainder in this one-variable Taylor expansion is the definition of \(f'(c_*)\); it is not an asymptotic remainder of \(M(t)\).
+
+\end{proof}
+
+\begin{theorem}\label{sc:theorem4.2}
+The functions \(F\) and \(D\) are positive on all of \(\R\). Consequently \(\sigma'=qF>0\) everywhere, so \(\sigma\) is strictly increasing, and \((h^2/\sigma)'=hD/\sigma^2>0\) everywhere, so \(h^2/\sigma\) is strictly increasing.
+
+\end{theorem}
+\begin{proof}
+Lemma~\ref{sc:lemma3.3} supplies a finite left endpoint beyond which \(F(-t)>0\) and \(D(-t)>0\). On every zero of \(F\), Subsection~\ref{sc:sub2} gives \(F'=2h\sigma>0\). On every zero of \(D\), Lemma~\ref{sc:lemma2.1} gives \(D'>0\). Lemma~\ref{sc:lemma4.1} applies to both functions. The sign statements for the derivatives of \(\sigma\) and \(h^2/\sigma\) were proved in Subsections~\ref{sc:sub1} and~\ref{sc:sub2}, conditionally on \(F>0\) and \(D>0\).
+
+Combined with Lemma~\ref{sc:lemma1.2}, the four scalar maps \(h\), \(h^2\), \(\sigma\), and \(h^2/\sigma\) are strictly increasing on \(\R\).
+
+\end{proof}
+
+\subsection{Differentiation under the integral and strict covariance}\label{sc:sub5}
+
+Let \(w_{m,\mu}(c)=e^{\mu c}\phi(c)^2\Phi(c)^{m-2}\) and let \(Z_m(\mu)=\int_{\R}w_{m,\mu}\). For each fixed \(m\) the map \(\mu\mapsto w_{m,\mu}(c)\) is smooth. For \(|\mu|\le M\), the estimate
+\[
+ |c|^N w_{m,\mu}(c)
+ \le \frac{e^{M^2/2}}{2\pi}(1+|c|)^N e^{-c^2/2}
+\]
+follows from \(M|c|\le(c^2+M^2)/2\). It gives a common integrable bound for every fixed polynomial degree.
+
+\begin{lemma}\label{sc:lemma5.1}
+For every integer \(m\ge 3\) and every real \(\mu\), the normalizing constant \(Z_m\) is smooth and positive, and if \(f:\R\to\R\) is continuous and \(|f(c)|\le C(1+|c|)^N\), then \(\mu\mapsto\E_{m,\mu}[f]\) is smooth and
+\[
+\frac{d}{d\mu}\E_{m,\mu}[f(c)]=\mathrm{Cov}_{m,\mu}\bigl(f(c),c\bigr).
+\]
+If in addition \(f\) is strictly increasing, the covariance is strictly positive.
+
+\end{lemma}
+\begin{proof}
+The difference quotient of \(w_{m,\mu}\) in \(\mu\) is \(w_{m,\mu}(c)\cdot c\cdot e^{\theta c}/e^{\mu c}\) for an intermediate \(\theta\), hence is dominated on a neighborhood of any fixed \(\mu\) by an integrable function of the type above. Differentiation under the integral sign is therefore legitimate and gives \(Z_m'(\mu)=\int c\,w_{m,\mu}\). The same domination applies to \(f(c)w_{m,\mu}(c)\) and to \(c f(c)w_{m,\mu}(c)\), so the quotient defining the expectation may be differentiated by the quotient rule. The result is the covariance.
+
+For the strict sign, let \(X,Y\) be independent copies of the law \(p_{m,\mu}\). Then
+\[
+\mathrm{Cov}(f(X),X)=\frac12\E\bigl[(f(X)-f(Y))(X-Y)\bigr].
+\]
+The integrand is nonnegative. It is not almost surely zero: the density \(p_{m,\mu}\) is continuous and strictly positive on \(\R\), so \(P(X\neq Y)=1\), and a strictly increasing \(f\) then gives a strictly positive integrand on \(\{X\neq Y\}\). The expectations exist by the polynomial-growth hypothesis and the Gaussian tail of \(p_{m,\mu}\).
+
+\end{proof}
+
+\begin{lemma}\label{sc:lemma5.2}
+For each integer \(m\ge 3\), the maps \(a_m\), \(b_m\), \(H_m\), and \(a_m/b_m\) are smooth and strictly increasing on \(\R\). In particular they are strictly increasing on \([0,\infty)\), and \(H_m(\mu)\ge H_m(0)>0\) for \(\mu\ge 0\).
+
+\end{lemma}
+\begin{proof}
+The functions \(h^2\), \(\sigma\), and \(h\) are continuous, strictly increasing, and of polynomial growth by Lemma~\ref{sc:lemma1.2} and Theorem~\ref{sc:theorem4.2}. Lemma~\ref{sc:lemma5.1} gives the result for \(a_m\), \(b_m\), and \(H_m\). Strict increase of \(H_m\) yields \(H_m(\mu)\ge H_m(0)\). Positivity of \(h\) yields \(H_m(0)>0\).
+
+For the ratio, let \(Q_{m,\mu}\) be the probability with density proportional to \(\sigma(c)w_{m,\mu}(c)\). The factor \(\sigma(c)\) does not depend on \(\mu\), lies in \((0,1)\), and is continuous and positive, so \(Q_{m,\mu}\) is again a smooth exponential family in \(\mu\) with the same dominating Gaussian tails. Moreover
+\[
+\E_{Q_{m,\mu}}\Bigl[\frac{h^2}{\sigma}\Bigr]=\frac{\E_{m,\mu}[h^2]}{\E_{m,\mu}[\sigma]}=\frac{a_m(\mu)}{b_m(\mu)}.
+\]
+Theorem~\ref{sc:theorem4.2} says that \(h^2/\sigma\) is strictly increasing. Lemma~\ref{sc:lemma3.3} gives \(h(-t)\sim t^{-1}\) and \(\sigma(-t)\sim t^{-2}\), so \(h^2/\sigma\to 1\) as \(c\to-\infty\). For \(c\ge 0\), the same theorem gives \(\sigma(c)\ge\sigma(0)=1-2/\pi>0\), and Lemma~\ref{sc:lemma1.2} gives \(h(c)\le c+\sqrt{2/\pi}\). Hence
+\[
+0<\frac{h(c)^2}{\sigma(c)}\le\frac{(c+\sqrt{2/\pi})^2}{1-2/\pi}
+\]
+on \([0,\infty)\). Continuity controls the remaining compact interval, so the ratio has polynomial growth on all of \(\R\). The weight of \(Q_{m,\mu}\) is \(\sigma(c)w_{m,\mu}(c)\). Since \(0<\sigma<1\), every integrable dominant used for \(w_{m,\mu}\) dominates the corresponding integrand for \(Q_{m,\mu}\), and differentiation in \(\mu\) still multiplies that weight by \(c\). The covariance argument of Lemma~\ref{sc:lemma5.1} therefore applies to \(Q_{m,\mu}\) and gives strict increase in \(\mu\).
+
+\end{proof}
+
+\begin{lemma}[monotonicity in the number of signals]\label{sc:lemma5.3}
+Fix \(\mu\in\R\). For every integer \(m\ge 3\),
+\[
+b_{m+1}(\mu)>b_m(\mu).
+\]
+The same strict increase holds for \(a_m(\mu)\), \(H_m(\mu)\), and \(a_m(\mu)/b_m(\mu)\).
+
+\end{lemma}
+\begin{proof}
+The un-normalized weight at \(m+1\) is the weight at \(m\) multiplied by \(\Phi(c)\). The function \(\Phi\) is strictly increasing, and \(\sigma\) is strictly increasing. For a positive probability \(P\) with full support on \(\R\) and a bounded, positive, strictly increasing \(g\), the reweighted expectation of a strictly increasing integrable \(f\) satisfies
+\[
+\frac{\E[fg]}{\E[g]}-\E[f]=\frac{1}{2\E[g]}\E\bigl[(f(X)-f(Y))(g(X)-g(Y))\bigr]>0,
+\]
+by the same independent-copy argument as in Lemma~\ref{sc:lemma5.1}. Apply this to \(P=p_{m,\mu}\), \(g=\Phi\), and \(f=\sigma\). Taking \(f=h^2\) or \(f=h\) proves the corresponding assertions for \(a_m\) and \(H_m\). The ratio \(a/b\) is the expectation of the strictly increasing function \(h^2/\sigma\) under the \(\sigma\)-reweighted law, and increasing \(m\) multiplies that law by another strictly increasing copy of \(\Phi\). The polynomial-growth integrability is the same Gaussian estimate as before.
+
+\end{proof}
+
+\subsection{The four-signal benchmark}\label{sc:sub6}
+
+Write \(\mathcal I_4=\int_{\R}\phi^4\) and \(\mathcal J=\int_{\R}\phi^2\Phi^2\).
+
+\begin{lemma}\label{sc:lemma6.1}
+\(\mathcal I_4=1/(4\sqrt 2\,\pi^{3/2})\) and
+\[
+b_4(0)=1-\frac{4\mathcal I_4}{3\mathcal J}.
+\]
+
+\end{lemma}
+\begin{proof}
+The identity \(\phi(c)^4=(2\pi)^{-2}e^{-2c^2}\) and \(\int e^{-2c^2}\,dc=\sqrt{\pi/2}\) give
+\[
+\mathcal I_4=(2\pi)^{-2}\sqrt{\pi/2}=1/(4\sqrt 2\,\pi^{3/2}).
+\]
+For the expectation, \(\sigma=1-qh\) and \(qh\,\phi^2\Phi^2=c\phi^3\Phi+\phi^4\). Integrate \(c\phi^3\Phi\) by parts. From \((\phi^3)'=-3c\phi^3\) and the vanishing of \(\phi^3\Phi\) at both ends,
+\[
+\int c\phi^3\Phi=\frac13\int\phi^4.
+\]
+Hence \(\int qh\,\phi^2\Phi^2=(4/3)\mathcal I_4\), and dividing by \(\mathcal J\) produces the formula. This identity is exact; the arcsin evaluation of \(\mathcal J\) is not used.
+
+\end{proof}
+
+\begin{lemma}\label{sc:lemma6.2}
+\(\mathcal J\ge (3\pi+2)/(24\pi^{3/2})\), and therefore
+\[
+b_4(0)\ge 1-\frac{4\sqrt 2}{3\pi+2}.
+\]
+
+\end{lemma}
+\begin{proof}
+Expand \(\Phi^2=(\Phi-1/2)^2+(\Phi-1/2)+1/4\). The cross term \(\phi^2(\Phi-1/2)\) is an odd integrable function, so its integral vanishes. Also \(\int\phi^2=1/(2\sqrt\pi)\), hence
+\[
+\mathcal J=\frac14\int\phi^2+\int\phi^2(\Phi-1/2)^2=\frac{1}{8\sqrt\pi}+\int\phi^2(\Phi-1/2)^2.
+\]
+Integration by parts, using \((\phi^2)'=-2c\phi^2\) and vanishing boundary terms, gives
+\[
+\int c\phi^2(\Phi-1/2)=\frac12\int\phi^3.
+\]
+Cauchy--Schwarz in the form
+\[
+\Bigl(\int (c\phi)\cdot\bigl(\phi(\Phi-1/2)\bigr)\Bigr)^2
+\le\Bigl(\int c^2\phi^2\Bigr)\Bigl(\int\phi^2(\Phi-1/2)^2\Bigr)
+\]
+therefore yields a lower bound on the second integral. The Gaussian integrals
+\[
+\int\phi^3=\frac{1}{2\pi\sqrt 3},\qquad \int c^2\phi^2=\frac{1}{4\sqrt\pi}
+\]
+are elementary. The resulting quotient is \(1/(12\pi^{3/2})\), and
+\[
+\mathcal J\ge\frac{1}{8\sqrt\pi}+\frac{1}{12\pi^{3/2}}=\frac{3\pi+2}{24\pi^{3/2}}.
+\]
+Cauchy--Schwarz is not asserted to be equality. Because \(\mathcal I_4>0\), replacing \(\mathcal J\) by this lower bound increases \(4\mathcal I_4/(3\mathcal J)\). The arithmetic
+\[
+\frac{4\mathcal I_4}{3}\Big/\frac{3\pi+2}{24\pi^{3/2}}=\frac{4\sqrt 2}{3\pi+2}
+\]
+is the comparison of Lemma~\ref{sc:lemma6.1} with Lemma~\ref{sc:lemma6.2}'s bound.
+
+\end{proof}
+
+\begin{lemma}\label{sc:lemma6.3}
+\(\pi>28/9\) and \(\sqrt 2<17/12\). Consequently \(4\sqrt 2/(3\pi+2)<1/2\), and \(b_4(0)>1/2\).
+
+\end{lemma}
+\begin{proof}
+Let \(\theta=\arctan(1/5)\). Then \(0<\theta<\pi/4\), because \(0<1/5<1\) and tangent is increasing on \((0,\pi/2)\). The double-angle formula applies and gives
+\[
+\tan(2\theta)=\frac{2\cdot(1/5)}{1-(1/5)^2}=\frac{5}{12}.
+\]
+Thus \(2\theta\in(0,\pi/2)\). Since \(\tan(2\theta)<1\), one has \(2\theta\in(0,\pi/4)\), and the formula applies again:
+\[
+\tan(4\theta)=\frac{2\cdot(5/12)}{1-(5/12)^2}=\frac{120}{119},
+\]
+with \(4\theta\in(0,\pi/2)\). Set \(\eta=4\theta\) and \(\beta=\arctan(1/239)\in(0,\pi/4)\). Then \(\tan\eta=120/119>1/239=\tan\beta\). Both angles lie in \((0,\pi/2)\) and tangent is increasing there, so \(\eta>\beta\) and \(\eta-\beta\in(0,\pi/2)\). Therefore
+\begin{align*}
+\tan(\eta-\beta)
+&=\frac{120/119-1/239}{1+(120/119)(1/239)}
+=\frac{120\cdot 239-119}{119\cdot 239+120}\\
+&=\frac{28680-119}{28441+120}
+=\frac{28561}{28561}=1.
+\end{align*}
+The unique angle in \((0,\pi/2)\) with tangent \(1\) is \(\pi/4\), so
+\[
+\frac\pi 4=4\arctan\frac15-\arctan\frac1{239}.
+\]
+For every real \(t\), the identity \((1-t^2)(1+t^2)+t^4=1\) rearranges to
+\[
+\frac{1}{1+t^2}=1-t^2+\frac{t^4}{1+t^2}.
+\]
+Integrating from \(0\) to \(x>0\) gives
+\[
+\arctan x=x-\frac{x^3}{3}+\int_0^x\frac{t^4}{1+t^2}\,dt>x-\frac{x^3}{3},
+\]
+the integrand being positive. In particular
+\[
+\arctan\frac15>\frac15-\frac{1}{3\cdot 5^3}=\frac{74}{375}.
+\]
+The same representation gives \(\arctan y<y\) for \(y>0\), because \(1/(1+t^2)<1\). Thus \(\arctan(1/239)<1/239\). Combining these strict bounds with Machin's formula,
+\[
+\frac\pi 4>4\cdot\frac{74}{375}-\frac{1}{239}=\frac{296}{375}-\frac{1}{239}=\frac{70369}{89625}.
+\]
+The cross multiplication \(70369\cdot 9-7\cdot 89625=5946>0\) gives \(70369/89625>7/9\), so \(\pi>28/9\). Both arctangent inequalities are strict.
+
+Separately, \((17/12)^2=289/144>288/144=2\), so \(\sqrt 2<17/12\). Hence
+\[
+8\sqrt 2<8\cdot\frac{17}{12}=\frac{34}{3},\qquad 3\pi+2>3\cdot\frac{28}{9}+2=\frac{34}{3}.
+\]
+The second inequality is strict, so \(8\sqrt 2<3\pi+2\) and \(4\sqrt 2/(3\pi+2)<1/2\). Lemma~\ref{sc:lemma6.2} gives \(b_4(0)\ge 1-4\sqrt 2/(3\pi+2)>1/2\).
+
+\end{proof}
+
+\begin{corollary}\label{sc:corollary6.4}
+For every integer \(m\ge 4\) and every \(\mu\ge 0\),
+\[
+\frac12<b_m(\mu)<1.
+\]
+
+\end{corollary}
+\begin{proof}
+The upper bound holds for every \(m\) and \(\mu\) because \(0<\sigma<1\) pointwise and \(p_{m,\mu}\) has full support, so the expectation of \(\sigma\) cannot attain \(1\). The lower bound holds at \((m,\mu)=(4,0)\) by Lemma~\ref{sc:lemma6.3}. Lemmas~\ref{sc:lemma5.2} and~\ref{sc:lemma5.3} move the value strictly upward in each variable separately, and the inequality is already strict at the minimal corner.
+
+\end{proof}
+
+\subsection{The balance identity and the initial values}\label{sc:sub7}
+
+\begin{lemma}\label{sc:lemma7.1}
+For every integer \(m\ge 3\) and every real \(\mu\),
+\begin{equation}
+\label{sc:identity}
+2a_m(\mu)+(m-1)b_m(\mu)=m+\mu H_m(\mu).
+\end{equation}
+
+\end{lemma}
+\begin{proof}
+The logarithmic derivative of the un-normalized weight is
+\[
+\mu-2c+(m-2)q=\mu-2h+mq,
+\]
+which is the weight's formula \(p'/p=\mu-2h+mq\). Fix \(R>0\). Then
+\[
+\int_{-R}^{R}(hp_{m,\mu})'=\bigl[hp_{m,\mu}\bigr]_{-R}^{R}.
+\]
+The bound of Lemma~\ref{sc:lemma1.2} and the Gaussian tail of \(p_{m,\mu}\) force the boundary term to \(0\) as \(R\to\infty\). Expanding the derivative,
+\[
+(hp)'=\sigma p+h(\mu-2h+mq)p.
+\]
+The resulting integrand is absolutely dominated by an integrable multiple of \((1+c^2)p_{m,\mu}(c)\), because \(0<\sigma<1\), \(qh=1-\sigma\), and \(h\) has linear growth. Passing to the limit,
+\[
+b+\mu H-2a+m\E[qh]=0.
+\]
+The identity \(\E[qh]=1-b\) rearranges into \eqref{sc:identity}.
+
+\end{proof}
+
+\begin{lemma}\label{sc:lemma7.2}
+Fix an integer \(m\ge 4\). At \(\mu=0\),
+\[
+a(0)<\frac m2,\qquad \frac{a(0)}{b(0)}<m,\qquad a(0)+(m-2)b(0)<m-1.
+\]
+All three inequalities are strict.
+
+\end{lemma}
+\begin{proof}
+The identity at \(\mu=0\) is \(2a+(m-1)b=m\), so \(a=[m-(m-1)b]/2\). Since \(b>0\), one has \(a<m/2\). Next
+\[
+\frac a b=\frac{m}{2b}-\frac{m-1}{2}.
+\]
+The inequality \(a/b<m\) rearranges to \(b>m/(3m-1)\). For \(m>1\), \(m/(3m-1)<1/2\), and Corollary~\ref{sc:corollary6.4} supplies \(b>1/2\). Finally
+\[
+a+(m-2)b=\frac{m+(m-3)b}{2}.
+\]
+Comparing with \(m-1\) rearranges to \((m-3)b<m-2\). For \(m=4\) the right side is \(2\) and the left side is \(b<1\). For \(m>4\), \((m-2)/(m-3)=1+1/(m-3)>1>b\). Every comparison is strict.
+
+\end{proof}
+
+\subsection{Growth and the ordered crossings}\label{sc:sub8}
+
+\begin{lemma}\label{sc:lemma8.1}
+For each integer \(m\ge 3\) and every \(\mu\ge 0\),
+\[
+2a_m(\mu)>1+\mu H_m(0).
+\]
+In particular \(a_m(\mu)\to+\infty\) as \(\mu\to+\infty\). For \(m=3\), \(\mu H_3(\mu)\ge \mu H_3(0)\), so \(\mu H_3(\mu)\to+\infty\).
+
+\end{lemma}
+\begin{proof}
+By \eqref{sc:identity} and \(b_m(\mu)<1\),
+\begin{align*}
+2a_m(\mu)&=m+\mu H_m(\mu)-(m-1)b_m(\mu)\\
+&>m+\mu H_m(\mu)-(m-1)=1+\mu H_m(\mu).
+\end{align*}
+Lemma~\ref{sc:lemma5.2} gives \(H_m(\mu)\ge H_m(0)>0\), and the displayed bound follows. The right-hand side tends to infinity. For \(m=3\) the same lemma gives the linear lower bound \(\mu H_3(0)\).
+
+\end{proof}
+
+\begin{lemma}[comparison of the three coefficients]\label{sc:lemma8.2}
+Let \(m\ge 4\), \(a>0\), and \(1/2<b<1\). Then
+\begin{align*}
+a=\frac m2&\Longrightarrow L_0(m,a)=L_\perp(m)\ \text{and}\ L_\perp(m)<L_1(m,a,b),\\[4pt]
+a=mb&\Longrightarrow L_0(m,a)=L_1(m,a,b)\ \text{and}\ L_\perp(m)<L_0(m,a),\\[4pt]
+\min\bigl(L_0(m,a),L_\perp(m)\bigr)&<L_1(m,a,b).
+\end{align*}
+
+\end{lemma}
+\begin{proof}
+If \(a=m/2\), then \(L_0=(m-1)/2=L_\perp\) and
+\[
+L_1-L_\perp=\frac{m-2}{2}\Bigl(b-\frac12\Bigr)>0.
+\]
+If \(a=mb\), then \(L_1=(mb+(m-2)b)/2=(m-1)b=L_0\), while
+\[
+L_\perp-L_0=(m-1)\Bigl(\frac12-b\Bigr)<0.
+\]
+For the third claim, the same algebra gives the unrestricted identity
+\[
+L_1-L_0=\frac{m-2}{2m}(mb-a)\qquad(m>2).
+\]
+Suppose toward a contradiction that \(L_1\le L_0\) and \(L_1\le L_\perp\). The first forces \(a\ge mb\). The second forces \(a+(m-2)b\le m-1\). Adding these,
+\[
+a+(m-2)b\ge mb+(m-2)b=2(m-1)b>(m-1),
+\]
+which contradicts the second inequality. The last step is strict because \(b>1/2\).
+
+\end{proof}
+
+\begin{theorem}[unique positive crossings for \(m\ge 4\)]\label{sc:theorem8.3}
+Fix an integer \(m\ge 4\). There exist unique real numbers
+\[
+0<\mu_{1\perp}(m)<\mu_{0\perp}(m)<\mu_{01}(m)<\infty
+\]
+such that
+\begin{align*}
+a(\mu_{1\perp})+(m-2)b(\mu_{1\perp})&=m-1,\\
+a(\mu_{0\perp})&=m/2,\\
+a(\mu_{01})&=m\,b(\mu_{01}),
+\end{align*}
+and each equation has no other root in \([0,\infty)\). Equivalently, the three normalized curvatures satisfy
+\[
+L_1=L_\perp,\qquad L_0=L_\perp,\qquad L_0=L_1
+\]
+at these three parameters, in that order.
+
+\end{theorem}
+\begin{proof}
+The maps
+\[
+f_{1\perp}=a+(m-2)b,\qquad f_{0\perp}=a,\qquad f_{01}=a/b
+\]
+are continuous and strictly increasing on \([0,\infty)\) by Lemma~\ref{sc:lemma5.2}. Lemma~\ref{sc:lemma7.2} says that their values at \(0\) are strictly less than \(m-1\), \(m/2\), and \(m\) respectively. Lemma~\ref{sc:lemma8.1} and the bound \(1/2<b<1\) give
+\[
+f_{0\perp}(\mu)\to\infty,\qquad f_{01}(\mu)\ge a(\mu)\to\infty,\qquad f_{1\perp}(\mu)\ge a(\mu)\to\infty.
+\]
+The intermediate-value theorem supplies at least one positive root of each equation, and strict increase supplies uniqueness.
+
+Let \(\mu_{0\perp}\) be the unique root of \(a=m/2\). Corollary~\ref{sc:corollary6.4} gives \(b(\mu_{0\perp})>1/2\), so \(a(\mu_{0\perp})<m b(\mu_{0\perp})\). Thus \(f_{01}(\mu_{0\perp})<m\), and the unique root \(\mu_{01}\) of \(f_{01}=m\) lies strictly to the right of \(\mu_{0\perp}\). At the same point,
+\[
+a+(m-2)b=\frac m2+(m-2)b>\frac m2+\frac{m-2}{2}=m-1,
+\]
+so \(f_{1\perp}(\mu_{0\perp})>m-1\). The unique root \(\mu_{1\perp}\) lies strictly to the left of \(\mu_{0\perp}\).
+
+\end{proof}
+
+\subsection{Ordering of the decoding curvatures}\label{sc:sub9}
+
+For \(\lambda>0\) set \(\mu=\lambda/\sqrt\alpha\) and
+\[
+\omega_\lambda(c)=\frac{\mu e^{-\mu^2/2}}{m}\,e^{\mu c}\phi(c)^2\Phi(c)^{m-2}.
+\]
+Let \(A_\lambda=\int\omega_\lambda h^2\), \(B_\lambda=\int\omega_\lambda\sigma\), and \(C_\lambda=\int\omega_\lambda\). The change of scale between \(\omega_\lambda\,dc\) and \(p_{m,\mu}\,dc\) is a positive constant, so \(C_\lambda>0\) and
+\[
+\frac{A_\lambda}{C_\lambda}=a(\mu),\qquad \frac{B_\lambda}{C_\lambda}=b(\mu).
+\]
+Define
+\[
+\Lambda_0=\alpha A_\lambda,\qquad
+\Lambda_1=\frac{A_\lambda+(m-2)B_\lambda}{2},\qquad
+\Lambda_\perp=\frac{m-1}{2}C_\lambda.
+\]
+Dividing by \(C_\lambda\) produces exactly \(L_0\), \(L_1\), and \(L_\perp\). Equality and strict inequality of the \(\Lambda\)'s are therefore the same as those of the \(L\)'s.
+
+\begin{theorem}[ordering]\label{sc:theorem9.1}
+Fix an integer \(m\ge 4\) and \(\lambda>0\), and let \(\mu=\lambda/\sqrt\alpha\). On the four open intervals determined by Theorem~\ref{sc:theorem8.3},
+\begin{align*}
+0<\mu<\mu_{1\perp}&\Longrightarrow \Lambda_0<\Lambda_1<\Lambda_\perp,\\
+\mu_{1\perp}<\mu<\mu_{0\perp}&\Longrightarrow \Lambda_0<\Lambda_\perp<\Lambda_1,\\
+\mu_{0\perp}<\mu<\mu_{01}&\Longrightarrow \Lambda_\perp<\Lambda_0<\Lambda_1,\\
+\mu>\mu_{01}&\Longrightarrow \Lambda_\perp<\Lambda_1<\Lambda_0.
+\end{align*}
+At \(\mu_{1\perp}\) one has \(\Lambda_1=\Lambda_\perp\) and \(\Lambda_0\) strictly smaller than both. At \(\mu_{0\perp}\) one has \(\Lambda_0=\Lambda_\perp\) and \(\Lambda_1\) strictly larger than both. At \(\mu_{01}\) one has \(\Lambda_0=\Lambda_1\) and \(\Lambda_\perp\) strictly smaller than both. The corresponding thresholds in the variable \(\lambda\) are \(\sqrt\alpha\) times the thresholds in \(\mu\).
+
+\end{theorem}
+\begin{proof}
+Strict increase of \(a+(m-2)b\), of \(a\), and of \(a/b\) converts the three roots into sign changes of \(\Lambda_1-\Lambda_\perp\), of \(\Lambda_0-\Lambda_\perp\), and of \(\Lambda_0-\Lambda_1\), respectively. The order of the roots forbids every other permutation. Lemma~\ref{sc:lemma8.2} is the endpoint comparison: when \(a=m/2\), \(b>1/2\) forces \(\Lambda_\perp<\Lambda_1\), and when \(a=mb\), the same bound forces \(\Lambda_\perp<\Lambda_0\). The relation \(\lambda=\mu\sqrt\alpha\) is the definition \(\mu=\lambda/\sqrt\alpha\).
+
+\end{proof}
+
+\begin{corollary}[the strict normal region]\label{sc:normal-region}
+For \(m\ge4\) and \(\lambda>0\), the normal curvature is strictly smaller than both in-plane curvatures if and only if
+\(\lambda/\sqrt\alpha>\mu_{0\perp}(m)\).
+Moreover,
+\[
+ \min(\Lambda_0,\Lambda_\perp)<\Lambda_1
+\]
+for every positive channel parameter.
+\end{corollary}
+\begin{proof}
+The equivalence follows from Theorem~\ref{sc:theorem9.1}, including its endpoint comparisons. The strict inequality is Lemma~\ref{sc:lemma8.2} multiplied by \(C_\lambda>0\).
+\end{proof}
+
+\subsection{The triangular case}\label{sc:sub10}
+
+For \(m=3\) the summand \(\mathcal H_0\) is absent. The identity \eqref{sc:identity} becomes \(2a+2b=3+\mu H_3(\mu)\), so
+\[
+\frac{\Lambda_1}{C_\lambda}=\frac{a+b}{2}=\frac{3+\mu H_3(\mu)}{4},\qquad \frac{\Lambda_\perp}{C_\lambda}=1.
+\]
+Thus \(\Lambda_1<\Lambda_\perp\), \(\Lambda_1=\Lambda_\perp\), or \(\Lambda_1>\Lambda_\perp\) according as \(\mu H_3(\mu)<1\), \(=1\), or \(>1\).
+
+\begin{theorem}\label{sc:theorem10.1}
+The function \(\mu\mapsto\mu H_3(\mu)\) is continuous and strictly increasing from \([0,\infty)\) onto \([0,\infty)\). It has a unique positive root \(\mu_*(3)\) of the equation \(\mu H_3(\mu)=1\). For \(0<\mu<\mu_*\) the in-plane coefficient is strictly smaller; for \(\mu>\mu_*\) the normal coefficient is strictly smaller; at \(\mu_*\) they agree.
+
+\end{theorem}
+\begin{proof}
+Lemma~\ref{sc:lemma5.1} gives \(H_3'(\mu)=\mathrm{Cov}(h,c)>0\). Hence
+\[
+\frac{d}{d\mu}\bigl(\mu H_3(\mu)\bigr)=H_3(\mu)+\mu H_3'(\mu)>0
+\]
+for every \(\mu\ge 0\), the value \(H_3(\mu)\) being positive. The function vanishes at \(0\). Lemma~\ref{sc:lemma8.1} sends it to infinity. The intermediate-value theorem and strict increase give a unique positive root, and the sign chart is the sentence above.
+
+\end{proof}

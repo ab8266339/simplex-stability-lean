@@ -1,0 +1,154 @@
+{
+  "role": "constants",
+  "task": "restored-read-only-audit",
+  "verdict": "no-defect",
+  "formula_inconsistencies": [],
+  "pending_obligations": [],
+  "recompiled_by_this_review": false,
+  "reviewers_should_rewrite_complete_modules": false,
+  "lean": "4.31.0",
+  "mathlib_pin_required": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "mathlib_pin_rechecked_by_this_review": false,
+  "paper": "snapshot/paper_source/paper_main.tex",
+  "scope": {
+    "audited": [
+      "scalar-agent/SimplexFull/GlobalScalarPsi.lean",
+      "scalar-agent/SimplexFull/GlobalScalarCurvature.lean",
+      "scalar-agent/SimplexFull/GlobalScalarRange.lean",
+      "scalar-agent/SimplexFull/GlobalScalarTaylor.lean",
+      "scalar-agent/SimplexFull/GlobalScalarBounds.lean",
+      "geometry-agent/SimplexFull/GlobalComparisonDefs.lean",
+      "foundation-audit/SimplexFull/GlobalComparisonConstants.lean"
+    ],
+    "read_dependency": [
+      "foundation-audit/SimplexFull/GlobalRectangleBound.lean"
+    ],
+    "outside_audit_passed_elsewhere": [
+      "Theorem 2 quantitative orthant comparison",
+      "downstream applications"
+    ],
+    "outside_frozen_set": [
+      "c_g",
+      "c_s",
+      "c_P",
+      "eta",
+      "tau",
+      "b_g",
+      "b_s",
+      "W"
+    ],
+    "not_certified": [
+      "constants/SimplexFull/GlobalConstantsBasic.lean"
+    ]
+  },
+  "coverage": {
+    "psi_pull": "log (Phi s) + q s^2 / 2",
+    "psi_derivative": "deriv Psi (h s) = q s",
+    "psi_second_derivative": "deriv (deriv Psi) y = -(q (hInv y) * y / sigma (hInv y))",
+    "sigma": "1 - q * h",
+    "inverse": "Psi_psiInv on L < 0 and psiInv_Psi on y > 0",
+    "L0": "logFloor = (m : Real) * log (Phi u)",
+    "beta": "psiInv (logFloor)",
+    "A0": "deriv Psi beta",
+    "B0": "v + sqrt(-2 * L0 / m) + sqrt(-2 * ((m - 1) / m) * L0)",
+    "ell": "beta / sqrt 2",
+    "T": "sqrt 2 * capB + ell",
+    "b": "2 * Phi t - 1",
+    "K_exponent": "2 * m - 2",
+    "K_denominator": "4 * pi * m * (m - 1)",
+    "rectangle_exponent": "m - 2",
+    "K_factorization": "paperK = exp(-m * capA * beta) * rectangleK m ell radiusT * centralMass(ell)^m",
+    "kappa": "(Phi u)^m * paperK / (1 + sqrt(1 + paperK * m * (m - 1)))",
+    "rationalization": "paperKappa * d <= (Phi u)^m * (sqrt(1 + paperK * d) - 1) for 0 <= d <= m * (m - 1)",
+    "defect_bound": "covarianceDefect R <= m * (m - 1) for IsCorrelation, singular PSD included",
+    "M0_interval": "Icc (h 0 / 2) (3 * h 1 / 2)",
+    "taylor": "Psi x + q(hInv x) * (y - x) - M0 * (y - x)^2 / 2 <= Psi y on curvatureInterval",
+    "centroid_taylor": "c in Icc 0 1 and |z| <= h 0 / 2"
+  },
+  "assumptions": {
+    "capB_pos": "0 < m and u <= v; u and v otherwise arbitrary, including both negative and u = v; no u >= 0 split",
+    "paperK_pos": "2 <= m and u, v any reals; u <= v is not required",
+    "paperKappa_pos": "2 <= m and u, v any reals; u <= v is not required",
+    "Psi_psiInv": "L < 0",
+    "psiInv_Psi": "y > 0",
+    "beta_inverse_equation": "for 0 < m, logFloor_neg gives L0 < 0, so Psi beta = logFloor by Psi_psiInv",
+    "q_le_A0": "L < 0 and L <= psiPull s imply q s <= deriv Psi (psiInv L)",
+    "threshold_envelope_pos_alpha": "alpha is a free real; capB hardcodes (m - 1) / m",
+    "correlation": "PosSemidef and unit diagonal"
+  },
+  "notes": [
+    "For m >= 2 the paper second radicand -2 * (m - 1) * log (Phi u) is positive, so capB uses the ordinary real square root.",
+    "If the free alpha in threshold_envelope_pos is negative, Real.sqrt of that negative radicand is 0. capB does not use that instance.",
+    "ell < radiusT under capB_pos is unnamed in the audited files. It is a corollary, not a formula defect, and Theorem 2 is already passed.",
+    "Unused-variable lint only: GlobalComparisonConstants.lean i and j; GlobalScalarCurvature.lean and GlobalScalarRange.lean y.",
+    "Stale Taylor logs 20261106-155955-711460 and 20261106-160143-284522 mention sorryAx. Current Taylor bytes match 20261106-160516-997959, which does not.",
+    "GlobalComparisonConstants imports GlobalComparisonDefs from geometry-agent. foundation-audit has no local Defs source. This review did not rebuild that import closure."
+  ],
+  "printed_axioms_latest": ["propext", "Classical.choice", "Quot.sound"],
+  "forbidden_tokens_in_audited_sources": {
+    "sorry": false,
+    "admit": false,
+    "unsafe": false,
+    "native_decide": false
+  },
+  "source_hashes": {
+    "scalar-agent/SimplexFull/GlobalScalarPsi.lean": "5ac00effd8cbfd5cadd6c3c8842ae276b6c814b1399b5caf95e36a86db02fd2e",
+    "scalar-agent/SimplexFull/GlobalScalarCurvature.lean": "5b6b2c7b06c8c22860b2281030310d1f015141ccb40f8b230946ddea0c26c6b3",
+    "scalar-agent/SimplexFull/GlobalScalarRange.lean": "61efb456691406d01fe87e2d0b907a43e9d5a0423b192ba6edfd3512b932ca0f",
+    "scalar-agent/SimplexFull/GlobalScalarTaylor.lean": "7ddc7a13a5ed04917417f8dd47fe7f7dbdce4c3acd11d2a1b731e99bf83f879d",
+    "scalar-agent/SimplexFull/GlobalScalarBounds.lean": "7200f32ecd360a4b61fbdaa7b86cbb1f8bdf04fccd63aa9e0e6ecd21224ab8db",
+    "geometry-agent/SimplexFull/GlobalComparisonDefs.lean": "8548d191842bc285e3a72ed425ab28e93aa5651e6644312b00948bdde5352215",
+    "foundation-audit/SimplexFull/GlobalComparisonConstants.lean": "5dcb47f9809551604be3d480547a39c8cef22ad3e0f236c9a49575eb980649af",
+    "foundation-audit/SimplexFull/GlobalRectangleBound.lean": "0b0713a725920cd3f71ed7c4f71699502dd6cb7cb78517977331c002417a798f"
+  },
+  "compile_records": [
+    {
+      "module": "SimplexFull.GlobalScalarPsi",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "scalar-agent/logs/SimplexFull.GlobalScalarPsi-20261106-155234-104442"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarCurvature",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "scalar-agent/logs/SimplexFull.GlobalScalarCurvature-20261106-155754-729617"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarRange",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "scalar-agent/logs/SimplexFull.GlobalScalarRange-20261106-160439-201650"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarTaylor",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "scalar-agent/logs/SimplexFull.GlobalScalarTaylor-20261106-160516-997959"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarBounds",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "scalar-agent/logs/SimplexFull.GlobalScalarBounds-20261106-160750-470181"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonDefs",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "geometry-agent/SimplexFull.GlobalComparisonDefs-20261106-171152-351251"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonConstants",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "foundation-audit/SimplexFull.GlobalComparisonConstants.json"
+    },
+    {
+      "module": "SimplexFull.GlobalRectangleBound",
+      "exit_code": 0,
+      "source_sha256_matches_current": true,
+      "record": "foundation-audit/SimplexFull.GlobalRectangleBound.json"
+    }
+  ]
+}

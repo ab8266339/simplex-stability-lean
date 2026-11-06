@@ -1,0 +1,15 @@
+'SimplexFull.Geometry.uncompress_zeroDiagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.uncompress_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.compression_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.onesMatrix_mul_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.centering_mul_onesMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.onesMatrix_mul_centering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.centering_onesMatrix_mul_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.compression_centered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.uncompress_compression_of_symm_zeroDiagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.compression_uncompress_of_centered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.entrySum_uncompress_of_centered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.halfEntrySum_uncompress_of_centered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.frobSq_centered_tracefree' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,11 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalSphereGaussianSymmetry.lean:7:0: warning: automatically included section variable(s) unused in theorem `SimplexFull.SphereGaussian.gaussian_integral_neg_eq`:
+  [NeZero d]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero d] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'SimplexFull.SphereGaussian.gaussian_integral_neg_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.sphere_support_neg_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.widthIntegral_convexHull_eq_meanWidth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

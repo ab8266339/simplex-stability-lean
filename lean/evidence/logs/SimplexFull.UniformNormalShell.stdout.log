@@ -1,0 +1,10 @@
+'SimplexFull.Geometry.uniform_normalShell_maximizes_configPc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.uniform_exactNormalShell_of_hessian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_exact_normal_shell_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_exact_normal_shell_m3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_normal_threshold_uniform_shell_m4' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.gaussian_normal_threshold_uniform_shell_m3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

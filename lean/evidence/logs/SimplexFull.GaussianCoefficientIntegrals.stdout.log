@@ -1,0 +1,5 @@
+'SimplexFull.Covariance.integral_exp_max_firstDensityCoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_tiltWeight_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_exp_max_secondDensityCoeff_entrySum_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

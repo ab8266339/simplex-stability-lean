@@ -1,0 +1,53 @@
+{
+  "mode": "review_restored",
+  "construction": "stopped",
+  "lean": "4.31.0",
+  "mathlib_pin_expected": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "recompiled_in_this_review": false,
+  "recorded_logs_match_these_hashes": true,
+  "recorded_exit_code": 0,
+  "recorded_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "forbidden_tokens_in_role_sources": [],
+  "scalar_copies_match_coordinator": [
+    "GlobalTailExponential.lean",
+    "GlobalTailExponentialGaussian.lean",
+    "GlobalCentroidDecoderNormalization.lean",
+    "GlobalCentroidDecoder.lean"
+  ],
+  "source_hashes": {
+    "coordinator/SimplexFull/GlobalTailMean.lean": "93521d1b8b89161ee02ac58c6bd6c1ecebd75bb7a34347aebffbe18c03dfca87",
+    "coordinator/SimplexFull/GlobalTailBounds.lean": "ec1491f663f1e56af33e9f56c190329a31e3054380ccd8c6d8bb386a1908aa4c",
+    "coordinator/SimplexFull/GlobalGaussianCDF.lean": "5d2d26c2785055a5e4276cd7ff38e18245a79ae7ce1c56a9d77acebffc5a48f2",
+    "coordinator/SimplexFull/GlobalGaussianNormalization.lean": "740cf8e24c1065c88e235f16ed132bcb099a0721229af76a4eb23dd8e5ae961d",
+    "coordinator/SimplexFull/GlobalNormalizationAlgebra.lean": "fdec58c8df02be92415629da6974c3615c3b8464267e681566e7f2b084932600",
+    "scalar-agent/SimplexFull/GlobalTailExponential.lean": "bee72b4ddcf0564de425310aaf61f54317d4d6c40d57caeba9a28f0b5bad8fb1",
+    "scalar-agent/SimplexFull/GlobalTailExponentialGaussian.lean": "b6253ad7fb2506038e6fa3a938451443e5c49387a5f0003a6797a4a867ecde67",
+    "scalar-agent/SimplexFull/GlobalCentroidDecoderNormalization.lean": "f6400d6ace9844fbb1fff1f09689960b4fa2097e58e76782ec756edc4cda5c47",
+    "scalar-agent/SimplexFull/GlobalCentroidDecoder.lean": "1def9828803b59bbb58e3f0dfe98e7be928d9232f9a82a49eb8b0c0b70a6a814"
+  },
+  "coverage": [
+    "integral_sub_eq_integral_cdf_gap: E_nu f - E_mu f = integral (F_mu - F_nu), centered kernel, product integrability from integrable f",
+    "gaussianMaxMean_gap_eq_integral plus cdf_gap_eq_thresholdDeficit: transformed max gap integrand is D_R",
+    "identity_orthantCDF: orthantCDF(I) = Phi^m",
+    "exp_integral_difference_ge_of_cdf_gap: window lower bound A*(exp a - 1)",
+    "expWindowWeight: exp(-a^2/2)*(exp a - 1)/m",
+    "decodingSuccess_normalizedCovariance: Pc(G, lambda) = Pc(R, lambda/sqrt alpha), exp(lambda^2/(2n)) already inside gramMgf_normalization_identity",
+    "gaussianMaxMean_normalizedCovariance: E_R max = sqrt(alpha) * E_G max",
+    "decodingSuccess_centroid_penalty: c_s = W*eta, times ||sum x_i||^2",
+    "frobSq_normalizedCovariance: ||R - I||_F^2 = alpha^2 * ||G - G_Delta||_F^2",
+    "m >= 2 on every theorem that divides by sqrt(alpha) or rewrites simplexGram",
+    "exponential moments require PosSemidef, singular PSD included; D_R >= 0 comes from lowerOrthant_ge_iid"
+  ],
+  "defects": [
+    "First-moment lemmas quantify over every matrix. Mathlib's multivariateGaussian is Dirac at the mean when the matrix is not PosSemidef.",
+    "normalizedCovariance and centroidDecoderConstant are unguarded. At m = 1, sqrt(alpha) = 0 and Lean division returns 0.",
+    "integral_ge_const_of_unit_interval assumes 0 <= A and the proof never uses that hypothesis."
+  ],
+  "remaining_obligations": [
+    "State and prove E exp(mu max Z) - E exp(mu max X') = mu * integral over R of exp(mu*c)*D_R(c). The nine files prove only the [0,1] floor consequence A*(exp mu - 1).",
+    "The nine files do not name the single identity gaussianMaxMean I - gaussianMaxMean R = integral D_R. It is the composite of gaussianMaxMean_gap_eq_integral and cdf_gap_eq_thresholdDeficit.",
+    "Original-scale b_s = eta/sqrt(alpha) is in coordinator/SimplexFull/GlobalUnitMeanBounds.lean (sha256 9ffb6924facb4450af770c06842d33da06029cb3362b429ba49099994d3c5096), outside the requested nine.",
+    "b_g = kappa*alpha^(3/2) and c_g = W*kappa*alpha^2 are instantiated in scalar-agent/SimplexFull/GlobalApplicationsCore.lean from the audited gap lemmas plus GlobalComparison.orthant_linear_comparison. This review did not re-audit that comparison proof.",
+    "Procrustes c_P, the rank corollary, the non-unit energy lift, and normalized spherical mean width are outside this layer."
+  ]
+}

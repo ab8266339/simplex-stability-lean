@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.contDiff_squareShellC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.contDiff_shellCovariance' depends on axioms: [propext, Classical.choice, Quot.sound]

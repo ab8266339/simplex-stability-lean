@@ -1,0 +1,2 @@
+'SimplexFull.GlobalTail.gaussian_exp_gap_ge_of_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.decodingSuccess_gap_ge_of_cdf' depends on axioms: [propext, Classical.choice, Quot.sound]

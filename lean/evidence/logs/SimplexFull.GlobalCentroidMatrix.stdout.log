@@ -1,0 +1,25 @@
+'SimplexFull.GlobalCentroid.qform_cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalCentroidMatrix.lean:58:37: warning: This simp argument is unused:
+  Matrix.mulVec
+
+Hint: Omit it from the simp argument list.
+  simp [coordBasis, matrixMul_ofFun, M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵V̵e̵c̵,̵ ̵dotProduct, Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalCentroidMatrix.lean:58:52: warning: This simp argument is unused:
+  dotProduct
+
+Hint: Omit it from the simp argument list.
+  simp [coordBasis, matrixMul_ofFun, Matrix.mulVec, d̵o̵t̵Pr̵o̵d̵u̵c̵t̵,̵ ̵P̵i.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalCentroidMatrix.lean:58:64: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [coordBasis, matrixMul_ofFun, Matrix.mulVec, dotProduct,̵ ̵P̵i̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.GlobalCentroid.row_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.sum_row_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.row_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]

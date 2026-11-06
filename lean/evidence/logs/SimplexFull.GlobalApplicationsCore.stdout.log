@@ -1,0 +1,10 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalApplicationsCore.lean:9:0: warning: automatically included section variable(s) unused in theorem `SimplexFull.GlobalApplication.thresholdDeficit_ge_kappa`:
+  [NeZero m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'SimplexFull.GlobalApplication.thresholdDeficit_ge_kappa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.gaussianMaxMean_gram_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.unitGaussianMaxBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_gram_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]

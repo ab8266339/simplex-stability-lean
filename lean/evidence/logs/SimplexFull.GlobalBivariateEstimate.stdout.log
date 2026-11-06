@@ -1,0 +1,19 @@
+'SimplexFull.GlobalBivariate.plackett' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.plackettRate_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.plackettRate_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.rectangleIntegral_monotone_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEstimate.lean:132:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEstimate.lean:148:79: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEstimate.lean:152:68: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEstimate.lean:152:82: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'SimplexFull.GlobalBivariate.rectangleIntegral_gap' depends on axioms: [propext, Classical.choice, Quot.sound]

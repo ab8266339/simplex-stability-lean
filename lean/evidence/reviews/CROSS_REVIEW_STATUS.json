@@ -1,0 +1,220 @@
+{
+  "passed": true,
+  "timestamp_utc": "2026-11-06T10:14:01.773057+00:00",
+  "construction_host": "DESKTOP-BRJD313",
+  "construction_drive": "E:",
+  "local_construction": false,
+  "grok_sessions": {
+    "foundations": {
+      "session": {
+        "role": "foundations",
+        "id": "10e3e53d-7b46-4df8-ba9a-d6e876c135f6",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "session_id": "10e3e53d-7b46-4df8-ba9a-d6e876c135f6",
+        "exit_code": 0,
+        "end": "2026-11-06T17:47:43.8761956+08:00"
+      },
+      "reports": [
+        {
+          "path": "foundations/REVIEW_RESTORED.md",
+          "sha256": "896d193d88b865ead7a2d5c5302fb207a6707de4f5cf66f903f44047447db84f"
+        },
+        {
+          "path": "foundations/STATUS_RESTORED.json",
+          "sha256": "3d53a557727e61285901e2e328635468444e4caa59f3c560fa5e57e2114dcbdc"
+        }
+      ]
+    },
+    "global": {
+      "session": {
+        "role": "global",
+        "id": "52e734d3-b817-4b77-8448-e8ad86b9f30e",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "exit_code": 0,
+        "session_id": "52e734d3-b817-4b77-8448-e8ad86b9f30e",
+        "end": "2026-11-06T17:34:07.9003383+08:00"
+      },
+      "reports": [
+        {
+          "path": "global/REVIEW_RESTORED.md",
+          "sha256": "497e897044bc549b9e101756e859546d0aa7d203f57c6bff6504b63a5b766347"
+        },
+        {
+          "path": "global/STATUS_RESTORED.json",
+          "sha256": "91edc1443a45f728f3442223d65d3fded9d6e41a4869fbe0d0a215412ac39e49"
+        }
+      ]
+    },
+    "geometry": {
+      "session": {
+        "role": "geometry",
+        "id": "f3c7de95-5a02-48cc-b6bf-93347e2dfb91",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "exit_code": 0,
+        "session_id": "f3c7de95-5a02-48cc-b6bf-93347e2dfb91",
+        "end": "2026-11-06T17:49:33.5685202+08:00"
+      },
+      "reports": [
+        {
+          "path": "geometry/REVIEW_RESTORED.md",
+          "sha256": "2947d1b4a798fce84a745519a93c1f54932ea0e0b0d4d2f77a40161c2ca88380"
+        },
+        {
+          "path": "geometry/STATUS_RESTORED.json",
+          "sha256": "b9dcaec5bc6c3613f2305bc0ce4effca64b95e137f85db8592e8f27b2845a955"
+        },
+        {
+          "path": "geometry/APPLICATIONS_REVIEW.md",
+          "sha256": "79ee0db8201d4d809fbcd9af74728176d1428aa118af5ff8c65910e0194be834"
+        },
+        {
+          "path": "geometry/APPLICATIONS_STATUS.json",
+          "sha256": "366a9960794249a31ec498b6e81901f4e77749a7ac2f2ac4b42e849f9b7f554e"
+        }
+      ]
+    },
+    "width": {
+      "session": {
+        "role": "width",
+        "id": "10d1a5ad-98a6-4e8c-8e0d-17e122af1d01",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "end": "2026-11-06T17:59:16.9554205+08:00",
+        "session_id": "10d1a5ad-98a6-4e8c-8e0d-17e122af1d01",
+        "exit_code": 0
+      },
+      "reports": [
+        {
+          "path": "width/REVIEW_RESTORED.md",
+          "sha256": "a6f41cf0f9fe89bb125d039f7a7c8b7fc99c3c9df86f6b9b3ee091a0b6ddec38"
+        },
+        {
+          "path": "width/STATUS_RESTORED.json",
+          "sha256": "8444f73fb0c21a8d958dc2722c9f037b9d61624451adbeef9579e33ed2210a06"
+        },
+        {
+          "path": "width/SPHERE_FINAL_REVIEW.md",
+          "sha256": "3fae62f4c77303feee1831119927e48de44e3b747ca4b3fc22408196fff83842"
+        },
+        {
+          "path": "width/SPHERE_FINAL_STATUS.json",
+          "sha256": "097bf7d584b60bd4a2abdca1e9001f99636de139c70191d029b4f802dd72a1c2"
+        }
+      ]
+    },
+    "tails": {
+      "session": {
+        "role": "tails",
+        "id": "ce7d4e6d-eeb6-4042-a67a-2a9917098c5c",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "exit_code": 0,
+        "session_id": "ce7d4e6d-eeb6-4042-a67a-2a9917098c5c",
+        "end": "2026-11-06T17:35:35.1004447+08:00"
+      },
+      "reports": [
+        {
+          "path": "tails/REVIEW_RESTORED.md",
+          "sha256": "0780f6d658518a52c3b419509a9241a09a414cbeece4384a3e7ecbac30a5afa2"
+        },
+        {
+          "path": "tails/STATUS_RESTORED.json",
+          "sha256": "ed3ee79b41ec863c567e017a9253ed62712acdb02e7132f18e50889f21d53247"
+        }
+      ]
+    },
+    "constants": {
+      "session": {
+        "role": "constants",
+        "id": "a94525d5-2c4f-4280-b0e7-badc4ea2a3f4",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "exit_code": 0,
+        "session_id": "a94525d5-2c4f-4280-b0e7-badc4ea2a3f4",
+        "end": "2026-11-06T17:46:45.8461472+08:00"
+      },
+      "reports": [
+        {
+          "path": "constants/REVIEW_RESTORED.md",
+          "sha256": "6b17b46c4a51e44c924b567327434d5c100ca62029e69103e9de2f9fcce532c0"
+        },
+        {
+          "path": "constants/STATUS_RESTORED.json",
+          "sha256": "81ca5304210ca3ac06bf99b52f03943684a6f5cf8b04236b823bfb95a9dd7dad"
+        }
+      ]
+    },
+    "centroid": {
+      "session": {
+        "role": "centroid",
+        "id": "eef60fca-1ff7-4727-a048-d08ec37feff5",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "exit_code": 0,
+        "session_id": "eef60fca-1ff7-4727-a048-d08ec37feff5",
+        "end": "2026-11-06T17:31:54.4434309+08:00"
+      },
+      "reports": [
+        {
+          "path": "centroid/REVIEW_RESTORED.md",
+          "sha256": "a010f68cc729198fcef6ea0fcc68e2a4445083732e99d3f06ddb36f6f079b574"
+        },
+        {
+          "path": "centroid/STATUS_RESTORED.json",
+          "sha256": "8d1964217acaee2484da77f1a049f274f169a6c3afe0bbd76730da64080b1403"
+        }
+      ]
+    },
+    "bivariate": {
+      "session": {
+        "role": "bivariate",
+        "id": "dabc3f24-2292-4289-b4c6-f47e721729ba",
+        "model": "grok-4.7"
+      },
+      "latest_exit": {
+        "session_id": "dabc3f24-2292-4289-b4c6-f47e721729ba",
+        "exit_code": 0,
+        "end": "2026-11-06T17:28:16.3209753+08:00"
+      },
+      "reports": [
+        {
+          "path": "bivariate/REVIEW_RESTORED.md",
+          "sha256": "cd5cfa9b820bd9d9325d6ca4a7d609c8e9064faf6bb006a6f65157918440b9d0"
+        },
+        {
+          "path": "bivariate/STATUS_RESTORED.json",
+          "sha256": "27a1e27c911316d942ebeb4ef6d40f0aabf98892da37c6789ac65304ec51030a"
+        }
+      ]
+    }
+  },
+  "kernel_certificate": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\kernel-global\\verification\\20261106-180522-470580\\verification.json",
+  "modules": 216,
+  "audited_theorems": 91,
+  "verifier_regression_tests": 44,
+  "unresolved_mathematical_findings": [],
+  "resolved_findings": [
+    "actual global/centroid inputs discharged in final applications",
+    "actual finite convex-hull support proved",
+    "actual normalized sphere and two-sided width integral proved",
+    "bare root custom binary isolation",
+    "fail-closed multiline and meta import handling",
+    "kernel-bypass option rejection",
+    "actual dependency version pin validation",
+    "snapshot source hashes before/after/final compile",
+    "paper support-average factor two corrected",
+    "paper Q1 product wording corrected",
+    "paper requires final sphere modules and entrypoints in supplied certificate"
+  ],
+  "historical_limits": "Early reports describe narrower source states; final application and sphere reports close them. No raw model reasoning or private runtime state is released."
+}

@@ -1,0 +1,90 @@
+{
+  "role": "geometry",
+  "mode": "application-discharge-audit",
+  "prior_review_preserved": ["REVIEW_RESTORED.md", "STATUS_RESTORED.json"],
+  "recompiled": false,
+  "lean": "v4.31.0",
+  "compiled_success": true,
+  "compile_evidence": "Current SHA-256 matches each cited success log, exit_code 0, stderr empty. Latest stdout dependency names are propext, Classical.choice, Quot.sound.",
+  "targetCDF_premise": false,
+  "hunit_premise": false,
+  "constants": {
+    "mu": "lam / sqrt(alpha)",
+    "W": "exp(-mu^2/2) * (exp(mu) - 1) / m",
+    "kappa": "paperKappa m 0 1 = kappa_{m,[0,1]}",
+    "eta": "2^(-m) * alpha * r(1) * tau / 2",
+    "cg": "gramDecoderConstant = W * kappa * alpha^2",
+    "cs": "centroidDecoderConstant = W * eta",
+    "cP": "(alpha/cg + 1/(m*cs))^(-1)",
+    "bg": "meanGramConstant = kappa * alpha^(3/2)",
+    "bs": "centroidMeanConstant = eta / sqrt(alpha)"
+  },
+  "constant_source_note": "GlobalApplicationConstants.lean, GlobalUnitMeanBounds.lean, and GlobalComparisonDefs.lean are absent from scalar-agent/SimplexFull and present there as oleans. coordinator and kernel-global copies of GlobalApplicationConstants.lean are byte-identical, sha256 d9731c891f48b18c4f58ab7a5712435a0823bbf6886e5e6ae6b7ecff36443dbe. Formula text was read from that source.",
+  "theorems": [
+    {
+      "name": "unitGaussianMaxBounds",
+      "discharges": "Geometry.UnitGaussianMaxBounds m bg bs",
+      "hypotheses": ["2 <= m"]
+    },
+    {
+      "name": "unitDecoderCentroidBound",
+      "discharges": "Geometry.UnitDecoderCentroidBound m lam cs",
+      "hypotheses": ["2 <= m", "0 < lam"]
+    },
+    {
+      "name": "decodingSuccess_gram_penalty",
+      "conclusion": "cg * frobSq(G - simplexGram) <= decoding gap",
+      "hypotheses": ["2 <= m", "IsCorrelation G", "0 < lam"]
+    },
+    {
+      "name": "decodingSuccess_procrustes_penalty",
+      "conclusion": "cP * procrustesSq X V <= decoding gap",
+      "hypotheses": ["2 <= m", "UnitConfig X", "gram V = simplexGram", "same dimension", "0 < lam"]
+    },
+    {
+      "name": "decodingSuccess_rank_penalty",
+      "conclusion": "cg * m^2 * (1/rankBound - 1/(m-1)) <= decoding gap",
+      "hypotheses": ["2 <= m", "1 <= rankBound", "IsCorrelation G", "rank G <= rankBound", "0 < lam"],
+      "ambient_dimension": "unrestricted"
+    },
+    {
+      "name": "decodingSuccess_rank_deficiency",
+      "conclusion": "same rank quantity is positive and bounds the decoding gap",
+      "hypotheses": ["1 <= rankBound < m-1", "IsCorrelation G", "rank G <= rankBound", "0 < lam"]
+    },
+    {
+      "name": "decodingSuccess_ambient_penalty",
+      "conclusion": "rank penalty with rankBound replaced by ambient dimension d",
+      "hypotheses": ["2 <= m", "1 <= d", "UnitConfig X", "X : Config m d", "0 < lam"],
+      "bridge": "global_gram_rank_le_ambient"
+    },
+    {
+      "name": "ball_mean_width",
+      "conclusion": "normalized Gaussian width gap bounds (2/E||g||) * (alpha/bg + 1/bs)^(-1) * procrustesSq and (2/E||g||) * bs * sum(1-||X i||^2)",
+      "hypotheses": ["2 <= m", "m-1 <= d", "BallConfig X", "gram V = simplexGram", "same dimension"],
+      "hunit": false
+    },
+    {
+      "name": "ball_bayes_unused_energy",
+      "conclusion": "cs * sum(1-||X i||^2) <= bayesValue V - bayesValue X",
+      "hypotheses": ["2 <= m", "0 < lam", "BallConfig X", "gram V = simplexGram", "d and refdim independent"],
+      "hunit": false
+    }
+  ],
+  "finite_convex_hull": {
+    "module": "GlobalFiniteHullSupport",
+    "theorem": "realSupport (convexHull (range X)) g = maxCoord (scoreMap X g)",
+    "integral": "Gaussian integral of that support equals configGaussianMax X",
+    "sha256": "5e3f2015b20bedff498e868d6978fd9d04febe0904e438f39721751c779d0a08",
+    "exit_code": 0
+  },
+  "sphere_surface_average": "separate active task; not identified in this audit",
+  "defects": [],
+  "sources": [
+    {"module": "GlobalApplicationsCore", "sha256": "eaea2f3d3637c93d709f6a8e5ec4ceb79bacc8316c30c7bcf071c8a8b1176dce", "exit_code": 0, "log": "logs/SimplexFull.GlobalApplicationsCore-20261106-172833-525497"},
+    {"module": "GlobalApplicationsMeanWidth", "sha256": "c7832df1611d0025c0fe9238b2d519f5baee954ac1bd91fc5c047a7687ce3efb", "exit_code": 0, "log": "logs/SimplexFull.GlobalApplicationsMeanWidth-20261106-172918-937661"},
+    {"module": "GlobalApplicationsDecoder", "sha256": "8a326dd79d126ee5d3ea89e00098a748f17b0edc5c08cd4829c96697990546cb", "exit_code": 0, "log": "logs/SimplexFull.GlobalApplicationsDecoder-20261106-173106-246438"},
+    {"module": "GlobalCentroidDecoderGram", "sha256": "f4437f741257ebbea69f0ba238913e61f90c1db05ac8f56205a28f4a29efad26", "exit_code": 0, "log": "logs/SimplexFull.GlobalCentroidDecoderGram-20261106-172006-010022"},
+    {"module": "GlobalCentroidDecoderEnergy", "sha256": "31f6b4a5d89663d954a451a7057e30156a30e65612519c30454fbb7d3e8c2e8d", "exit_code": 0, "log": "logs/SimplexFull.GlobalCentroidDecoderEnergy-20261106-172248-775281"}
+  ]
+}

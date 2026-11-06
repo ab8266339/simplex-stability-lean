@@ -1,0 +1,4 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalComparisonTilt.lean:41:6: warning: 'change e * k * covarianceDefect R ≤ _' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'SimplexFull.GlobalComparison.tilt_doubling_lower' depends on axioms: [propext, Classical.choice, Quot.sound]

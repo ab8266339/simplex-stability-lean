@@ -1,0 +1,20 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateCalculus.lean:32:73: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateCalculus.lean:39:80: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateCalculus.lean:56:109: warning: This simp argument is unused:
+  z
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵z̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateCalculus.lean:56:99: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'SimplexFull.GlobalBivariate.hasDerivAt_conditional_param' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.hasDerivAt_corner_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.hasDerivAt_rectangleIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.plackett_corners' depends on axioms: [propext, Classical.choice, Quot.sound]

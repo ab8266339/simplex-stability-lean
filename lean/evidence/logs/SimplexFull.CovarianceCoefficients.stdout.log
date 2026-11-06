@@ -1,0 +1,16 @@
+'SimplexFull.Covariance.integral_coefficientWeight_qh' depends on axioms: [propext, Classical.choice, Quot.sound]
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\CovarianceCoefficients.lean:58:17: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\CovarianceCoefficients.lean:58:17: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'SimplexFull.Covariance.gaussian_gap0_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.gaussian_gap1_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.gaussian_normal_region_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.gaussian_triangle_normal_region_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.gaussian_raw_gap0_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.gaussian_twoB_subC_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.gaussian_triangle_gap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.gaussian_shell_coercive_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_shell_coercive_m3' depends on axioms: [propext, Classical.choice, Quot.sound]

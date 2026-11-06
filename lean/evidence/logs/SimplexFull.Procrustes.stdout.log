@@ -1,0 +1,6 @@
+'SimplexFull.Geometry.procrustesSq_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.procrustesSq_le_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.procrustesSq_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.synthesis_norm_eq_of_gram_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_orthogonal_of_gram_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.orthoOrbit_iff_gram_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

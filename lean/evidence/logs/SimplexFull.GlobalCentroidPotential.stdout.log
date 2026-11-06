@@ -1,0 +1,3 @@
+'SimplexFull.GlobalCentroid.Psi_tangent_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.witness_h_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.adaptive_value_ge_centroid_trial' depends on axioms: [propext, Classical.choice, Quot.sound]

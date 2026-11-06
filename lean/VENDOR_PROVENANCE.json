@@ -1,0 +1,576 @@
+{
+  "created": "2026-11-06T07:49:19.738147+00:00",
+  "module_count": 52,
+  "targets": [
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Prekopa",
+      "name": "prekopa_leindler",
+      "path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\LogConcavity\\Prekopa.lean",
+      "line": 21,
+      "signature": "theorem prekopa_leindler\n    {\u03b9 : Type u} [Fintype \u03b9]\n    {f g h : (\u03b9 \u2192 \u211d) \u2192 \u211d\u22650\u221e}\n    (hf_meas : Measurable f) (hg_meas : Measurable g)\n    (hh_meas : Measurable h)\n    {t : \u211d} (ht_pos : 0 < t) (ht_lt : t < 1)\n    (h_le : \u2200 x y,\n      f x ^ t * g y ^ (1 - t) \u2264 h (t \u2022 x + (1 - t) \u2022 y)) :\n    (\u222b\u207b x, f x) ^ t * (\u222b\u207b y, g y) ^ (1 - t) \u2264 \u222b\u207b z, h z"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProduct",
+      "name": "centered_product_of_posDef",
+      "path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\CenteredProduct.lean",
+      "line": 114,
+      "signature": "theorem centered_product_of_posDef\n    {m : \u2115} (R : Matrix (Fin m) (Fin m) \u211d)\n    (hR : R.PosDef) (hdiag : \u2200 i, R i i = 1) :\n    CenteredProductProperty R"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.AdaptiveWitnesses",
+      "name": "exists_adaptiveWitnesses",
+      "path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\AdaptiveWitnesses.lean",
+      "line": 30,
+      "signature": "theorem exists_adaptiveWitnesses\n    {m : \u2115} (hm : 0 < m)\n    (R : Matrix (Fin m) (Fin m) \u211d)\n    (hR : R.PosDef)\n    (hdom : (R - (1 / (m : \u211d)) \u2022 allOnesMatrix m).PosSemidef)\n    (c : \u211d) :\n    Nonempty (AdaptiveWitnesses R c)"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.Singular",
+      "name": "lowerOrthant_ge_iid",
+      "path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Orthant\\Singular.lean",
+      "line": 378,
+      "signature": "theorem lowerOrthant_ge_iid\n    {m : \u2115} (hm : 0 < m)\n    (R : Matrix (Fin m) (Fin m) \u211d)\n    (hR : IsWeakSimplexCov R)\n    (c : \u211d) :\n    (multivariateGaussian 0 R) (lowerOrthant c) \u2265\n      (gaussianReal 0 1) (Set.Iic c) ^ m"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.StochasticOrder",
+      "name": "coordinateMax_tail_le_iid",
+      "path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Maxima\\StochasticOrder.lean",
+      "line": 53,
+      "signature": "theorem coordinateMax_tail_le_iid\n    {m : \u2115} (hm : 0 < m)\n    (R : Matrix (Fin m) (Fin m) \u211d)\n    (hR : IsWeakSimplexCov R)\n    (c : \u211d) :\n    (multivariateGaussian (0 : Coord m) R) {x | c < coordinateMax hm x} \u2264\n      (multivariateGaussian (0 : Coord m) (1 : Matrix (Fin m) (Fin m) \u211d))\n        {x | c < coordinateMax hm x}"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.RegularSimplex",
+      "name": "gramGaussianMax_mgf_le_regularSimplex",
+      "path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\RegularSimplex.lean",
+      "line": 21,
+      "signature": "theorem gramGaussianMax_mgf_le_regularSimplex\n    {m : \u2115} (hm : 1 < m)\n    (G : Matrix (Fin m) (Fin m) \u211d)\n    (hG : IsCorrelation G)\n    (lam : \u211d) (hlam : 0 \u2264 lam) :\n    mgf (coordinateMax (Nat.zero_lt_of_lt hm)) (multivariateGaussian 0 G) lam \u2264\n      mgf (coordinateMax (Nat.zero_lt_of_lt hm))\n        (multivariateGaussian 0 (regularSimplexGram m)) lam"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictRectangle",
+      "name": "symmetricRectangle_gt_iid",
+      "path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\StrictRectangle.lean",
+      "line": 1092,
+      "signature": "theorem symmetricRectangle_gt_iid\n    {m : \u2115} (S : Matrix (Fin m) (Fin m) \u211d) (hS : IsCorrelation S) (hne : S \u2260 1)\n    (r : Fin m \u2192 \u211d) (hr : \u2200 i, 0 < r i) :\n    (\u220f i, gaussianReal 0 1 (Icc (-r i) (r i))) <\n      multivariateGaussian (0 : Coord m) S (symmetricRectangle r)"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingularWitnesses",
+      "name": "exists_adaptiveWitnesses_of_isWeakSimplexCov",
+      "path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\SingularWitnesses.lean",
+      "line": 219,
+      "signature": "theorem exists_adaptiveWitnesses_of_isWeakSimplexCov\n    {m : \u2115} (hm : 0 < m)\n    (R : Matrix (Fin m) (Fin m) \u211d)\n    (hR : IsWeakSimplexCov R)\n    (c : \u211d) :\n    Nonempty (AdaptiveWitnesses R c)"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingleThreshold",
+      "name": "lowerOrthant_gt_iid",
+      "path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\SingleThreshold.lean",
+      "line": 370,
+      "signature": "theorem lowerOrthant_gt_iid\n    {m : \u2115} (hm : 0 < m)\n    (R : Matrix (Fin m) (Fin m) \u211d)\n    (hR : IsWeakSimplexCov R) (hne : R \u2260 1)\n    (c : \u211d) :\n    (gaussianReal 0 1) (Iic c) ^ m <\n      (multivariateGaussian (0 : Coord m) R) (lowerOrthant c)"
+    }
+  ],
+  "topological_order": [
+    "WeakSimplexConjectureLean.LogConcavity.Basic",
+    "WeakSimplexConjectureLean.Vendor.StatLean.PrekopaLeindler",
+    "WeakSimplexConjectureLean.LogConcavity.Prekopa",
+    "WeakSimplexConjectureLean.Core.Finite",
+    "WeakSimplexConjectureLean.Core.Euclidean",
+    "WeakSimplexConjectureLean.Core.Matrix",
+    "WeakSimplexConjectureLean.Vendor.StatLean.PiWithDensity",
+    "WeakSimplexConjectureLean.Vendor.StatLean.PiGaussian",
+    "WeakSimplexConjectureLean.Vendor.StatLean.WithDensityMap",
+    "WeakSimplexConjectureLean.Gaussian.DensityRatio",
+    "WeakSimplexConjectureLean.Product.NormalizedSelfConvolution",
+    "WeakSimplexConjectureLean.Product.DyadicCLT",
+    "WeakSimplexConjectureLean.Product.PositiveLowerBound",
+    "WeakSimplexConjectureLean.Product.CenteredProperty",
+    "WeakSimplexConjectureLean.Core.Correlation",
+    "WeakSimplexConjectureLean.Core.QuadraticCoercivity",
+    "WeakSimplexConjectureLean.LogConcavity.Indicators",
+    "WeakSimplexConjectureLean.Product.SymmetricRectangle",
+    "WeakSimplexConjectureLean.Product.EvenLayerCake",
+    "WeakSimplexConjectureLean.Product.SumDifference",
+    "WeakSimplexConjectureLean.Product.CenteredProduct",
+    "WeakSimplexConjectureLean.Normal.PDFCDF",
+    "WeakSimplexConjectureLean.Normal.TruncatedMoments",
+    "WeakSimplexConjectureLean.Normal.Mills",
+    "WeakSimplexConjectureLean.Normal.TiltFunctions",
+    "WeakSimplexConjectureLean.Tilt.RankOneInverse",
+    "WeakSimplexConjectureLean.Tilt.Potential",
+    "WeakSimplexConjectureLean.Tilt.CompactMaximizer",
+    "WeakSimplexConjectureLean.Tilt.Stationarity",
+    "WeakSimplexConjectureLean.Tilt.AdaptiveWitnesses",
+    "WeakSimplexConjectureLean.Vendor.StatLean.GaussianMGFShift",
+    "WeakSimplexConjectureLean.Gaussian.Shift",
+    "WeakSimplexConjectureLean.Tilt.TiltedHalfLine",
+    "WeakSimplexConjectureLean.Tilt.EventShift",
+    "WeakSimplexConjectureLean.Orthant.PositiveDefiniteConditional",
+    "WeakSimplexConjectureLean.Orthant.PositiveDefinite",
+    "WeakSimplexConjectureLean.Orthant.Singular",
+    "WeakSimplexConjectureLean.Maxima.CoordinateMax",
+    "WeakSimplexConjectureLean.Maxima.StochasticOrder",
+    "WeakSimplexConjectureLean.Coding.Gram",
+    "WeakSimplexConjectureLean.Maxima.ExponentialMoments",
+    "WeakSimplexConjectureLean.Coding.Normalization",
+    "WeakSimplexConjectureLean.Coding.RegularSimplex",
+    "WeakSimplexConjectureLean.Basic",
+    "WeakSimplexConjectureLean.Coding.BayesValue",
+    "WeakSimplexConjectureLean.Coding.MLDecoder",
+    "WeakSimplexConjectureLean.Coding.WeakSimplex",
+    "WeakSimplexConjectureLean",
+    "SimplexUniquenessLean.StrictRectangle",
+    "SimplexUniquenessLean.SingularWitnesses",
+    "SimplexUniquenessLean.StrictProduct",
+    "SimplexUniquenessLean.SingleThreshold"
+  ],
+  "files": [
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Basic",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\LogConcavity\\Basic.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\LogConcavity\\Basic.lean",
+      "sha256": "c3cf3afa3f5030910e17dd5e929c15ebb831fa47ea8f61858031ebe2c9862092",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PrekopaLeindler",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\StatLean\\PrekopaLeindler.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\StatLean\\PrekopaLeindler.lean",
+      "sha256": "f688c9828abe49d2c44d870d47f00adc312a51d24d25a1ba79014b437e222aa8",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Prekopa",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\LogConcavity\\Prekopa.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\LogConcavity\\Prekopa.lean",
+      "sha256": "0434f184d079988afc57e518e111a345bec3065bd71b0a4684eb8d90ab83a67e",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Finite",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Core\\Finite.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Core\\Finite.lean",
+      "sha256": "1f1a70c80fc17ae9b6b0939e88aa2a2f1ca9ce45ac52cf0d54d7695391e7aaf9",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Euclidean",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Core\\Euclidean.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Core\\Euclidean.lean",
+      "sha256": "119360436cfda22ae625dc4dc4bc6ba7e02a92398a3526e690c34874c48d09cb",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Matrix",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Core\\Matrix.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Core\\Matrix.lean",
+      "sha256": "6fc691989dae34c79a9f252ab25cdccce354e090be51a529dfa289bc020bff58",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PiWithDensity",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\StatLean\\PiWithDensity.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\StatLean\\PiWithDensity.lean",
+      "sha256": "adc66c7cd3ccc8df21a8072278dc4221fb2c85132219474de17e00ae62d461d0",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PiGaussian",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\StatLean\\PiGaussian.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\StatLean\\PiGaussian.lean",
+      "sha256": "57a9c7029afcbfad788f5a6e82b80129eb64c0426c982d51230ea87c4d21db1f",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.WithDensityMap",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\StatLean\\WithDensityMap.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\StatLean\\WithDensityMap.lean",
+      "sha256": "b02e96c07623854b5f5f2a53aedae52aed34093b5bc1e78dfd3b1bc8bb79cf9c",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Gaussian.DensityRatio",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Gaussian\\DensityRatio.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Gaussian\\DensityRatio.lean",
+      "sha256": "6c6d14e951ea3e06b03c51491a2acb85dcc8c020459717d1d2130a143e9d24eb",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.NormalizedSelfConvolution",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\NormalizedSelfConvolution.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\NormalizedSelfConvolution.lean",
+      "sha256": "3211ce3ff8694599c9c2071e6d5d980e444a3cd948bf80c5cfd6e7a4408b6a3b",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.DyadicCLT",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\DyadicCLT.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\DyadicCLT.lean",
+      "sha256": "d54ff50ded52fd129d86a3282c1e7661f862ded4bb54029fe216673cb9e9b4f4",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.PositiveLowerBound",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\PositiveLowerBound.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\PositiveLowerBound.lean",
+      "sha256": "81a0891bb2c25480fb08493d2e09b0f127af8fe5cd1b42a9ec2254de67215c9e",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProperty",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\CenteredProperty.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\CenteredProperty.lean",
+      "sha256": "56431d39874eab04059ef929689c9359e90de6aecfdc47c4481a77c3e4466dc2",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Correlation",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Core\\Correlation.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Core\\Correlation.lean",
+      "sha256": "706b3fde60602f868526400b81c9de1a4580d00a197c577564ed43f2618a7f06",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.QuadraticCoercivity",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Core\\QuadraticCoercivity.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Core\\QuadraticCoercivity.lean",
+      "sha256": "f99e03b00db02bd5b351e1c1c06d6428cc03ff13735dc025b99bcfb495d9305f",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Indicators",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\LogConcavity\\Indicators.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\LogConcavity\\Indicators.lean",
+      "sha256": "b43ad92f709f213f41d2f592d233833f46046df42652295c2eadf7d9d5239cca",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.SymmetricRectangle",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\SymmetricRectangle.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\SymmetricRectangle.lean",
+      "sha256": "0a6405b84a4d1d89c34ba0088c5102bdea3b82aea886a4c7c1436e559d8e034c",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.EvenLayerCake",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\EvenLayerCake.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\EvenLayerCake.lean",
+      "sha256": "d25e8d553d06bf0f7e3a379387ab0aa59df4c683d3e8b4fa8c7d0621bec7a178",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.SumDifference",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\SumDifference.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\SumDifference.lean",
+      "sha256": "6da4c5565d6dfef40db60ed227e54f05a75283526ccb0b26bdd2ba103f8f1045",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProduct",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Product\\CenteredProduct.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Product\\CenteredProduct.lean",
+      "sha256": "3d5a59cdfbd0f074ae94472437e276f1a18e978e5d8fd478eb0e400ef7a81129",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.PDFCDF",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Normal\\PDFCDF.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Normal\\PDFCDF.lean",
+      "sha256": "ff1f22753af4338e243b37c39f77adab5e228659eeaed3c1ad20705940cd14b3",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.TruncatedMoments",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Normal\\TruncatedMoments.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Normal\\TruncatedMoments.lean",
+      "sha256": "103d9cb9aeeb5babbb9fe6e8da361d284d4722c01e70ff82cdbe86092118ac6d",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.Mills",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Normal\\Mills.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Normal\\Mills.lean",
+      "sha256": "5b643f98457442cdd3a58c50f5afbee787caa0f16388f327648d96c50652caf1",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.TiltFunctions",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Normal\\TiltFunctions.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Normal\\TiltFunctions.lean",
+      "sha256": "e144471a1a2d8ef810375cf21ac164dc1ee87ec29368fc92c2c9536329b32752",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.RankOneInverse",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\RankOneInverse.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\RankOneInverse.lean",
+      "sha256": "c4f1ab5b83bf8e445ac6f3a48d292a292fe60a2acd7690a907c87a7dc36c7ae1",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.Potential",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\Potential.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\Potential.lean",
+      "sha256": "070b7a92cabcb8f4e278f941d129c141953837773224cae019f011a0134a2fbf",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.CompactMaximizer",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\CompactMaximizer.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\CompactMaximizer.lean",
+      "sha256": "a042857a471d8d879b619a4cd1c055b74f29c2a4d67cf3df0774a14a6d86a778",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.Stationarity",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\Stationarity.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\Stationarity.lean",
+      "sha256": "581c1f33a66dc8ce0156278509d6a8f15ca15156bfb69f26ffd3449e61feef89",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.AdaptiveWitnesses",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\AdaptiveWitnesses.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\AdaptiveWitnesses.lean",
+      "sha256": "d39fcad402473f5853788be84c2884cd86e9888c9c7371b42b4c8d652d7e23f8",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.GaussianMGFShift",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\StatLean\\GaussianMGFShift.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\StatLean\\GaussianMGFShift.lean",
+      "sha256": "fa14457d3338ada795771b742a0d776a98976968fae9d787a69cd6d28c1019a0",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Gaussian.Shift",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Gaussian\\Shift.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Gaussian\\Shift.lean",
+      "sha256": "fff781796e662593a68ffc09dc7907f71db762decf4db1f328850c9e08adbe0f",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.TiltedHalfLine",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\TiltedHalfLine.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\TiltedHalfLine.lean",
+      "sha256": "639b7bfa75bdc3fa3c21cfd299a767080b9d351e781c7b09fff9377b51498745",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.EventShift",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Tilt\\EventShift.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Tilt\\EventShift.lean",
+      "sha256": "02a93adb65921bc838c3b81e98cb711115eb098d3ed32bb177b94f83f609a73c",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.PositiveDefiniteConditional",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Orthant\\PositiveDefiniteConditional.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Orthant\\PositiveDefiniteConditional.lean",
+      "sha256": "f29f5910f1775e2195cd5d98c27cad17348350e54ed47efc589ba39d5c1c0bfe",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.PositiveDefinite",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Orthant\\PositiveDefinite.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Orthant\\PositiveDefinite.lean",
+      "sha256": "c4e59eb250e58e331308bb5a0b304fe090b46885cd82ad7b7410edb05e95b182",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.Singular",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Orthant\\Singular.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Orthant\\Singular.lean",
+      "sha256": "f63c9ae1525dd7f9b1fa7fbff6d2f1bb55151d6e58f9c34a7d02b4a57da2dffd",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.CoordinateMax",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Maxima\\CoordinateMax.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Maxima\\CoordinateMax.lean",
+      "sha256": "94c7f4db4c838d800b87061c37801f6e7a7197cd9599f41f90c26bb8751aa36c",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.StochasticOrder",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Maxima\\StochasticOrder.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Maxima\\StochasticOrder.lean",
+      "sha256": "faaaf0106de0eefe0ae7b8a210315103130b5f075ef1c7c1efa505c4e4627eb1",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.Gram",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\Gram.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Coding\\Gram.lean",
+      "sha256": "82636b91b6dd6057c6665936e6a978c81bc0beaf73b9190850ef8ca8e4519fb8",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.ExponentialMoments",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Maxima\\ExponentialMoments.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Maxima\\ExponentialMoments.lean",
+      "sha256": "0c8d2bcdaaf021c49178d5fc1c29004181f0b9215cbe4574fe51e97d8e48625d",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.Normalization",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\Normalization.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Coding\\Normalization.lean",
+      "sha256": "133fc09ccb60d3306186132738de9e85f6ba41716d93c5b43bbebc3ceb721cc5",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.RegularSimplex",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\RegularSimplex.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Coding\\RegularSimplex.lean",
+      "sha256": "b331e2e083c513811d336ad96c71eb4280cf47ae8251c917501903fe4aeef442",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Basic",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Basic.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Basic.lean",
+      "sha256": "fb457a3a7b5b8d08bd3d153b243e18355d0dd58c07bd9dd92e585733c495a8a5",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.BayesValue",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\BayesValue.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Coding\\BayesValue.lean",
+      "sha256": "03fc5f9428f4aa7ce17723e2d08f8c2b3b1a8d42d5c88534a035b8b6c1ed5a79",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.MLDecoder",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\MLDecoder.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Coding\\MLDecoder.lean",
+      "sha256": "89a135d439e8ebb9485fafa78de287373eaf76532c77e0c0e78465a85920cdb9",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.WeakSimplex",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Coding\\WeakSimplex.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Coding\\WeakSimplex.lean",
+      "sha256": "66f55591f99ef0063668f1f31e2e74514edfdb7475901cb1dba3aa5678ff94c0",
+      "changes": "none"
+    },
+    {
+      "module": "WeakSimplexConjectureLean",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04",
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean.lean",
+      "sha256": "81abbd255e3ce57eefffdcf5523ea37fb1a2ca72260faabf854aa337e91fe469",
+      "changes": "none"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictRectangle",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e",
+      "original_path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\StrictRectangle.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\SimplexUniquenessLean\\StrictRectangle.lean",
+      "sha256": "323ed1bfe1fb4e2035c26b8e390f27bb81154b85524d3c065fb2997a2319d78d",
+      "changes": "none"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingularWitnesses",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e",
+      "original_path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\SingularWitnesses.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\SimplexUniquenessLean\\SingularWitnesses.lean",
+      "sha256": "5585fdc2bc398dc7bc27b8a089d86b1f319a0f582cdb345adf97ce4d264b1250",
+      "changes": "none"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictProduct",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e",
+      "original_path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\StrictProduct.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\SimplexUniquenessLean\\StrictProduct.lean",
+      "sha256": "86f92646fb3983415ea5505c1be23b21365b2b6debe86467abc980d369b753b5",
+      "changes": "none"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingleThreshold",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e",
+      "original_path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\SimplexUniquenessLean\\SingleThreshold.lean",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\SimplexUniquenessLean\\SingleThreshold.lean",
+      "sha256": "2620a36530439504f892a7edddaf8d2c49f3d9d5a64612c69541cee28f230f56",
+      "changes": "none"
+    }
+  ],
+  "licenses": [
+    {
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\LICENSE",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\licenses\\WeakSimplexConjectureLean\\LICENSE",
+      "sha256": "5dd9ee399d7cf3810f7948d847a49f918e4a63a144b4bb2f3689c03d5eb4d496"
+    },
+    {
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\README.md",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\licenses\\WeakSimplexConjectureLean\\README.md",
+      "sha256": "9aa4442a75167133c0acd357e67dfb11fe6146823a9289698a1300437de86d5f"
+    },
+    {
+      "original_path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\LICENSE",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\licenses\\SimplexUniquenessLean\\LICENSE",
+      "sha256": "ab20e5e67a0b1b361ee6ebae2120bcc4883f846e886ffbd05ada226f337cf168"
+    },
+    {
+      "original_path": "E:\\claude-lean-work\\simplex-uniqueness-lean\\README.md",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\licenses\\SimplexUniquenessLean\\README.md",
+      "sha256": "99efc2196c48e618540ede1736915a0bf534491a55e053ced295fe028dcc03e5"
+    },
+    {
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\README.md",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\README.md",
+      "sha256": "381ee5f90dfe88ef3758631bd52e28e207f3b005869e60dd11753221a5d3a932"
+    },
+    {
+      "original_path": "E:\\claude-lean-work\\weak-simplex-conjecture-lean\\WeakSimplexConjectureLean\\Vendor\\StatLean\\LICENSE",
+      "local_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\WeakSimplexConjectureLean\\Vendor\\StatLean\\LICENSE",
+      "sha256": "5e5e8463338687fc3a86e6a886aba7f920522eba6c09a3209de42298e588ec7d"
+    }
+  ],
+  "changes": "none",
+  "lean": "4.31.0",
+  "mathlib": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f"
+}

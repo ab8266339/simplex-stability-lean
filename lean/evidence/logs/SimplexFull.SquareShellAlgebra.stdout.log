@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.square_shell_hessian_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.square_shell_hessian_pos' depends on axioms: [propext, Classical.choice, Quot.sound]

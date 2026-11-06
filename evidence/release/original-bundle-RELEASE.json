@@ -1,0 +1,20 @@
+{
+  "name": "concrete-simplex-paper-global-20261106",
+  "date": "2026-11-06",
+  "paper": "paper_main.pdf",
+  "paper_pages": 46,
+  "paper_sha256": "1dd2342414c64e420b1ceae865fa4d4eabc292f1df6c5d3c77cf7db932ea26f1",
+  "paper_bytes": 594932,
+  "lean_modules": 216,
+  "audited_theorems": 91,
+  "lean_archive": "concrete-simplex-lean-global-20261106.zip",
+  "lean_archive_sha256": "4e8e24831e8c56ab07523aed22c89c4ba6854726accccff2aa32c0587133896b",
+  "verification_run": "20261106-180522-470580",
+  "verification_certificate": "lean/evidence/verification.json",
+  "construction_host": "DESKTOP-BRJD313",
+  "construction_root": "E:\\simplex-lean-full-20261106",
+  "local_construction": false,
+  "scope": "Original exact global/rank/decoder/energy/spherical mean-width and previous local crossing/strict-normal/O(rho^6) results",
+  "paper_visual_qa": "passed",
+  "independent_mathematical_review": "passed"
+}

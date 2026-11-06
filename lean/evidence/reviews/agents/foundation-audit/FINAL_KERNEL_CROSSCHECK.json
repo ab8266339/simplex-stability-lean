@@ -1,0 +1,1893 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-06T10:13:59.526842+00:00",
+  "run": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\kernel-global\\verification\\20261106-180522-470580",
+  "certificate_sha256": "793342aab7bc84d496542efadbb280538ad621e71e03239f46d5e85209a467fe",
+  "module_count": 216,
+  "entry_count": 91,
+  "audit_raw_report_count": 91,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "original_module_count": 94,
+  "vendor_module_count": 52,
+  "effective_lean_path": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\kernel-global\\verification\\20261106-180522-470580\\build;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;E:\\claude-lean-work\\hsfnlean\\.lake\\build\\lib\\lean;C:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\lib\\lean",
+  "old_custom_paths_found": [],
+  "lean_version_actual": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+  "mathlib_git_head_actual": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "mathlib_source_root_actual": "E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\mathlib",
+  "source_snapshot_checks": [
+    {
+      "module": "SimplexFull.GeometryBase",
+      "passed": true,
+      "sha256": "e214bf38d37fb2451f505020fab052d0ccad33a8b8d1f1d66256dd0be8c0ac2a"
+    },
+    {
+      "module": "SimplexFull.GramCoordinates",
+      "passed": true,
+      "sha256": "212b18f6352c087fcdc765711bfb1e2fe2a49829bb2b4e59bb5621b3eea4c4ee"
+    },
+    {
+      "module": "SimplexFull.GeometryAlgebra",
+      "passed": true,
+      "sha256": "c86372d9242b1ba3ba4a2f4e42fb7b896dba164c72ccc10893ce38d278c93d4e"
+    },
+    {
+      "module": "SimplexFull.SquareShellAlgebra",
+      "passed": true,
+      "sha256": "f805214f8f1cffa38f6621219cde1ff7eaaff9cdbdacf57ffd86ae1c55e00eca"
+    },
+    {
+      "module": "SimplexFull.Shell",
+      "passed": true,
+      "sha256": "2773d65c45ff05dc20daf4fa950f5e5bc488a448b277cedc8003627bb5cfb9cd"
+    },
+    {
+      "module": "SimplexFull.MatrixCFC",
+      "passed": true,
+      "sha256": "26c526c1d5572358c719f7bcb03abc323d287e723de27b62b012fafa9b17e0d2"
+    },
+    {
+      "module": "SimplexFull.CenteredSqrt",
+      "passed": true,
+      "sha256": "226291a2e0e6163612d543e19e4fd630fe65d952bfad6bd1b70452797e10f1c4"
+    },
+    {
+      "module": "SimplexFull.Procrustes",
+      "passed": true,
+      "sha256": "84974fe4c01b9881e79907175f62cd9f99acd91ddab7f0b17651b8357d3b320b"
+    },
+    {
+      "module": "SimplexFull.ProcrustesFormula",
+      "passed": true,
+      "sha256": "4bc7ac877a622725a4da77354ee7e78f8b7a426c64390f3ee665f7e66e6716b1"
+    },
+    {
+      "module": "SimplexFull.NormalMinimizer",
+      "passed": true,
+      "sha256": "b012dff5276a46d9f0ba4efd0c4772f868cba42a075d0f3700becef1df74fd3d"
+    },
+    {
+      "module": "SimplexFull.ActualProcrustes",
+      "passed": true,
+      "sha256": "658ce06eee4ea5394f62d79413bd88a567936c750ddac5fd19f48643e5d15f70"
+    },
+    {
+      "module": "SimplexFull.GaussianMaps",
+      "passed": true,
+      "sha256": "259e1c726aff7da04d5bbb83259aa6db21ffb80bd629953a7832ae2471d4a3d2"
+    },
+    {
+      "module": "SimplexFull.Decoder",
+      "passed": true,
+      "sha256": "4788d5066851c91a296f10d112a03fdd2ec6de9cc2a2d2812dd67f1660de11a9"
+    },
+    {
+      "module": "SimplexFull.GaussianShift",
+      "passed": true,
+      "sha256": "8029585a5d3d312e2e542baa7dab303c929616e5453c84b235e8818346293598"
+    },
+    {
+      "module": "SimplexFull.CovarianceGeometry",
+      "passed": true,
+      "sha256": "6c3500538b56e8231ab6a0f7005e37e6e6bb4ce2ef58c3b8d5a4f4d8dbdc939d"
+    },
+    {
+      "module": "SimplexFull.ShellEnclosure",
+      "passed": true,
+      "sha256": "6492a3c10fe59b8f5a5fef6fe692fe061b1b2d2b25d2b72d56ab656aeab84f2e"
+    },
+    {
+      "module": "SimplexFull.ActualShell",
+      "passed": true,
+      "sha256": "d4459a1e3e8af8af459431cb1f66ccca77268e75b61e9c5b11d969b1626753b8"
+    },
+    {
+      "module": "SimplexFull.ShellRegularity",
+      "passed": true,
+      "sha256": "3360fc20472fed774fbf80c823c87ff5041745334841fef71e6a3ea5ccad7c8f"
+    },
+    {
+      "module": "SimplexFull.GaussianDensity",
+      "passed": true,
+      "sha256": "ab1273930347997d3993e06328c0cc030da98a810d5f3d4935f3239ad904ca5b"
+    },
+    {
+      "module": "SimplexFull.DensityCalculus",
+      "passed": true,
+      "sha256": "6a5ae3d0ec36cfba982343b6ca947a6f8a95c8184f4f9f360799b8632e33d99f"
+    },
+    {
+      "module": "SimplexFull.GaussianDomination",
+      "passed": true,
+      "sha256": "2fa548d56d00212f04fc33ea1d6e3799c8d01396ef661e9f80f8c724c5fca84b"
+    },
+    {
+      "module": "SimplexFull.SmoothIntegral",
+      "passed": true,
+      "sha256": "04d8115cbd3d48f1236bb9b3e36f125989c70f15b823f5f3d69ff6092c453fdd"
+    },
+    {
+      "module": "SimplexFull.GaussianLocalBounds",
+      "passed": true,
+      "sha256": "7f2f7139876f56bcf41eeef0066412cb2d4731c55961f5577f20128b69237f12"
+    },
+    {
+      "module": "SimplexFull.PrecisionGaussian",
+      "passed": true,
+      "sha256": "3015c39153efec175823445ae6443b81ee6d6c70a2e8ea01620f6a037671ec98"
+    },
+    {
+      "module": "SimplexFull.GaussianSmooth",
+      "passed": true,
+      "sha256": "384496e4a5c6ad2710dd3bc741aa3b7291123fd4d10ba39adbeb1a02c0e95d92"
+    },
+    {
+      "module": "SimplexFull.ShellSymmetry",
+      "passed": true,
+      "sha256": "6e75e372e90c4f48eca3ad27a08b7e357b1932d60bebcaafbfc2cef87098d942"
+    },
+    {
+      "module": "SimplexFull.ShellObjective",
+      "passed": true,
+      "sha256": "d879be44f62891dad238623f477c45c2d5266bedacdf84fa744e00a4ffdc4eac"
+    },
+    {
+      "module": "SimplexFull.GaussianSymmetry",
+      "passed": true,
+      "sha256": "86aa86aec6c0c5f288d0231d8ce11267b88750b6f02b630379cfd1a28f6fcfd9"
+    },
+    {
+      "module": "SimplexFull.ShellStationarity",
+      "passed": true,
+      "sha256": "e8a28f819ee57e617063209a61841e8fbf9c223ad69e425f470986f0630a1a23"
+    },
+    {
+      "module": "SimplexFull.ShellConvexity",
+      "passed": true,
+      "sha256": "8e3f30e11d24e81fa0d8ad0377762d0d6fe467126d0b49b4ca07fc2d8a1253bb"
+    },
+    {
+      "module": "SimplexFull.ShellLocalMinimum",
+      "passed": true,
+      "sha256": "f892589153751d8b1ff16533dd0ca388a63d2ab4b96424ce2bda5c34dea6d292"
+    },
+    {
+      "module": "SimplexFull.GaussianDensityMatrix",
+      "passed": true,
+      "sha256": "f7a82901bdb6345368c01e5f7f87d648624952f04fde6a8182f4c6ae5defbf94"
+    },
+    {
+      "module": "SimplexFull.GaussianDensityLaw",
+      "passed": true,
+      "sha256": "d38cbef2fe548a5184a725ff734baa15a916766743bf3a816c5c225fb7df0656"
+    },
+    {
+      "module": "SimplexFull.GaussianDensityIntegrals",
+      "passed": true,
+      "sha256": "62c10f622b3d971bbbded30f3f26bf4284c40dba0fd89be26a1a63213fcee9a7"
+    },
+    {
+      "module": "SimplexFull.ShellProbability",
+      "passed": true,
+      "sha256": "bfae96e58be5210430405d9b220e04c25cbe2a4cddde3692b5389ff2a15ea172"
+    },
+    {
+      "module": "SimplexFull.NormalShellOptimization",
+      "passed": true,
+      "sha256": "875a817a6a7d0ae0778a51b49807ef2b6a541c8fbe7bd1ed1505076f0250fb6c"
+    },
+    {
+      "module": "SimplexFull.NormalShellValue",
+      "passed": true,
+      "sha256": "119ebcb9ea2db2de60ba242e1ac476d6e5b27e97ca4b1fb668c9af0e48d4f45b"
+    },
+    {
+      "module": "SimplexFull.GaussianBase",
+      "passed": true,
+      "sha256": "78cf027a77dcb3238b8da2fb90d5e123ced689125d2e071a423cef9fa0939807"
+    },
+    {
+      "module": "SimplexFull.Scalar",
+      "passed": true,
+      "sha256": "ac1114765d07ec8d06bd4449e6841b71145012886d7fa75c71053c4fec65d6a7"
+    },
+    {
+      "module": "SimplexFull.Abstract",
+      "passed": true,
+      "sha256": "75f02dd3d5e3189d8be86a7922f01281f41f1a9533b5921570cebfa63bcb0803"
+    },
+    {
+      "module": "SimplexFull.MillsPrep",
+      "passed": true,
+      "sha256": "390d1e6bae146a2dec42155758b7545f7aa17994a6f1d479f9a56786f8b03fa3"
+    },
+    {
+      "module": "SimplexFull.MillsBounds",
+      "passed": true,
+      "sha256": "458c08d17ab209f01631b1a8f3f7eb2047d4462be03de09ff41edcefa95c9c23"
+    },
+    {
+      "module": "SimplexFull.MillsAlgebra",
+      "passed": true,
+      "sha256": "cd9bd0a57498b51a9e4a549e7e59dc1fe09b55cddf11d3370e0562b845989dd9"
+    },
+    {
+      "module": "SimplexFull.Mills",
+      "passed": true,
+      "sha256": "2f382a2072956ca98c401f036cfb34093794076e1118ecf89080356c7947dbcb"
+    },
+    {
+      "module": "SimplexFull.Orthant",
+      "passed": true,
+      "sha256": "4412c1d21b033ffb59b9380ec73198df432ff210396c759765f334cb8ec3760a"
+    },
+    {
+      "module": "SimplexFull.LayerCake",
+      "passed": true,
+      "sha256": "bccf9cf240aafedf5a0cc1a0bf55781560d1b935d65d8ded04feec394aaf58bd"
+    },
+    {
+      "module": "SimplexFull.OrthantProduct",
+      "passed": true,
+      "sha256": "96209377765edda25f30126f4192e5cda45127aad119ce49de38dae0ed012874"
+    },
+    {
+      "module": "SimplexFull.GaussianPolynomial",
+      "passed": true,
+      "sha256": "eb57f76b2da66ef67553224da1b638f985eb558a8fd181a23ada4f209377bf41"
+    },
+    {
+      "module": "SimplexFull.OrthantLimits",
+      "passed": true,
+      "sha256": "93654b388a70fbfce6e38492e34f7fd21ed6f1fad9f33007d6492ae908647116"
+    },
+    {
+      "module": "SimplexFull.OrthantMomentTable",
+      "passed": true,
+      "sha256": "3f3584ef7c6d9bb6f6423eeb946e9e76eb6688107d3f6fc3ed5a0dd84cd42ed1"
+    },
+    {
+      "module": "SimplexFull.OrthantAlgebra",
+      "passed": true,
+      "sha256": "cf2fe84885f734934beb61ab16f00e20ec08de1dbe52138040ba74e9a33e4134"
+    },
+    {
+      "module": "SimplexFull.OrthantMomentBridge",
+      "passed": true,
+      "sha256": "e54ec0853e38bcd178993032a8b1517366e796df89783230913c78f937aac4a2"
+    },
+    {
+      "module": "SimplexFull.OrthantCoefficients",
+      "passed": true,
+      "sha256": "eea7142020dc03744b144f3b55de2ad7919331539b87fd0a2e4abcc17d6a1404"
+    },
+    {
+      "module": "SimplexFull.Tilted",
+      "passed": true,
+      "sha256": "cbd359a93b703ec658873186696015ba81c6c4714810bd0335d6de4740f18a4b"
+    },
+    {
+      "module": "SimplexFull.Covariance1D",
+      "passed": true,
+      "sha256": "15a530bdbadedfedb216477d98e246ada19fc8360b6181d582ead0b20071baf5"
+    },
+    {
+      "module": "SimplexFull.Moments",
+      "passed": true,
+      "sha256": "8b182a91aab51e725b98354baf22ddaed073afd9d1b1141211521868bc519426"
+    },
+    {
+      "module": "SimplexFull.GaussianMoments",
+      "passed": true,
+      "sha256": "7b33a4bd005e8128456f27ca7092d196e75f997faa57d748cd251ba3cffa0eaf"
+    },
+    {
+      "module": "SimplexFull.Benchmark",
+      "passed": true,
+      "sha256": "29e2ceb4dc160d9384744f9621f13b9d6b5ee9f7258b18134b04ba60c21acee4"
+    },
+    {
+      "module": "SimplexFull.MomentOrder",
+      "passed": true,
+      "sha256": "c7f54a0ee29cc0807916444ff92e0dbbeb4fa00ee92830c2414d7fd2e0dce41a"
+    },
+    {
+      "module": "SimplexFull.Balance",
+      "passed": true,
+      "sha256": "83a4914b5cfac266807bf952af4de0b8d9e59c1f6779fa898ef961c9d1228361"
+    },
+    {
+      "module": "SimplexFull.GaussianCrossings",
+      "passed": true,
+      "sha256": "75877ccc68858e11165e18e2b9e0ea819e2965e57207cf9ec2affa5f47c40434"
+    },
+    {
+      "module": "SimplexFull.CovarianceCoefficients",
+      "passed": true,
+      "sha256": "abd38d5544901b0365054f3fa4ff7a5773365c438076a301da512594a132e92e"
+    },
+    {
+      "module": "SimplexFull.GaussianCoefficientIntegrals",
+      "passed": true,
+      "sha256": "9b8cecaa6770925ea150813a99256a1497afaa636ef22ce9827e9d1c83592899"
+    },
+    {
+      "module": "SimplexFull.DensityDerivatives",
+      "passed": true,
+      "sha256": "c0dccb773c5a3e740be3892a7da8b302ba7294b827e5bc68cf3444a3bb6911ae"
+    },
+    {
+      "module": "SimplexFull.GaussianDifferentiation",
+      "passed": true,
+      "sha256": "0c649d2c7121b92fbb38936914641fb271386400dcfc642afb207460265aac22"
+    },
+    {
+      "module": "SimplexFull.DensityInverse",
+      "passed": true,
+      "sha256": "e831be1775a11b7125ee4bfd5b9b2b5c6114527fa859996b2a8a63d5e2e2cfff"
+    },
+    {
+      "module": "SimplexFull.DensityInverseSecond",
+      "passed": true,
+      "sha256": "a6153e43ee6105cb803f69dc9037750c78170292fe71303d7cb6fc5c9e776eff"
+    },
+    {
+      "module": "SimplexFull.SecondChain",
+      "passed": true,
+      "sha256": "6d6becfb9eb3e617ba9349ee84cb87a634698737a80679844312416319ea08f5"
+    },
+    {
+      "module": "SimplexFull.PrecisionCompositionSecond",
+      "passed": true,
+      "sha256": "74fb70a1293b8efa2e794b2161edf69131dabc0723606667e5ff795c5ef6b186"
+    },
+    {
+      "module": "SimplexFull.DensityJacobi",
+      "passed": true,
+      "sha256": "f243822dd67933157fdc58a2a6df28c8f7e84cd91aeb34825b17caf102457732"
+    },
+    {
+      "module": "SimplexFull.DensityPrefactorSecond",
+      "passed": true,
+      "sha256": "d7891727738099d240edf092063115b87b1cb3560b6d7913bf45ec1a4532705f"
+    },
+    {
+      "module": "SimplexFull.GaussianSecondDifferentiation",
+      "passed": true,
+      "sha256": "be98ed0e2a927de516ea293bca11b5c1f109488efc5ac7b9885a4d2f644e7153"
+    },
+    {
+      "module": "SimplexFull.GaussianHessian",
+      "passed": true,
+      "sha256": "22aa380612d27903eb5f0103db4e4a7707a87052ad71c15ad3b5164d305a5db6"
+    },
+    {
+      "module": "SimplexFull.ShapeHessian",
+      "passed": true,
+      "sha256": "fe96a34de8c7cc2fba41e4d30448298b933485d8f78c24ff0d6bbba187c26e78"
+    },
+    {
+      "module": "SimplexFull.GaussianShellAlgebra",
+      "passed": true,
+      "sha256": "26d21551531922f63e680858d601b1415affb2167b2b16fcac0bb950690fafbb"
+    },
+    {
+      "module": "SimplexFull.ShellHessianChain",
+      "passed": true,
+      "sha256": "6b49040bba61c29ac17e7fe2f6c46aa4bc602619b094a469336b7ef854b466ca"
+    },
+    {
+      "module": "SimplexFull.GaussianShellHessian",
+      "passed": true,
+      "sha256": "b19863219e0960b538672d376507b0dac0587fc689aa443270d84663f63a4d4c"
+    },
+    {
+      "module": "SimplexFull.GaussianShapeCoercivity",
+      "passed": true,
+      "sha256": "1a842190461a9e0f007f86e89325ae3a788b514700bf11fdb5e58c52e2fb4bd3"
+    },
+    {
+      "module": "SimplexFull.GaussianShellNormal",
+      "passed": true,
+      "sha256": "67d66c32617c01030c73fc96e1684c95e0bf6ea5f4c79b37a07496bb0fb60fff"
+    },
+    {
+      "module": "SimplexFull.UniformGramBound",
+      "passed": true,
+      "sha256": "39687ae7a1e6a5694feb3adf073ea8fc48c95c92c2ba954d9ce458e46784b1c9"
+    },
+    {
+      "module": "SimplexFull.UniformNeighborhood",
+      "passed": true,
+      "sha256": "f14e173eb5ea88a55ea014102add5fb85fc30d3a5da475868fe3b8682aa2703d"
+    },
+    {
+      "module": "SimplexFull.UniformShell",
+      "passed": true,
+      "sha256": "164c1a4e8092c9693108deb4227b0c72fd0eab3487c12b84f26dccd528ef566c"
+    },
+    {
+      "module": "SimplexFull.UniformNormalShell",
+      "passed": true,
+      "sha256": "c2151a51968738eef02262a068f865faaced11e7294473b07fb6c480ebf26eaa"
+    },
+    {
+      "module": "SimplexFull.DensitySecond",
+      "passed": true,
+      "sha256": "0db1823a032c0244d88f9d61df8c178f47fcbb5d7bd78059f1d77a8dfc03d6b5"
+    },
+    {
+      "module": "SimplexFull.Verified",
+      "passed": true,
+      "sha256": "66405a0d7dd9dedc453cfafa7d8db518265aaa97a1a8897442bdd8e0349296f4"
+    },
+    {
+      "module": "SimplexFull.EvenTaylor",
+      "passed": true,
+      "sha256": "f04963e9bb64309deba35321ea6423067dd3f95f1b7e46d3177c1cdb89cf8dee"
+    },
+    {
+      "module": "SimplexFull.SignalSmooth",
+      "passed": true,
+      "sha256": "35dd5e2fe689c846b0730a08fb0705145d1a5323f356e6c3814b975926456508"
+    },
+    {
+      "module": "SimplexFull.TaylorDefinitions",
+      "passed": true,
+      "sha256": "0ed4e719bd8ae8e6c7986001adb311d137a89efda34d30eb86e44482f55c4741"
+    },
+    {
+      "module": "SimplexFull.TaylorShell",
+      "passed": true,
+      "sha256": "5956d10f78c21620921e239f904167fbcba4d136f6cfc957d50fac33a576ee11"
+    },
+    {
+      "module": "SimplexFull.TaylorParity",
+      "passed": true,
+      "sha256": "a7db49558317c2393bf05a1c7fa1df9e37823eb6821261468be1c79b54003c96"
+    },
+    {
+      "module": "SimplexFull.GaussianTaylor",
+      "passed": true,
+      "sha256": "2e05a55a884257b88ce1f83e1909b1398aa4899d8675ed450709fad56d078c8e"
+    },
+    {
+      "module": "SimplexFull.TaylorCoefficient",
+      "passed": true,
+      "sha256": "950f44ae1efc308be38578fedee2ab9d3e380a81eb1f8c96b59d1bcf97f032ac"
+    },
+    {
+      "module": "SimplexFull.CrossingSignChart",
+      "passed": true,
+      "sha256": "46c78341597a040e0491a2802a2b179d7b66109535ea7ae557eeb87cd649ed5c"
+    },
+    {
+      "module": "SimplexFull.VerifiedTaylor",
+      "passed": true,
+      "sha256": "d1453a3f3634d4a948caf8dc7f0477cbfa39cadea8f6a605a93f64b1cd0eef9e"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarPsi",
+      "passed": true,
+      "sha256": "5ac00effd8cbfd5cadd6c3c8842ae276b6c814b1399b5caf95e36a86db02fd2e"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarCurvature",
+      "passed": true,
+      "sha256": "5b6b2c7b06c8c22860b2281030310d1f015141ccb40f8b230946ddea0c26c6b3"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.PDFCDF",
+      "passed": true,
+      "sha256": "ff1f22753af4338e243b37c39f77adab5e228659eeaed3c1ad20705940cd14b3"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.TruncatedMoments",
+      "passed": true,
+      "sha256": "103d9cb9aeeb5babbb9fe6e8da361d284d4722c01e70ff82cdbe86092118ac6d"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.Mills",
+      "passed": true,
+      "sha256": "5b643f98457442cdd3a58c50f5afbee787caa0f16388f327648d96c50652caf1"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.TiltFunctions",
+      "passed": true,
+      "sha256": "e144471a1a2d8ef810375cf21ac164dc1ee87ec29368fc92c2c9536329b32752"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Finite",
+      "passed": true,
+      "sha256": "1f1a70c80fc17ae9b6b0939e88aa2a2f1ca9ce45ac52cf0d54d7695391e7aaf9"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Euclidean",
+      "passed": true,
+      "sha256": "119360436cfda22ae625dc4dc4bc6ba7e02a92398a3526e690c34874c48d09cb"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Matrix",
+      "passed": true,
+      "sha256": "6fc691989dae34c79a9f252ab25cdccce354e090be51a529dfa289bc020bff58"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Correlation",
+      "passed": true,
+      "sha256": "706b3fde60602f868526400b81c9de1a4580d00a197c577564ed43f2618a7f06"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.Gram",
+      "passed": true,
+      "sha256": "82636b91b6dd6057c6665936e6a978c81bc0beaf73b9190850ef8ca8e4519fb8"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.CoordinateMax",
+      "passed": true,
+      "sha256": "94c7f4db4c838d800b87061c37801f6e7a7197cd9599f41f90c26bb8751aa36c"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Basic",
+      "passed": true,
+      "sha256": "c3cf3afa3f5030910e17dd5e929c15ebb831fa47ea8f61858031ebe2c9862092"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProperty",
+      "passed": true,
+      "sha256": "56431d39874eab04059ef929689c9359e90de6aecfdc47c4481a77c3e4466dc2"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.QuadraticCoercivity",
+      "passed": true,
+      "sha256": "f99e03b00db02bd5b351e1c1c06d6428cc03ff13735dc025b99bcfb495d9305f"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.RankOneInverse",
+      "passed": true,
+      "sha256": "c4f1ab5b83bf8e445ac6f3a48d292a292fe60a2acd7690a907c87a7dc36c7ae1"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.Potential",
+      "passed": true,
+      "sha256": "070b7a92cabcb8f4e278f941d129c141953837773224cae019f011a0134a2fbf"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.CompactMaximizer",
+      "passed": true,
+      "sha256": "a042857a471d8d879b619a4cd1c055b74f29c2a4d67cf3df0774a14a6d86a778"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.Stationarity",
+      "passed": true,
+      "sha256": "581c1f33a66dc8ce0156278509d6a8f15ca15156bfb69f26ffd3449e61feef89"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.AdaptiveWitnesses",
+      "passed": true,
+      "sha256": "d39fcad402473f5853788be84c2884cd86e9888c9c7371b42b4c8d652d7e23f8"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PiWithDensity",
+      "passed": true,
+      "sha256": "adc66c7cd3ccc8df21a8072278dc4221fb2c85132219474de17e00ae62d461d0"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.WithDensityMap",
+      "passed": true,
+      "sha256": "b02e96c07623854b5f5f2a53aedae52aed34093b5bc1e78dfd3b1bc8bb79cf9c"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.GaussianMGFShift",
+      "passed": true,
+      "sha256": "fa14457d3338ada795771b742a0d776a98976968fae9d787a69cd6d28c1019a0"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Gaussian.Shift",
+      "passed": true,
+      "sha256": "fff781796e662593a68ffc09dc7907f71db762decf4db1f328850c9e08adbe0f"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Indicators",
+      "passed": true,
+      "sha256": "b43ad92f709f213f41d2f592d233833f46046df42652295c2eadf7d9d5239cca"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.TiltedHalfLine",
+      "passed": true,
+      "sha256": "639b7bfa75bdc3fa3c21cfd299a767080b9d351e781c7b09fff9377b51498745"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.EventShift",
+      "passed": true,
+      "sha256": "02a93adb65921bc838c3b81e98cb711115eb098d3ed32bb177b94f83f609a73c"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.PositiveDefiniteConditional",
+      "passed": true,
+      "sha256": "f29f5910f1775e2195cd5d98c27cad17348350e54ed47efc589ba39d5c1c0bfe"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PiGaussian",
+      "passed": true,
+      "sha256": "57a9c7029afcbfad788f5a6e82b80129eb64c0426c982d51230ea87c4d21db1f"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Gaussian.DensityRatio",
+      "passed": true,
+      "sha256": "6c6d14e951ea3e06b03c51491a2acb85dcc8c020459717d1d2130a143e9d24eb"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PrekopaLeindler",
+      "passed": true,
+      "sha256": "f688c9828abe49d2c44d870d47f00adc312a51d24d25a1ba79014b437e222aa8"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Prekopa",
+      "passed": true,
+      "sha256": "0434f184d079988afc57e518e111a345bec3065bd71b0a4684eb8d90ab83a67e"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.NormalizedSelfConvolution",
+      "passed": true,
+      "sha256": "3211ce3ff8694599c9c2071e6d5d980e444a3cd948bf80c5cfd6e7a4408b6a3b"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.DyadicCLT",
+      "passed": true,
+      "sha256": "d54ff50ded52fd129d86a3282c1e7661f862ded4bb54029fe216673cb9e9b4f4"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.PositiveLowerBound",
+      "passed": true,
+      "sha256": "81a0891bb2c25480fb08493d2e09b0f127af8fe5cd1b42a9ec2254de67215c9e"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.SymmetricRectangle",
+      "passed": true,
+      "sha256": "0a6405b84a4d1d89c34ba0088c5102bdea3b82aea886a4c7c1436e559d8e034c"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.EvenLayerCake",
+      "passed": true,
+      "sha256": "d25e8d553d06bf0f7e3a379387ab0aa59df4c683d3e8b4fa8c7d0621bec7a178"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.SumDifference",
+      "passed": true,
+      "sha256": "6da4c5565d6dfef40db60ed227e54f05a75283526ccb0b26bdd2ba103f8f1045"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProduct",
+      "passed": true,
+      "sha256": "3d5a59cdfbd0f074ae94472437e276f1a18e978e5d8fd478eb0e400ef7a81129"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.PositiveDefinite",
+      "passed": true,
+      "sha256": "c4e59eb250e58e331308bb5a0b304fe090b46885cd82ad7b7410edb05e95b182"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.Singular",
+      "passed": true,
+      "sha256": "f63c9ae1525dd7f9b1fa7fbff6d2f1bb55151d6e58f9c34a7d02b4a57da2dffd"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.StochasticOrder",
+      "passed": true,
+      "sha256": "faaaf0106de0eefe0ae7b8a210315103130b5f075ef1c7c1efa505c4e4627eb1"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.ExponentialMoments",
+      "passed": true,
+      "sha256": "0c8d2bcdaaf021c49178d5fc1c29004181f0b9215cbe4574fe51e97d8e48625d"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.Normalization",
+      "passed": true,
+      "sha256": "133fc09ccb60d3306186132738de9e85f6ba41716d93c5b43bbebc3ceb721cc5"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.RegularSimplex",
+      "passed": true,
+      "sha256": "b331e2e083c513811d336ad96c71eb4280cf47ae8251c917501903fe4aeef442"
+    },
+    {
+      "module": "SimplexFull.GlobalFoundationBridge",
+      "passed": true,
+      "sha256": "cf656facf99a2802329588fa62352d6941d2ee35fe560d02e96490df69ceaf58"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarRange",
+      "passed": true,
+      "sha256": "61efb456691406d01fe87e2d0b907a43e9d5a0423b192ba6edfd3512b932ca0f"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarBounds",
+      "passed": true,
+      "sha256": "7200f32ecd360a4b61fbdaa7b86cbb1f8bdf04fccd63aa9e0e6ecd21224ab8db"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidMatrix",
+      "passed": true,
+      "sha256": "e42631143441186b552ddb007129af84c962e417fc61190a8e13550c4373a9dc"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Basic",
+      "passed": true,
+      "sha256": "fb457a3a7b5b8d08bd3d153b243e18355d0dd58c07bd9dd92e585733c495a8a5"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.BayesValue",
+      "passed": true,
+      "sha256": "03fc5f9428f4aa7ce17723e2d08f8c2b3b1a8d42d5c88534a035b8b6c1ed5a79"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.MLDecoder",
+      "passed": true,
+      "sha256": "89a135d439e8ebb9485fafa78de287373eaf76532c77e0c0e78465a85920cdb9"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.WeakSimplex",
+      "passed": true,
+      "sha256": "66f55591f99ef0063668f1f31e2e74514edfdb7475901cb1dba3aa5678ff94c0"
+    },
+    {
+      "module": "WeakSimplexConjectureLean",
+      "passed": true,
+      "sha256": "81abbd255e3ce57eefffdcf5523ea37fb1a2ca72260faabf854aa337e91fe469"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictRectangle",
+      "passed": true,
+      "sha256": "323ed1bfe1fb4e2035c26b8e390f27bb81154b85524d3c065fb2997a2319d78d"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictProduct",
+      "passed": true,
+      "sha256": "86f92646fb3983415ea5505c1be23b21365b2b6debe86467abc980d369b753b5"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingularWitnesses",
+      "passed": true,
+      "sha256": "5585fdc2bc398dc7bc27b8a089d86b1f319a0f582cdb345adf97ce4d264b1250"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingleThreshold",
+      "passed": true,
+      "sha256": "2620a36530439504f892a7edddaf8d2c49f3d9d5a64612c69541cee28f230f56"
+    },
+    {
+      "module": "SimplexFull.GlobalWitnessOrthantBound",
+      "passed": true,
+      "sha256": "5db8013510bdaddb9d236da94786bef81e22b87f4df675b23e1ee76aeff3d1ed"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonDefs",
+      "passed": true,
+      "sha256": "8548d191842bc285e3a72ed425ab28e93aa5651e6644312b00948bdde5352215"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonWitness",
+      "passed": true,
+      "sha256": "77e5e7ecf3aeb80c80a444ea1077f2114fa5f23ad65cd33961876a83c331d796"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonRotation",
+      "passed": true,
+      "sha256": "1cce899287075bd1d4c83ea98107ae0a139e5fdad304d6c7a047a019137c5805"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonDoubling",
+      "passed": true,
+      "sha256": "e6563c87b152808b942458523efaf2e6caef18018098810ddb30b04c0a94364c"
+    },
+    {
+      "module": "SimplexFull.GlobalBivariateCalculus",
+      "passed": true,
+      "sha256": "16d34d1d183ded9be286c324c592bf41667a490c22df754844a6ebc5d3f226be"
+    },
+    {
+      "module": "SimplexFull.GlobalRectangleQuantitative",
+      "passed": true,
+      "sha256": "4a8075ed3cc814dd14d01418be4d7bad7ca64ca2935b33509c5bf6b330c1812c"
+    },
+    {
+      "module": "SimplexFull.GlobalBivariateProbability",
+      "passed": true,
+      "sha256": "a5418ecdfcd04b44622df9deb91abc2418251883c3f6d694664b7db0e357d8da"
+    },
+    {
+      "module": "SimplexFull.GlobalBivariateEstimate",
+      "passed": true,
+      "sha256": "78dbec165b416f3101a3d68d21b81994dc54fe678c972936030c70486e94a6fe"
+    },
+    {
+      "module": "SimplexFull.GlobalBivariateInterior",
+      "passed": true,
+      "sha256": "2fd6ce894796a573902ba3c60991133397349a95fe43cc40c86570ce210cfd30"
+    },
+    {
+      "module": "SimplexFull.GlobalBivariateEndpoint",
+      "passed": true,
+      "sha256": "4474715a20fcadf562d4bd1058116565d5663f8e15416105d320ad2e665f0d9b"
+    },
+    {
+      "module": "SimplexFull.GlobalRectangleAssembly",
+      "passed": true,
+      "sha256": "2dc53b12aa4feaf25fed888d62aba6f87c49c1eda43738db229d27d14f861613"
+    },
+    {
+      "module": "SimplexFull.GlobalRectangleBound",
+      "passed": true,
+      "sha256": "0b0713a725920cd3f71ed7c4f71699502dd6cb7cb78517977331c002417a798f"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonProduct",
+      "passed": true,
+      "sha256": "069cff2e0ae074042e9c7af4f08ce277386b3692ab81447485e2f9c91e565284"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonFactors",
+      "passed": true,
+      "sha256": "40dedc575f966aee77e4fac4dabe6a309f6aeeee437995f7a7a81737e3862b89"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonBox",
+      "passed": true,
+      "sha256": "78071d6fada359a0efe0e02dbaa8be8514df0b5f2534befc10db0df3915f9be9"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonTilt",
+      "passed": true,
+      "sha256": "afc40ce597dc6c1c07e890392b0e24a3f32a3549c0d5229b8d003563b42292c1"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonConstants",
+      "passed": true,
+      "sha256": "5dcb47f9809551604be3d480547a39c8cef22ad3e0f236c9a49575eb980649af"
+    },
+    {
+      "module": "SimplexFull.GlobalComparisonActual",
+      "passed": true,
+      "sha256": "c242066249f81d40a435d86e90dca08529e848a46f01fd0f0adc982948b941e0"
+    },
+    {
+      "module": "SimplexFull.GlobalComparison",
+      "passed": true,
+      "sha256": "bcd7064747863e5ca8752a8894caaf508701d4e4203000072ad132ce4b62ab97"
+    },
+    {
+      "module": "SimplexFull.GlobalProcrustes",
+      "passed": true,
+      "sha256": "4e38bf70e0ac7396863567224fe61afcce5ab3a662f733cdf7465bc350586179"
+    },
+    {
+      "module": "SimplexFull.GlobalProcrustesDecomp",
+      "passed": true,
+      "sha256": "ad595fc62e865689218c460a0b94fda31fc596767a9b340900e9925088ca4370"
+    },
+    {
+      "module": "SimplexFull.GlobalProjectionContraction",
+      "passed": true,
+      "sha256": "90f5f70b9e0ac191017f2004ec4cdcce308cd271e2e791dedeb65d6f97114606"
+    },
+    {
+      "module": "SimplexFull.GlobalSqrtContraction",
+      "passed": true,
+      "sha256": "67431f57b2795b83a16416233e5788a44c4eacd93b924a0139ef66ab174c4fc7"
+    },
+    {
+      "module": "SimplexFull.GlobalProcrustesBound",
+      "passed": true,
+      "sha256": "bd17c96378c06ec21fb5ecb9012d4dc245a4a3cea23e35d0e4f47d118be34a68"
+    },
+    {
+      "module": "SimplexFull.GlobalRankBound",
+      "passed": true,
+      "sha256": "605ba76eab7b64dc48ee50b1a6768aa8103636fb5915d09e90e18d87852e5caf"
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthBase",
+      "passed": true,
+      "sha256": "99a35e19c5d0bfb2953864e6ac731b43363d4167182893abd63ab945393b8040"
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthNoise",
+      "passed": true,
+      "sha256": "5296f28940d5f5525c2ed8a42df475a78e8ac168d83e0cb73dd0054b03b508ea"
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthLift",
+      "passed": true,
+      "sha256": "1923834228419b1d8816fef30d64fededa2e19dbb0d8c63c3b8bee1ff2205297"
+    },
+    {
+      "module": "SimplexFull.GlobalEnergyBase",
+      "passed": true,
+      "sha256": "814a6be3daa6785e41db744c4a2ab5ec38fafcd56edd6beb8e6f189e7d46fcfa"
+    },
+    {
+      "module": "SimplexFull.GlobalEnergyNoise",
+      "passed": true,
+      "sha256": "0bc37374ef718b6f09f32d945eb97e6fd11a914e6f259522e97cefd6c02cdb51"
+    },
+    {
+      "module": "SimplexFull.GlobalEnergy",
+      "passed": true,
+      "sha256": "2fd920cae5170aaedf16ab7a9e8fa5c9b316a215810860caac43826ff92396e8"
+    },
+    {
+      "module": "SimplexFull.GlobalFiniteHullSupport",
+      "passed": true,
+      "sha256": "5e3f2015b20bedff498e868d6978fd9d04febe0904e438f39721751c779d0a08"
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthGeometry",
+      "passed": true,
+      "sha256": "39aee2f2688245c2a920dc3e0d90478cffd0384fe4937718af161384e1cabf16"
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidth",
+      "passed": true,
+      "sha256": "83ca63748bb2b06169458eb8ec8cb81041e322f47651ad8d837e09af50e14b28"
+    },
+    {
+      "module": "SimplexFull.GlobalGaussianNormalization",
+      "passed": true,
+      "sha256": "740cf8e24c1065c88e235f16ed132bcb099a0721229af76a4eb23dd8e5ae961d"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidEnergy",
+      "passed": true,
+      "sha256": "e70a71e282009cc29c317ec062f417d3b310bec41f6fbade1c5200b819ffbeb4"
+    },
+    {
+      "module": "SimplexFull.GlobalScalarTaylor",
+      "passed": true,
+      "sha256": "7ddc7a13a5ed04917417f8dd47fe7f7dbdce4c3acd11d2a1b731e99bf83f879d"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidConstants",
+      "passed": true,
+      "sha256": "cc4b6eb89aa9a14e647d6c096b139745020e877d7890fe8aca383cc8403ab505"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidRows",
+      "passed": true,
+      "sha256": "55906b0fec4b2dc97d19c730b6181aa6c49d284f7ee65caf864ceded2cffd3c6"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidPotential",
+      "passed": true,
+      "sha256": "bcefbf671069d4fc5a33a29beabbc6ca5bba73ec46620e0f5b90d6ff77142382"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidGrowth",
+      "passed": true,
+      "sha256": "c12885577096bf049e88612b9b25eb3dea92715fa50ba6f6f1d21722ce1e8ca9"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidOrthant",
+      "passed": true,
+      "sha256": "fea1a2497f2d14688af053875dd4b5da9cd75c556cb9f9eddb2952285e7900da"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidConfig",
+      "passed": true,
+      "sha256": "897ad4d73646cb002fa9721d010a79352d903baaedbd73dbe0ab8f231f4092cb"
+    },
+    {
+      "module": "SimplexFull.GlobalNormalizationAlgebra",
+      "passed": true,
+      "sha256": "fdec58c8df02be92415629da6974c3615c3b8464267e681566e7f2b084932600"
+    },
+    {
+      "module": "SimplexFull.GlobalTailMean",
+      "passed": true,
+      "sha256": "93521d1b8b89161ee02ac58c6bd6c1ecebd75bb7a34347aebffbe18c03dfca87"
+    },
+    {
+      "module": "SimplexFull.GlobalTailBounds",
+      "passed": true,
+      "sha256": "ec1491f663f1e56af33e9f56c190329a31e3054380ccd8c6d8bb386a1908aa4c"
+    },
+    {
+      "module": "SimplexFull.GlobalGaussianCDF",
+      "passed": true,
+      "sha256": "5d2d26c2785055a5e4276cd7ff38e18245a79ae7ce1c56a9d77acebffc5a48f2"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoderNormalization",
+      "passed": true,
+      "sha256": "f6400d6ace9844fbb1fff1f09689960b4fa2097e58e76782ec756edc4cda5c47"
+    },
+    {
+      "module": "SimplexFull.GlobalUnitMeanBounds",
+      "passed": true,
+      "sha256": "9ffb6924facb4450af770c06842d33da06029cb3362b429ba49099994d3c5096"
+    },
+    {
+      "module": "SimplexFull.GlobalTailExponential",
+      "passed": true,
+      "sha256": "bee72b4ddcf0564de425310aaf61f54317d4d6c40d57caeba9a28f0b5bad8fb1"
+    },
+    {
+      "module": "SimplexFull.GlobalTailExponentialGaussian",
+      "passed": true,
+      "sha256": "b6253ad7fb2506038e6fa3a938451443e5c49387a5f0003a6797a4a867ecde67"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoder",
+      "passed": true,
+      "sha256": "1def9828803b59bbb58e3f0dfe98e7be928d9232f9a82a49eb8b0c0b70a6a814"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoderGram",
+      "passed": true,
+      "sha256": "f4437f741257ebbea69f0ba238913e61f90c1db05ac8f56205a28f4a29efad26"
+    },
+    {
+      "module": "SimplexFull.GlobalApplicationConstants",
+      "passed": true,
+      "sha256": "d9731c891f48b18c4f58ab7a5712435a0823bbf6886e5e6ae6b7ecff36443dbe"
+    },
+    {
+      "module": "SimplexFull.GlobalApplicationsCore",
+      "passed": true,
+      "sha256": "eaea2f3d3637c93d709f6a8e5ec4ceb79bacc8316c30c7bcf071c8a8b1176dce"
+    },
+    {
+      "module": "SimplexFull.GlobalApplicationsDecoder",
+      "passed": true,
+      "sha256": "8a326dd79d126ee5d3ea89e00098a748f17b0edc5c08cd4829c96697990546cb"
+    },
+    {
+      "module": "SimplexFull.GlobalApplicationsMeanWidth",
+      "passed": true,
+      "sha256": "c7832df1611d0025c0fe9238b2d519f5baee954ac1bd91fc5c047a7687ce3efb"
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoderEnergy",
+      "passed": true,
+      "sha256": "31f6b4a5d89663d954a451a7057e30156a30e65612519c30454fbb7d3e8c2e8d"
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussianPolar",
+      "passed": true,
+      "sha256": "77e79f71ede3e689220c01a27f54054bb7b7e5dfe0d1b3d85cc8639d43ee3152"
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussian",
+      "passed": true,
+      "sha256": "65f8fc8b1b113af2ca5a3684d8375a441b74ac42ee935dbbf9457e0cbafd73ff"
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussianWidth",
+      "passed": true,
+      "sha256": "8777146416aafb52b71735d793ab574e061096407161c0702348a847e09888cd"
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussianSymmetry",
+      "passed": true,
+      "sha256": "ad2a4e52232876e559a2cdad4125cbb14da6843ac4720129c5fc476ddf48c477"
+    },
+    {
+      "module": "SimplexFull.VerifiedGlobal",
+      "passed": true,
+      "sha256": "e230fcedb278d91476fe382cb442a589d0f5461626c51550483a23515503ddf8"
+    }
+  ],
+  "old94_checks": [
+    {
+      "module": "SimplexFull.GeometryBase",
+      "passed": true,
+      "sha256": "e214bf38d37fb2451f505020fab052d0ccad33a8b8d1f1d66256dd0be8c0ac2a"
+    },
+    {
+      "module": "SimplexFull.GramCoordinates",
+      "passed": true,
+      "sha256": "212b18f6352c087fcdc765711bfb1e2fe2a49829bb2b4e59bb5621b3eea4c4ee"
+    },
+    {
+      "module": "SimplexFull.GeometryAlgebra",
+      "passed": true,
+      "sha256": "c86372d9242b1ba3ba4a2f4e42fb7b896dba164c72ccc10893ce38d278c93d4e"
+    },
+    {
+      "module": "SimplexFull.SquareShellAlgebra",
+      "passed": true,
+      "sha256": "f805214f8f1cffa38f6621219cde1ff7eaaff9cdbdacf57ffd86ae1c55e00eca"
+    },
+    {
+      "module": "SimplexFull.Shell",
+      "passed": true,
+      "sha256": "2773d65c45ff05dc20daf4fa950f5e5bc488a448b277cedc8003627bb5cfb9cd"
+    },
+    {
+      "module": "SimplexFull.MatrixCFC",
+      "passed": true,
+      "sha256": "26c526c1d5572358c719f7bcb03abc323d287e723de27b62b012fafa9b17e0d2"
+    },
+    {
+      "module": "SimplexFull.CenteredSqrt",
+      "passed": true,
+      "sha256": "226291a2e0e6163612d543e19e4fd630fe65d952bfad6bd1b70452797e10f1c4"
+    },
+    {
+      "module": "SimplexFull.Procrustes",
+      "passed": true,
+      "sha256": "84974fe4c01b9881e79907175f62cd9f99acd91ddab7f0b17651b8357d3b320b"
+    },
+    {
+      "module": "SimplexFull.ProcrustesFormula",
+      "passed": true,
+      "sha256": "4bc7ac877a622725a4da77354ee7e78f8b7a426c64390f3ee665f7e66e6716b1"
+    },
+    {
+      "module": "SimplexFull.NormalMinimizer",
+      "passed": true,
+      "sha256": "b012dff5276a46d9f0ba4efd0c4772f868cba42a075d0f3700becef1df74fd3d"
+    },
+    {
+      "module": "SimplexFull.ActualProcrustes",
+      "passed": true,
+      "sha256": "658ce06eee4ea5394f62d79413bd88a567936c750ddac5fd19f48643e5d15f70"
+    },
+    {
+      "module": "SimplexFull.GaussianMaps",
+      "passed": true,
+      "sha256": "259e1c726aff7da04d5bbb83259aa6db21ffb80bd629953a7832ae2471d4a3d2"
+    },
+    {
+      "module": "SimplexFull.Decoder",
+      "passed": true,
+      "sha256": "4788d5066851c91a296f10d112a03fdd2ec6de9cc2a2d2812dd67f1660de11a9"
+    },
+    {
+      "module": "SimplexFull.GaussianShift",
+      "passed": true,
+      "sha256": "8029585a5d3d312e2e542baa7dab303c929616e5453c84b235e8818346293598"
+    },
+    {
+      "module": "SimplexFull.CovarianceGeometry",
+      "passed": true,
+      "sha256": "6c3500538b56e8231ab6a0f7005e37e6e6bb4ce2ef58c3b8d5a4f4d8dbdc939d"
+    },
+    {
+      "module": "SimplexFull.ShellEnclosure",
+      "passed": true,
+      "sha256": "6492a3c10fe59b8f5a5fef6fe692fe061b1b2d2b25d2b72d56ab656aeab84f2e"
+    },
+    {
+      "module": "SimplexFull.ActualShell",
+      "passed": true,
+      "sha256": "d4459a1e3e8af8af459431cb1f66ccca77268e75b61e9c5b11d969b1626753b8"
+    },
+    {
+      "module": "SimplexFull.ShellRegularity",
+      "passed": true,
+      "sha256": "3360fc20472fed774fbf80c823c87ff5041745334841fef71e6a3ea5ccad7c8f"
+    },
+    {
+      "module": "SimplexFull.GaussianDensity",
+      "passed": true,
+      "sha256": "ab1273930347997d3993e06328c0cc030da98a810d5f3d4935f3239ad904ca5b"
+    },
+    {
+      "module": "SimplexFull.DensityCalculus",
+      "passed": true,
+      "sha256": "6a5ae3d0ec36cfba982343b6ca947a6f8a95c8184f4f9f360799b8632e33d99f"
+    },
+    {
+      "module": "SimplexFull.GaussianDomination",
+      "passed": true,
+      "sha256": "2fa548d56d00212f04fc33ea1d6e3799c8d01396ef661e9f80f8c724c5fca84b"
+    },
+    {
+      "module": "SimplexFull.SmoothIntegral",
+      "passed": true,
+      "sha256": "04d8115cbd3d48f1236bb9b3e36f125989c70f15b823f5f3d69ff6092c453fdd"
+    },
+    {
+      "module": "SimplexFull.GaussianLocalBounds",
+      "passed": true,
+      "sha256": "7f2f7139876f56bcf41eeef0066412cb2d4731c55961f5577f20128b69237f12"
+    },
+    {
+      "module": "SimplexFull.PrecisionGaussian",
+      "passed": true,
+      "sha256": "3015c39153efec175823445ae6443b81ee6d6c70a2e8ea01620f6a037671ec98"
+    },
+    {
+      "module": "SimplexFull.GaussianSmooth",
+      "passed": true,
+      "sha256": "384496e4a5c6ad2710dd3bc741aa3b7291123fd4d10ba39adbeb1a02c0e95d92"
+    },
+    {
+      "module": "SimplexFull.ShellSymmetry",
+      "passed": true,
+      "sha256": "6e75e372e90c4f48eca3ad27a08b7e357b1932d60bebcaafbfc2cef87098d942"
+    },
+    {
+      "module": "SimplexFull.ShellObjective",
+      "passed": true,
+      "sha256": "d879be44f62891dad238623f477c45c2d5266bedacdf84fa744e00a4ffdc4eac"
+    },
+    {
+      "module": "SimplexFull.GaussianSymmetry",
+      "passed": true,
+      "sha256": "86aa86aec6c0c5f288d0231d8ce11267b88750b6f02b630379cfd1a28f6fcfd9"
+    },
+    {
+      "module": "SimplexFull.ShellStationarity",
+      "passed": true,
+      "sha256": "e8a28f819ee57e617063209a61841e8fbf9c223ad69e425f470986f0630a1a23"
+    },
+    {
+      "module": "SimplexFull.ShellConvexity",
+      "passed": true,
+      "sha256": "8e3f30e11d24e81fa0d8ad0377762d0d6fe467126d0b49b4ca07fc2d8a1253bb"
+    },
+    {
+      "module": "SimplexFull.ShellLocalMinimum",
+      "passed": true,
+      "sha256": "f892589153751d8b1ff16533dd0ca388a63d2ab4b96424ce2bda5c34dea6d292"
+    },
+    {
+      "module": "SimplexFull.GaussianDensityMatrix",
+      "passed": true,
+      "sha256": "f7a82901bdb6345368c01e5f7f87d648624952f04fde6a8182f4c6ae5defbf94"
+    },
+    {
+      "module": "SimplexFull.GaussianDensityLaw",
+      "passed": true,
+      "sha256": "d38cbef2fe548a5184a725ff734baa15a916766743bf3a816c5c225fb7df0656"
+    },
+    {
+      "module": "SimplexFull.GaussianDensityIntegrals",
+      "passed": true,
+      "sha256": "62c10f622b3d971bbbded30f3f26bf4284c40dba0fd89be26a1a63213fcee9a7"
+    },
+    {
+      "module": "SimplexFull.ShellProbability",
+      "passed": true,
+      "sha256": "bfae96e58be5210430405d9b220e04c25cbe2a4cddde3692b5389ff2a15ea172"
+    },
+    {
+      "module": "SimplexFull.NormalShellOptimization",
+      "passed": true,
+      "sha256": "875a817a6a7d0ae0778a51b49807ef2b6a541c8fbe7bd1ed1505076f0250fb6c"
+    },
+    {
+      "module": "SimplexFull.NormalShellValue",
+      "passed": true,
+      "sha256": "119ebcb9ea2db2de60ba242e1ac476d6e5b27e97ca4b1fb668c9af0e48d4f45b"
+    },
+    {
+      "module": "SimplexFull.GaussianBase",
+      "passed": true,
+      "sha256": "78cf027a77dcb3238b8da2fb90d5e123ced689125d2e071a423cef9fa0939807"
+    },
+    {
+      "module": "SimplexFull.Scalar",
+      "passed": true,
+      "sha256": "ac1114765d07ec8d06bd4449e6841b71145012886d7fa75c71053c4fec65d6a7"
+    },
+    {
+      "module": "SimplexFull.Abstract",
+      "passed": true,
+      "sha256": "75f02dd3d5e3189d8be86a7922f01281f41f1a9533b5921570cebfa63bcb0803"
+    },
+    {
+      "module": "SimplexFull.MillsPrep",
+      "passed": true,
+      "sha256": "390d1e6bae146a2dec42155758b7545f7aa17994a6f1d479f9a56786f8b03fa3"
+    },
+    {
+      "module": "SimplexFull.MillsBounds",
+      "passed": true,
+      "sha256": "458c08d17ab209f01631b1a8f3f7eb2047d4462be03de09ff41edcefa95c9c23"
+    },
+    {
+      "module": "SimplexFull.MillsAlgebra",
+      "passed": true,
+      "sha256": "cd9bd0a57498b51a9e4a549e7e59dc1fe09b55cddf11d3370e0562b845989dd9"
+    },
+    {
+      "module": "SimplexFull.Mills",
+      "passed": true,
+      "sha256": "2f382a2072956ca98c401f036cfb34093794076e1118ecf89080356c7947dbcb"
+    },
+    {
+      "module": "SimplexFull.Orthant",
+      "passed": true,
+      "sha256": "4412c1d21b033ffb59b9380ec73198df432ff210396c759765f334cb8ec3760a"
+    },
+    {
+      "module": "SimplexFull.LayerCake",
+      "passed": true,
+      "sha256": "bccf9cf240aafedf5a0cc1a0bf55781560d1b935d65d8ded04feec394aaf58bd"
+    },
+    {
+      "module": "SimplexFull.OrthantProduct",
+      "passed": true,
+      "sha256": "96209377765edda25f30126f4192e5cda45127aad119ce49de38dae0ed012874"
+    },
+    {
+      "module": "SimplexFull.GaussianPolynomial",
+      "passed": true,
+      "sha256": "eb57f76b2da66ef67553224da1b638f985eb558a8fd181a23ada4f209377bf41"
+    },
+    {
+      "module": "SimplexFull.OrthantLimits",
+      "passed": true,
+      "sha256": "93654b388a70fbfce6e38492e34f7fd21ed6f1fad9f33007d6492ae908647116"
+    },
+    {
+      "module": "SimplexFull.OrthantMomentTable",
+      "passed": true,
+      "sha256": "3f3584ef7c6d9bb6f6423eeb946e9e76eb6688107d3f6fc3ed5a0dd84cd42ed1"
+    },
+    {
+      "module": "SimplexFull.OrthantAlgebra",
+      "passed": true,
+      "sha256": "cf2fe84885f734934beb61ab16f00e20ec08de1dbe52138040ba74e9a33e4134"
+    },
+    {
+      "module": "SimplexFull.OrthantMomentBridge",
+      "passed": true,
+      "sha256": "e54ec0853e38bcd178993032a8b1517366e796df89783230913c78f937aac4a2"
+    },
+    {
+      "module": "SimplexFull.OrthantCoefficients",
+      "passed": true,
+      "sha256": "eea7142020dc03744b144f3b55de2ad7919331539b87fd0a2e4abcc17d6a1404"
+    },
+    {
+      "module": "SimplexFull.Tilted",
+      "passed": true,
+      "sha256": "cbd359a93b703ec658873186696015ba81c6c4714810bd0335d6de4740f18a4b"
+    },
+    {
+      "module": "SimplexFull.Covariance1D",
+      "passed": true,
+      "sha256": "15a530bdbadedfedb216477d98e246ada19fc8360b6181d582ead0b20071baf5"
+    },
+    {
+      "module": "SimplexFull.Moments",
+      "passed": true,
+      "sha256": "8b182a91aab51e725b98354baf22ddaed073afd9d1b1141211521868bc519426"
+    },
+    {
+      "module": "SimplexFull.GaussianMoments",
+      "passed": true,
+      "sha256": "7b33a4bd005e8128456f27ca7092d196e75f997faa57d748cd251ba3cffa0eaf"
+    },
+    {
+      "module": "SimplexFull.Benchmark",
+      "passed": true,
+      "sha256": "29e2ceb4dc160d9384744f9621f13b9d6b5ee9f7258b18134b04ba60c21acee4"
+    },
+    {
+      "module": "SimplexFull.MomentOrder",
+      "passed": true,
+      "sha256": "c7f54a0ee29cc0807916444ff92e0dbbeb4fa00ee92830c2414d7fd2e0dce41a"
+    },
+    {
+      "module": "SimplexFull.Balance",
+      "passed": true,
+      "sha256": "83a4914b5cfac266807bf952af4de0b8d9e59c1f6779fa898ef961c9d1228361"
+    },
+    {
+      "module": "SimplexFull.GaussianCrossings",
+      "passed": true,
+      "sha256": "75877ccc68858e11165e18e2b9e0ea819e2965e57207cf9ec2affa5f47c40434"
+    },
+    {
+      "module": "SimplexFull.CovarianceCoefficients",
+      "passed": true,
+      "sha256": "abd38d5544901b0365054f3fa4ff7a5773365c438076a301da512594a132e92e"
+    },
+    {
+      "module": "SimplexFull.GaussianCoefficientIntegrals",
+      "passed": true,
+      "sha256": "9b8cecaa6770925ea150813a99256a1497afaa636ef22ce9827e9d1c83592899"
+    },
+    {
+      "module": "SimplexFull.DensityDerivatives",
+      "passed": true,
+      "sha256": "c0dccb773c5a3e740be3892a7da8b302ba7294b827e5bc68cf3444a3bb6911ae"
+    },
+    {
+      "module": "SimplexFull.GaussianDifferentiation",
+      "passed": true,
+      "sha256": "0c649d2c7121b92fbb38936914641fb271386400dcfc642afb207460265aac22"
+    },
+    {
+      "module": "SimplexFull.DensityInverse",
+      "passed": true,
+      "sha256": "e831be1775a11b7125ee4bfd5b9b2b5c6114527fa859996b2a8a63d5e2e2cfff"
+    },
+    {
+      "module": "SimplexFull.DensityInverseSecond",
+      "passed": true,
+      "sha256": "a6153e43ee6105cb803f69dc9037750c78170292fe71303d7cb6fc5c9e776eff"
+    },
+    {
+      "module": "SimplexFull.SecondChain",
+      "passed": true,
+      "sha256": "6d6becfb9eb3e617ba9349ee84cb87a634698737a80679844312416319ea08f5"
+    },
+    {
+      "module": "SimplexFull.PrecisionCompositionSecond",
+      "passed": true,
+      "sha256": "74fb70a1293b8efa2e794b2161edf69131dabc0723606667e5ff795c5ef6b186"
+    },
+    {
+      "module": "SimplexFull.DensityJacobi",
+      "passed": true,
+      "sha256": "f243822dd67933157fdc58a2a6df28c8f7e84cd91aeb34825b17caf102457732"
+    },
+    {
+      "module": "SimplexFull.DensityPrefactorSecond",
+      "passed": true,
+      "sha256": "d7891727738099d240edf092063115b87b1cb3560b6d7913bf45ec1a4532705f"
+    },
+    {
+      "module": "SimplexFull.GaussianSecondDifferentiation",
+      "passed": true,
+      "sha256": "be98ed0e2a927de516ea293bca11b5c1f109488efc5ac7b9885a4d2f644e7153"
+    },
+    {
+      "module": "SimplexFull.GaussianHessian",
+      "passed": true,
+      "sha256": "22aa380612d27903eb5f0103db4e4a7707a87052ad71c15ad3b5164d305a5db6"
+    },
+    {
+      "module": "SimplexFull.ShapeHessian",
+      "passed": true,
+      "sha256": "fe96a34de8c7cc2fba41e4d30448298b933485d8f78c24ff0d6bbba187c26e78"
+    },
+    {
+      "module": "SimplexFull.GaussianShellAlgebra",
+      "passed": true,
+      "sha256": "26d21551531922f63e680858d601b1415affb2167b2b16fcac0bb950690fafbb"
+    },
+    {
+      "module": "SimplexFull.ShellHessianChain",
+      "passed": true,
+      "sha256": "6b49040bba61c29ac17e7fe2f6c46aa4bc602619b094a469336b7ef854b466ca"
+    },
+    {
+      "module": "SimplexFull.GaussianShellHessian",
+      "passed": true,
+      "sha256": "b19863219e0960b538672d376507b0dac0587fc689aa443270d84663f63a4d4c"
+    },
+    {
+      "module": "SimplexFull.GaussianShapeCoercivity",
+      "passed": true,
+      "sha256": "1a842190461a9e0f007f86e89325ae3a788b514700bf11fdb5e58c52e2fb4bd3"
+    },
+    {
+      "module": "SimplexFull.GaussianShellNormal",
+      "passed": true,
+      "sha256": "67d66c32617c01030c73fc96e1684c95e0bf6ea5f4c79b37a07496bb0fb60fff"
+    },
+    {
+      "module": "SimplexFull.UniformGramBound",
+      "passed": true,
+      "sha256": "39687ae7a1e6a5694feb3adf073ea8fc48c95c92c2ba954d9ce458e46784b1c9"
+    },
+    {
+      "module": "SimplexFull.UniformNeighborhood",
+      "passed": true,
+      "sha256": "f14e173eb5ea88a55ea014102add5fb85fc30d3a5da475868fe3b8682aa2703d"
+    },
+    {
+      "module": "SimplexFull.UniformShell",
+      "passed": true,
+      "sha256": "164c1a4e8092c9693108deb4227b0c72fd0eab3487c12b84f26dccd528ef566c"
+    },
+    {
+      "module": "SimplexFull.UniformNormalShell",
+      "passed": true,
+      "sha256": "c2151a51968738eef02262a068f865faaced11e7294473b07fb6c480ebf26eaa"
+    },
+    {
+      "module": "SimplexFull.DensitySecond",
+      "passed": true,
+      "sha256": "0db1823a032c0244d88f9d61df8c178f47fcbb5d7bd78059f1d77a8dfc03d6b5"
+    },
+    {
+      "module": "SimplexFull.Verified",
+      "passed": true,
+      "sha256": "66405a0d7dd9dedc453cfafa7d8db518265aaa97a1a8897442bdd8e0349296f4"
+    },
+    {
+      "module": "SimplexFull.EvenTaylor",
+      "passed": true,
+      "sha256": "f04963e9bb64309deba35321ea6423067dd3f95f1b7e46d3177c1cdb89cf8dee"
+    },
+    {
+      "module": "SimplexFull.SignalSmooth",
+      "passed": true,
+      "sha256": "35dd5e2fe689c846b0730a08fb0705145d1a5323f356e6c3814b975926456508"
+    },
+    {
+      "module": "SimplexFull.TaylorDefinitions",
+      "passed": true,
+      "sha256": "0ed4e719bd8ae8e6c7986001adb311d137a89efda34d30eb86e44482f55c4741"
+    },
+    {
+      "module": "SimplexFull.TaylorShell",
+      "passed": true,
+      "sha256": "5956d10f78c21620921e239f904167fbcba4d136f6cfc957d50fac33a576ee11"
+    },
+    {
+      "module": "SimplexFull.TaylorParity",
+      "passed": true,
+      "sha256": "a7db49558317c2393bf05a1c7fa1df9e37823eb6821261468be1c79b54003c96"
+    },
+    {
+      "module": "SimplexFull.GaussianTaylor",
+      "passed": true,
+      "sha256": "2e05a55a884257b88ce1f83e1909b1398aa4899d8675ed450709fad56d078c8e"
+    },
+    {
+      "module": "SimplexFull.TaylorCoefficient",
+      "passed": true,
+      "sha256": "950f44ae1efc308be38578fedee2ab9d3e380a81eb1f8c96b59d1bcf97f032ac"
+    },
+    {
+      "module": "SimplexFull.CrossingSignChart",
+      "passed": true,
+      "sha256": "46c78341597a040e0491a2802a2b179d7b66109535ea7ae557eeb87cd649ed5c"
+    },
+    {
+      "module": "SimplexFull.VerifiedTaylor",
+      "passed": true,
+      "sha256": "d1453a3f3634d4a948caf8dc7f0477cbfa39cadea8f6a605a93f64b1cd0eef9e"
+    }
+  ],
+  "vendor52_checks": [
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Basic",
+      "passed": true,
+      "sha256": "c3cf3afa3f5030910e17dd5e929c15ebb831fa47ea8f61858031ebe2c9862092",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PrekopaLeindler",
+      "passed": true,
+      "sha256": "f688c9828abe49d2c44d870d47f00adc312a51d24d25a1ba79014b437e222aa8",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Prekopa",
+      "passed": true,
+      "sha256": "0434f184d079988afc57e518e111a345bec3065bd71b0a4684eb8d90ab83a67e",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Finite",
+      "passed": true,
+      "sha256": "1f1a70c80fc17ae9b6b0939e88aa2a2f1ca9ce45ac52cf0d54d7695391e7aaf9",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Euclidean",
+      "passed": true,
+      "sha256": "119360436cfda22ae625dc4dc4bc6ba7e02a92398a3526e690c34874c48d09cb",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Matrix",
+      "passed": true,
+      "sha256": "6fc691989dae34c79a9f252ab25cdccce354e090be51a529dfa289bc020bff58",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PiWithDensity",
+      "passed": true,
+      "sha256": "adc66c7cd3ccc8df21a8072278dc4221fb2c85132219474de17e00ae62d461d0",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.PiGaussian",
+      "passed": true,
+      "sha256": "57a9c7029afcbfad788f5a6e82b80129eb64c0426c982d51230ea87c4d21db1f",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.WithDensityMap",
+      "passed": true,
+      "sha256": "b02e96c07623854b5f5f2a53aedae52aed34093b5bc1e78dfd3b1bc8bb79cf9c",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Gaussian.DensityRatio",
+      "passed": true,
+      "sha256": "6c6d14e951ea3e06b03c51491a2acb85dcc8c020459717d1d2130a143e9d24eb",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.NormalizedSelfConvolution",
+      "passed": true,
+      "sha256": "3211ce3ff8694599c9c2071e6d5d980e444a3cd948bf80c5cfd6e7a4408b6a3b",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.DyadicCLT",
+      "passed": true,
+      "sha256": "d54ff50ded52fd129d86a3282c1e7661f862ded4bb54029fe216673cb9e9b4f4",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.PositiveLowerBound",
+      "passed": true,
+      "sha256": "81a0891bb2c25480fb08493d2e09b0f127af8fe5cd1b42a9ec2254de67215c9e",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProperty",
+      "passed": true,
+      "sha256": "56431d39874eab04059ef929689c9359e90de6aecfdc47c4481a77c3e4466dc2",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.Correlation",
+      "passed": true,
+      "sha256": "706b3fde60602f868526400b81c9de1a4580d00a197c577564ed43f2618a7f06",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Core.QuadraticCoercivity",
+      "passed": true,
+      "sha256": "f99e03b00db02bd5b351e1c1c06d6428cc03ff13735dc025b99bcfb495d9305f",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.LogConcavity.Indicators",
+      "passed": true,
+      "sha256": "b43ad92f709f213f41d2f592d233833f46046df42652295c2eadf7d9d5239cca",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.SymmetricRectangle",
+      "passed": true,
+      "sha256": "0a6405b84a4d1d89c34ba0088c5102bdea3b82aea886a4c7c1436e559d8e034c",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.EvenLayerCake",
+      "passed": true,
+      "sha256": "d25e8d553d06bf0f7e3a379387ab0aa59df4c683d3e8b4fa8c7d0621bec7a178",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.SumDifference",
+      "passed": true,
+      "sha256": "6da4c5565d6dfef40db60ed227e54f05a75283526ccb0b26bdd2ba103f8f1045",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Product.CenteredProduct",
+      "passed": true,
+      "sha256": "3d5a59cdfbd0f074ae94472437e276f1a18e978e5d8fd478eb0e400ef7a81129",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.PDFCDF",
+      "passed": true,
+      "sha256": "ff1f22753af4338e243b37c39f77adab5e228659eeaed3c1ad20705940cd14b3",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.TruncatedMoments",
+      "passed": true,
+      "sha256": "103d9cb9aeeb5babbb9fe6e8da361d284d4722c01e70ff82cdbe86092118ac6d",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.Mills",
+      "passed": true,
+      "sha256": "5b643f98457442cdd3a58c50f5afbee787caa0f16388f327648d96c50652caf1",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Normal.TiltFunctions",
+      "passed": true,
+      "sha256": "e144471a1a2d8ef810375cf21ac164dc1ee87ec29368fc92c2c9536329b32752",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.RankOneInverse",
+      "passed": true,
+      "sha256": "c4f1ab5b83bf8e445ac6f3a48d292a292fe60a2acd7690a907c87a7dc36c7ae1",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.Potential",
+      "passed": true,
+      "sha256": "070b7a92cabcb8f4e278f941d129c141953837773224cae019f011a0134a2fbf",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.CompactMaximizer",
+      "passed": true,
+      "sha256": "a042857a471d8d879b619a4cd1c055b74f29c2a4d67cf3df0774a14a6d86a778",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.Stationarity",
+      "passed": true,
+      "sha256": "581c1f33a66dc8ce0156278509d6a8f15ca15156bfb69f26ffd3449e61feef89",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.AdaptiveWitnesses",
+      "passed": true,
+      "sha256": "d39fcad402473f5853788be84c2884cd86e9888c9c7371b42b4c8d652d7e23f8",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Vendor.StatLean.GaussianMGFShift",
+      "passed": true,
+      "sha256": "fa14457d3338ada795771b742a0d776a98976968fae9d787a69cd6d28c1019a0",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Gaussian.Shift",
+      "passed": true,
+      "sha256": "fff781796e662593a68ffc09dc7907f71db762decf4db1f328850c9e08adbe0f",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.TiltedHalfLine",
+      "passed": true,
+      "sha256": "639b7bfa75bdc3fa3c21cfd299a767080b9d351e781c7b09fff9377b51498745",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Tilt.EventShift",
+      "passed": true,
+      "sha256": "02a93adb65921bc838c3b81e98cb711115eb098d3ed32bb177b94f83f609a73c",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.PositiveDefiniteConditional",
+      "passed": true,
+      "sha256": "f29f5910f1775e2195cd5d98c27cad17348350e54ed47efc589ba39d5c1c0bfe",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.PositiveDefinite",
+      "passed": true,
+      "sha256": "c4e59eb250e58e331308bb5a0b304fe090b46885cd82ad7b7410edb05e95b182",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Orthant.Singular",
+      "passed": true,
+      "sha256": "f63c9ae1525dd7f9b1fa7fbff6d2f1bb55151d6e58f9c34a7d02b4a57da2dffd",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.CoordinateMax",
+      "passed": true,
+      "sha256": "94c7f4db4c838d800b87061c37801f6e7a7197cd9599f41f90c26bb8751aa36c",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.StochasticOrder",
+      "passed": true,
+      "sha256": "faaaf0106de0eefe0ae7b8a210315103130b5f075ef1c7c1efa505c4e4627eb1",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.Gram",
+      "passed": true,
+      "sha256": "82636b91b6dd6057c6665936e6a978c81bc0beaf73b9190850ef8ca8e4519fb8",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Maxima.ExponentialMoments",
+      "passed": true,
+      "sha256": "0c8d2bcdaaf021c49178d5fc1c29004181f0b9215cbe4574fe51e97d8e48625d",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.Normalization",
+      "passed": true,
+      "sha256": "133fc09ccb60d3306186132738de9e85f6ba41716d93c5b43bbebc3ceb721cc5",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.RegularSimplex",
+      "passed": true,
+      "sha256": "b331e2e083c513811d336ad96c71eb4280cf47ae8251c917501903fe4aeef442",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Basic",
+      "passed": true,
+      "sha256": "fb457a3a7b5b8d08bd3d153b243e18355d0dd58c07bd9dd92e585733c495a8a5",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.BayesValue",
+      "passed": true,
+      "sha256": "03fc5f9428f4aa7ce17723e2d08f8c2b3b1a8d42d5c88534a035b8b6c1ed5a79",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.MLDecoder",
+      "passed": true,
+      "sha256": "89a135d439e8ebb9485fafa78de287373eaf76532c77e0c0e78465a85920cdb9",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean.Coding.WeakSimplex",
+      "passed": true,
+      "sha256": "66f55591f99ef0063668f1f31e2e74514edfdb7475901cb1dba3aa5678ff94c0",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "WeakSimplexConjectureLean",
+      "passed": true,
+      "sha256": "81abbd255e3ce57eefffdcf5523ea37fb1a2ca72260faabf854aa337e91fe469",
+      "commit": "f59d449132ca8a08f48093efce41e80cbd772d04"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictRectangle",
+      "passed": true,
+      "sha256": "323ed1bfe1fb4e2035c26b8e390f27bb81154b85524d3c065fb2997a2319d78d",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingularWitnesses",
+      "passed": true,
+      "sha256": "5585fdc2bc398dc7bc27b8a089d86b1f319a0f582cdb345adf97ce4d264b1250",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e"
+    },
+    {
+      "module": "SimplexUniquenessLean.StrictProduct",
+      "passed": true,
+      "sha256": "86f92646fb3983415ea5505c1be23b21365b2b6debe86467abc980d369b753b5",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e"
+    },
+    {
+      "module": "SimplexUniquenessLean.SingleThreshold",
+      "passed": true,
+      "sha256": "2620a36530439504f892a7edddaf8d2c49f3d9d5a64612c69541cee28f230f56",
+      "commit": "54eaa804e722cf3e763c87492056b27702ac526e"
+    }
+  ],
+  "audit_source_hash": "9dafb6dc88bf178443e5ff27982dcd4caa3810026ab16975a10f2066091fb54e",
+  "old_certificate": "E:\\simplex-lean-full-20261106\\review-20261106-r2\\kernel-final\\verification\\20261106-144849-638957\\verification.json",
+  "vendor_provenance": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\vendor-staging\\PROVENANCE.json",
+  "errors": []
+}

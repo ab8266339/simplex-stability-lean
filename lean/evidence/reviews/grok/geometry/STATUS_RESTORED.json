@@ -1,0 +1,102 @@
+{
+  "role": "geometry",
+  "mode": "cross-review",
+  "implementation_task": "stopped",
+  "reviewed_at": "2026-11-06",
+  "lean": "v4.31.0",
+  "mathlib_pin_expected": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "mathlib_pin_rechecked": false,
+  "paper": "snapshot/paper_source/paper_main.tex",
+  "paper_labels": ["thm:code", "cor:operational", "thm:width"],
+  "compiled_success": true,
+  "compile_evidence": "Existing SimplexFull.<module>.latest.json logs. Current source SHA-256 matches each log, exit_code is 0, stderr is empty, and the latest stdout dependency lists are propext, Classical.choice, Quot.sound. This session did not rebuild. Older logs in geometry-agent still record sorryAx for superseded hashes.",
+  "source_declarations": {
+    "sorry": false,
+    "admit": false,
+    "axiom": false,
+    "unsafe": false,
+    "native_decide": false
+  },
+  "checks": {
+    "orthogonal_infimum": {
+      "status": "proved",
+      "theorems": ["global_procrustesSq_centeredRoot", "global_procrustesSq_sqrt", "global_procrustesSq_attained"],
+      "hypotheses": ["2 ≤ m", "gram V = simplexGram m"]
+    },
+    "arbitrary_lengths": {
+      "status": "proved",
+      "theorems": ["global_procrustesSq_decomposition", "global_procrustesSq_le_gram_centroid"],
+      "hypotheses": ["2 ≤ m", "gram V = simplexGram m", "no UnitConfig hypothesis on X"]
+    },
+    "singular_matrices": {
+      "status": "proved",
+      "theorems": ["global_polar_alignment", "global_frobSq_root_sub_centering_le", "global_frobSq_centeredRoot_le"]
+    },
+    "rank_versus_ambient": {
+      "status": "proved",
+      "rank_theorem": "global_simplex_frobSq_lower_of_rank_le",
+      "config_rank_theorem": "global_config_simplex_frobSq_lower_of_rank_le",
+      "ambient_theorem": "global_config_simplex_frobSq_lower_of_ambient",
+      "ambient_rank_lemma": "global_gram_rank_le_ambient",
+      "positive_gap": "global_rank_deficiency_gap"
+    },
+    "ball_lift": {
+      "status": "proved",
+      "construction": "orthogonalUnitLift",
+      "theorems": ["gram_orthogonalUnitLift", "unitConfig_orthogonalUnitLift", "centroid_sq_orthogonalUnitLift", "frobSq_gram_lift_identity", "global_procrustesSq_le_lift_errors"],
+      "paper_shared_axis_lift_formalized": false
+    },
+    "unequal_energy_bayes": {
+      "status": "proved_as_likelihood_integral",
+      "definitions": ["energyLikelihood", "energyLikelihoodMax", "gaussianBayesValue"],
+      "theorems": ["bayesValue_eq_gaussianBayesValue", "decoderSuccess_eq_gaussianBayesValue", "gaussianBayesValue_le_add", "bayesValue_le_orthogonalUnitLift", "decoderSuccess_le_orthogonalUnitLift"],
+      "equal_energy_formula_restricted_to_unit": "bayesValue_eq_decodingSuccess_of_unit"
+    }
+  },
+  "defects": [],
+  "nonblocking_notes": [
+    "GlobalRankBound latest stdout has linter warnings at lines 98 and 190.",
+    "Corollary 6 in the paper uses one shared extra coordinate. The formal unused-energy proof uses orthogonalUnitLift.",
+    "The unnormalized mean-width unused-energy sentence is not a separate named theorem. ball_normalized_width_unused_energy_of_unit is the normalized form."
+  ],
+  "remaining_obligations": [
+    {
+      "id": "unit-gaussian-max-bounds",
+      "statement": "Discharge UnitGaussianMaxBounds m bg bs at the paper constants b_g = kappa alpha^(3/2) and b_s = eta/sqrt(alpha), or at proved positive substitutes.",
+      "blocks": ["ball_gaussian_max_procrustes_of_unit", "ball_normalized_width_procrustes_of_unit", "ball_mean_width_of_unit_bounds"]
+    },
+    {
+      "id": "unit-decoder-centroid-bound",
+      "statement": "Discharge UnitDecoderCentroidBound and compose it with ball_bayes_unused_energy_of_unit. scalar-agent defines centroidDecoderConstant and states the predicate; this review did not audit that proof.",
+      "blocks": ["ball_decoder_centroid_energy_of_unit", "ball_decoder_unused_energy_of_unit", "ball_bayes_unused_energy_of_unit"]
+    },
+    {
+      "id": "theorem-5-analytic",
+      "statement": "Prove delta_lambda(G) >= c_g frobSq(G-G_Delta), delta_lambda(G) >= c_s ||sum x_i||^2, and delta_lambda(G) >= c_P procrustesSq. The geometric input global_procrustesSq_le_gram_centroid is proved."
+    },
+    {
+      "id": "corollary-6-decoder-rank",
+      "statement": "Compose a Frobenius decoder bound with global_rank_deficiency_gap to obtain delta_lambda >= c_g m^2 (1/d - 1/(m-1)). The Gram inequality is proved."
+    },
+    {
+      "id": "simplex-rank",
+      "statement": "Prove rank(simplexGram m) = m-1 if ambient necessity of a realized regular simplex is required as its own theorem. global_gram_rank_le_ambient is the available half."
+    }
+  ],
+  "sources": [
+    {"module": "GlobalProcrustes", "sha256": "4e38bf70e0ac7396863567224fe61afcce5ab3a662f733cdf7465bc350586179", "exit_code": 0},
+    {"module": "GlobalProcrustesDecomp", "sha256": "ad595fc62e865689218c460a0b94fda31fc596767a9b340900e9925088ca4370", "exit_code": 0},
+    {"module": "GlobalProcrustesBound", "sha256": "bd17c96378c06ec21fb5ecb9012d4dc245a4a3cea23e35d0e4f47d118be34a68", "exit_code": 0},
+    {"module": "GlobalSqrtContraction", "sha256": "67431f57b2795b83a16416233e5788a44c4eacd93b924a0139ef66ab174c4fc7", "exit_code": 0},
+    {"module": "GlobalProjectionContraction", "sha256": "90f5f70b9e0ac191017f2004ec4cdcce308cd271e2e791dedeb65d6f97114606", "exit_code": 0},
+    {"module": "GlobalRankBound", "sha256": "605ba76eab7b64dc48ee50b1a6768aa8103636fb5915d09e90e18d87852e5caf", "exit_code": 0},
+    {"module": "GlobalMeanWidth", "sha256": "83ca63748bb2b06169458eb8ec8cb81041e322f47651ad8d837e09af50e14b28", "exit_code": 0},
+    {"module": "GlobalMeanWidthBase", "sha256": "99a35e19c5d0bfb2953864e6ac731b43363d4167182893abd63ab945393b8040", "exit_code": 0},
+    {"module": "GlobalMeanWidthGeometry", "sha256": "39aee2f2688245c2a920dc3e0d90478cffd0384fe4937718af161384e1cabf16", "exit_code": 0},
+    {"module": "GlobalMeanWidthLift", "sha256": "1923834228419b1d8816fef30d64fededa2e19dbb0d8c63c3b8bee1ff2205297", "exit_code": 0},
+    {"module": "GlobalMeanWidthNoise", "sha256": "5296f28940d5f5525c2ed8a42df475a78e8ac168d83e0cb73dd0054b03b508ea", "exit_code": 0},
+    {"module": "GlobalEnergy", "sha256": "2fd920cae5170aaedf16ab7a9e8fa5c9b316a215810860caac43826ff92396e8", "exit_code": 0},
+    {"module": "GlobalEnergyBase", "sha256": "814a6be3daa6785e41db744c4a2ab5ec38fafcd56edd6beb8e6f189e7d46fcfa", "exit_code": 0},
+    {"module": "GlobalEnergyNoise", "sha256": "0bc37374ef718b6f09f32d945eb97e6fd11a914e6f259522e97cefd6c02cdb51", "exit_code": 0}
+  ]
+}

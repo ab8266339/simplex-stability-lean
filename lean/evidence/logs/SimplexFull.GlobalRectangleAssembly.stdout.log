@@ -1,0 +1,1 @@
+'SimplexFull.GlobalRectangle.rectangle_bound_of_pair_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

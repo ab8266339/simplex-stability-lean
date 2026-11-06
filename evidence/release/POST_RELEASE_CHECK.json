@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "archive_sha256": "6f7840fa6975370f4931a2f2157178c7b8f6aabd5f60941f03aa1c81932c305d",
+  "pdf_sha256": "1dd2342414c64e420b1ceae865fa4d4eabc292f1df6c5d3c77cf7db932ea26f1",
+  "manifest_entries": 763,
+  "zip_crc": "passed",
+  "zip_hashes": "passed",
+  "root_promoted_source_modules": 216,
+  "root_verifier_and_paper_match": true,
+  "private_files_excluded": true,
+  "prior_archive_hashes": {
+    "concrete-simplex-paper-reviewed-20261106.zip": "3533c4c240b4f7a2f920068af468f7c7774cdfa0b80cfbf8dc176fabe6249672",
+    "concrete-simplex-lean-reviewed-20261106.zip": "cc6f7aebb7554f2b055f1cf92c8f56e6f8576a4881b4e1c1f8d6adddb528a166"
+  },
+  "prior_archives_unchanged": true,
+  "metadata_current": true,
+  "local_construction": false,
+  "checked_at_utc": "2026-11-06T10:22:57.227882+00:00"
+}

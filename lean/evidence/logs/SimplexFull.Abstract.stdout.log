@@ -1,0 +1,49 @@
+'WeakSimplexPilot.proof_T1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.proof_T2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.proof_T3' depends on axioms: [propext, Classical.choice, Quot.sound]
+WeakSimplexPilot.proof_T1 : T1
+WeakSimplexPilot.proof_T2 : T2
+WeakSimplexPilot.proof_T3 : T3
+'WeakSimplexPilot.balance_linear_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.growth_from_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.triangular_prod_strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.triangular_switch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.no_downcross' depends on axioms: [propext, Classical.choice, Quot.sound]
+WeakSimplexPilot.balance_linear_lower (m H0 : ℝ) (a b H : ℝ → ℝ) (hm : 1 < m) (_hH0 : 0 < H0)
+  (hb : ∀ (t : ℝ), 0 ≤ t → b t < 1) (hH : ∀ (t : ℝ), 0 ≤ t → H0 ≤ H t)
+  (hbal : ∀ (t : ℝ), 0 ≤ t → 2 * a t + (m - 1) * b t = m + t * H t) {t : ℝ} (ht : 0 ≤ t) : 1 + t * H0 < 2 * a t
+WeakSimplexPilot.growth_from_balance (m H0 : ℝ) (a b H : ℝ → ℝ) (hm : 1 < m) (hH0 : 0 < H0)
+  (hb : ∀ (t : ℝ), 0 ≤ t → b t < 1) (hH : ∀ (t : ℝ), 0 ≤ t → H0 ≤ H t)
+  (hbal : ∀ (t : ℝ), 0 ≤ t → 2 * a t + (m - 1) * b t = m + t * H t) : Tendsto a atTop atTop
+WeakSimplexPilot.triangular_prod_strictMonoOn {H : ℝ → ℝ} (hmono : MonotoneOn H (Ici 0))
+  (hpos : ∀ (t : ℝ), 0 ≤ t → 0 < H t) : StrictMonoOn (fun t => t * H t) (Ici 0)
+WeakSimplexPilot.triangular_switch {H : ℝ → ℝ} (hcont : ContinuousOn H (Ici 0)) (hmono : MonotoneOn H (Ici 0))
+  (hpos : ∀ (t : ℝ), 0 ≤ t → 0 < H t) : ∃ t, 0 < t ∧ t * H t = 1 ∧ ∀ (s : ℝ), 0 ≤ s → s * H s = 1 → s = t
+WeakSimplexPilot.no_downcross (f : ℝ → ℝ) (hdiff : Differentiable ℝ f) (A : ℝ) (hpos : ∀ x ≤ A, 0 < f x)
+  (hderiv : ∀ (x : ℝ), f x = 0 → 0 < deriv f x) (x : ℝ) : 0 < f x
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Abstract.lean:458:18: warning: Variable name `ha` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'WeakSimplexPilot.endpoint_from_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.weighted_sum_strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplexPilot.crossing_from_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+WeakSimplexPilot.endpoint_from_balance (m a b : ℝ) (hm : 4 ≤ m) (ha : 0 < a) (hb1 : 1 / 2 < b) (hb : b < 1)
+  (hbal : 2 * a + (m - 1) * b = m) : a < m / 2 ∧ a / b < m ∧ a + (m - 2) * b < m - 1
+WeakSimplexPilot.weighted_sum_strictMonoOn (m : ℝ) (a b : ℝ → ℝ) (hm : 4 ≤ m) (ha : StrictMonoOn a (Ici 0))
+  (hb : MonotoneOn b (Ici 0)) : StrictMonoOn (fun t => a t + (m - 2) * b t) (Ici 0)
+WeakSimplexPilot.crossing_from_balance (m : ℝ) (a b H : ℝ → ℝ) (hm : 4 ≤ m) (ha_cont : ContinuousOn a (Ici 0))
+  (hb_cont : ContinuousOn b (Ici 0)) (ha_mono : StrictMonoOn a (Ici 0))
+  (hr_mono : StrictMonoOn (fun t => a t / b t) (Ici 0)) (hb_mono : MonotoneOn b (Ici 0))
+  (hbnd : ∀ t ∈ Ici 0, 0 < a t ∧ 1 / 2 < b t ∧ b t < 1) (hH_mono : MonotoneOn H (Ici 0)) (hH0 : 0 < H 0)
+  (hbal : ∀ (t : ℝ), 0 ≤ t → 2 * a t + (m - 1) * b t = m + t * H t) :
+  ∃ t1 t0 t01,
+    0 < t1 ∧
+      t1 < t0 ∧
+        t0 < t01 ∧
+          a t1 + (m - 2) * b t1 = m - 1 ∧
+            a t0 = m / 2 ∧
+              a t01 = m * b t01 ∧
+                (∀ t ∈ Ici 0, a t + (m - 2) * b t = m - 1 → t = t1) ∧
+                  (∀ t ∈ Ici 0, a t = m / 2 → t = t0) ∧ ∀ t ∈ Ici 0, a t = m * b t → t = t01

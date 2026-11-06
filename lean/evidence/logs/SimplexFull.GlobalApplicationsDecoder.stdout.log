@@ -1,0 +1,10 @@
+'SimplexFull.GlobalApplication.decodingSuccess_procrustes_penalty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_rank_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_rank_deficiency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_ambient_penalty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

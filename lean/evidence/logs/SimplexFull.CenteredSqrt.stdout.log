@@ -1,0 +1,4 @@
+'SimplexFull.Geometry.centeredGram_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.centeredRoot_centered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.continuous_centeredRoot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.centeredRoot_of_simplex' depends on axioms: [propext, Classical.choice, Quot.sound]

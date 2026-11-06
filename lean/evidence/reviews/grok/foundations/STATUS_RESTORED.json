@@ -1,0 +1,78 @@
+{
+  "role": "foundations",
+  "review": "restored",
+  "fresh_rebuild": false,
+  "verdict": "Inspected collaborator statements match the paper rectangle lemma and Theorem global on A_m, singular covariances included. Existing trust-0 logs report only propext, Classical.choice, and Quot.sound. This review did not rebuild.",
+  "lean": "4.31.0",
+  "mathlib": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "commits": {
+    "WeakSimplexConjectureLean": "f59d449132ca8a08f48093efce41e80cbd772d04",
+    "SimplexUniquenessLean": "54eaa804e722cf3e763c87492056b27702ac526e",
+    "uniqueness_requires_weak_simplex": "f59d449132ca8a08f48093efce41e80cbd772d04"
+  },
+  "closure": {
+    "module_count": 52,
+    "order_matches_provenance": true,
+    "counts": {"WeakSimplexConjectureLean": 47, "bare_root": 1, "SimplexUniquenessLean": 4},
+    "local_equals_recorded_sha256": 52,
+    "local_equals_original_bytes": 52,
+    "license_mismatches": 0,
+    "changes": "none",
+    "vendor_run": "vendor-staging/verification/20261106-075019-854450",
+    "vendor_run_passed_recorded": true,
+    "vendor_olean_count": 52,
+    "vendor_probe_axioms": ["Classical.choice", "Quot.sound", "propext"]
+  },
+  "coverage": {
+    "GlobalFoundationBridge": "Qualitative decodingSuccess and MGF comparison for IsCorrelation, singular Grams included. Does not state the rectangle constant.",
+    "GlobalComparisonProduct": "normalizedSelfConvolution_product_ge_one gives 1 ≤ integral of the product for centered tilted half-lines on every IsCorrelation, singular included.",
+    "GlobalWitnessOrthantBound": "orthant_mass_eq_tilted_product allows PosSemidef given AdaptiveWitnesses. exp_adaptive_value_le_orthant_of_ne_one requires IsWeakSimplexCov and R ≠ 1.",
+    "symmetricRectangle_gap": "Paper rectangle coefficient times Frobenius sum of squares for PosSemidef unit-diagonal matrices, m ≥ 2, with an explicit singular pair endpoint.",
+    "quantitative_lowerOrthant": "Paper Theorem global square-root and paperKappa forms for IsWeakSimplexCov, m ≥ 2, c in [u, v], singular included."
+  },
+  "axioms_observed": ["Classical.choice", "Quot.sound", "propext"],
+  "source_compiled_match": {
+    "GlobalFoundationBridge": true,
+    "GlobalWitnessOrthantBound": true,
+    "GlobalComparisonProduct": true,
+    "GlobalComparison": true,
+    "coordinator_twin_bridge_and_orthant": true,
+    "coordinator_twin_GlobalComparisonProduct": false
+  },
+  "coordinator_checker": {
+    "bare_module_lean_path": "fresh_lean_path drops a path entry that contains a project-prefix directory or a bare Prefix.olean, .olean.private, .olean.server, or .ilean",
+    "import_header": "fail-closed on multiline import, import after a declaration, unrecognized header text, and unaudited roots",
+    "forbidden_constructs": ["sorry", "admit", "axiom", "unsafe", "native_decide", "debug.skipKernelTC"],
+    "trust_flag": "-t 0 is lean --trust=0",
+    "axiom_allowlist": ["propext", "Classical.choice", "Quot.sound"],
+    "tests_reported_passed": 30,
+    "tests_rerun_by_this_review": false
+  },
+  "defects": [
+    "verify_full.py does not read PROVENANCE.json and does not check the Mathlib commit.",
+    "passed compares live coordinator sources with visit hashes and does not require the compile-time snapshot hash to equal the visit hash.",
+    "Audit.lean is generated after the lexical scan.",
+    "foundation-audit/compile_module.py prepends the vendor build, the audit build, and E:/simplex-lean-full-20261106/build, which contains SimplexFull. Those certificates are trust-0 rechecks, not the coordinator source snapshot.",
+    "The stored staging crosscheck parser hash is the previous source_audit.py, not sha256 494835267f09fc99b40a4b2db8e4e72cd4b210fbaa99de3d4c6e01288114cf9e.",
+    "The vendor probe prints axioms for nine target theorems, not every declaration in the 52 modules."
+  ],
+  "remaining_obligations": [
+    "A general centered product for discontinuous log-concave factors on a singular correlation is not proved. centered_product_of_posDef remains PosDef-only. The tilted normalized-self-convolution family used for Q1 is proved for singular IsCorrelation.",
+    "Correlations outside IsWeakSimplexCov are outside Theorem global. PSD unit-diagonal matrices remain inside symmetricRectangle_gap.",
+    "Rectangle and global quantitative statements are for m ≥ 2.",
+    "The integrated coordinator source-only closure of the owned SimplexFull modules was not run in this review."
+  ],
+  "source_hashes": {
+    "vendor-staging/PROVENANCE.json": "e63101a6f5e0247d11fed1403feb2ca398b2803abe7e378320ad4f4173f5aea0",
+    "foundation-audit/CUSTOM_SOURCE_CLOSURE.json": "20f2b5bb2c10044cca00cf6114f5446104d994a4ff0522a69c6d0a1c1dea7a04",
+    "foundation-audit/SimplexFull/GlobalFoundationBridge.lean": "cf656facf99a2802329588fa62352d6941d2ee35fe560d02e96490df69ceaf58",
+    "foundation-audit/SimplexFull/GlobalWitnessOrthantBound.lean": "5db8013510bdaddb9d236da94786bef81e22b87f4df675b23e1ee76aeff3d1ed",
+    "foundation-audit/SimplexFull/GlobalComparisonProduct.lean": "069cff2e0ae074042e9c7af4f08ce277386b3692ab81447485e2f9c91e565284",
+    "foundation-audit/SimplexFull/GlobalRectangleBound.lean": "0b0713a725920cd3f71ed7c4f71699502dd6cb7cb78517977331c002417a798f",
+    "geometry-agent/SimplexFull/GlobalComparison.lean": "bcd7064747863e5ca8752a8894caaf508701d4e4203000072ad132ce4b62ab97",
+    "coordinator/source_audit.py": "494835267f09fc99b40a4b2db8e4e72cd4b210fbaa99de3d4c6e01288114cf9e",
+    "coordinator/verify_full.py": "f8cee4e2daaf46c25167bbc0966fa76944a2ee0c413ae9c5a48c900e31a3745a",
+    "coordinator/audit_output.py": "2c94fe0bd4afd2feef6ce799a43c41427573bdb1385ef5e9639bcd44d1d85280",
+    "foundation-audit/compile_module.py": "29b72fd6fd4aa5417afdc65454074d34aeadf0afbc32b2f4cb264fc39129c4a4"
+  }
+}

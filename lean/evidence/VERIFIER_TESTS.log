@@ -1,0 +1,49 @@
+test_duplicate_report_rejected (test_audit_output.AuditOutputTests.test_duplicate_report_rejected) ... ok
+test_duplicate_request_rejected (test_audit_output.AuditOutputTests.test_duplicate_request_rejected) ... ok
+test_empty_output_rejected (test_audit_output.AuditOutputTests.test_empty_output_rejected) ... ok
+test_empty_request_rejected (test_audit_output.AuditOutputTests.test_empty_request_rejected) ... ok
+test_explicit_axiom_free_report (test_audit_output.AuditOutputTests.test_explicit_axiom_free_report) ... ok
+test_missing_report_rejected (test_audit_output.AuditOutputTests.test_missing_report_rejected) ... ok
+test_success_exit_text_without_reports_rejected (test_audit_output.AuditOutputTests.test_success_exit_text_without_reports_rejected) ... ok
+test_truncated_report_rejected (test_audit_output.AuditOutputTests.test_truncated_report_rejected) ... ok
+test_unexpected_name_rejected (test_audit_output.AuditOutputTests.test_unexpected_name_rejected) ... ok
+test_unknown_axiom_rejected (test_audit_output.AuditOutputTests.test_unknown_axiom_rejected) ... ok
+test_wrapped_expected_reports (test_audit_output.AuditOutputTests.test_wrapped_expected_reports) ... ok
+test_all_project_prefixes (test_source_audit.SourceAuditTests.test_all_project_prefixes) ... ok
+test_declaration_after_header (test_source_audit.SourceAuditTests.test_declaration_after_header) ... ok
+test_duplicate_imports (test_source_audit.SourceAuditTests.test_duplicate_imports) ... ok
+test_import_continuation_rejected (test_source_audit.SourceAuditTests.test_import_continuation_rejected) ... ok
+test_inline_comment_separates_tokens (test_source_audit.SourceAuditTests.test_inline_comment_separates_tokens) ... ok
+test_kernel_bypass_rejected (test_source_audit.SourceAuditTests.test_kernel_bypass_rejected) ... ok
+test_kernel_option_in_comment_not_flagged (test_source_audit.SourceAuditTests.test_kernel_option_in_comment_not_flagged) ... ok
+test_library_not_custom (test_source_audit.SourceAuditTests.test_library_not_custom) ... ok
+test_malformed_import_rejected (test_source_audit.SourceAuditTests.test_malformed_import_rejected) ... ok
+test_meta_import_fails_closed (test_source_audit.SourceAuditTests.test_meta_import_fails_closed) ... ok
+test_multiline_import_fails_closed (test_source_audit.SourceAuditTests.test_multiline_import_fails_closed) ... ok
+test_multiple_imports (test_source_audit.SourceAuditTests.test_multiple_imports) ... ok
+test_nested_comments_not_imports (test_source_audit.SourceAuditTests.test_nested_comments_not_imports) ... ok
+test_remove_all_old_project_roots (test_source_audit.SourceAuditTests.test_remove_all_old_project_roots) ... ok
+test_remove_bare_project_compiled_modules (test_source_audit.SourceAuditTests.test_remove_bare_project_compiled_modules) ... ok
+test_remove_live_source_build (test_source_audit.SourceAuditTests.test_remove_live_source_build) ... ok
+test_strings_not_imports (test_source_audit.SourceAuditTests.test_strings_not_imports) ... ok
+test_unknown_import_rejected (test_source_audit.SourceAuditTests.test_unknown_import_rejected) ... ok
+test_unterminated_comment (test_source_audit.SourceAuditTests.test_unterminated_comment) ... ok
+test_unterminated_string (test_source_audit.SourceAuditTests.test_unterminated_string) ... ok
+test_compiler_failure_remains_failure (test_verification_guards.GuardTests.test_compiler_failure_remains_failure) ... ok
+test_correct_environment_pins (test_verification_guards.GuardTests.test_correct_environment_pins) ... ok
+test_deleted_snapshot_rejects_successful_compiler (test_verification_guards.GuardTests.test_deleted_snapshot_rejects_successful_compiler) ... ok
+test_first_shadow_provider_is_not_skipped (test_verification_guards.GuardTests.test_first_shadow_provider_is_not_skipped) ... ok
+test_git_missing_rejected (test_verification_guards.GuardTests.test_git_missing_rejected) ... ok
+test_matching_snapshot_compiles (test_verification_guards.GuardTests.test_matching_snapshot_compiles) ... ok
+test_nightly_is_not_release_pin (test_verification_guards.GuardTests.test_nightly_is_not_release_pin) ... ok
+test_no_mathlib_provider_rejected (test_verification_guards.GuardTests.test_no_mathlib_provider_rejected) ... ok
+test_postcompile_mutation_rejects_successful_compiler (test_verification_guards.GuardTests.test_postcompile_mutation_rejects_successful_compiler) ... ok
+test_precompile_mutation_never_runs_compiler (test_verification_guards.GuardTests.test_precompile_mutation_never_runs_compiler) ... ok
+test_wrong_git_root_rejected (test_verification_guards.GuardTests.test_wrong_git_root_rejected) ... ok
+test_wrong_lean_rejected (test_verification_guards.GuardTests.test_wrong_lean_rejected) ... ok
+test_wrong_mathlib_commit_rejected (test_verification_guards.GuardTests.test_wrong_mathlib_commit_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.048s
+
+OK

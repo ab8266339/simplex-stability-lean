@@ -1,0 +1,2 @@
+'SimplexFull.GlobalTail.decodingSuccess_centroid_entrySum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.unitDecoderCentroidBound' depends on axioms: [propext, Classical.choice, Quot.sound]

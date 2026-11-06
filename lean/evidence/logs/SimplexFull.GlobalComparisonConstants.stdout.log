@@ -1,0 +1,15 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalComparisonConstants.lean:43:24: warning: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalComparisonConstants.lean:43:53: warning: Variable name `j` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'SimplexFull.GlobalComparison.paperK_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.paperK_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.paperKappa_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.covarianceDefect_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.paperKappa_defect_le_sqrt_gap' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,3155 @@
+Explicit Stability of the Weak Simplex Bound
+Research draft
+6 November 2026
+Abstract
+Equal-energy Gaussian signaling uses the regular simplex as an optimal reference when
+the signal dimension permits it. Quantifying geometric recovery from a small decoding
+deficit requires a bound that remains valid near singular Gram matrices. We give explicit
+global quadratic bounds for Gram and vertex distance at every fixed positive channel
+parameter, together with a separate centroid penalty. A configuration-metric expansion
+separates two in-plane sectors from a transverse centroid sector and identifies the local
+least-loss directions. We prove unique ordered channel-parameter crossings and identify
+the exact minimizers on all sufficiently small Procrustes shells in the strict-normal regime,
+uniformly in the ambient dimension. Their minimal deficit has an explicit quartic expansion
+with a sixth-order remainder. The global bounds, mean-width stability, transition and
+small-shell results, including the remainder, are formalized in Lean. For four- and 16-signal
+constellations, directional coefficients predict central perturbation losses more accurately
+in aggregate than two scalar controls across 108 tested cells. A separate 20-run learning
+comparison attributes improved matched-decoder performance to ordinary simplex Gram
+regularization, rather than to a new optimization method. The evaluated global recovery
+constants range from approximately 10−39 to 10−234 and give no practical finite-precision
+geometry certificate. The results provide an explicit mathematical rate and a directional
+local diagnostic, while practical certification requires sharper constants and effective
+numerical bounds for the local radius and remainder constant.
+1
+Setting and the quantitative question
+Fix m ≥2, put n = m −1, α = n/m, J = 11T and P = Im −J/m. The regular unit simplex
+has Gram matrix G∆= P/α. For a correlation matrix G (positive semidefinite with unit
+diagonal), define
+R = αG + J/m,
+Am = {R : diag R = 1, R −J/m ⪰0}.
+(1)
+Thus G = G∆corresponds to R = Im. Write
+FR(c) = P{Xi ≤c for all i},
+X ∼N(0, R),
+DR(c) = FR(c) −Φ(c)m,
+where Φ and ϕ are the standard normal distribution and density. We use the comparison
+DR(c) ≥0 proved in [1], as well as its centered product inequality and variational construction.
+Pointwise strictness was established independently by Su et al. [2] and by Mulgund, whose
+v4 explicitly records this parallel development [7, Remark 2.3 and Appendix B]. Su et al.
+also explicitly suggest a quantitative deficit estimate. The present argument replaces a strict
+positive gap by a computable lower bound. We cite v2 for the particular product and variational
+statements used in the proof, not as a description of the current state of Mulgund’s work.
+For unit signals x1, . . . , xm in Rd, let Gij = ⟨xi, xj⟩and consider Y = λxI + Z, with I
+uniform, Z ∼N(0, Id), and λ > 0. Maximum-likelihood decoding gives the identity
+Pc(G; λ) = e−λ2/2
+m
+Eeλ maxi ξi,
+ξ ∼N(0, G).
+(2)
+1
+
+
+All deficits below compare to the unit centered regular simplex at the same operating parameter.
+The integer m is the number of signals, and d is the ambient dimension of the signal space.
+Decoding constants and unnormalized expected-maximum constants depend on m and, for
+decoding, on λ, but not on d. Only those constants are called uniform in the signal-space
+dimension.
+The normalized mean-width lower bound (22) retains the factor 2/E ∥g∥for
+g ∼N(0, Id), and that prefactor depends on d. No positive lower constant uniform in m, and
+no positive lower constant uniform over all positive channel parameters, is asserted.
+Local optimality of simplex codes is classical. Litvak attributes fixed-parameter local
+maximality to Balakrishnan [4, Theorem 2.5], whose original article is [8]. Weber already
+expresses the general second variation through repeated, adjacent and disjoint edge pairs [12,
+Lemma 5.8, equation (5.102)]. His three quadratic invariants are the squared edge norm,
+squared total row sum and sum of squared row sums. On his feasible zero-total-sum face,
+the row sums vanish and (5.105) gives the restricted form used in Theorem 5.5. Equations
+(5.107)–(5.108) integrate the distribution-function variation into the decoding functional. Thus
+edge-type decomposition and local simplex optimality are established antecedents of the
+calculation below. We claim no priority for these local ideas or for the existence of a Hessian.
+Our global quantitative contribution is the specified rate and its conversion into configuration
+distance. The local formulas supply explicit normalization and feasible-sequence criteria for
+using that rate. Section 7 additionally proves unique channel transitions and an exact, rather
+than only second-order, optimizer on small shells in the strict-normal regime. Its complete
+analytic and geometric proofs are in Appendices A and B; the precise scope of the Lean
+verification is given in Appendix C.
+Mean-width stability under John/Löwner ellipsoid constraints [5] concerns a different
+admissible class. The unsmoothed comparison in [6, Theorem 1.1] dominates Gaussian maxima
+at every real threshold and characterizes equality at positive thresholds. Its equality statement
+does not extend to every nonpositive threshold. We use the cited comparison and centered
+product inequality as inputs. Quantitative Gaussian correlation inequalities also predate this
+work [10]. Our rectangle estimate is a specialized input.
+Friedland, Guédon, and Souli [11] prove an explicit stability theorem for a different
+functional. For β ∈R they set Zβ(X) = PN
+i=1 eβXi, where X is centered Gaussian with unit
+variances and correlation matrix C ∈EN. The set EN consists of all N × N correlation
+matrices, and ∆N is the regular-simplex correlation. That matrix equals G∆. The symbol β
+in this discussion is theirs, not the scalar in (5). Their coefficients µN,q,β and ηN,q,β are not
+the constants µ and η in (15) and (13).
+Their Theorem 1.1 is a phase transition of generalized Lq-means, for every real q, every
+real β, and every C ∈EN. The simplex correlation maximizes ∥Zβ(X)∥q when q < 1. The
+mean equals Neβ2/2 for every such C when q = 1. The simplex correlation minimizes the
+mean when q > 1. The quantitative statement is narrower. Theorem 1.3 requires q > 1 and
+β ̸= 0, and concludes
+E[Zβ(X)q] −E[Zβ(S)q] ≥ηN,q,β 1TC1 + µN,q,β
+2
+∥C −∆N∥2
+F ,
+where S ∼N(0, ∆N) and both coefficients are positive. The summand ηN,q,β 1TC1 measures
+centroid defect, and the Frobenius summand measures shape defect. The same modulus
+µN,q,β, their (15), is the strong-convexity modulus of C 7→E[Zβ(X)q] on all of EN in their
+Theorem 1.2. Their (15) and (16) vanish at β = 0, so both the modulus and the two stability
+terms are zero in that case. Theorem 1.1 remains valid at β = 0, where Z0 is the constant N.
+The estimates below are not those statements.
+Since αG∆= P = Im −J/m, the
+normalization (1) gives R −Im = α(G −G∆) and identifies Am with the image of Em. Since
+∆m = G∆, it follows that ∥R −Im∥F = α ∥G −∆m∥F . The constant κm,[u,v] depends on
+a compact threshold interval and is not µN,q,β. Theorem 1.3 controls moments of order
+2
+
+
+q > 1 of Zβ on EN. The deficit DR(c) is an orthant probability on Am, uniform for c in
+a compact interval, and the bound includes singular R. The inequality DR(c) ≥0 has the
+direction of their Corollary 1.5 applied to the indicator of (−∞, c]. That corollary assumes
+a correlation matrix R with R −J/N ⪰0, which is the class AN with their N equal to the
+number of signals m. Remark 1.6 records the resulting non-strict bound as generalizing an
+orthant inequality of Mulgund. The corollary does not give a quadratic rate. For a Gram
+matrix of unit vectors, their centroid summand and Lemma 4 both control ∥P
+i xi∥2 = 1TG1,
+through different functionals and different coefficients. Decoding and mean-width stability
+below concern Eeλ maxi ξi and E maxi ξi. They record that β−1E log Zβ tends to E maxi Xi as
+β →+∞. At q = 0, Theorem 1.1 compares E log Zβ at fixed β. Theorem 1.3 covers neither
+statement, because it assumes q > 1. The full-class local liminf, including the split between
+m = 3 and m ≥4, is not a conclusion of Theorem 1.1 or Theorem 1.3.
+Proposition 1 (What compactness supplies). Let K be a compact metric space, Z ⊂K a
+nonempty closed set, and f : K →[0, ∞) continuous with zero set exactly Z. Then f(xj) →0
+implies d(xj, Z) →0. If, in addition, f(x) ≥a d(x, Z)2 whenever d(x, Z) < ρ, with a, ρ > 0,
+then there exists b > 0 such that f(x) ≥b d(x, Z)2 on K.
+Proof. For each ϵ > 0, compactness gives a positive minimum of f on {d(x, Z) ≥ϵ} whenever
+that set is nonempty. This proves the first assertion. For the second, let M = maxK d(x, Z). If
+M = 0 or the set {d(x, Z) ≥ρ} is empty, the assertion is immediate. Otherwise its minimum
+η is positive, and b = min{a, η/M2} works.
+For fixed m, the correlation-matrix domain is compact. The analogous vertex formulation
+uses a fixed ambient space and the closed simplex orbit. Thus a nonexplicit global quadratic
+bound is a standard consequence of uniqueness and a local quadratic bound in the same
+metric. Uniqueness and compactness alone give no power law. Nor are the Gram and vertex
+metrics locally equivalent at the rank-deficient simplex, as Section 6 shows through an explicit
+transverse example. These distinctions delimit the role of our global proof and constants.
+2
+Explicit constants and the global comparison
+Define the scalar functions
+r(s) = ϕ(s)
+Φ(s),
+H(s) = s + r(s),
+Ψ(H(s)) = log Φ(s) + 1
+2r(s)2.
+(3)
+The map H : R →(0, ∞) is an increasing bijection. Moreover Ψ : (0, ∞) →(−∞, 0) is an
+increasing, strictly concave bijection, with
+Ψ′(H(s)) = r(s),
+Ψ′′(H(s)) = −
+r(s)H(s)
+1 −r(s)H(s) < 0.
+(4)
+The denominator is the variance of a standard normal conditioned on Z ≤s. These scalar
+identities also fix the meaning of the one-dimensional inverses and maximizations used in our
+constants.
+Fix a finite interval [u, v], allowing u = v, and set
+L0 = m log Φ(u),
+β = Ψ−1(L0),
+A0 = Ψ′(β),
+B0 = v +
+q
+−2L0/m +
+p
+−2αL0,
+ℓ= β/
+√
+2,
+T =
+√
+2B0 + ℓ.
+(5)
+All these quantities are finite, and β, ℓ, B0, T, A0 are positive. For t > 0 put b(t) = 2Φ(t) −1.
+Define
+Km,[u,v] = e−mA0βℓ2e−4T 2/3b(ℓ)2m−2
+4πm(m −1)
+,
+κm,[u,v] =
+Φ(u)mKm,[u,v]
+1 +
+q
+1 + Km,[u,v]m(m −1)
+.
+(6)
+3
+
+
+Theorem 2 (Global quantitative comparison). For every R ∈Am and c ∈[u, v],
+DR(c) ≥Φ(u)m
+q
+1 + Km,[u,v] ∥R −Im∥2
+F −1
+
+≥κm,[u,v] ∥R −Im∥2
+F .
+(7)
+The conclusion includes singular R.
+We first quantify the two-coordinate input. Its conversion to a full rectangle uses the
+Gaussian correlation inequality [3].
+Lemma 3 (Quantitative rectangle gap). Let V ∼N(0, S), where S is any m × m correlation
+matrix, possibly singular. If ti ∈[ℓ, T], with 0 < ℓ≤T < ∞, then
+P{|Vi| ≤ti ∀i} −
+Y
+i
+b(ti) ≥ℓ2e−4T 2/3b(ℓ)m−2
+4πm(m −1)
+∥S −Im∥2
+F .
+(8)
+Proof. For a bivariate standard normal with correlation ρ, let Bρ(a, b) = P{|V1| ≤a, |V2| ≤b}.
+This is even in ρ. Differentiating the Gaussian integral (equivalently, integrating ∂ρfρ = ∂x∂yfρ)
+gives, for 0 < ρ < 1,
+∂ρBρ(a, b) =
+2
+π
+p
+1 −ρ2 e−(a2+b2)/(2(1−ρ2)) sinh
+ ρab
+1 −ρ2
+
+.
+For a, b ∈[ℓ, T] and 0 ≤ρ ≤1/2, this derivative is at least (2ℓ2/π)e−4T 2/3ρ. It is nonnegative
+on [0, 1), so integration gives
+Bρ(a, b) −b(a)b(b) ≥ℓ2
+π e−4T 2/3 min{|ρ|, 1/2}2 ≥ℓ2
+4πe−4T 2/3ρ2.
+Continuity extends this non-strict quantitative inequality to |ρ| = 1; the rectangle boundary
+has zero probability since the marginals have no atoms. Choose i < j with maximal S2
+ij.
+Group this two-coordinate rectangle with the remaining symmetric slabs using the Gaussian
+correlation inequality. Its deficit is multiplied by at least b(ℓ)m−2. Finally maxi<j S2
+ij ≥
+∥S −Im∥2
+F /[m(m−1)]. For singular S, apply the correlation inequality to the linear preimages
+of these sets under a representation V = TW with nondegenerate W.
+Proof of Theorem 2. Represent G = (R −J/m)/α by unit vectors xi. We recall precisely the
+two inputs from [1]. The centered product inequality says
+E
+Y
+i
+fi(Yi) ≥
+Y
+i
+Z
+fi dγ1
+(9)
+for any Gaussian correlation matrix of Y , and bounded nonnegative log-concave factors with
+positive Gaussian integrals and zero Gaussian first moments. The adaptive tilts arise from
+maximizing
+Jc(q, w) =
+X
+i
+Ψ(q + α⟨xi, w⟩) −α
+2 ∥w∥2 −m
+2 (q −c)2
+on the domain where all scalar arguments are positive. Its maximizer has
+bi = H(si) = c + (Ra)i,
+ai = r(si),
+J∗≥m log Φ(c) ≥L0.
+(10)
+For clarity, stationarity of the strictly concave variational functional gives w∗= P
+i aixi and
+q∗−c = m−1 P
+i ai, and hence
+J∗=
+X
+i
+Ψ(bi) −1
+2aTRa.
+4
+
+
+The maximizer exists in the positive-argument domain: the quadratic terms control infinity,
+whereas Ψ(y) →−∞as y ↓0. We now extract bounds not requiring any inverse of R. Since
+every summand Ψ(bi) and both negative quadratic terms are nonpositive, Ψ(bi) ≥L0. Thus
+bi ≥β and ai ≤A0. The quadratic penalty is at most −L0, whence
+|q −c| ≤
+q
+−2L0/m,
+∥w∥≤
+q
+−2L0/α,
+bi ≤B0.
+In particular B0 > 0.
+Let fi(z) = eaiz1z≤bi, µi =
+R fi dγ1 = eΨ(bi) < 1, and hi = fi/µi. They are centered in
+Gaussian first moment. For
+(Dh)(u) =
+Z
+h((u + v)/
+√
+2)h((u −v)/
+√
+2) dγ1(v),
+write Q0 = ER
+Q
+i hi(Xi) and Q1 = ER
+Q
+i(Dhi)(Xi). Taking independent X, X′ ∼N(0, R)
+and setting U = (X + X′)/
+√
+2, V = (X −X′)/
+√
+2, the vectors U, V are independent with
+covariance R. Conditional on U = u, the factors become
+hi((ui + vi)/
+√
+2)hi((ui −vi)/
+√
+2) = µ−2
+i e
+√
+2aiui1|vi|≤
+√
+2bi−ui.
+(11)
+On B = {|Ui| ≤ℓ∀i} all radii belong to [ℓ, T]. The product of the weights in (11) is at least
+e−
+√
+2mA0ℓ= e−mA0β. The symmetric rectangle inequality gives P(B) ≥b(ℓ)m, even for singular
+R. Lemma 3 therefore yields
+Q2
+0 −Q1 ≥Km,[u,v] ∥R −Im∥2
+F .
+(12)
+Outside B the conditional difference remains nonnegative: use the ordinary rectangle inequality
+when all radii are positive; if a radius is negative both products vanish, and a zero radius also
+has zero mass because every coordinate marginal is continuous.
+Each Dhi is bounded and log-concave, has unit Gaussian integral and zero Gaussian first
+moment. The integral and moment assertions follow by the same orthogonal change of two
+independent scalar Gaussian variables; log-concavity follows by integration of a log-concave
+function. Thus (9) gives Q1 ≥1. The Gaussian change of measure and (10) give the exact
+identity
+FR(c) = eJ∗Q0.
+This identity is valid for singular R as well: write X = TZ with Z standard Gaussian in the
+rank of R and tilt by T Ta. The shifted vector is X +Ra, and b−Ra = c1; no inverse covariance
+or full-dimensional density is used. Consequently FR(c) ≥Φ(c)m
+q
+1 + Km,[u,v] ∥R −Im∥2
+F .
+Subtract Φ(c)m and use Φ(c)m ≥Φ(u)m. Finally ∥R −Im∥2
+F ≤m(m −1), since |Rij| ≤1.
+Rationalizing the square root proves (7).
+3
+A centroid estimate and decoding stability
+For the rest of the global consequences use the interval [0, 1] and abbreviate κ = κm,[0,1]. Define
+M0 =
+max
+y∈[H(0)/2, 3H(1)/2](−Ψ′′(y)),
+τ = min
+H(0)
+2αm ,
+r(1)
+1 + M0αm
+
+,
+η = 2−m αr(1)τ
+2
+> 0.
+(13)
+Lemma 4 (Centroid penalty). For unit vectors xi with Gram matrix G and R as in (1), set
+sX = P
+i xi. For 0 ≤c ≤1,
+DR(c) ≥η ∥sX∥2 .
+(14)
+5
+
+
+Proof. In the variational functional use q = H(c) and w = τsX. Since ∥sX∥≤m, the scalar
+displacements zi = ατ⟨xi, sX⟩obey |zi| ≤H(0)/2. Taylor’s theorem on the interval in (13)
+gives
+Ψ(H(c) + zi) ≥Ψ(H(c)) + r(c)zi −M0z2
+i /2.
+Now P
+i zi = ατ ∥sX∥2 and P
+i z2
+i ≤α2τ 2m ∥sX∥2. Subtracting the value at (H(c), 0) gives
+J∗−m log Φ(c) ≥α
+ 
+r(c)τ −τ 2
+2 (1 + M0αm)
+!
+∥sX∥2 ≥αr(1)τ
+2
+∥sX∥2 .
+Use FR(c) ≥eJ∗, ez −1 ≥z, and Φ(c)m ≥2−m.
+Let µ = λ/√α and put
+Wm,λ = e−µ2/2
+m
+(eµ −1),
+cg = Wm,λκα2,
+cs = Wm,λη,
+cP =
+ 
+α
+cg
++
+1
+mcs
+!−1
+.
+(15)
+These constants are positive for every fixed m ≥2 and λ > 0.
+Theorem 5 (Quantitative recovery of a simplex). Let G be the Gram matrix of m unit signals
+and δλ(G) = Pc(G∆; λ) −Pc(G; λ). Then
+δλ(G) ≥cg ∥G −G∆∥2
+F ,
+δλ(G) ≥cs ∥P
+i xi∥2 .
+(16)
+If the ambient dimension is at least m −1, fix a regular simplex matrix V = [v1 · · · vm] in
+that space, and define
+dP (X, ∆)2 =
+min
+U∈O(d)
+X
+i
+∥xi −Uvi∥2 .
+Then
+δλ(G) ≥cP dP (X, ∆)2.
+(17)
+In particular δλ(G) ≤ε implies dP (X, ∆) ≤
+p
+ε/cP .
+Proof. Add an independent scalar B ∼N(0, 1/n) and set X′
+i = √α(ξi + B). Its covariance is
+R and
+Eeµ maxi X′
+i = eλ2/(2n)Eeλ maxi ξi.
+For the simplex the transformed coordinates are independent standard normals. All the
+exponential moments are finite. Integrating their tail probabilities gives
+Eeµ maxi Zi −Eeµ maxi X′
+i = µ
+Z
+R
+eµcDR(c) dc.
+The integrand is nonnegative everywhere by the known comparison. Restrict it to [0, 1],
+use Theorem 2 or Lemma 4, and then use (2). The prefactor becomes m−1e−λ2/2−λ2/(2n) =
+m−1e−µ2/2. This proves (16).
+For completeness, the geometric conversion is quantitative linear algebra.
+Let X =
+[x1 · · · xm] and let λ1, . . . , λn be the eigenvalues of PGP on 1⊥, including zeros.
+The
+cross matrix XV T has nonzero singular values
+q
+λj/α, with zeros added as necessary. The
+orthogonal Procrustes formula follows by maximizing tr(UTXV T) over O(d). Alignment and
+the orthogonality of centered and constant columns give
+dP (X, ∆)2 = ∥sX∥2
+m
++
+n
+X
+j=1
+(
+q
+λj −α−1/2)2
+≤∥sX∥2
+m
++ α ∥PGP −G∆∥2
+F ≤∥sX∥2
+m
++ α ∥G −G∆∥2
+F .
+6
+
+
+The first inequality uses (
+√
+t −√a)2 ≤(t −a)2/a for t ≥0, a > 0. Applying the two separate
+deficit bounds proves (17). Relabeling is already included: every permutation of regular-simplex
+vertices extends to an orthogonal symmetry.
+Corollary 6 (Insufficient dimension and unused energy). If the unit-signal Gram matrix has
+rank at most d < m −1, with d ≥1, then
+δλ(G) ≥cgm2
+1
+d −
+1
+m −1
+
+.
+(18)
+For arbitrary signals ∥xi∥≤1, define the deficit using the actual maximum-likelihood success
+probability (not the equal-energy formula (2)). Then, regardless of whether the original channel
+permits an additional use,
+Pc(G∆; λ) −Pc({xi}; λ) ≥cs
+X
+i
+(1 −∥xi∥2).
+(19)
+Proof. Using tr G = m,
+∥G −G∆∥2
+F = tr(G2) −
+m2
+m −1 +
+2
+m −11TG1 ≥m2
+d −
+m2
+m −1.
+Here tr(G2) ≥(tr G)2/d and 1TG1 ≥0. For the energy claim, use the following lift only as a
+mathematical comparison (it imposes no additional-channel-use assumption on the code): lift
+the codewords to exi = (xi, qi), qi =
+q
+1 −∥xi∥2 ≥0. The augmented signals have unit norm,
+and their optimal success probability is no smaller because the receiver may ignore the additional
+observation. Apply the centroid inequality in (16) and note ∥P
+i exi∥2 ≥(P
+i qi)2 ≥P
+i q2
+i .
+4
+Mean width of arbitrary inscribed simplices
+Set
+bg = κα3/2,
+bs = η/√α.
+(20)
+For any correlation matrix G the same distribution-function integration, without the exponential
+weight, proves
+E max
+i
+ξ∆
+i −E max
+i
+ξi ≥bg ∥G −G∆∥2
+F ,
+E max
+i
+ξ∆
+i −E max
+i
+ξi ≥bs ∥P
+i xi∥2 .
+(21)
+Indeed the expectation gap of the transformed maxima is
+R
+R DR(c) dc, and the common added
+Gaussian has mean zero.
+Theorem 7 (Mean-width stability in a ball). Let y1, . . . , ym ∈Bd
+2 with d ≥m −1, let
+K = conv{yi}, and let ∆be a unit regular simplex in the same ambient space. Use normalized
+spherical mean width, so that w(K) = 2E maxi⟨g, yi⟩/E ∥g∥for g ∼N(0, Id). Then
+w(∆) −w(K) ≥
+2
+E ∥g∥
+ 
+α
+bg
++ 1
+bs
+!−1
+dP ([yi], ∆)2.
+(22)
+Also the unnormalized expected-maximum deficit is at least bs
+P
+i(1 −∥yi∥2).
+Proof. Put di = 1−∥yi∥2 and lift to unit vectors byi = (yi, √diei) using mutually orthogonal new
+coordinates. Conditional Jensen implies that adding these independent mean-zero noises cannot
+decrease the expected maximum. Write G = (⟨yi, yj⟩), bG = G + diag(di), Tg =
+ bG −G∆
+
+2
+F ,
+and Ts = ∥P
+i yi∥2 + P
+i di. The original expected-maximum deficit δw is at least bgTg and at
+7
+
+
+least bsTs by (21). The Procrustes argument in the previous proof applies to vectors of any
+lengths, and hence
+dP ([yi], ∆)2 ≤α ∥G −G∆∥2
+F + ∥P
+i yi∥2 /m
+= α
+ 
+Tg +
+X
+i
+d2
+i
+!
++ ∥P
+i yi∥2 /m ≤αTg + Ts,
+since 0 ≤di ≤1. Thus d2
+P ≤(α/bg +1/bs)δw. The polar decomposition of a standard Gaussian
+gives (22).
+5
+Sharp local coefficients and optimal exponents
+The explicit global constants are deliberately conservative. The exact local coefficient is much
+simpler and identifies a distinction between m = 3 and m ≥4.
+Theorem 8 (Sharp local common-threshold coefficient). Fix a finite c, and write p = Φ(c),
+q = r(c), h = c + q, and k = ϕ(c)2pm−2. For m ≥3,
+lim inf
+R→Im, R∈Am
+R̸=Im
+DR(c)
+∥R −Im∥2
+F
+=
+(
+k(1 + ch)/4,
+m = 3,
+kh2/4,
+m ≥4.
+(23)
+Both constants are positive. For m = 2 the sharp behavior is linear: DR(c)/ ∥R −I2∥F →
+ϕ(c)2/
+√
+2.
+Proof. Put A = R−Im, S = P
+i<j Aij, Q = P
+i<j A2
+ij = ∥A∥2
+F /2, and rA = A1. The Gaussian
+density is smooth in A near zero and its first three derivatives are bounded by an integrable
+polynomial times a Gaussian. Differentiation under the integral over the fixed lower orthant is
+therefore justified. For off-diagonal covariance entries, the first derivative at independence is k.
+The second-order Taylor contributions for a repeated edge, two edges sharing one endpoint,
+and two disjoint edges are respectively
+1
+2c2ϕ(c)2pm−2A2
+ij,
+−cϕ(c)3pm−3AijAik,
+ϕ(c)4pm−4AijAkℓ.
+Each unordered pair of distinct edges is counted once. The sums of products over adjacent
+and disjoint pairs are ∥rA∥2 /2 −Q and (S2 + Q −∥rA∥2)/2, respectively. Consequently
+DIm+A(c)
+k
+= S + h2
+2 Q −qh
+2 ∥rA∥2 + q2
+2 S2 + O(∥A∥3
+F ).
+(24)
+For m = 3 there are no disjoint pairs; the displayed combined formula still holds because the
+corresponding combinatorial sum is zero.
+Feasibility means L = P + A ⪰0. Since L1 = rA, the spectral inequality L2 ⪯λmax(L)L
+gives
+S ≥0,
+∥rA∥2 ≤2(1 + ∥A∥op)S.
+(25)
+Also σ = 1 −qh > 0 is a truncated-normal variance. Equations (24)–(25) imply, for sufficiently
+small feasible A,
+DIm+A(c) ≥k
+ 
+σ
+2 S + h2
+4 Q
+!
+.
+Thus sequences with S/Q →∞have an infinite deficit quotient. On sequences with S = O(Q),
+(25) yields S ≥∥rA∥2 /2 + o(Q) and hence
+DIm+A(c)/k ≥1
+2h2Q + 1
+2σ ∥rA∥2 + o(Q).
+(26)
+8
+
+
+For m ≥4 this gives the lower coefficient kh2/4. It is attained by A = tD, where D is
+symmetric with D12 = D34 = 1, D23 = D14 = −1, and all other entries zero. Then D1 = 0, so
+P + tD ⪰0 for sufficiently small |t|.
+For m = 3 there is the identity ∥rA∥2 = Q + S2. Equation (26) gives the lower coefficient
+k(h2 + σ)/4 = k(1 + ch)/4. To attain it, take a regular simplex vi ∈Rm−1, a unit vector
+u ⊥v1, and replace only v1 by v1(t) = cos(t)v1 + sin(t)u. For the resulting A = α(G(t) −G∆)
+one computes exactly
+S = α(1 −cos t),
+Q =
+α2
+m −1
+ (1 −cos t)2 + m sin2 t
+,
+∥rA∥2 = 2S.
+Thus Q = αt2 + O(t4) and the desired quotient follows from (24). Positivity follows from
+h2 + σ > 0. For m = 2, feasibility is R12 = ρ ≥0 and the first derivative at ρ = 0 is ϕ(c)2,
+whereas ∥R −I2∥F =
+√
+2ρ.
+Corollary 9 (Optimal powers). For m ≥3, the power two of the Frobenius distance in the
+common-threshold bound and in decoding Gram stability cannot be replaced by any smaller
+positive power with a uniform positive constant near the simplex. For m ≥3, the power two
+of the coordinate distance in (17) is likewise optimal, including when signals are restricted to
+dimension m −1.
+Proof. Use the one-vertex rotation from the proof of Theorem 8. It gives ∥G(t) −G∆∥F = Θ(|t|)
+and S = O(t2). The normalized covariance R(t) remains near Im, where expectations of
+eµ maxi Xi are twice differentiable by Gaussian-density domination. Permutation symmetry
+makes their first derivative a constant times the sum of the off-diagonal perturbations. That
+sum has zero first derivative along this path. The decoding deficit is therefore O(t2), and the
+lower bound in Theorem 5 makes it Θ(t2). The same argument applies to the fixed-threshold
+deficit. Moreover ∥G −G∆∥F ≤2√m dP (X, ∆) for unit columns, while the displayed rotation
+itself gives dP = O(|t|). Hence dP = Θ(|t|). No estimate with a power below two can hold on
+this path.
+6
+Second variation in the configuration metric
+The Frobenius normalization in Theorem 8 is different from the metric of signal configurations.
+We record the distinction explicitly. The calculation is a reformulation of local second variation,
+not a claim of priority for local optimality or the existence of a second-variation calculation.
+We first complete the minimum-direction statement in the Gram metric. For a feasible
+sequence A = R −Im →0, let ζ ≥0 be the Schur slack defined in Lemma 11. For m ≥4
+the sharp quotient in Theorem 8 is attained exactly when ∥A1∥2 + ζ = o(∥A∥2
+F ). Thus its
+nonzero limiting directions are all symmetric zero-diagonal, zero-row-sum matrices, with no
+excess second-order Schur slack. For m = 3 the corresponding condition is ζ = o(∥A∥2
+F ): all
+nonzero critical tangent directions can attain the minimum. These conditions follow from the
+positive coefficients of ∥A1∥2 and ζ in the expansions below, which specify the second-order
+feasibility condition as well as the first-order direction.
+Fix a unit regular simplex V = [v1 · · · vm] in Rd, d ≥n = m−1, and set E = span{vi} and
+r = d −n. The configuration space is (Sd−1)m, with squared tangent norm ∥U∥2
+F = P
+i ∥ui∥2.
+At V the rotation directions are U = ΩV , ΩT = −Ω. Their orthogonal complement will be
+called the horizontal tangent space. Write
+H = {B = BT : diag B = 0, 1TB1 = 0}.
+For m ≥3 this space has the orthogonal decomposition
+H = H0 ⊕H1,
+H0 = {B ∈H : B1 = 0},
+9
+
+
+where H1 consists of the matrices Bij = ai + aj for i ̸= j, Bii = 0, and a ⊥1. The dimensions
+are m(m −3)/2 and m −1, respectively. For m = 3, H0 = {0}.
+Theorem 10 (Horizontal second variation and its minimum). Fix a finite c, and retain k, h, q
+from Theorem 8; put σ = 1 −qh > 0. For m ≥3 the horizontal tangent space is the orthogonal
+sum of the lifts of H0, the lifts of H1, and the normal-centroid space {z1T : z ∈E⊥}. For a
+twice differentiable sphere path with horizontal initial velocity U = U0 + U1 + U⊥,
+DR(t)(c) = t2
+
+kαh2∥U0∥2
+F + k
+2
+h2 + (m −2)σ
+∥U1∥2
+F + k(m −1)
+2
+∥U⊥∥2
+F
+
++ o(t2).
+(27)
+Thus the Hessian eigenvalues are twice the three displayed coefficients, with multiplicities
+m(m −3)/2, m −1, and r, omitting zero-dimensional spaces. On the full tangent space there
+is also the zero eigenvalue, of multiplicity n(n −1)/2 + nr, precisely the rotation directions.
+The exact local coefficient of DR(c) relative to dP (X, ∆)2 is the minimum of the coefficients
+in (27) whose spaces are present. All minimum directions are precisely the direct sum of the
+spaces with that minimum coefficient, modulo rotations and the residual simplex symmetries.
+In particular:
+• If m ≥4 and d = n, the minimizing space is H0 when h2 < mσ, H1 when h2 > mσ, and
+their direct sum when equality holds.
+• If m ≥4 and d ≥m, the minimum is kα min{h2, m/2}. The minimizing space is H0
+when h2 < m/2, the normal-centroid space when h2 > m/2, and their direct sum when
+equality holds. The H1 coefficient is strictly larger than this minimum for every finite c.
+• If m = 3 and d = 2, all nonzero horizontal directions minimize, with coefficient k(1+ch)/2.
+If m = 3 and d ≥3, compare this coefficient to k: the two minimizing spaces are selected
+by ch < 1, ch > 1, or their direct sum at ch = 1.
+For m = 2 and d ≥2, only the normal-centroid space remains, with coefficient ϕ(c)2/2 and
+horizontal multiplicity d −1. For m = 2, d = 1, the configuration space is locally discrete and
+there is no nonconstant local variation.
+Proof. Let X(t) be a sphere path with X(0) = V , X′(0) = U, and A(t) = α(X(t)TX(t) −G∆).
+Its initial Gram velocity is
+B = A′(0) = α(V TU + UTV ) ∈H.
+Since S(t) = α∥X(t)1∥2/2 exactly,
+S(t) = α
+2 t2∥U1∥2 + o(t2),
+B1 = αV TU1.
+Using V V T = α−1IE and separating the normal projection UN of U, equation (24) therefore
+gives
+DR(t)(c)
+kt2
+= h2
+4 ∥B∥2
+F + σ
+2 ∥B1∥2 + α
+2 ∥UN1∥2 + o(1).
+(28)
+In particular the first variation vanishes and the second variation does not depend on accelera-
+tion.
+Every B ∈H has the unique horizontal in-plane lift
+UB = 1
+2V B + 1
+2mV (B1)1T.
+10
+
+
+Direct multiplication proves its tangency, horizontality, and prescribed Gram velocity. Its
+squared norm is
+∥UB∥2
+F = 1
+4α∥B∥2
+F +
+1
+2mα∥B1∥2.
+(29)
+The remaining horizontal vectors are exactly z1T with z ∈E⊥: all normal matrices with zero
+column sum are rotation directions. The two in-plane spaces are orthogonal both in Frobenius
+Gram norm and in (29). On H0 the metric is ∥B∥2
+F /(4α). On H1,
+∥B1∥2 = m −2
+2
+∥B∥2
+F ,
+∥UB∥2
+F = 1
+2∥B∥2
+F .
+For U⊥= z1T one has ∥U⊥1∥2 = m∥U⊥∥2
+F . Substitution proves the spectrum. Every listed
+direction is attainable: use the independent spherical geodesics
+xi(t) = cos(t∥ui∥)vi + sin(t∥ui∥)
+∥ui∥
+ui,
+with the continuous interpretation when ui = 0. Furthermore dP (X(t), ∆)2 = t2∥U∥2
+F + o(t2)
+for horizontal U. The path-free argument below justifies the corresponding local infimum over
+arbitrary sequences, rather than only over differentiable paths.
+To verify the stated ordering when m ≥4 and the normal space is present, use h′ = σ and
+σ′ = q(h2 −σ). Put f = σ −h2/m. At a zero of f,
+f′ = h
+m2
+ m(m −1) −(m + 1)h2 > 0
+if h2 ≤m/2.
+The elementary Gaussian-tail asymptotics give σ/h2 →1 as c →−∞. Hence a first downward
+crossing is impossible and σ > h2/m whenever h2 ≤m/2. At h2 = m/2 this gives σ > 1/2.
+Subsequently σ cannot cross down through 1/2, because σ′ = q(h2−1/2) > 0 on that boundary.
+These two strict inequalities imply that the H1 coefficient exceeds the smaller of the other two
+coefficients. The other comparisons follow by subtraction; for m = 3, h2 + σ = 1 + ch.
+For m = 2, write A12 = ρ ≥0. Then DR(c) = ϕ(c)2ρ + O(ρ2) and the exact Procrustes
+formula is d2
+P = 4(1 −√1 −ρ) = 2ρ + O(ρ2).
+Lemma 11 (Feasible-sequence expansion). Let m ≥3 and let X be a unit-column configuration
+approaching the simplex orbit in Rd, with d ≥n. Put A = R−Im, e = 1/√m and C = PAP|e⊥.
+Define
+ζ = eTAe −(PAe)T(I + C)−1(PAe),
+B = A −
+2S
+m(m −1)(J −Im),
+b = B1.
+For i ̸= j, set (B1)ij = (bi + bj)/(m −2), set (B1)ii = 0 and put B0 = B −B1. Then ζ ≥0,
+Bj ∈Hj and
+E0 = ∥B0∥2
+F
+4α
+,
+E1 = ∥B1∥2
+F
+2
+,
+E⊥= ζ
+α
+satisfy
+d2
+P = E0 + E1 + E⊥+ o(d2
+P ),
+(30)
+DR(c) = kαh2E0 + k
+2[h2 + (m −2)σ]E1 + k(m −1)
+2
+E⊥+ o(d2
+P ).
+(31)
+Here ζ = 0 if and only if rank G = n. In particular E⊥= 0 when d = n. The remainders
+apply to arbitrary feasible sequences.
+11
+
+
+Proof. In the orthogonal splitting Re ⊕e⊥, the matrix P + A has blocks
+P + A =
+ 
+a
+vT
+v
+I + C
+!
+,
+a = 2S/m,
+v = PAe.
+The lower block is positive definite near A = 0. The Schur complement therefore gives positivity
+exactly when ζ ≥0 and rank n exactly when ζ = 0. Since ∥v∥2 = ∥A1∥2/m −4S2/m2,
+expansion of (I + C)−1 gives
+S = 1
+2∥A1∥2 + m
+2 ζ + O(∥A∥3
+F + S2).
+(32)
+The exact Procrustes formula from Theorem 5 is
+d2
+P = 2m −2
+α tr
+√
+I + C.
+Since tr C = −2S/m, its matrix square-root expansion gives
+d2
+P = 2S
+mα + ∥C∥2
+F
+4α
++ O(∥A∥3
+F ).
+The block decomposition also gives
+∥C∥2
+F = ∥A∥2
+F −2
+m∥A1∥2 + 4S2
+m2 .
+Substitution of (32) yields
+d2
+P = ζ
+α + ∥A∥2
+F
+4α
++ ∥A1∥2
+2mα + O(∥A∥3
+F + S2).
+(33)
+To control this remainder in the configuration metric, align V to a minimizer of dP . Then
+S = α∥(X −V )1∥2/2 ≤αmd2
+P /2 and ∥A∥F ≤2α√m dP .
+Thus the remainder is o(d2
+P )
+uniformly for fixed m. Moreover A −B = O(S), so replacing A by B in the quadratic terms
+changes them by o(d2
+P ). Orthogonality of B0, B1 and ∥B11∥2 = (m −2)∥B1∥2
+F /2 now prove
+(30). Substituting (32) into (24) gives
+DR(c)/k = h2
+4 ∥A∥2
+F + σ
+2 ∥A1∥2 + m
+2 ζ + o(d2
+P ).
+The same orthogonal decomposition proves (31).
+Because the three energies are nonnegative, a feasible sequence attains the minimum
+quotient exactly when its higher-coefficient energies sum to o(d2
+P ). This proves the arbitrary-
+sequence claim in Theorem 10. The rotation-and-permutation quotient itself need not be
+smooth. Its tangent cone is (H ⊕E⊥)/(Sm × O(r)) with the horizontal metric. For r > 0, the
+normal-centroid component becomes a radial half-line in the quotient, while its horizontal
+multiplicity remains r.
+The distinction between Gram and configuration metrics is explicit when d ≥m. For a
+unit normal z ⊥E, set xi(t) =
+√
+1 −t2 vi + tz. Then
+A = t2(J −Im),
+d2
+P = 2m(1 −
+p
+1 −t2) = mt2 + O(t4),
+
+X
+i
+xi(t)
+
+2
+= m2t2.
+The squared Gram defect has order t4, whereas the squared configuration distance has order
+t2. The separate centroid term controls this transverse path.
+12
+
+
+Corollary 12 (Decoding and mean-width second variations). Let µ = λ/√α and define
+ωλ(c) = µe−µ2/2
+m
+eµcϕ(c)2Φ(c)m−2,
+Aλ =
+Z
+R
+ωλh2,
+Bλ =
+Z
+R
+ωλσ,
+Cλ =
+Z
+R
+ωλ.
+All three constants are finite and positive. The quadratic coefficients of the decoding deficit on
+the three horizontal spaces are exactly
+Λ0 = αAλ,
+Λ1 = Aλ + (m −2)Bλ
+2
+,
+Λ⊥= m −1
+2
+Cλ.
+The local coefficient relative to d2
+P is their minimum over spaces present, and every minimum
+direction belongs to the direct sum of the spaces attaining that minimum. Theorems 13 and 14
+below determine the ordering of these decoding coefficients at every positive channel parameter.
+Relative to the Gram Frobenius norm, the exact decoding coefficient is
+lim inf
+G→G∆, G̸=G∆
+δλ(G)
+∥G −G∆∥2
+F
+=
+(
+α2(Aλ + Bλ)/4,
+m = 3,
+α2Aλ/4,
+m ≥4.
+These coefficients are attainable in dimension n. For m = 2,
+δλ(G)
+∥G −G∆∥F
+−→λϕ(λ)
+4
+√
+2 ,
+δλ(G)
+d2
+P
+−→λϕ(λ)
+4
+along nonconstant configurations in dimension at least two.
+For m ≥3, the same assertions for the unnormalized expected-maximum deficit hold
+after replacing ωλ(c) by ωw(c) = ϕ(c)2Φ(c)m−2/√α. For normalized spherical mean width,
+multiply all coefficients by 2/E∥g∥, g ∼N(0, Id). For m = 2 in dimension at least two, the
+expected-maximum deficit has local coefficients ϕ(0)/(2
+√
+2) relative to ∥G −G∆∥F and ϕ(0)/2
+relative to d2
+P .
+Proof. Use the integral identities already established in the manuscript.
+Near R = Im,
+covariance-density derivatives through order three are bounded by a polynomial times a
+fixed nondegenerate Gaussian density. Their products with eµ maxi xi, or with maxi xi, remain
+integrable. Thus differentiating the expectations twice is justified, and their Taylor coefficients
+equal the displayed integrals. Equivalently, differentiate the distribution-function identities
+with a common integrable domination: for negative c bound the fixed orthant integral by a
+Gaussian tail, and for positive c use that each derivative density has total integral zero and
+integrate over the complementary tail. This also proves convergence of the coefficient integrals.
+Integrating the path-free expansion in Lemma 11, or applying this density Taylor expansion
+directly, proves the coordinate coefficients and their minimum criterion.
+For the Gram
+coefficients, the expansion is
+δλ(G) = Aλ
+4 ∥A∥2
+F + Bλ
+2 ∥A1∥2 + mCλ
+2
+ζ + o(∥A∥2
+F )
+on sequences with S = O(∥A∥2
+F ). Sequences for which S/∥A∥2
+F →∞have divergent deficit
+quotient, by the positive centroid bound already proved. For m ≥4 the lower coefficient
+is attained by a nonzero row-zero Gram direction with zero Schur slack. For m = 3 use
+∥A1∥2 = ∥A∥2
+F /2 + S2 and a rank-two feasible path. Finally ∥A∥F = α∥G −G∆∥F . For
+m = 2 the exact success probability is Φ(λ√1 −ρ), ρ = A12; the stated constants follow by
+differentiation and the Procrustes formula above.
+13
+
+
+7
+Unique channel transitions and exact small-shell minimizers
+Corollary 12 expresses the directional coefficients through three explicit integrals. We now
+determine the ordering of these coefficients for every positive channel parameter and, when
+the normal coefficient is strictly least, identify the exact optimizer on every sufficiently small
+Procrustes shell. The radii obtained here are uniform in the ambient dimension, but are not
+evaluated numerically.
+7.1
+A tilted Gaussian family
+For m ≥3 and µ ∈R, set
+wm,µ(c) = eµcϕ(c)2Φ(c)m−2,
+Zm(µ) =
+Z
+R
+wm,µ(c) dc,
+(34)
+am(µ) = Zm(µ)−1
+Z
+R
+h(c)2wm,µ(c) dc,
+bm(µ) = Zm(µ)−1
+Z
+R
+σ(c)wm,µ(c) dc,
+Hm(µ) = Zm(µ)−1
+Z
+R
+h(c)wm,µ(c) dc.
+Here q = ϕ/Φ, h(c) = c + q(c) and σ = 1 −qh, as in Theorem 10. The normalizer is positive
+and finite. At µ = λ/√α,
+Aλ = Cλam(µ),
+Bλ = Cλbm(µ),
+Cλ = µe−µ2/2
+m
+Zm(µ) > 0.
+Consequently the normalized decoding curvatures are
+L0 = m −1
+m
+am(µ),
+L1 = am(µ) + (m −2)bm(µ)
+2
+,
+L⊥= m −1
+2
+.
+(35)
+The endpoint µ = 0 below is an endpoint of the normalized moment family; it is not division
+by Cλ at a zero-amplitude channel.
+Theorem 13 (Unique ordered channel crossings). Let m ≥4. There are unique positive
+parameters
+0 < µ1⊥(m) < µ0⊥(m) < µ01(m)
+satisfying, respectively,
+am + (m −2)bm = m −1,
+am = m/2,
+am = mbm.
+Each equation has no other root in [0, ∞). For λ > 0, with µ = λ/√α, the four open intervals
+have the orderings
+0 < µ < µ1⊥:
+Λ0 < Λ1 < Λ⊥,
+µ1⊥< µ < µ0⊥:
+Λ0 < Λ⊥< Λ1,
+µ0⊥< µ < µ01 :
+Λ⊥< Λ0 < Λ1,
+µ > µ01 :
+Λ⊥< Λ1 < Λ0.
+At the three endpoints the indicated pair agrees, and the remaining inequality is strict. In
+particular min{Λ0, Λ⊥} < Λ1 for every λ > 0. The thresholds in λ are √α times these
+thresholds.
+14
+
+
+Proof. Appendix A proves continuity and strict increase of am, bm, Hm and am/bm, as well as
+1
+2 < bm(µ) < 1
+(m ≥4, µ ≥0),
+2am + (m −1)bm = m + µHm.
+At zero the identity gives am < m/2 and, using bm < 1, am + (m −2)bm < m −1. Using
+bm > 1/2 also gives am < mbm. Moreover 2am(µ) > 1 + µHm(0), so am tends to infinity. The
+three continuous strictly increasing functions am + (m −2)bm, am, and am/bm therefore cross
+their targets once. At am = m/2, the bound bm > 1/2 puts the first crossing to the left and
+the third to the right. Finally L1 −L0 = (m −2)(mbm −am)/(2m) gives the displayed sign
+chart. The analytic ingredients, including the strict benchmark at m = 4, are proved in full in
+Appendix A.
+Theorem 14 (The triangular channel crossing). For m = 3 there is a unique µ∗(3) > 0 such
+that µ∗H3(µ∗) = 1, equivalently a3(µ∗) + b3(µ∗) = 2. For 0 < µ < µ∗one has Λ1 < Λ⊥; for
+µ > µ∗the reverse inequality holds. They agree only at µ∗. The space H0 is absent.
+Proof. The balance identity gives (a3 + b3)/2 = (3 + µH3)/4. On [0, ∞), the function µH3(µ)
+is continuous and strictly increasing from zero to infinity, since H3 is positive and increasing.
+This proves the assertion. Its integral ingredients are included in Appendix A.
+7.2
+The exact strict-normal shell optimum
+For m ≥3 and λ > 0, impose the strict-normal condition
+(
+µ > µ0⊥(m),
+m ≥4,
+µ > µ∗(3),
+m = 3,
+µ = λ/√α.
+(36)
+Equivalently am(µ) > m/2 for m ≥4, and a3(µ) + b3(µ) > 2 for m = 3. These are precisely
+the conditions that the normal coefficient be strictly smaller than every in-plane coefficient
+whose space is present.
+Theorem 15 (Exact optimizer on small Procrustes shells). Assume (36). There is ρ0 =
+ρ0(m, λ) > 0 such that, for every d ≥m, every unit regular simplex V = [v1 · · · vm] in Rd, and
+every 0 < ρ < ρ0, the minimum of δλ(X) = Pc(G∆; λ) −Pc(GX; λ) over all unit configurations
+with dP (X, V ) = ρ is attained precisely by the orthogonal images of
+Ni = κvi +
+p
+1 −κ2 z,
+κ = 1 −ρ2
+2m,
+∥z∥= 1,
+z ⊥span{vi}.
+(37)
+The normal z may be chosen once for all these radii. Different choices of z give the same
+orthogonal orbit. The minimal deficit is exactly
+δmin(ρ) = Pc(G∆; λ) −Pc
+ 
+G∆; λ
+ 
+1 −ρ2
+2m
+!!
+.
+(38)
+Proof. Appendix B supplies the complete geometric argument. The centered square root
+T = (αPGXP)1/2 satisfies, on a uniform neighborhood, dP (X, V )2 = 2m −2 tr(T)/α. On the
+shell τ = ρ2, write T = κP +D, where D is symmetric, centered and trace-free. The covariance
+reconstructed from (τ, D) defines a smooth extension of the decoding deficit. Permutation
+symmetry makes D = 0 stationary for every small τ. Its Hessian at (0, 0) is positive definite
+under (36); the precise coefficients and the square-root coordinate normalization are derived
+in Appendix B. Continuity then gives a strict quadratic lower bound near this ray. Every
+sufficiently small actual shell lies in that neighborhood. Thus D = 0 is its unique minimizing
+covariance. It is realized by (37), with exact distance ρ, and equality of Gram matrices is
+15
+
+
+equivalent to an orthogonal change of realization. A common Gaussian shift in the normal
+direction gives (38). The neighborhood estimates are made in the fixed m × m Gram space, so
+ρ0 is independent of d and V .
+Theorem 16 (Quartic expansion with a sixth-order remainder). Let p(λ) = Pc(G∆; λ). This
+function is real analytic. For fixed m ≥3 and λ > 0 satisfying (36), there are C = C(m, λ) > 0
+and r = r(m, λ) > 0 such that Theorem 15 holds for 0 < ρ < r and
+δmin(ρ) = λp′(λ)
+2m ρ2 −λ2p′′(λ)
+8m2
+ρ4 + Rm,λ(ρ),
+(39)
+|Rm,λ(ρ)| ≤C|ρ|6
+(|ρ| < r).
+(40)
+For negative ρ, the deficit in this display denotes the even extension given by the right side of
+(38). All its odd derivatives at zero vanish. In particular there is no cubic term. The leading
+coefficient satisfies
+λp′(λ)
+2m
+= Λ⊥= m −1
+2
+Cλ.
+(41)
+Proof. All real exponential moments of the Gaussian maximum in (2) are finite, so its moment
+generating function, and hence p, is real analytic. Taylor’s theorem through the quadratic
+term at λ has error O(|s −λ|3). Substituting s = λ −λρ2/(2m) gives (39)–(40); the sign of the
+quartic term comes from subtracting p(s) from p(λ). The exact expression is even in ρ, which
+gives the assertion about all odd derivatives. The normal covariance path has initial velocity
+(J −Im)/m in the squared radius, so its first deficit derivative is Cλ(m −1)/2. Differentiating
+the exact value gives the other side of (41). Detailed domination and remainder arguments
+are in Appendix B.
+The equal-curvature boundary is excluded, and no claim of a finite-radius in-plane optimizer
+is made. The positive radius and remainder constant are existential; they do not supply an
+effective numerical certificate. The channel crossings, the strict-normal optimization theorem
+and the quantified Taylor expansion are formalized over the actual Gaussian integrals and
+orthogonal Procrustes distance. Appendix C records the exact scope, theorem correspondence
+and reproducible Lean checks; the other global bounds and numerical experiments in this
+paper are not included in that formalization.
+8
+Finite-dimensional decoding diagnostics
+The local coefficients describe directional sensitivity near a simplex. We test that use separately
+from fixed-budget learning and from the numerical size of the global recovery constant. All
+comparisons use the channel in (2), uniform messages and unit-energy codewords.
+8.1
+Directional prediction
+We use (m, d) = (4, 3) and (16, 15), with λ ∈{1, 2, 3}. For each of the two in-plane sectors,
+three independently generated tangent directions have unit configuration Frobenius norm.
+Spherical geodesics preserve each codeword’s energy. At amplitudes t ∈{0.05, 0.10, 0.20}, the
+target is the central average [δλ(X(t)) + δλ(X(−t))]/2. The predictor is Λjt2 for a direction in
+sector j. Two scalar controls replace Λj by its dimension-weighted average or by the equally
+weighted average of the two sectors. These controls measure the effect of discarding direction
+information.
+The resulting 108 cells use eight independently randomized Sobol integrations, with 211
+points per replicate. Table 1 reports mean absolute prediction error over 18 cells per row. The
+scalar controls have the same displayed aggregate error on this balanced grid, although their
+16
+
+
+cellwise predictions differ. The directional predictor has smaller aggregate error in every row.
+This comparison does not establish a uniform cellwise ordering. For one four-signal cell at
+λ = 3 and t = 0.20, its error is 2.54 × 10−5, compared with 1.99 × 10−5 for the equal-sector
+control.
+Table 1: Mean absolute error for the central decoding-loss prediction. Each row aggregates
+both in-plane sectors, three directions and three channel parameters.
+m
+t
+Directional
+Dimension-weighted
+Equal-sector
+4
+0.05
+3.89 × 10−8
+3.25 × 10−6
+3.25 × 10−6
+4
+0.10
+6.68 × 10−7
+1.31 × 10−5
+1.31 × 10−5
+4
+0.20
+1.09 × 10−5
+5.43 × 10−5
+5.43 × 10−5
+16
+0.05
+4.47 × 10−8
+1.08 × 10−5
+1.08 × 10−5
+16
+0.10
+1.88 × 10−7
+4.31 × 10−5
+4.31 × 10−5
+16
+0.20
+1.01 × 10−6
+1.73 × 10−4
+1.73 × 10−4
+Central averaging removes odd-order terms and changes the prediction target. For a
+four-signal direction at λ = 2 and t = 0.20, the two losses are 0.0026961 and 0.0023393.
+Their average is 0.0025177, while the quadratic prediction is 0.0025202. A one-sided tolerance
+requires a separate remainder bound. All 108 losses exceed five estimated integration standard
+errors. That check resolves the loss, rather than the much smaller prediction residual. Eight
+prespecified higher-resolution checks have paired difference intervals containing zero. Their
+differences can still exceed the residuals in Table 1. At m = 16 and λ = 2, one checked
+direction changes by −1.48 × 10−7 at t = 0.05 and by −2.37 × 10−6 at t = 0.20. The table
+therefore supports a coarse directional diagnostic, without a certified residual, improvement
+factor or higher-order coefficient.
+8.2
+A fixed-budget learning comparison
+We adapt the communication autoencoder of O’Shea and Hoydis [13, Section III-A and Table
+IV] to the two dimensions above. The encoder uses a dense layer of width m with rectified
+linear activation, a linear layer of width d and per-codeword energy normalization. The
+decoder uses a dense layer of width m with rectified linear activation and a softmax output of
+width m. Training minimizes cross-entropy at Eb/N0 = 7 dB, where Eb/N0 = λ2/(2 log2 m).
+An additional arm uses the ordinary simplex Gram mean-square penalty with weight 0.1.
+This penalty follows from the known optimal geometry. The local decoding Hessian is not a
+cross-entropy Hessian or an Adam preconditioner.
+Five paired initializations per dimension use identical message and noise streams. Both
+arms use double precision and Adam with learning rate 0.001 for 1200 steps. The batch size
+is 256 for the first 600 steps and 1024 for the remaining 600 steps. Every run contributes
+its final checkpoint, with no seed or checkpoint selection. These 20 runs complete a fixed
+budget, without an optimization-convergence claim. The dimensions differ from the original
+autoencoder’s (16, 7) example.
+Table 2 evaluates each learned codebook with matched maximum-likelihood decoding.
+Block error rate is one minus decoding success probability. Each interval is a paired Student-t
+interval over five training initializations, evaluated pointwise without multiplicity correction.
+The eight mean differences favor the Gram penalty under this budget. Both arms retain a
+gap from the ideal simplex. The learned decoder is a different endpoint. In two of the five
+16-signal pairs, its estimated error increases at all four tested channel parameters. Cross-
+initialization paired intervals for that decoder were not evaluated, so the comparison establishes
+no end-to-end decoder improvement.
+17
+
+
+Table 2: Mean matched-decoder block error rate over five paired initializations. The interval
+is for the Gram-penalized arm minus the baseline.
+m
+λ
+Baseline
+Gram penalty
+Simplex
+Paired 95% interval
+4
+1
+0.421808
+0.403936
+0.399550
+[−0.032181, −0.003562]
+4
+2
+0.151550
+0.127305
+0.121023
+[−0.043128, −0.005362]
+4
+3
+0.034736
+0.022434
+0.019231
+[−0.021918, −0.002685]
+4
+4.47744
+0.001919
+0.000667
+0.000375
+[−0.002372, −0.000131]
+16
+1
+0.749215
+0.746866
+0.729857
+[−0.003146, −0.001552]
+16
+2
+0.434459
+0.428081
+0.383069
+[−0.008566, −0.004190]
+16
+3
+0.165418
+0.158813
+0.116521
+[−0.008638, −0.004573]
+16
+6.33206
+0.0003243
+0.0002622
+0.0000273
+[−0.0000924, −0.0000318]
+Evaluation retains independent direct Gaussian sampling with 100000 trials per codebook
+and channel parameter. The integration evaluation uses eight randomized Sobol replicates
+with 212 points each. Training variability and integration variability remain distinct sources of
+uncertainty. The computations used four CPU workers under Linux, Python 3.11.16, NumPy
+2.2.0, SciPy 1.17.1, PyTorch 2.8.0 and mpmath 1.3.0. No timing comparison is made.
+8.3
+Size of the global recovery constant
+The explicit constant in (15) is positive but very small. Table 3 evaluates a conservative
+partition envelope for its scalar maximization. Repeating the λ = 2 cases at 80 and 120 decimal
+digits gives consistent values. Such agreement is not outward-rounded interval certification.
+Table 3: Numerical values of the explicit global Procrustes constant cP .
+m
+λ = 1
+λ = 2
+λ = 3
+4
+2.1293 × 10−39
+1.2026 × 10−39
+1.4640 × 10−40
+16
+4.6152 × 10−233
+3.5491 × 10−233
+7.5743 × 10−234
+At λ = 2, certifying dP ≤0.1 through this inverse bound would require a reliable deficit
+upper bound of 1.20 × 10−41 for four signals, or 3.55 × 10−235 for 16 signals. These values are
+far below the precision of the empirical estimates. The explicit global bound supplies a rate,
+while practical geometric recovery requires sharper constants and an effective numerical lower
+bound for the local transition radius.
+9
+Conclusion and limitations
+The explicit comparison controls Gram defect and centroid displacement, including singular
+configurations. Together they give a global quadratic configuration bound at fixed m and
+positive λ. The local expansion identifies the feasible least-loss sectors in the configuration
+metric. Numerical diagnostics support its aggregate use for small central perturbations of four-
+and 16-signal constellations. The normalized Gaussian moment family has three unique ordered
+crossings for m ≥4 and a separate unique crossing for m = 3. In the strict-normal regime the
+finite-radius small-shell optimizer is exactly the common-normal deformation, up to orthogonal
+equivalence. Its deficit has a quartic expansion with a quantified O(ρ6) remainder and no
+odd Taylor terms. The radius and remainder constant depend only on m and λ, not on the
+embedding dimension. The global comparison, recovery and mean-width results, together with
+the transition, strict-normal optimization and remainder results, have been checked in Lean
+18
+
+
+over the actual Gaussian integrals. The global constants are included; numerical diagnostics
+and experimental claims remain outside the certificate.
+The global constants deteriorate rapidly with the number of signals. Their numerical values
+provide no practical geometry certificate in the tested cases. Practical recovery needs sharper
+constants, an effective numerical lower bound for the local transition radius, computable
+remainder bounds, and controlled integration error. The fixed-budget learning comparison
+concerns known Gram regularization and matched decoding. Its decoder and convergence
+limitations remain separate from the mathematical stability result. The rank penalty quantifies
+a gap from the unrestricted simplex value, without identifying the optimal rank-constrained
+constellation. The channel model assumes equal message probabilities and isotropic Gaussian
+noise. Fading, synchronization, channel estimation and constrained modulation alphabets
+require separate analysis.
+A
+Proof of the channel transitions
+This appendix proves the scalar and integral assertions underlying Theorems 13 and 14. Fix
+an integer m ≥3 and put α = (m −1)/m. For c ∈R, let
+ϕ(c) = (2π)−1/2e−c2/2,
+Φ(c) =
+Z c
+−∞
+ϕ(s) ds,
+q(c) = ϕ(c)
+Φ(c),
+h(c) = c + q(c),
+σ(c) = 1 −q(c)h(c).
+These functions are smooth because 0 < Φ(c) < 1. For µ ∈R, define
+wm,µ(c) = eµcϕ(c)2Φ(c)m−2,
+Zm(µ) =
+Z
+R
+wm,µ(c) dc,
+pm,µ(c) = wm,µ(c)
+Zm(µ) .
+(A.1)
+The density is positive and has Gaussian tails; in particular 0 < Zm(µ) < ∞. Write
+am(µ) = Em,µ[h2],
+bm(µ) = Em,µ[σ],
+Hm(µ) = Em,µ[h].
+We omit m when it is fixed. The channel parameter of Section 7 is λ > 0, and µ = λ/√α. The
+endpoint µ = 0 is used only for the continuous family of these normalized moments. Define
+L0(m, a) = (m −1)a
+m
+,
+L1(m, a, b) = a + (m −2)b
+2
+,
+L⊥(m) = m −1
+2
+.
+(A.2)
+Their relation to the unnormalized decoding curvatures is recorded in Subsection A.9.
+A.1
+Scalar differential identities
+Lemma A.1. q′ = −qh, h′ = σ, and σ′ = q(h2 −σ).
+Proof. Since ϕ′ = −cϕ,
+q′ = ϕ′Φ −ϕ2
+Φ2
+= −q
+
+c + ϕ
+Φ
+
+= −qh.
+Then h′ = 1 + q′ = 1 −qh = σ, and
+σ′ = −q′h −qh′ = qh · h −qσ = q(h2 −σ).
+19
+
+
+Lemma A.2. For every real c, one has h(c) > 0 and 0 < σ(c) < 1. In particular h and h2
+are strictly increasing, and q is strictly decreasing. Also
+0 < h(c) ≤max(c, 0) +
+q
+2/π,
+with equality on the right at c = 0.
+Proof. Let g be standard normal and let Y be the law of c + g conditioned on c + g > 0.
+The conditioning event has probability Φ(c) ∈(0, 1), and the conditional law is supported on
+(0, ∞) with a non-degenerate absolutely continuous distribution, so its mean is positive and its
+variance is positive and finite. Write Z = c+g, so Z has density ϕ(z −c) and P(Z > 0) = Φ(c).
+The substitution u = z −c and the identity (ϕ)′ = −uϕ give
+E[Z1Z>0] =
+Z ∞
+−c
+(u + c)ϕ(u) du = ϕ(c) + cΦ(c),
+because
+R ∞
+−c uϕ(u) du = ϕ(c). Dividing by Φ(c) produces E[Y ] = c + q(c) = h(c). For the
+second moment, u2ϕ(u) = ϕ(u) −(uϕ(u))′ and [uϕ(u)]∞
+−c = cϕ(c), so
+R ∞
+−c u2ϕ = Φ(c) −cϕ(c).
+Adding
+R ∞
+−c(2cu + c2)ϕ = 2cϕ(c) + c2Φ(c) yields
+E[Z21Z>0] = Φ(c)(1 + c2) + cϕ(c),
+hence E[Y 2] = 1 + c2 + cq(c) = 1 + ch(c). Therefore Var(Y ) = 1 + ch −h2. The identity
+h = c + q turns the right-hand side into 1 −qh = σ. Thus h > 0 and σ > 0. Since q > 0 and
+h > 0, one has qh > 0, so σ < 1.
+Now h′ = σ > 0, so h is strictly increasing, and (h2)′ = 2hσ > 0. Also q′ = −qh < 0, so q
+is strictly decreasing. Therefore h(c) < h(0) for c < 0 and q(c) ≤q(0) for c ≥0. The value
+h(0) = q(0) = ϕ(0)/Φ(0) =
+p
+2/π gives the stated bound.
+A.2
+The zero-locus derivatives
+Define the scalar functions
+F(c) = h(c)2 −σ(c),
+D(c) = σ + σ2 −(1 −σ)h2.
+Both are smooth. The chain rule and Lemma A.1 give, at every c,
+F ′ = 2hσ −qF.
+In particular, on the locus F = 0,
+F ′ = 2hσ > 0,
+because h > 0 and σ > 0.
+For D, use q = (1 −σ)/h, which is the rearrangement of σ = 1 −qh. Then
+σ′ = (1 −σ)(h2 −σ)
+h
+,
+(h2)′ = 2hσ.
+Writing s = σ(c) and x = h(c)2 at a fixed c,
+D′(c) = (1 −s)(x −s)
+h
+(1 + 2s + x) −2hs(1 −s).
+(A.3)
+This is an identity of smooth functions, obtained by the chain rule, not by differentiating a
+remainder.
+20
+
+
+Lemma A.3 (positivity at a zero). Let h, s ∈R satisfy 0 < h, 0 < s < 1, and
+s + s2 −(1 −s)h2 = 0.
+Then x = h2 equals s(1 + s)/(1 −s), and the right-hand side of (A.3) equals
+4s3
+h(1 −s) > 0.
+Thus, whenever D(c) = 0, one has D′(c) > 0.
+Proof. The constraint solves as x = s(1 + s)/(1 −s). Then
+x −s = 2s2
+1 −s,
+σ′ coefficient = 1 −s
+h
+· 2s2
+1 −s = 2s2
+h .
+Substitute x into 1 + 2s + x:
+1 + 2s + x = (1 + 2s)(1 −s) + s(1 + s)
+1 −s
+= 1 + 2s −s2
+1 −s
+.
+The expression (A.3) becomes
+2s2
+h · 1 + 2s −s2
+1 −s
+−2hs(1 −s)
+= 2s2(1 + 2s −s2) −2h2s(1 −s)2
+h(1 −s)
+.
+The relation h2 = s(1 + s)/(1 −s) gives h2(1 −s)2 = s(1 + s)(1 −s) = s(1 −s2), so the second
+numerator term is 2s2(1 −s2). The numerator collapses to
+2s2 1 + 2s −s2 −1 + s2 = 4s3.
+Hence the expression equals 4s3/(h(1 −s)). The hypotheses h > 0 and 0 < s < 1 make this
+positive.
+The same computation with no constraint shows the sign identity used later for the ratio:
+h2
+σ
+′
+= h D
+σ2 .
+Indeed, with x = h2 and s = σ,
+x
+s
+′
+= x′s −xs′
+s2
+,
+x′ = 2hs,
+s′ = (1 −s)(x −s)
+h
+,
+and clearing the positive factor h produces the numerator hD if and only if
+2s2 −(1 −s)(x −s) = s + s2 −(1 −s)x,
+which is an algebraic identity. Thus, wherever D > 0, the ratio h2/σ is strictly increasing.
+The sign of D is proved in Subsection A.4, after the tail expansion.
+21
+
+
+A.3
+Mills expansion with a bounded remainder
+For t > 0 the left-tail Mills ratio is
+M(t) = Φ(−t)
+ϕ(t)
+=
+Z ∞
+0
+exp(−tv −v2/2) dv.
+The substitution s = tv gives the Laplace representation,
+M(t) = t−1
+Z ∞
+0
+e−s exp
+ −s2/(2t2)
+ ds.
+At c = −t one has q(−t) = 1/M(t) and h(−t) = 1/M(t) −t.
+Lemma A.4 (explicit Taylor remainder). Let n ≥1 be an integer and let t > 0. Then
+M(t) =
+n−1
+X
+k=0
+(−1)k (2k)!
+k! 2k t−(2k+1) + θn(t),
+where
+|θn(t)| ≤
+(2n)!
+n! 2n t2n+1 .
+In particular, for n = 5,
+M(t) = t−1 −t−3 + 3t−5 −15t−7 + 105t−9 + θ5(t),
+with |θ5(t)| ≤945 t−11. The remainder is not differentiated anywhere below.
+Proof. For x > 0 the Lagrange remainder after the terms of degree 0, . . . , n −1 in e−x has
+absolute value at most xn/n!, because it equals (−1)ne−ξxn/n! for some ξ ∈(0, x) and e−ξ ≤1;
+at x = 0 the remainder is zero. Insert x = s2/(2t2), integrate against e−s on (0, ∞), and
+use
+R ∞
+0 e−ss2n ds = (2n)!. Dividing by t gives the bound on θn. The coefficient of t−(2k+1) is
+(−1)k(2k)!/(k!2k). For k ≤4 these coefficients are 1, −1, 3, −15, 105, and the n = 5 bound is
+10!/(120 · 32) = 945.
+Set u = t−2. For every t > 0,
+M(t) = t−1 1 −u + 3u2 −15u3 + 105u4 + r(t)
+,
+(A.4)
+where |r(t)| ≤945 u5. Write a0(u) = −u + 3u2 −15u3 + 105u4 and a(t) = a0(u) + r(t), so the
+factor in parentheses is 1 + a(t).
+Lemma A.5 (algebraic inversion on a far ray). There exist a finite T0 ≥1 and a finite positive
+constant Ch such that for every t ≥T0,
+h(−t) = t−1 −2t−3 + 10t−5 −74t−7 + ρh(t),
+|ρh(t)| ≤Ch t−9.
+(A.5)
+The coefficient −74 is required later. Stopping the expansion of h at O(t−7) does not determine
+the coefficient of t−6 in σ.
+Proof. As u →0, a0(u) →0 and r(t) →0. Choose a finite T0 ≥1 such that t ≥T0 implies
+both |a0(u)| ≤1/4 and |r(t)| ≤1/4. Then |a(t)| ≤1/2 and |a0(u)| ≤1/2, so 1 + a(t) ≥1/2
+and q(−t) = t/(1 + a(t)) is well-defined. In particular
+h(−t) = t
+
+1
+1 + a(t) −1
+
+.
+22
+
+
+On the compact interval 0 ≤u ≤T −2
+0
+one has |a0(u)| ≤1/2, so g(u) = (1+a0(u))−1 is smooth
+there. The recurrence below computes the Taylor coefficients of g at 0, because it is the Cauchy
+product for the reciprocal of the polynomial 1 + a0. Lagrange’s theorem in the variable u,
+through degree 4, then gives a remainder bounded by a constant times u5: the fifth derivative
+of g is continuous on that compact interval. The recurrence b0 = 1 and bn = −Pn
+j=1 ajbn−j
+for the coefficients of (1 + a0)−1, with a1 = −1, a2 = 3, a3 = −15, a4 = 105, gives
+b1 = 1,
+b2 = −(−1 + 3) = −2,
+b3 = −(2 + 3 −15) = 10,
+b4 = −(−10 −6 −15 + 105) = −74.
+Thus
+(1 + a0)−1 = 1 + u −2u2 + 10u3 −74u4 + O(u5),
+where the O(u5) on t ≥T0 is the Lagrange remainder of g. Both a0(u) and a(t) lie in [−1/2, 1/2],
+and so does the segment between them. On that segment the derivative of (1 + z)−1 has
+absolute value at most 4, so the mean value theorem gives
+(1 + a)−1 −(1 + a0)−1 ≤4|r(t)| ≤3780 u5.
+Thus the same expansion holds for (1+a)−1, with a possibly larger finite constant. Multiplying
+by t and subtracting t produces (A.5). No derivative of ρh is taken.
+Lemma A.6. There exist a finite T1 ≥T0 and finite positive constants Cσ, CF , CD such that
+for every t ≥T1,
+σ(−t) = t−2 −6t−4 + 50t−6 + ρσ(t),
+|ρσ| ≤Cσt−8,
+F(−t) = 2t−4 + ρF (t),
+|ρF | ≤CF t−6,
+D(−t) = 4t−6 + ρD(t),
+|ρD| ≤CDt−8.
+In particular there exists a finite T∗such that F(−t) > 0 and D(−t) > 0 for all t ≥T∗.
+Proof. Retain t ≥T0 and write H = th(−t), so Lemma A.5 says
+H = 1 −2u + 10u2 −74u3 + ˜ρ,
+|˜ρ| ≤Chu4.
+Set H1 = H −1 = −2u + 10u2 −74u3 + ˜ρ. From q = t + h = t(1 + uH) and σ = 1 −qh,
+qh = H + uH2,
+σ = 1 −H −uH2 = −H1 −u −2uH1 −uH2
+1.
+Expand, using only products of series and the bound on ˜ρ. The terms through u3 are
+−H1 = 2u −10u2 + 74u3 + O(u4),
+−2uH1 = 4u2 −20u3 + O(u4),
+H2
+1 = 4u2 −40u3 + O(u4),
+−uH2
+1 = −4u3 + O(u4).
+Adding and using −u gives
+σ = u −6u2 + 50u3 + O(u4).
+23
+
+
+The summand 74u3 comes from the coefficient −74 in h. It is the reason that coefficient must
+be kept. The symbol O(u4) denotes a remainder bounded by a constant times u4 for t ≥T0;
+the constant exists because it is a finite combination of Ch and the absolute values of the
+displayed coefficients. This is the expansion of σ.
+Next, h2 = uH2 = u(1 + 2H1 + H2
+1). Through order u3,
+h2 = u −4u2 + 24u3 + O(u4).
+The coefficient 24 uses h only through t−5. Subtracting the expansion of σ,
+F = h2 −σ = 2u2 + O(u3) = 2t−4 + O(t−6).
+The leading coefficient 2 requires h through its 10t−5 term, which fixes the coefficient −6t−4
+in σ. Choose the constant CF from this O(t−6).
+For D, square the expansion of σ:
+σ2 = u2 −12u3 + O(u4),
+so σ + σ2 = u −5u2 + 38u3 + O(u4). Also
+(1 −σ)h2 = u −5u2 + 34u3 + O(u4),
+where the coefficient 34 is 24 + 4 + 6, coming from h2, from (−u)(−4u2), and from (6u2)(u).
+Therefore
+D = 4u3 + O(u4) = 4t−6 + O(t−8).
+The leading coefficient 4 uses the coefficient 50 in σ, hence uses the coefficient −74 in h. The
+constant CD exists for the same reason as CF .
+Finally F(−t) ≥t−4(2 −CF t−2) for t ≥T1, and D(−t) ≥t−6(4 −CDt−2) for t ≥T1. Any
+T∗> max
+ T1,
+p
+CF ,
+q
+CD/4
+
+is a finite cutoff on which both functions are positive. The value of T∗is not required.
+A.4
+First-zero argument
+Lemma A.7. Let f ∈C1(R). Suppose there is a finite c0 such that f > 0 on (−∞, c0], and
+suppose f′(c) > 0 whenever f(c) = 0. Then f > 0 on R.
+Proof. If the set E = {c : f(c) ≤0} is empty, there is nothing to prove. Otherwise c∗= inf E
+is finite and c∗> c0. Continuity gives f(c∗) = 0, while f > 0 on (−∞, c∗). Differentiability
+gives
+f(c∗−ε) = −εf′(c∗) + o(ε).
+The hypothesis f′(c∗) > 0 makes the right-hand side negative for small ε > 0, contradicting
+positivity on the left. The remainder in this one-variable Taylor expansion is the definition of
+f′(c∗); it is not an asymptotic remainder of M(t).
+Theorem A.8. The functions F and D are positive on all of R. Consequently σ′ = qF > 0
+everywhere, so σ is strictly increasing, and (h2/σ)′ = hD/σ2 > 0 everywhere, so h2/σ is
+strictly increasing.
+24
+
+
+Proof. Lemma A.6 supplies a finite left endpoint beyond which F(−t) > 0 and D(−t) > 0.
+On every zero of F, Subsection A.2 gives F ′ = 2hσ > 0. On every zero of D, Lemma A.3 gives
+D′ > 0. Lemma A.7 applies to both functions. The sign statements for the derivatives of σ
+and h2/σ were proved in Subsections A.1 and A.2, conditionally on F > 0 and D > 0.
+Combined with Lemma A.2, the four scalar maps h, h2, σ, and h2/σ are strictly increasing
+on R.
+A.5
+Differentiation under the integral and strict covariance
+Let wm,µ(c) = eµcϕ(c)2Φ(c)m−2 and let Zm(µ) =
+R
+R wm,µ. For each fixed m the map µ 7→
+wm,µ(c) is smooth. For |µ| ≤M, the estimate
+|c|Nwm,µ(c) ≤eM2/2
+2π
+(1 + |c|)Ne−c2/2
+follows from M|c| ≤(c2 + M2)/2.
+It gives a common integrable bound for every fixed
+polynomial degree.
+Lemma A.9. For every integer m ≥3 and every real µ, the normalizing constant Zm is
+smooth and positive, and if f : R →R is continuous and |f(c)| ≤C(1+|c|)N, then µ 7→Em,µ[f]
+is smooth and
+d
+dµEm,µ[f(c)] = Covm,µ
+ f(c), c
+.
+If in addition f is strictly increasing, the covariance is strictly positive.
+Proof. The difference quotient of wm,µ in µ is wm,µ(c) · c · eθc/eµc for an intermediate θ, hence
+is dominated on a neighborhood of any fixed µ by an integrable function of the type above.
+Differentiation under the integral sign is therefore legitimate and gives Z′
+m(µ) =
+R c wm,µ. The
+same domination applies to f(c)wm,µ(c) and to cf(c)wm,µ(c), so the quotient defining the
+expectation may be differentiated by the quotient rule. The result is the covariance.
+For the strict sign, let X, Y be independent copies of the law pm,µ. Then
+Cov(f(X), X) = 1
+2E
+(f(X) −f(Y ))(X −Y )
+.
+The integrand is nonnegative. It is not almost surely zero: the density pm,µ is continuous
+and strictly positive on R, so P(X ̸= Y ) = 1, and a strictly increasing f then gives a strictly
+positive integrand on {X ̸= Y }. The expectations exist by the polynomial-growth hypothesis
+and the Gaussian tail of pm,µ.
+Lemma A.10. For each integer m ≥3, the maps am, bm, Hm, and am/bm are smooth and
+strictly increasing on R. In particular they are strictly increasing on [0, ∞), and Hm(µ) ≥
+Hm(0) > 0 for µ ≥0.
+Proof. The functions h2, σ, and h are continuous, strictly increasing, and of polynomial growth
+by Lemma A.2 and Theorem A.8. Lemma A.9 gives the result for am, bm, and Hm. Strict
+increase of Hm yields Hm(µ) ≥Hm(0). Positivity of h yields Hm(0) > 0.
+For the ratio, let Qm,µ be the probability with density proportional to σ(c)wm,µ(c). The
+factor σ(c) does not depend on µ, lies in (0, 1), and is continuous and positive, so Qm,µ is
+again a smooth exponential family in µ with the same dominating Gaussian tails. Moreover
+EQm,µ
+hh2
+σ
+i
+= Em,µ[h2]
+Em,µ[σ] = am(µ)
+bm(µ) .
+25
+
+
+Theorem A.8 says that h2/σ is strictly increasing. Lemma A.6 gives h(−t) ∼t−1 and σ(−t) ∼
+t−2, so h2/σ →1 as c →−∞. For c ≥0, the same theorem gives σ(c) ≥σ(0) = 1 −2/π > 0,
+and Lemma A.2 gives h(c) ≤c +
+p
+2/π. Hence
+0 < h(c)2
+σ(c) ≤(c +
+p
+2/π)2
+1 −2/π
+on [0, ∞). Continuity controls the remaining compact interval, so the ratio has polynomial
+growth on all of R. The weight of Qm,µ is σ(c)wm,µ(c). Since 0 < σ < 1, every integrable
+dominant used for wm,µ dominates the corresponding integrand for Qm,µ, and differentiation
+in µ still multiplies that weight by c. The covariance argument of Lemma A.9 therefore applies
+to Qm,µ and gives strict increase in µ.
+Lemma A.11 (monotonicity in the number of signals). Fix µ ∈R. For every integer m ≥3,
+bm+1(µ) > bm(µ).
+The same strict increase holds for am(µ), Hm(µ), and am(µ)/bm(µ).
+Proof. The un-normalized weight at m + 1 is the weight at m multiplied by Φ(c). The function
+Φ is strictly increasing, and σ is strictly increasing. For a positive probability P with full
+support on R and a bounded, positive, strictly increasing g, the reweighted expectation of a
+strictly increasing integrable f satisfies
+E[fg]
+E[g] −E[f] =
+1
+2E[g]E
+(f(X) −f(Y ))(g(X) −g(Y ))
+ > 0,
+by the same independent-copy argument as in Lemma A.9. Apply this to P = pm,µ, g = Φ,
+and f = σ. Taking f = h2 or f = h proves the corresponding assertions for am and Hm. The
+ratio a/b is the expectation of the strictly increasing function h2/σ under the σ-reweighted
+law, and increasing m multiplies that law by another strictly increasing copy of Φ. The
+polynomial-growth integrability is the same Gaussian estimate as before.
+A.6
+The four-signal benchmark
+Write I4 =
+R
+R ϕ4 and J =
+R
+R ϕ2Φ2.
+Lemma A.12. I4 = 1/(4
+√
+2 π3/2) and
+b4(0) = 1 −4I4
+3J .
+Proof. The identity ϕ(c)4 = (2π)−2e−2c2 and
+R e−2c2 dc =
+p
+π/2 give
+I4 = (2π)−2q
+π/2 = 1/(4
+√
+2 π3/2).
+For the expectation, σ = 1 −qh and qh ϕ2Φ2 = cϕ3Φ + ϕ4. Integrate cϕ3Φ by parts. From
+(ϕ3)′ = −3cϕ3 and the vanishing of ϕ3Φ at both ends,
+Z
+cϕ3Φ = 1
+3
+Z
+ϕ4.
+Hence
+R qh ϕ2Φ2 = (4/3)I4, and dividing by J produces the formula. This identity is exact;
+the arcsin evaluation of J is not used.
+26
+
+
+Lemma A.13. J ≥(3π + 2)/(24π3/2), and therefore
+b4(0) ≥1 −
+4
+√
+2
+3π + 2.
+Proof. Expand Φ2 = (Φ −1/2)2 + (Φ −1/2) + 1/4. The cross term ϕ2(Φ −1/2) is an odd
+integrable function, so its integral vanishes. Also
+R ϕ2 = 1/(2√π), hence
+J = 1
+4
+Z
+ϕ2 +
+Z
+ϕ2(Φ −1/2)2 =
+1
+8√π +
+Z
+ϕ2(Φ −1/2)2.
+Integration by parts, using (ϕ2)′ = −2cϕ2 and vanishing boundary terms, gives
+Z
+cϕ2(Φ −1/2) = 1
+2
+Z
+ϕ3.
+Cauchy–Schwarz in the form
+Z
+(cϕ) ·
+ ϕ(Φ −1/2)
+2
+≤
+Z
+c2ϕ2Z
+ϕ2(Φ −1/2)2
+therefore yields a lower bound on the second integral. The Gaussian integrals
+Z
+ϕ3 =
+1
+2π
+√
+3,
+Z
+c2ϕ2 =
+1
+4√π
+are elementary. The resulting quotient is 1/(12π3/2), and
+J ≥
+1
+8√π +
+1
+12π3/2 = 3π + 2
+24π3/2 .
+Cauchy–Schwarz is not asserted to be equality. Because I4 > 0, replacing J by this lower
+bound increases 4I4/(3J ). The arithmetic
+4I4
+3
+.3π + 2
+24π3/2 =
+4
+√
+2
+3π + 2
+is the comparison of Lemma A.12 with Lemma A.13’s bound.
+Lemma A.14. π > 28/9 and
+√
+2 < 17/12. Consequently 4
+√
+2/(3π+2) < 1/2, and b4(0) > 1/2.
+Proof. Let θ = arctan(1/5). Then 0 < θ < π/4, because 0 < 1/5 < 1 and tangent is increasing
+on (0, π/2). The double-angle formula applies and gives
+tan(2θ) =
+2 · (1/5)
+1 −(1/5)2 = 5
+12.
+Thus 2θ ∈(0, π/2). Since tan(2θ) < 1, one has 2θ ∈(0, π/4), and the formula applies again:
+tan(4θ) =
+2 · (5/12)
+1 −(5/12)2 = 120
+119,
+with 4θ ∈(0, π/2). Set η = 4θ and β = arctan(1/239) ∈(0, π/4). Then tan η = 120/119 >
+1/239 = tan β. Both angles lie in (0, π/2) and tangent is increasing there, so η > β and
+η −β ∈(0, π/2). Therefore
+tan(η −β) =
+120/119 −1/239
+1 + (120/119)(1/239) = 120 · 239 −119
+119 · 239 + 120
+= 28680 −119
+28441 + 120 = 28561
+28561 = 1.
+27
+
+
+The unique angle in (0, π/2) with tangent 1 is π/4, so
+π
+4 = 4 arctan 1
+5 −arctan 1
+239.
+For every real t, the identity (1 −t2)(1 + t2) + t4 = 1 rearranges to
+1
+1 + t2 = 1 −t2 +
+t4
+1 + t2 .
+Integrating from 0 to x > 0 gives
+arctan x = x −x3
+3 +
+Z x
+0
+t4
+1 + t2 dt > x −x3
+3 ,
+the integrand being positive. In particular
+arctan 1
+5 > 1
+5 −
+1
+3 · 53 = 74
+375.
+The same representation gives arctan y < y for y > 0, because 1/(1 + t2) < 1.
+Thus
+arctan(1/239) < 1/239. Combining these strict bounds with Machin’s formula,
+π
+4 > 4 · 74
+375 −
+1
+239 = 296
+375 −
+1
+239 = 70369
+89625.
+The cross multiplication 70369 · 9 −7 · 89625 = 5946 > 0 gives 70369/89625 > 7/9, so π > 28/9.
+Both arctangent inequalities are strict.
+Separately, (17/12)2 = 289/144 > 288/144 = 2, so
+√
+2 < 17/12. Hence
+8
+√
+2 < 8 · 17
+12 = 34
+3 ,
+3π + 2 > 3 · 28
+9 + 2 = 34
+3 .
+The second inequality is strict, so 8
+√
+2 < 3π + 2 and 4
+√
+2/(3π + 2) < 1/2. Lemma A.13 gives
+b4(0) ≥1 −4
+√
+2/(3π + 2) > 1/2.
+Corollary A.15. For every integer m ≥4 and every µ ≥0,
+1
+2 < bm(µ) < 1.
+Proof. The upper bound holds for every m and µ because 0 < σ < 1 pointwise and pm,µ has
+full support, so the expectation of σ cannot attain 1. The lower bound holds at (m, µ) = (4, 0)
+by Lemma A.14. Lemmas A.10 and A.11 move the value strictly upward in each variable
+separately, and the inequality is already strict at the minimal corner.
+A.7
+The balance identity and the initial values
+Lemma A.16. For every integer m ≥3 and every real µ,
+2am(µ) + (m −1)bm(µ) = m + µHm(µ).
+(A.6)
+Proof. The logarithmic derivative of the un-normalized weight is
+µ −2c + (m −2)q = µ −2h + mq,
+28
+
+
+which is the weight’s formula p′/p = µ −2h + mq. Fix R > 0. Then
+Z R
+−R
+(hpm,µ)′ =
+hpm,µ
+R
+−R.
+The bound of Lemma A.2 and the Gaussian tail of pm,µ force the boundary term to 0 as
+R →∞. Expanding the derivative,
+(hp)′ = σp + h(µ −2h + mq)p.
+The resulting integrand is absolutely dominated by an integrable multiple of (1 + c2)pm,µ(c),
+because 0 < σ < 1, qh = 1 −σ, and h has linear growth. Passing to the limit,
+b + µH −2a + mE[qh] = 0.
+The identity E[qh] = 1 −b rearranges into (A.6).
+Lemma A.17. Fix an integer m ≥4. At µ = 0,
+a(0) < m
+2 ,
+a(0)
+b(0) < m,
+a(0) + (m −2)b(0) < m −1.
+All three inequalities are strict.
+Proof. The identity at µ = 0 is 2a + (m −1)b = m, so a = [m −(m −1)b]/2. Since b > 0, one
+has a < m/2. Next
+a
+b = m
+2b −m −1
+2
+.
+The inequality a/b < m rearranges to b > m/(3m −1). For m > 1, m/(3m −1) < 1/2, and
+Corollary A.15 supplies b > 1/2. Finally
+a + (m −2)b = m + (m −3)b
+2
+.
+Comparing with m −1 rearranges to (m −3)b < m −2. For m = 4 the right side is 2 and the
+left side is b < 1. For m > 4, (m −2)/(m −3) = 1 + 1/(m −3) > 1 > b. Every comparison is
+strict.
+A.8
+Growth and the ordered crossings
+Lemma A.18. For each integer m ≥3 and every µ ≥0,
+2am(µ) > 1 + µHm(0).
+In particular am(µ) →+∞as µ →+∞. For m = 3, µH3(µ) ≥µH3(0), so µH3(µ) →+∞.
+Proof. By (A.6) and bm(µ) < 1,
+2am(µ) = m + µHm(µ) −(m −1)bm(µ)
+> m + µHm(µ) −(m −1) = 1 + µHm(µ).
+Lemma A.10 gives Hm(µ) ≥Hm(0) > 0, and the displayed bound follows. The right-hand side
+tends to infinity. For m = 3 the same lemma gives the linear lower bound µH3(0).
+29
+
+
+Lemma A.19 (comparison of the three coefficients). Let m ≥4, a > 0, and 1/2 < b < 1.
+Then
+a = m
+2 =⇒L0(m, a) = L⊥(m) and L⊥(m) < L1(m, a, b),
+a = mb =⇒L0(m, a) = L1(m, a, b) and L⊥(m) < L0(m, a),
+min
+ L0(m, a), L⊥(m)
+ < L1(m, a, b).
+Proof. If a = m/2, then L0 = (m −1)/2 = L⊥and
+L1 −L⊥= m −2
+2
+
+b −1
+2
+
+> 0.
+If a = mb, then L1 = (mb + (m −2)b)/2 = (m −1)b = L0, while
+L⊥−L0 = (m −1)
+1
+2 −b
+
+< 0.
+For the third claim, the same algebra gives the unrestricted identity
+L1 −L0 = m −2
+2m (mb −a)
+(m > 2).
+Suppose toward a contradiction that L1 ≤L0 and L1 ≤L⊥. The first forces a ≥mb. The
+second forces a + (m −2)b ≤m −1. Adding these,
+a + (m −2)b ≥mb + (m −2)b = 2(m −1)b > (m −1),
+which contradicts the second inequality. The last step is strict because b > 1/2.
+Theorem A.20 (unique positive crossings for m ≥4). Fix an integer m ≥4. There exist
+unique real numbers
+0 < µ1⊥(m) < µ0⊥(m) < µ01(m) < ∞
+such that
+a(µ1⊥) + (m −2)b(µ1⊥) = m −1,
+a(µ0⊥) = m/2,
+a(µ01) = m b(µ01),
+and each equation has no other root in [0, ∞). Equivalently, the three normalized curvatures
+satisfy
+L1 = L⊥,
+L0 = L⊥,
+L0 = L1
+at these three parameters, in that order.
+Proof. The maps
+f1⊥= a + (m −2)b,
+f0⊥= a,
+f01 = a/b
+are continuous and strictly increasing on [0, ∞) by Lemma A.10. Lemma A.17 says that their
+values at 0 are strictly less than m −1, m/2, and m respectively. Lemma A.18 and the bound
+1/2 < b < 1 give
+f0⊥(µ) →∞,
+f01(µ) ≥a(µ) →∞,
+f1⊥(µ) ≥a(µ) →∞.
+The intermediate-value theorem supplies at least one positive root of each equation, and strict
+increase supplies uniqueness.
+30
+
+
+Let µ0⊥be the unique root of a = m/2. Corollary A.15 gives b(µ0⊥) > 1/2, so a(µ0⊥) <
+mb(µ0⊥). Thus f01(µ0⊥) < m, and the unique root µ01 of f01 = m lies strictly to the right of
+µ0⊥. At the same point,
+a + (m −2)b = m
+2 + (m −2)b > m
+2 + m −2
+2
+= m −1,
+so f1⊥(µ0⊥) > m −1. The unique root µ1⊥lies strictly to the left of µ0⊥.
+A.9
+Ordering of the decoding curvatures
+For λ > 0 set µ = λ/√α and
+ωλ(c) = µe−µ2/2
+m
+eµcϕ(c)2Φ(c)m−2.
+Let Aλ =
+R ωλh2, Bλ =
+R ωλσ, and Cλ =
+R ωλ. The change of scale between ωλ dc and pm,µ dc
+is a positive constant, so Cλ > 0 and
+Aλ
+Cλ
+= a(µ),
+Bλ
+Cλ
+= b(µ).
+Define
+Λ0 = αAλ,
+Λ1 = Aλ + (m −2)Bλ
+2
+,
+Λ⊥= m −1
+2
+Cλ.
+Dividing by Cλ produces exactly L0, L1, and L⊥. Equality and strict inequality of the Λ’s are
+therefore the same as those of the L’s.
+Theorem A.21 (ordering). Fix an integer m ≥4 and λ > 0, and let µ = λ/√α. On the four
+open intervals determined by Theorem A.20,
+0 < µ < µ1⊥=⇒Λ0 < Λ1 < Λ⊥,
+µ1⊥< µ < µ0⊥=⇒Λ0 < Λ⊥< Λ1,
+µ0⊥< µ < µ01 =⇒Λ⊥< Λ0 < Λ1,
+µ > µ01 =⇒Λ⊥< Λ1 < Λ0.
+At µ1⊥one has Λ1 = Λ⊥and Λ0 strictly smaller than both. At µ0⊥one has Λ0 = Λ⊥and
+Λ1 strictly larger than both. At µ01 one has Λ0 = Λ1 and Λ⊥strictly smaller than both. The
+corresponding thresholds in the variable λ are √α times the thresholds in µ.
+Proof. Strict increase of a + (m −2)b, of a, and of a/b converts the three roots into sign
+changes of Λ1 −Λ⊥, of Λ0 −Λ⊥, and of Λ0 −Λ1, respectively. The order of the roots forbids
+every other permutation. Lemma A.19 is the endpoint comparison: when a = m/2, b > 1/2
+forces Λ⊥< Λ1, and when a = mb, the same bound forces Λ⊥< Λ0. The relation λ = µ√α is
+the definition µ = λ/√α.
+Corollary A.22 (the strict normal region). For m ≥4 and λ > 0, the normal curvature is
+strictly smaller than both in-plane curvatures if and only if λ/√α > µ0⊥(m). Moreover,
+min(Λ0, Λ⊥) < Λ1
+for every positive channel parameter.
+Proof. The equivalence follows from Theorem A.21, including its endpoint comparisons. The
+strict inequality is Lemma A.19 multiplied by Cλ > 0.
+31
+
+
+A.10
+The triangular case
+For m = 3 the summand H0 is absent. The identity (A.6) becomes 2a + 2b = 3 + µH3(µ), so
+Λ1
+Cλ
+= a + b
+2
+= 3 + µH3(µ)
+4
+,
+Λ⊥
+Cλ
+= 1.
+Thus Λ1 < Λ⊥, Λ1 = Λ⊥, or Λ1 > Λ⊥according as µH3(µ) < 1, = 1, or > 1.
+Theorem A.23. The function µ 7→µH3(µ) is continuous and strictly increasing from [0, ∞)
+onto [0, ∞). It has a unique positive root µ∗(3) of the equation µH3(µ) = 1. For 0 < µ < µ∗
+the in-plane coefficient is strictly smaller; for µ > µ∗the normal coefficient is strictly smaller;
+at µ∗they agree.
+Proof. Lemma A.9 gives H′
+3(µ) = Cov(h, c) > 0. Hence
+d
+dµ
+ µH3(µ)
+ = H3(µ) + µH′
+3(µ) > 0
+for every µ ≥0, the value H3(µ) being positive. The function vanishes at 0. Lemma A.18
+sends it to infinity. The intermediate-value theorem and strict increase give a unique positive
+root, and the sign chart is the sentence above.
+B
+Proof of the exact normal-shell theorem
+We prove Theorems 15 and 16.
+Throughout, m ≥3, n = m −1, α = n/m, J = 11T,
+P = Im −J/m, and G∆= P/α. The reference configuration V = [v1 · · · vm] satisfies
+V TV = G∆, and d ≥m. Fix λ > 0 and put µ = λ/√α. The scalar results in Appendix A give
+the strict normal regime: am(µ) > m/2 if m ≥4, and a3(µ) + b3(µ) > 2 if m = 3.
+We use coordinates on the positive square root of the centered Gram matrix.
+They
+give a polynomial parametrization of the extended shell objective; no differentiable choice
+of eigenvectors or implicit shell equation is needed.
+The objective is extended to a full
+neighborhood in a fixed finite-dimensional matrix space before it is restricted to realizable
+configurations.
+B.1
+A smooth extension of the actual decoding deficit
+For a centered Gaussian vector ξ with covariance G, the success probability of a unit configu-
+ration is
+Pc(G; λ) = e−λ2/2
+m
+Eeλ maxi ξi.
+(B.1)
+This formula is valid when G is singular. If Z is a standard Gaussian in the signal space, the
+score vector (⟨xi, Z⟩)m
+i=1 has exactly covariance G.
+Let b be an independent standard real Gaussian. The vector √α ξ +m−1/2b1 has covariance
+R = αG + J/m. Since µ√α = λ,
+EReµ maxi Xi = eµ2/(2m)EGeλ maxi ξi,
+e−µ2/2eµ2/(2m) = e−λ2/2.
+Consequently the actual deficit is the restriction of
+Fλ(R) = e−µ2/2
+m
+
+EImeµ maxi Zi −EReµ maxi Xi
+
+:
+Fλ(αG + J/m) = Pc(G∆; λ) −Pc(G; λ).
+(B.2)
+32
+
+
+The expectation defining this extension makes sense for every positive definite symmetric R
+near Im, including matrices for which (R −J/m)/α is not positive semidefinite.
+Here is the regularity justification used below. On a closed covariance neighborhood
+satisfying
+1
+2Im ⪯R ⪯2Im,
+(B.3)
+write
+pR(x) = (2π)−m/2(det R)−1/2 exp(−xTR−1x/2).
+A derivative of order k in the covariance entries is Pk,R(x)pR(x), where Pk,R is a polynomial
+of degree at most 2k whose coefficients are uniformly bounded on this neighborhood. Hence
+|∂β
+RpR(x)| ≤Kβ(1 + ∥x∥2|β|)e−∥x∥2/4.
+(B.4)
+Multiplication by eµ maxi xi ≤eµ∥x∥preserves integrability. Dominated differentiation therefore
+proves that Fλ is smooth on a smaller neighborhood. In particular it is C2 jointly in all its
+covariance parameters, and its third derivatives are locally bounded. All these neighborhoods
+and bounds depend only on m and λ.
+For clarity, both bounds in (B.3) are used: the upper bound supplies the uniform Gaussian
+decay in (B.4). The argument estimates derivatives of the density, rather than asserting a
+polynomial bound, uniform in x, on a density ratio.
+B.2
+The first two covariance variations
+Let A = AT have zero diagonal, and set
+S(A) =
+X
+i<j
+Aij = 1
+21TA1,
+N(A) = ∥A∥2
+F ,
+R1(A) = ∥A1∥2 .
+We recall the scalar notation
+q(c) = ϕ(c)
+Φ(c),
+h(c) = c + q(c),
+σ(c) = 1 −q(c)h(c),
+k(c) = ϕ(c)2Φ(c)m−2,
+and define the positive weight and its moments by
+ωλ(c) = µe−µ2/2
+m
+eµck(c),
+Cλ =
+Z
+R
+ωλ(c) dc,
+(B.5)
+Aλ =
+Z
+R
+ωλ(c)h(c)2 dc,
+Bλ =
+Z
+R
+ωλ(c)σ(c) dc.
+Thus Cλ > 0, Aλ/Cλ = am(µ), and Bλ/Cλ = bm(µ).
+Lemma B.1 (Full covariance expansion). For symmetric zero-diagonal A near zero,
+Fλ(Im + A) = CλS(A) + Aλ
+4 N(A) −Cλ −Bλ
+2
+R1(A)
++ S(A)2
+2
+Z
+R
+ωλ(c)q(c)2 dc + O(∥A∥3
+F ).
+(B.6)
+The remainder is uniform on a sufficiently small matrix neighborhood.
+Proof. At the identity, the density Taylor coefficients are
+pIm+A(x) = pIm(x)
+1 + 1
+2xTAx + 1
+4N(A) + 1
+8(xTAx)2 −1
+2xTA2x
+ + RA(x).
+(B.7)
+33
+
+
+This follows by expanding (Im + A)−1 and −1
+2 log det(Im + A), using tr A = 0. The density
+differentiation argument above gives, after shrinking the neighborhood,
+|RA(x)| ≤K ∥A∥3
+F (1 + ∥x∥6)e−∥x∥2/4.
+It thus also gives the integrated third-order remainder.
+We identify the coefficients by integrating over (−∞, c]m. The three one-dimensional
+truncated moments needed are
+Z c
+−∞
+ϕ = Φ(c),
+Z c
+−∞
+xϕ(x) dx = −ϕ(c),
+Z c
+−∞
+x2ϕ(x) dx = Φ(c) −cϕ(c).
+The linear coefficient of Aij, i < j, is k(c). For the quadratic coefficients, an edge square
+A2
+ij contributes c2k(c)/2; a product of distinct edges with one common vertex contributes
+−cq(c)k(c); and a product of disjoint edges contributes q(c)2k(c). These assertions follow
+directly from (B.7): the corresponding polynomials are
+1
+2(1 −x2
+i )(1 −x2
+j),
+(x2
+i −1)xjxℓ,
+xixjxℓxs,
+respectively. Each product of distinct edges is counted once.
+Put Qe = P
+i<j A2
+ij = N(A)/2, and denote the sums of adjacent and disjoint edge products
+by Ue and We. Then
+R1(A) = 2Qe + 2Ue,
+S(A)2 = Qe + 2Ue + 2We.
+Substitution gives the fixed-c expansion
+FIm+A(c) −Φ(c)m
+k(c)
+= S(A) + h(c)2
+4
+N(A) −q(c)h(c)
+2
+R1(A) + q(c)2
+2
+S(A)2 + Oc(∥A∥3
+F ). (B.8)
+We justify the subsequent integration, including its sign. Expressing the expectations
+through the distribution of the maximum gives
+EImeµ maxi Zi −EReµ maxi Xi = µ
+Z
+R
+eµc FR(c) −Φ(c)m dc.
+(B.9)
+One may obtain it by integration by parts, or by applying Fubini to the difference of the two
+laws, which has total mass zero. The same argument applies to a positive-order covariance
+derivative of the density: its integral over all of Rm is zero. For c ≥0, its integral over
+(−∞, c]m is minus its integral over the complementary set, which is contained in {∥x∥≥c}.
+For c ≤0, the orthant itself lies in {∥x∥≥|c|}. Formula (B.4) therefore bounds each first or
+second orthant derivative by K(1 + |c|N)e−c2/8. This remains integrable after multiplication
+by eµc. It validates Fubini and differentiation of (B.9) through order two.
+Multiply the explicitly displayed normalized coefficients in (B.8) by the full weight ωλ(c),
+which includes k(c), and integrate. Since qh = 1 −σ, this yields (B.6). The bound q(c) ≤
+|c| +
+p
+2/π ensures finiteness of the q2 coefficient. The integrated remainder comes from the
+smooth density argument, not from integrating an unspecified fixed-c remainder.
+B.3
+Compression and its exact inverse
+Identify operators on H = 1⊥with symmetric m × m matrices C satisfying PC = CP = C.
+Define the linear map
+U(C)ij = Cij −1
+2(Cii + Cjj).
+(B.10)
+It has zero diagonal, and direct multiplication gives
+PU(C)P = C,
+U(PAP) = A
+if A = AT, diag A = 0.
+(B.11)
+34
+
+
+For the second identity, write a = A1 and s = 1TA1. The entries of PAP are Aij −(ai +
+aj)/m + s/m2, and its diagonal entries are −2ai/m + s/m2; (B.10) cancels the extra terms.
+Since a centered matrix has zero total entry sum,
+S(U(C)) = −m
+2 tr C.
+(B.12)
+The shape space used in this appendix is
+Dm = {D = DT : PD = DP = D, tr D = 0}.
+If D ∈Dm and B = U(D), then S(B) = 0 and D = PBP. Writing b = B1, we have 1Tb = 0
+and
+D = B −1
+m(b1T + 1bT).
+Expansion of the squared Frobenius norm gives the useful exact identity
+tr(D2) = ∥D∥2
+F = N(B) −2
+mR1(B).
+(B.13)
+B.4
+The actual Procrustes infimum and a uniform neighborhood
+For unit configurations define
+dP (X, V )2 =
+inf
+U∈O(d) ∥X −UV ∥2
+F .
+This is the actual configuration distance. The following calculation both evaluates the infimum
+near a simplex and exhibits an attaining orthogonal map.
+Let G = XTX, and set
+T = (αPGP)1/2,
+K = T + (Im −P).
+(B.14)
+The square root is positive semidefinite, PT = TP = T, and T 2 = αPGP. Assume for the
+moment that K is invertible. Put
+W = XPK−1.
+The regular Gram identity implies V 1 = 0. The matrix K preserves H and its orthogonal
+complement; on these spaces it acts as T and the identity, respectively. Consequently
+W TW = K−1PGPK−1 = α−1P = G∆,
+WP = W,
+XP = WT.
+Configurations with the same Gram matrix are related by an orthogonal map of the ambient
+space. Indeed, sending the columns of one to those of the other defines an isometry between
+their spans: the Gram equality makes the map well-defined and preserves every inner product.
+An orthogonal extension over the complementary subspaces gives an element of O(d). Thus
+W = U∗V for some U∗∈O(d).
+For any other Y = UV , the matrices Y and W are centered and have Gram matrix P/α.
+Positivity of T gives
+0 ≤tr
+
+T(W −Y )T(W −Y )
+
+= 2
+α tr T −2 tr(TW TY ).
+Because XP = WT and Y P = Y , the last trace equals ⟨X, Y ⟩F . It is at most tr T/α, with
+equality at Y = W. Since ∥X∥2
+F = ∥V ∥2
+F = m, we obtain
+dP (X, V )2 = 2m −2
+α tr T.
+(B.15)
+35
+
+
+In particular the infimum is attained in the situation used here.
+We now verify uniformly when this situation applies. If ∥X −UV ∥2
+F = e, then, for each
+pair of indices,
+|Gij −(G∆)ij| ≤∥xi −Uvi∥+ ∥xj −Uvj∥≤2√e.
+Taking a sequence approaching the infimum gives
+∥G −G∆∥op ≤∥G −G∆∥F ≤2m dP (X, V ).
+(B.16)
+The bound is independent of d and V .
+On the cone of positive semidefinite m × m matrices, the maps
+G 7−→(αPGP)1/2 + (Im −P),
+G 7−→αG + J/m
+are continuous and take the value Im at G∆. Invertibility is an open condition. The second
+map is positive semidefinite on this cone, so invertibility makes it positive definite. There is
+therefore an εm > 0, in this fixed matrix space, such that both required conclusions hold when
+∥G −G∆∥op < εm. Together with (B.16), this supplies a positive Procrustes neighborhood
+depending only on m. We have used continuity of the square root on the positive cone,
+including at the singular matrix P, but have not differentiated that square root.
+B.5
+Polynomial square-root coordinates and enclosure
+Put τ = ρ2 and
+κ = κ(τ) = 1 −τ
+2m.
+If X is on a sufficiently small actual shell dP (X, V )2 = τ, (B.15) gives tr T = (m −1)κ. Hence
+D = T −κP ∈Dm.
+(B.17)
+Conversely, on the fixed vector space Dm define the polynomial maps
+Cτ(D) = (κP + D)2 −P,
+Rτ(D) = Im + U(Cτ(D)),
+fτ(D) = Fλ(Rτ(D)).
+(B.18)
+For (τ, D) near (0, 0), Rτ(D) is positive definite and fτ(D) is jointly C2. This definition
+permits all small D ∈Dm, irrespective of whether the corresponding Gram matrix is realizable.
+Every actual sufficiently small shell is represented by this chart. Indeed, for its D in (B.17),
+Cτ(D) = T 2 −P = P(αG −P)P.
+The matrix αG−P has zero diagonal. The inverse identity (B.11) gives the exact reconstruction
+Rτ(D) = αG + J/m.
+(B.19)
+There is also a quantitative enclosure that uses no modulus of continuity for the square root.
+Since the columns of X are unit vectors,
+tr(T 2) = α tr(PGP) = α
+ 
+m −∥P
+i xi∥2
+m
+!
+≤m −1,
+∥D∥2
+F = tr(T 2) −κ2(m −1) ≤(m −1)(1 −κ2) ≤τ.
+Thus
+∥D∥op ≤∥D∥F ≤ρ
+(B.20)
+for every configuration on every sufficiently small positive shell. The entire feasible shell, not
+just a chosen smooth path through the simplex, is covered.
+36
+
+
+B.6
+Stationarity and the exact shell Hessian
+Conjugation by a permutation matrix preserves P, Dm, the map U, and the chart (B.18). If
+X ∼N(0, R) and Q is a permutation matrix, then QX ∼N(0, QRQT), while maxi(QX)i =
+maxi Xi. Together with the equivariance of the chart, this proves that fτ is permutation
+invariant. For each sufficiently small fixed τ, its differential at zero is an invariant linear
+functional on Dm. The average of any D ∈Dm under all permutations is a matrix aIm + bJ.
+Centeredness gives a + mb = 0, while zero trace gives a + b = 0. Since m > 1, both coefficients
+vanish. Applying the invariant functional to this average proves
+dfτ(0)[D] = 0
+(D ∈Dm).
+(B.21)
+We compute the Hessian at (τ, D) = (0, 0). Fix D ∈Dm and write B = U(D) and
+L = U(D2). The polynomial chart gives exactly
+R0(tD) = Im + 2tB + t2L.
+Here S(B) = 0 and, by (B.12), S(L) = −m tr(D2)/2. Substitution in (B.6) yields
+f0(tD) = t2Q(D) + O(t3),
+Q(D) = −mCλ
+2
+tr(D2)+ AλN(B) −2(Cλ −Bλ)R1(B). (B.22)
+The S(A)2 term of the full expansion is of order t4 here. It is needed in the general covariance
+expansion but contributes nothing to this Hessian. Since f0 is C2,
+d2f0(0)[D, D] = 2Q(D).
+(B.23)
+This follows either by the second derivative chain rule or by comparing the t2 Taylor coefficient.
+No remainder symbol is differentiated.
+For comparison with the in-plane sectors, write b = B1 and set
+(B1)ii = 0,
+(B1)ij = bi + bj
+m −2 (i ̸= j),
+B0 = B −B1.
+Since 1Tb = 0, these matrices satisfy B01 = 0, B11 = b, and ⟨B0, B1⟩F = 0. Direct summation
+also gives ∥B1∥2
+F = 2 ∥b∥2 /(m −2). Define
+E0 = ∥B0∥2
+F
+4α
+,
+E1 = ∥b∥2
+m −2.
+They are nonnegative and vanish together only when D = 0. Moreover,
+N(B) = 4αE0 + 2E1,
+R1(B) = (m −2)E1.
+For m = 3, the symmetric zero-diagonal row-zero matrix B0 is zero: its three row equations
+force all three off-diagonal entries to vanish. Thus E0 = 0 in that case.
+With
+Λ0 = αAλ,
+Λ1 = Aλ + (m −2)Bλ
+2
+,
+Λ⊥= m −1
+2
+Cλ,
+identities (B.13) and (B.22) give
+Q(D) = 4
+(Λ0 −Λ⊥)E0 + (Λ1 −Λ⊥)E1
+,
+d2f0(0)[D, D] = 8
+(Λ0 −Λ⊥)E0 + (Λ1 −Λ⊥)E1
+.
+(B.24)
+The factors in this display are part of the coordinate normalization: the covariance velocity in
+the present chart is 2B, and the Hessian is twice the quadratic Taylor coefficient.
+37
+
+
+The scalar gap assumptions make (B.24) positive definite. One can see the required quan-
+titative coercivity without any additional representation-theoretic argument. Formula (B.13)
+reduces (B.22) to
+Q(D) =
+
+Aλ −m
+2 Cλ
+
+N(B) + (2Bλ −Cλ)R1(B).
+(B.25)
+For m ≥4, Appendix A gives bm(µ) > 1/2 for µ ≥0, while the strict normal regime gives
+am(µ) > m/2. Both coefficients in (B.25) are positive, and N(B) ≥∥D∥2
+F . For m = 3,
+R1(B) = N(B)/2, so
+Q(D) = (Aλ + Bλ −2Cλ)N(B),
+again with a positive coefficient.
+In either case there is a γ = γ(m, λ) > 0 such that
+Q(D) ≥γ ∥D∥2
+F for every D ∈Dm.
+B.7
+Uniform convexity and the equality orbit
+Continuity of the Hessian of the joint C2 map (τ, D) 7→fτ(D), together with (B.23), gives
+positive numbers τ∗, δ, and η, depending only on m and λ, such that
+d2fτ(D)[H, H] ≥η ∥H∥2
+F
+if |τ| < τ∗, ∥D∥F < δ, H ∈Dm.
+Shrink the neighborhoods if necessary to keep the covariance positive definite. The ball in Dm
+is convex. Integrating the second derivative along t 7→tD, and using (B.21), gives
+fτ(D) −fτ(0) =
+Z 1
+0
+(1 −t) d2fτ(tD)[D, D] dt ≥η
+2 ∥D∥2
+F .
+(B.26)
+In particular, fτ(D) = fτ(0) holds if and only if D = 0.
+Choose ρ0 > 0 smaller than
+√
+2m, √τ∗, δ, and the uniform Procrustes neighborhood from
+Subsection B.4. These choices involve only m and λ, before d or V is selected. By (B.20),
+every actual unit configuration on a shell 0 < ρ < ρ0 satisfies the hypotheses of (B.26). By
+(B.19) and (B.2), its value fρ2(D) is its actual decoding deficit.
+It remains to verify attainment and identify every equality case. Since U(P) = Im −J, the
+point D = 0 has
+Rρ2(0) = κ2Im + (1 −κ2)J,
+Gκ = κ2G∆+ (1 −κ2)J,
+κ = 1 −ρ2
+2m ∈(0, 1).
+The span of V has dimension m −1, so d ≥m provides a unit z ⊥span{vi}. Define
+Ni = κvi +
+p
+1 −κ2 z.
+(B.27)
+These are unit vectors and have Gram matrix Gκ. Their centered square root is T = κP, so
+K is invertible and (B.15) gives
+dP (N, V )2 = 2m(1 −κ) = ρ2.
+Thus the minimizer of the extended problem is feasible in the original problem. Its Gram
+matrix has eigenvalues κ2/α on H and m(1 −κ2) on span{1}, so it has rank m.
+For an arbitrary configuration on this shell, equality in the deficit bound forces D = 0 by
+(B.26), hence G = Gκ by reconstruction. The same-Gram isometry argument in Subsection B.4
+then gives precisely the O(d) orbit of (B.27). Conversely every configuration on this orbit
+has the same Gram matrix and success probability. Different choices of the unit normal, and
+permutations of the regular simplex vertices, produce the same orbit. This proves the equality
+assertion and the uniform radius statement of Theorem 15.
+38
+
+
+B.8
+The exact value and the sixth-order remainder
+Let ξ ∼N(0, G∆) and let b be an independent standard real Gaussian. The vector κξ +
+√
+1 −κ2 b1 has covariance Gκ. For κ ≥0, its coordinate maximum is κ maxi ξi +
+√
+1 −κ2 b.
+Using the Gaussian moment-generating function in (B.1) yields
+Pc(Gκ; λ) = e−λ2/2
+m
+eλ2(1−κ2)/2Eeλκ maxi ξi = Pc(G∆; λκ).
+(B.28)
+This proves the exact optimal value, with all prefactors included.
+Write p(s) = Pc(G∆; s) using the expectation formula as a real extension in s. This
+extension is smooth.
+Indeed, if M = maxi ξi, then each coordinate ξi is Gaussian and
+|M| ≤maxi |ξi|. Therefore E(|M|keL|M|) < ∞for every fixed k and L. On compact s-intervals
+these moments dominate all the derivatives of e−s2/2EesM/m. In particular p is C3 near λ,
+with bounds depending only on m and λ.
+Choose u > 0 and M3 > 0 such that |p′′′(s)| ≤M3 whenever |s−λ| ≤u. For h = λρ2/(2m)
+small enough, Taylor’s theorem gives
+p(λ) −p(λ −h) −p′(λ)h + 1
+2p′′(λ)h2
+ ≤M3
+6 |h|3.
+Together with (B.28), this proves
+δmin(ρ) = λp′(λ)
+2m ρ2 −λ2p′′(λ)
+8m2
+ρ4 + O(ρ6).
+(B.29)
+More explicitly, after decreasing ρ0 if necessary there is a C > 0, depending only on m and λ,
+such that
+δmin(ρ) −λp′(λ)
+2m ρ2 + λ2p′′(λ)
+8m2
+ρ4
+ ≤C|ρ|6,
+0 < ρ < ρ0.
+(B.30)
+For example the Taylor argument permits C = M3λ3/(48m3) on a sufficiently small interval.
+The same estimate holds on a two-sided interval for the real extension p(λ)−p(λ(1−ρ2/(2m))).
+That exact extension is even in ρ, so every odd derivative at zero vanishes. In particular
+there is no cubic term; this follows from the exact value, not from dropping an uncomputed
+cubic remainder.
+The kernel-checked Taylor argument proves the same quantified O(ρ6)
+statement by applying the order-three Taylor little-o theorem, adding back its cubic coefficient
+to obtain O(h3) after the quadratic polynomial, and composing with h = −λρ2/(2m). It thus
+verifies the full sixth-order bound, in addition to the parity identity.
+The proof uses strict positivity of the existing in-plane curvature gaps. At a threshold
+where one such gap vanishes, (B.26) is not supplied by this argument. No assertion about that
+degenerate case, or an effective numerical lower bound for ρ0, is part of the theorem.
+C
+Lean formalization and reproducibility
+C.1
+Scope of the certificate
+The supplementary Lean development verifies the global quantitative orthant comparison
+with its explicit constants, the separate centroid penalty, and their consequences for decoding,
+Procrustes recovery, rank deficiency, unused energy and mean width. This extends the earlier
+certificate for the ordered channel-parameter crossings, the exact strict-normal minimizer on
+sufficiently small Procrustes shells, and the quantified O(ρ6) Taylor remainder. All statements
+use the actual Gaussian measures, integrals and geometric distance. The global comparison
+does not assume a witness bound, a product deficit or a desired CDF inequality: these are
+proved in the dependency chain, including for singular covariances.
+39
+
+
+The global results hold for m ≥2, with λ > 0 where a positive decoding coefficient is
+required. This does not relax the separate hypotheses of the local results: those retain m ≥3,
+the stated strict curvature gap, and a sufficiently small shell radius. The certificate does not
+cover numerical diagnostics, learning experiments or historical priority claims. It does not
+identify finite-radius minimizers in the tangential regimes or on a boundary of equal curvatures.
+The local radius and remainder constant are proved to exist; no effective numerical value is
+certified.
+The final library entry is SimplexFull/VerifiedGlobal.lean. Its dependency closure
+contains 216 source modules, including 52 vendored foundation modules. A separate audit
+imports this entry and prints the axioms of 91 selected public declarations. These counts
+describe the supplied artifact, rather than a claim that every sentence of the manuscript has a
+formal counterpart. The formal and written proofs may use different intermediate lemmas.
+The original 94-module local development is retained byte for byte.
+C.2
+Objects and normalization
+The Gaussian density and distribution function are concrete definitions: SimplexFull.phi is
+Mathlib’s real standard Gaussian density, and SimplexFull.Phi is its Lebesgue integral over
+(−∞, c]. The definitions of q, h, σ therefore have their usual analytic meaning. For m ≥3, the
+normalized moments in the crossing theorems are defined using
+wm,µ(c) = eµcϕ(c)2Φ(c)m−2,
+Zm(µ) =
+Z
+R
+wm,µ(c) dc,
+and
+am(µ) =
+R h(c)2wm,µ(c) dc
+Zm(µ)
+,
+bm(µ) =
+R σ(c)wm,µ(c) dc
+Zm(µ)
+,
+Hm(µ) =
+R h(c)wm,µ(c) dc
+Zm(µ)
+.
+These are respectively SimplexFull.a, SimplexFull.b, and SimplexFull.H; their normalizer
+is proved positive. The parameter in these integrals is µ = λ/√α, where α = (m −1)/m.
+Thus a crossing expressed in µ corresponds to the physical signal amplitude λ = √α µ. The
+variables c, µ, and λ are not interchangeable. For λ > 0,
+am(µ) = Aλ/Cλ,
+bm(µ) = Bλ/Cλ,
+Cλ = µe−µ2/2
+m
+Zm(µ) > 0.
+The value µ = 0 used in the normalized crossing arguments is an endpoint of the moment
+family, not a division by the zero-amplitude value of Cλ.
+The objective SimplexFull.decodingSuccess is defined by
+Pc(G; λ) = e−λ2/2
+m
+Z
+Rm eλ maxi xi dN(0, G)(x).
+Here N(0, G) is Mathlib’s actual ProbabilityTheory.multivariateGaussian, including the
+singular simplex covariance. Gaussian density identities for positive definite covariances and the
+common Gaussian shift identity connect the local analytic calculations to this definition. The
+extended development also identifies this expression with the operational maximum-likelihood
+decoder for unit signals. For signals of unequal energy it instead uses the class likelihood
+exp(λ⟨xi, z⟩−λ2∥xi∥2/2) and the maximum-likelihood/Bayes-value identity. The individual
+energy correction is retained when proving the unused-energy result.
+In the namespace SimplexFull.Geometry, simplexSuccessm is exactly the function
+pm(λ) = Pc(G∆; λ). The symbols p′
+m and p′′
+m in the Taylor statement are represented by deriv
+and deriv(deriv(simplexSuccessm)), rather than by independent coefficient variables.
+40
+
+
+The theorem SimplexFull.contDiff_simplexSuccess supplies genuine C3 regularity. Its
+proof establishes all-real exponential integrability of the coordinate maximum and applies
+Mathlib’s moment-generating-function analyticity theorem. In fact, the formal regularity result
+is stronger than the order needed here.
+For configurations, Geometry.procrustesSqXV is defined as the real infimum
+inf
+U∈O(d)
+m
+X
+i=1
+∥Xi −UVi∥2.
+The index type consists of linear isometric automorphisms of the whole Euclidean space. Ac-
+cordingly, Geometry.orthoOrbitXN expresses membership in the actual O(d) orbit, including
+reflections. The distance is not replaced by a chosen alignment or an auxiliary matrix norm.
+The normal configuration is proved realizable when d ≥m, and its squared Procrustes distance
+is proved to equal ρ2.
+For a finite configuration X, the support of its actual convex hull is defined as the supremum
+of ⟨g, y⟩over y ∈conv(range X). The development proves that this supremum is attained and
+equals the finite maximum of the scores. The normalized sphere measure is the normalization of
+Mathlib’s volume.toSphere; it is not defined through a Gaussian ratio. The polar-coordinate
+measure-preserving map, the radial Gaussian density, and positive homogeneity identify twice
+its support average (equivalently, the average of hK(u)+hK(−u)) with the Gaussian expression
+2E maxi⟨g, Xi⟩/E∥g∥. The denominator is always the Gaussian radial mean in the original
+ambient dimension d, including when an auxiliary lift uses d + m coordinates.
+C.3
+Correspondence with the new theorems
+Table 4 lists the principal entry declarations. Module paths are relative to SimplexFull; all
+declarations shown below are fully qualified. The package’s proof map and source index give
+the remaining dependency information.
+Table 4: Principal mathematical statements and their Lean entry
+points.
+Statement
+Module and public declaration
+Theorem 2
+GlobalComparison.lean: SimplexFull.GlobalComparison.orthant
+_sqrt_comparison, orthant_linear_comparison, and quantitative
+_lowerOrthant in the same namespace. These use the exact K, κ and
+all admissible PSD covariances.
+Quantitative rectangle
+and centroid bounds
+GlobalRectangleBound.lean: SimplexFull.GlobalRectangle.symm
+etricRectangle_gap; GlobalCentroidConfig.lean: SimplexFull.
+GlobalCentroid.centroid_penalty.
+Theorem 5 and
+Corollary 6
+GlobalApplicationsCore.lean and GlobalApplicationsDecoder.le
+an: SimplexFull.GlobalApplication.decodingSuccess_gram_pen
+alty, decodingSuccess_procrustes_penalty, and decodingSucces
+s_rank_deficiency in that namespace. The centroid and operational
+unused-energy conclusions are SimplexFull.GlobalTail.decodingSuc
+cess_centroid_penalty and SimplexFull.GlobalTail.ball_decode
+r_unused_energy.
+Theorem 7
+GlobalSphereGaussianWidth.lean: SimplexFull.SphereGaussian
+.ball_mean_width. The traditional width-function integral is identified
+by GlobalSphereGaussianSymmetry.lean: SimplexFull.SphereGa
+ussian.widthIntegral_convexHull_eq_meanWidth. The Gaussian
+representation is SimplexFull.GlobalApplication.ball_mean_widt
+h.
+41
+
+
+Statement
+Module and public declaration
+Theorem 13
+GaussianCrossings.lean: SimplexFull.gaussian_ordered_cro
+ssings. The strict exclusion of the intermediate coefficient from the
+minimum is SimplexFull.gaussian_middle_coefficient_not_min.
+The complete chart and its positive-scaling form are in CrossingSignCh
+art.lean: SimplexFull.gaussian_ordered_crossings_sign_chart
+and SimplexFull.gaussian_ordered_crossings_sign_chart_scal
+ed.
+Theorem 14
+GaussianCrossings.lean: SimplexFull.gaussian_triangular_un
+ique_crossing. The equivalent equation µH3(µ) = 1 is established by
+SimplexFull.gaussian_triangular_coefficient_eq_iff.
+Theorem 15
+UniformNormalShell.lean: SimplexFull.Geometry.gaussian_un
+iform_exact_normal_shell_m4 and SimplexFull.Geometry.gauss
+ian_uniform_exact_normal_shell_m3. The corresponding threshold
+versions are SimplexFull.Geometry.gaussian_normal_threshold_u
+niform_shell_m4 and SimplexFull.Geometry.gaussian_normal_thr
+eshold_uniform_shell_m3.
+Theorem 16
+GaussianTaylor.lean: SimplexFull.Geometry.normalTaylor_boun
+d, SimplexFull.Geometry.normalTaylor_isBigO, SimplexFull.Ge
+ometry.gaussian_uniform_taylor_shell_m4, and SimplexFull.Ge
+ometry.gaussian_uniform_taylor_shell_m3.
+For m ≥4, the crossing declaration asserts 0 < t1 < t0 < t01 and uniqueness on [0, ∞) of
+the equations
+am(t1) + (m −2)bm(t1) = m −1,
+am(t0) = m/2,
+am(t01) = mbm(t01).
+The declaration gaussian_ordered_crossings_sign_chart packages these roots and their
+uniqueness together with all four open-interval comparisons and all three endpoint comparisons
+for L0, L1, L⊥. Its gaussian_ordered_crossings_sign_chart_scaled companion gives the
+same chart after multiplication by any positive common factor, with the roots independent
+of that factor. For every λ > 0 one may therefore use Cλ > 0 and Λj = CλLj to obtain the
+physical coefficient chart in Theorem 13. No additional analytic hypothesis is required. The
+original crossing declaration instantiates the abstract comparison lemmas with the actual
+Gaussian moments. The proofs include the strict benchmark b4(0) > 1/2, monotonicity, and
+the integral balance identity 2am + (m −1)bm = m + µHm. The case m = 3 is handled
+separately: its crossing is a3 + b3 = 2, and no nonzero H0 sector is introduced.
+The geometric conclusions are packaged as SimplexFull.Geometry.UniformExactNorma
+lShell and SimplexFull.Geometry.UniformTaylorNormalShell. For fixed m and λ in the
+strict-normal regime, the latter has the quantifier order
+∃C > 0 ∃ρ0 > 0 ∀d ≥m ∀V with Gram G∆∃z ∀0 < ρ < ρ0 ∀X on the feasible shell.
+The normal vector z is unit and orthogonal to every Vi. In particular, both C and ρ0 are
+independent of the ambient dimension, reference embedding, and competitor. The chosen
+z is independent of ρ. The final statements contain feasibility of Ni = κVi +
+√
+1 −κ2 z,
+the exact optimal value, a comparison with every feasible X, and equality if and only if
+Geometry.orthoOrbitXN. The strict-normal hypothesis is am(µ) > m/2 for m ≥4, and
+a3(µ) + b3(µ) > 2 for m = 3.
+The Taylor remainder is the actual function
+Rm,λ(ρ) = pm(λ) −pm
+ 
+λ
+ 
+1 −ρ2
+2m
+!!
+−
+"
+λp′
+m(λ)
+2m
+ρ2 −λ2p′′
+m(λ)
+8m2
+ρ4
+#
+.
+42
+
+
+The declaration normalTaylor_bound proves |Rm,λ(ρ)| ≤C|ρ|6 for |ρ| < r, with C, r > 0.
+The companion normalTaylor_isBigO states the corresponding two-sided big-O assertion
+at zero. The generic proof uses a third-order Taylor expansion, obtains an O(h3) quadratic
+remainder, and substitutes h = −λρ2/(2m). Thus it proves O(ρ6), rather than only the o(ρ4)
+conclusion available from C2 regularity.
+The stronger regularity declaration SimplexFull.contDiff_simplexSuccess_top also
+verifies the analyticity assertion. In the pinned Mathlib version the order type of ContDiff
+is WithTop(N∞): its outer ⊤is the analytic order ω, distinct from the smooth order ∞.
+Applying ContDiffAt.analyticAt therefore gives AnalyticAt at every real argument. A
+supplementary kernel-checked statement spells out this consequence for the actual multivariate
+Gaussian probability integral.
+The declaration SimplexFull.Geometry.normalDeficit_odd_iteratedDeriv_zero in
+TaylorParity.lean proves that every odd derivative of the exact deficit vanishes at zero.
+Finally, SimplexFull.Geometry.simplex_quadratic_coefficient_eq_normal_curvature
+in TaylorCoefficient.lean identifies the leading coefficient with the actual normal curvature:
+λp′
+m(λ)
+2m
+= m −1
+2
+Cλ.
+This identity includes the conversion between λ and µ.
+C.4
+Global proof chain and assumptions
+The scalar function Ψ is defined from the actual inverse of h(s) = s + q(s) on the positive axis.
+Its monotonicity, inverse range, strict concavity, and derivatives are proved. The curvature
+constant M0 is the attained maximum of the actual continuous curvature function on the
+manuscript’s compact interval. In particular, the lower Taylor bound used in the centroid
+argument is not supplied as an external smoothness or remainder assumption.
+The quantitative rectangle proof starts from the true bivariate conditional Gaussian law.
+Differentiation under the compact integral and the boundary derivative give the Plackett
+formula. Integration on [0, 1/2], monotonicity and evenness yield the stated ℓ2e−4T 2/3/(4π)
+coefficient. At correlation +1 or −1 the residual Gaussian is a Dirac measure and the rectangle
+mass is the smaller marginal slab mass; no singular density is substituted. The actual Gaussian
+slab peeling argument and a maximizing off-diagonal pair then give the factor m(m −1) and
+the exponent m −2.
+For Theorem 2, existence of actual adaptive witnesses, their compact coordinate bounds,
+the sum–difference Gaussian law and Fubini’s theorem lead to the quantitative doubled-product
+deficit. The product of the normalized self-convolution factors has Gaussian integral at least
+one, including for PSD singular covariance by continuous regularization. The fixed-factor
+rectangle estimate on the central box gives precisely K, with exponent 2m−2. The correlation-
+matrix bound ∥R −I∥2
+F ≤m(m −1) gives the manuscript’s κ by rationalizing the square root.
+The identity covariance is handled directly. The centroid proof uses the actual PSD variational
+value, the verified lower Taylor bound for Ψ, and the exact τ, η.
+The integration bridge proves
+E max Z −E max X =
+Z
+R
+ FX(c) −FZ(c)
+ dc
+from a centered signed-tail kernel and Fubini, with integrability proved. Applied to the
+exponential of the maximum it retains the exact window factor eµ −1. Gaussian normalization
+at R = αG + J/m supplies the factors α2 and √α. Consequently the final entries use
+cg = Wκα2,
+cs = Wη,
+cP =
+ 
+α
+cg
++
+1
+mcs
+!−1
+,
+bg = κα3/2,
+bs = η/√α.
+43
+
+
+None of those entries retains a unit-comparison or target-CDF hypothesis.
+The geometric inequality is proved for vectors of arbitrary lengths and for the actual
+infimum over O(d); a polar-alignment witness also proves attainment. The rank corollary
+assumes the actual matrix rank bound, with its bound independent of any realization dimension.
+For ball configurations the formal proof uses mutually orthogonal extra coordinates. Adding
+the resulting independent centered Gaussian noise cannot decrease the expected maximum;
+the corresponding likelihood argument proves the operational decoding comparison for nonunit
+signals. This orthogonal lift is an alternative to the shared-coordinate lift in the written
+unused-energy proof.
+The foundation sources from the weak-simplex and simplex-uniqueness developments are
+supplied with exact upstream commits, per-file provenance and their original licenses and
+attributions in VENDOR_PROVENANCE.json and licenses/. Their imported closure is included
+in the same fresh trust-level-zero build as the new modules, rather than accepted through
+inherited project binaries.
+C.5
+Build and axiom audit
+The released archive is concrete-simplex-lean-global-20261106.zip. Its SHA-256 digest
+is
+4e8e24831e8c56ab07523aed22c89c4ba6854726accccff2aa32c0587133896b.
+The toolchain is Lean 4.31.0, pinned by leanprover/lean4:v4.31.0; the Mathlib revision is
+fabf563a7c95a166b8d7b6efca11c8b4dc9d911f.
+The successful recorded run is 20261106-180522-470580. Its evidence/verification.json
+records all 216 source-module commands and exit codes, source and compiled-file hashes, the
+successful combined import, and the final axiom audit. All source hashes remained unchanged
+through verification. The manuscript bundle also supplies the independent Grok Build and
+agent cross-reviews.
+The verifier copies the three project-source namespaces into a fresh snapshot and creates an
+initially empty output directory. It compiles their explicit dependency closure in dependency
+order. All inherited project build paths, including paths containing only a bare root module,
+are excluded from LEAN_PATH; the pinned Mathlib cache is supplied by Lake. Every project
+source is compiled with Lean’s trust level zero:
+lean -j 2 -t 0 -R <snapshot/src> \
+-o <fresh/build/Module.olean> \
+<snapshot/src/Module.lean>
+The final audit imports SimplexFull.VerifiedGlobal and invokes #printaxioms for 91
+selected declarations. Their dependency reports contain only propext, Classical.choice,
+and Quot.sound. Acceptance requires exactly one recognized report per requested declaration.
+Missing, duplicate, unexpected or nonstandard reports cause verification to fail.
+After removing comments and strings, source scanning rejects sorry, admit, project axiom
+declarations, unsafe, native_decide and debug.skipKernelTC. Import parsing rejects
+unknown project roots and unsupported header layouts instead of silently omitting them.
+Positive and negative regression tests cover the parser, binary-path isolation and axiom reports.
+These checks accompany, rather than replace, kernel checking.
+44
+
+
+C.6
+Reproducing the verification
+After extracting the archive, install the pinned Lean toolchain with elan and make Python
+available. From the package directory run
+lake update
+lake exe cache get
+lake env python reproduce.py
+The Mathlib revision is fixed in lakefile.toml. The verifier uses SimplexFull.Verified
+Global and AUDIT_THEOREMS_GLOBAL.json, creates a fresh timestamped build, and returns
+a nonzero status on any source, compilation or axiom-audit failure. The package supplies
+PROOF_MAP_GLOBAL.md, SOURCE_INDEX.json, SHA256SUMS.json, the individual compiler
+logs, upstream provenance and independent cross-reviews. The source, compiler output and
+evidence/verification.json are the reproducibility evidence.
+References
+[1] A. Mulgund, Stochastic Domination of Gaussian Maxima: A Resolution of the Weak
+Simplex Conjecture, arXiv:2607.14087. The non-strict product and adaptive tilting inputs
+used here are in v2, 20 July 2026, Theorem 4.1 and Proposition 5.2. https://arxiv.or
+g/abs/2607.14087v2.
+[2] M. Su, K. Yang, H. Xu, and Chih-Lin I, The Equality Cases of the Weak Simplex
+Conjecture, arXiv:2608.19093v1, 19 August 2026. https://arxiv.org/abs/2608.19093.
+[3] T. Royen, A simple proof of the Gaussian correlation conjecture extended to some multi-
+variate gamma distributions, Far East Journal of Theoretical Statistics 48 (2014), 139–145.
+https://arxiv.org/abs/1408.1028.
+[4] A. E. Litvak, Around the simplex mean width conjecture, in Analytic Aspects of Convexity,
+Springer INdAM Series 25 (2018), 73–84. https://www.math.ualberta.ca/~alexandr/
+OrganizedPapers/AL-simp-wv.pdf.
+[5] K. J. Böröczky, F. Fodor, and D. Hug, Strengthened inequalities for the mean width and
+the ℓ-norm, Journal of the London Mathematical Society (2) 104 (2021), no. 1, 233–268.
+https://doi.org/10.1112/jlms.12429.
+[6] A. Mulgund, Stochastic Domination of Gaussian Maxima by the Regular Simplex,
+arXiv:2609.28452v2, 27 September 2026. https://arxiv.org/abs/2609.28452v2.
+[7] A. Mulgund, Stochastic Domination of Gaussian Maxima: A Resolution of the Weak
+Simplex Conjecture, arXiv:2607.14087v4, 21 August 2026. https://arxiv.org/abs/26
+07.14087v4.
+[8] A. V. Balakrishnan, A contribution to the sphere-packing problem of communication
+theory, Journal of Mathematical Analysis and Applications 3 (1961), 485–506. https:
+//doi.org/10.1016/0022-247X(61)90072-5.
+[9] H. J. Landau and D. Slepian, On the optimality of the regular simplex code, Bell System
+Technical Journal 45 (1966), 1247–1272. https://doi.org/10.1002/j.1538-7305.19
+66.tb01696.x.
+[10] A. De, S. Nadimpalli, and R. A. Servedio, Quantitative Correlation Inequalities via
+Semigroup Interpolation, 12th Innovations in Theoretical Computer Science Conference
+(ITCS 2021), LIPIcs 185, Article 69. https://doi.org/10.4230/LIPIcs.ITCS.2021.69.
+45
+
+
+[11] O. Friedland, O. Guédon and F. Souli, On partition functions of Gaussian random variables,
+arXiv:2609.38904v1, 30 September 2026. https://arxiv.org/abs/2609.38904v1.
+[12] C. L. Weber, Signal design for space communication channels, part I, USCEE-129 /
+NASA-CR-78972, 1 February 1965. https://ntrs.nasa.gov/citations/19660030423.
+[13] T. O’Shea and J. Hoydis, An Introduction to Deep Learning for the Physical Layer,
+IEEE Transactions on Cognitive Communications and Networking 3 (2017), 563–575.
+https://arxiv.org/abs/1702.00832v2.
+46

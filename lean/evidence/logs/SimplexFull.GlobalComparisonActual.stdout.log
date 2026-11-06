@@ -1,0 +1,8 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalComparisonActual.lean:53:22: warning: Variable name `x` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'SimplexFull.GlobalComparison.witnessQ1_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.orthantMass_eq_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.witness_doubling_lower' depends on axioms: [propext, Classical.choice, Quot.sound]

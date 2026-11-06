@@ -1,0 +1,6 @@
+'SimplexFull.Geometry.global_frobSq_centering_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_frobSq_mul_centering_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_frobSq_compression_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_frobSq_compressed_gram_sub_simplex_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

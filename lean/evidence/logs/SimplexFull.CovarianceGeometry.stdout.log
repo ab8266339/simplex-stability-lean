@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.exists_local_channelCovariance_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.orthoOrbit_iff_channelCovariance' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,50 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthLift.lean:43:10: warning: This simp argument is unused:
+  EuclideanSpace.inner_single_left
+
+Hint: Omit it from the simp argument list.
+  simp [̵E̵u̵c̵l̵i̵d̵e̵a̵n̵S̵p̵a̵c̵e̵.̵i̵n̵n̵e̵r̵_̵s̵i̵n̵g̵l̵e̵_̵l̵e̵f̵t̵,̵ ̵R̵e̵a̵l̵.̵s̵q̵_̵s̵q̵r̵t̵[̲R̲e̲a̲l̲.̲s̲q̲_̲s̲q̲r̲t̲ (energyDeficit_bounds X hX i).1, ← pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthLift.lean:44:6: warning: This simp argument is unused:
+  ← pow_two
+
+Hint: Omit it from the simp argument list.
+  simp [EuclideanSpace.inner_single_left, Real.sq_sqrt (energyDeficit_bounds X hX i).1,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵←̵ ̵p̵o̵w̵_̵t̵w̵o̵]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthLift.lean:45:44: warning: This simp argument is unused:
+  PiLp.single_apply
+
+Hint: Omit it from the simp argument list.
+  simp [EuclideanSpace.inner_single_left, P̵i̵L̵p̵.̵s̵i̵n̵g̵l̵e̵_̵a̵p̵p̵l̵y̵,̵ ̵Matrix.diagonal_apply, hij, Ne.symm hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthLift.lean:45:63: warning: This simp argument is unused:
+  Matrix.diagonal_apply
+
+Hint: Omit it from the simp argument list.
+  simp [EuclideanSpace.inner_single_left, PiLp.single_apply, M̵a̵t̵r̵i̵x̵.̵d̵i̵a̵g̵o̵n̵a̵l̵_̵a̵p̵p̵l̵y̵,̵
+  ̵ ̵ ̵ ̵ ̵ ̵ ̵hij, Ne.symm hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthLift.lean:46:11: warning: This simp argument is unused:
+  Ne.symm hij
+
+Hint: Omit it from the simp argument list.
+  simp [EuclideanSpace.inner_single_left, PiLp.single_apply, Matrix.diagonal_apply, h̵i̵j̵,̵ ̵N̵e̵.̵s̵y̵m̵m̵ ̵hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthLift.lean:85:48: warning: This simp argument is unused:
+  Matrix.diagonal_apply
+
+Hint: Omit it from the simp argument list.
+  simp [Matrix.sub_apply, Matrix.add_apply, M̵a̵t̵r̵i̵x̵.̵d̵i̵a̵g̵o̵n̵a̵l̵_̵a̵p̵p̵l̵y̵,̵ ̵hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.Geometry.gram_orthogonalUnitLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.unitConfig_orthogonalUnitLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.centroid_sq_orthogonalUnitLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.frobSq_gram_lift_identity' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,15 @@
+{
+  "expected_lean_version": "4.31.0",
+  "expected_mathlib_commit": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "passed": true,
+  "lean_version_output": "Lean (version 4.31.0, x86_64-w64-windows-gnu, commit 68218e876d2a38b1985b8590fff244a83c321783, Release)",
+  "lean_version": "4.31.0",
+  "mathlib_lean_path_entry": "E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean",
+  "mathlib_source_root": "E:\\claude-lean-work\\hsfnlean\\.lake\\packages\\mathlib",
+  "mathlib_git_root": "E:/claude-lean-work/hsfnlean/.lake/packages/mathlib",
+  "mathlib_git_head": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "mathlib_source_pin_files": {
+    "lean-toolchain": "465c68148dd061230368e3cbe5d1d2973069172b48b684c928ef1a665b627832",
+    "lakefile.lean": "48914522b338d12d8f49761fd3dfc5a926cb2bdb28a298182506a30858d14bd6"
+  }
+}

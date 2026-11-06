@@ -1,0 +1,70 @@
+{
+  "role": "global",
+  "task": "audit_restored_theorem2",
+  "implementation_task": "stopped",
+  "sources_modified": false,
+  "theorem": "thm:global",
+  "paper": "snapshot/paper_source/paper_main.tex",
+  "paper_lines": {
+    "statement": "241-248",
+    "proof": "289-368",
+    "constants": "223-239"
+  },
+  "lean_version": "4.31.0",
+  "mathlib": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "compiled_success": true,
+  "compile_rerun_by_this_audit": false,
+  "compile_log": "geometry-agent/SimplexFull.GlobalComparison-20261106-172539-394652",
+  "compile_exit_code": 0,
+  "compile_source_sha256_matches_current": true,
+  "axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "hypothesis": "m >= 2, WeakSimplex.IsWeakSimplexCov R, c in Icc u v",
+  "hypothesis_note": "IsWeakSimplexCov is unit diagonal, R.PosSemidef, and (R - (1/m) • J).PosSemidef. This is paper A_m together with the PSD conjunct implied by R - J/m ≽ 0.",
+  "proved_entry_names": [
+    "SimplexFull.GlobalComparison.orthant_sqrt_comparison",
+    "SimplexFull.GlobalComparison.orthant_linear_comparison",
+    "SimplexFull.GlobalComparison.quantitative_lowerOrthant",
+    "SimplexFull.GlobalComparison.witness_a_le",
+    "SimplexFull.GlobalComparison.witness_beta_le",
+    "SimplexFull.GlobalComparison.witness_threshold_le",
+    "SimplexFull.GlobalComparison.Rotation.doubling_identity",
+    "SimplexFull.GlobalComparison.Rotation.doubling_lower_of_indicator",
+    "SimplexFull.GlobalComparison.tilt_gap_formula",
+    "SimplexFull.GlobalComparison.tilt_gap_nonneg",
+    "SimplexFull.GlobalComparison.tilt_weights_lower",
+    "SimplexFull.GlobalComparison.fixed_radii_bounds",
+    "SimplexFull.GlobalComparison.central_box_mass_lower",
+    "SimplexFull.GlobalComparison.tilt_doubling_lower",
+    "SimplexFull.GlobalComparison.witness_doubling_lower",
+    "SimplexFull.GlobalComparison.witnessQ1_ge_one",
+    "SimplexFull.GlobalComparison.orthantMass_eq_witness",
+    "SimplexFull.GlobalComparison.paperK_factorization",
+    "SimplexFull.GlobalComparison.paperKappa_defect_le_sqrt_gap"
+  ],
+  "coverage": {
+    "witness_compact_bounds": "verified: a_i <= A_0, beta <= b_i <= B_0, with paper B_0 and paper T",
+    "doubling_identity": "verified for singular PSD through rotation by -pi/4",
+    "pointwise_deficit": "verified: weight times rectangle gap on the box; nonnegative gap for R != 1; identity matrix by equality",
+    "exact_K": "verified: paperK factors as exp(-m A_0 beta) * rectangleK * b(ell)^m",
+    "singular_R": "included",
+    "identity_covariance": "included by orthant_sqrt_comparison lines 14-22"
+  },
+  "defects": [],
+  "pending_obligations": [],
+  "out_of_scope": [
+    "paper theorems after thm:global",
+    "geometry-agent modules other than GlobalComparison*.lean",
+    "cwd SimplexFull/GlobalComparisonDefs.lean is an earlier unfinished draft and is not in this closure"
+  ],
+  "source_hashes": {
+    "geometry-agent/SimplexFull/GlobalComparison.lean": "bcd7064747863e5ca8752a8894caaf508701d4e4203000072ad132ce4b62ab97",
+    "geometry-agent/SimplexFull/GlobalComparisonActual.lean": "c242066249f81d40a435d86e90dca08529e848a46f01fd0f0adc982948b941e0",
+    "geometry-agent/SimplexFull/GlobalComparisonBox.lean": "78071d6fada359a0efe0e02dbaa8be8514df0b5f2534befc10db0df3915f9be9",
+    "geometry-agent/SimplexFull/GlobalComparisonDefs.lean": "8548d191842bc285e3a72ed425ab28e93aa5651e6644312b00948bdde5352215",
+    "geometry-agent/SimplexFull/GlobalComparisonDoubling.lean": "e6563c87b152808b942458523efaf2e6caef18018098810ddb30b04c0a94364c",
+    "geometry-agent/SimplexFull/GlobalComparisonFactors.lean": "40dedc575f966aee77e4fac4dabe6a309f6aeeee437995f7a7a81737e3862b89",
+    "geometry-agent/SimplexFull/GlobalComparisonRotation.lean": "1cce899287075bd1d4c83ea98107ae0a139e5fdad304d6c7a047a019137c5805",
+    "geometry-agent/SimplexFull/GlobalComparisonTilt.lean": "afc40ce597dc6c1c07e890392b0e24a3f32a3549c0d5229b8d003563b42292c1",
+    "geometry-agent/SimplexFull/GlobalComparisonWitness.lean": "77e5e7ecf3aeb80c80a444ea1077f2114fa5f23ad65cd33961876a83c331d796"
+  }
+}

@@ -1,0 +1,6 @@
+'SimplexFull.GlobalBivariate.pair_probability_eq_rectangleIntegral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalBivariate.rectangleIntegral_zero_eq_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

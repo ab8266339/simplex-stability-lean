@@ -1,0 +1,7 @@
+'SimplexFull.hasDerivAt_phi_mul_millsP4_sub_Phi_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_phi_mul_millsP5_sub_Phi_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.tendsto_phi_mul_millsP4_sub_Phi_neg_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.tendsto_phi_mul_millsP5_sub_Phi_neg_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.phi_mul_millsP5_le_Phi_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Phi_neg_le_phi_mul_millsP4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.mills_ratio_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

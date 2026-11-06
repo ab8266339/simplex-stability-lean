@@ -1,0 +1,17 @@
+'SimplexFull.Geometry.Symmetry.invariantLinear_single_offDiag' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.Symmetry.invariantLinear_single_diag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Symmetry.invariantLinear_eq_mul_entrySum_of_zeroDiagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.Symmetry.invariantLinear_vanishes_of_zeroDiagonal_entrySum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.Symmetry.squareShellC_submatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Symmetry.shellCovariance_submatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Symmetry.shellCovariance_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Symmetry.entrySum_uncompress_shell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Symmetry.loss_fderiv_shellCovariance_vanishes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

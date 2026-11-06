@@ -1,0 +1,203 @@
+\section{Unique channel transitions and exact small-shell minimizers}
+\label{sec:new-results}
+
+Corollary~\ref{cor:spectrum-integrated} expresses the directional coefficients through
+three explicit integrals. We now determine the ordering of these coefficients for every positive
+channel parameter and, when the normal coefficient is strictly least,
+identify the exact optimizer on every sufficiently small Procrustes shell.
+The radii obtained here are uniform in the ambient dimension, but are not
+evaluated numerically.
+
+\subsection{A tilted Gaussian family}
+
+For $m\ge3$ and $\mu\in\R$, set
+\begin{align}
+ w_{m,\mu}(c)&=e^{\mu c}\phi(c)^2\Phi(c)^{m-2},&
+ Z_m(\mu)&=\int_\R w_{m,\mu}(c)\,dc,\label{new:tilt}\\
+ a_m(\mu)&=Z_m(\mu)^{-1}\int_\R h(c)^2w_{m,\mu}(c)\,dc,&
+ b_m(\mu)&=Z_m(\mu)^{-1}\int_\R \sigma(c)w_{m,\mu}(c)\,dc,\notag\\
+ H_m(\mu)&=Z_m(\mu)^{-1}\int_\R h(c)w_{m,\mu}(c)\,dc.\notag
+\end{align}
+Here $q=\phi/\Phi$, $h(c)=c+q(c)$ and $\sigma=1-qh$, as in
+Theorem~\ref{thm:spectrum}. The normalizer is positive and finite.
+At $\mu=\lambda/\sqrt\alpha$,
+\[
+ A_\lambda=C_\lambda a_m(\mu),\qquad
+ B_\lambda=C_\lambda b_m(\mu),\qquad
+ C_\lambda=\frac{\mu e^{-\mu^2/2}}m Z_m(\mu)>0.
+\]
+Consequently the normalized decoding curvatures are
+\begin{equation}\label{new:normalized-curvatures}
+ L_0=\frac{m-1}{m}a_m(\mu),\qquad
+ L_1=\frac{a_m(\mu)+(m-2)b_m(\mu)}2,\qquad
+ L_\perp=\frac{m-1}{2}.
+\end{equation}
+The endpoint $\mu=0$ below is an endpoint of the normalized moment family;
+it is not division by $C_\lambda$ at a zero-amplitude channel.
+
+\begin{theorem}[Unique ordered channel crossings]\label{thm:ordered-switches}
+Let $m\ge4$. There are unique positive parameters
+\[
+ 0<\mu_{1\perp}(m)<\mu_{0\perp}(m)<\mu_{01}(m)
+\]
+satisfying, respectively,
+\[
+ a_m+(m-2)b_m=m-1,\qquad a_m=m/2,\qquad a_m=mb_m.
+\]
+Each equation has no other root in $[0,\infty)$. For $\lambda>0$,
+with $\mu=\lambda/\sqrt\alpha$, the four open intervals have the orderings
+\begin{align*}
+ 0<\mu<\mu_{1\perp}&:\quad \Lambda_0<\Lambda_1<\Lambda_\perp,\\
+ \mu_{1\perp}<\mu<\mu_{0\perp}&:\quad \Lambda_0<\Lambda_\perp<\Lambda_1,\\
+ \mu_{0\perp}<\mu<\mu_{01}&:\quad \Lambda_\perp<\Lambda_0<\Lambda_1,\\
+ \mu>\mu_{01}&:\quad \Lambda_\perp<\Lambda_1<\Lambda_0.
+\end{align*}
+At the three endpoints the indicated pair agrees, and the remaining
+inequality is strict. In particular
+$\min\{\Lambda_0,\Lambda_\perp\}<\Lambda_1$ for every $\lambda>0$.
+The thresholds in $\lambda$ are $\sqrt\alpha$ times these thresholds.
+\end{theorem}
+
+\begin{proof}
+Appendix~\ref{ap:transitions} proves continuity and strict increase of
+$a_m$, $b_m$, $H_m$ and $a_m/b_m$, as well as
+\[
+ \frac12<b_m(\mu)<1\quad(m\ge4,\ \mu\ge0),\qquad
+ 2a_m+(m-1)b_m=m+\mu H_m.
+\]
+At zero the identity gives $a_m<m/2$ and, using $b_m<1$,
+$a_m+(m-2)b_m<m-1$. Using $b_m>1/2$ also gives $a_m<mb_m$.
+Moreover $2a_m(\mu)>1+\mu H_m(0)$, so $a_m$ tends to infinity.
+The three continuous strictly increasing functions
+$a_m+(m-2)b_m$, $a_m$, and $a_m/b_m$ therefore cross their targets once.
+At $a_m=m/2$, the bound $b_m>1/2$ puts the first crossing to the left
+and the third to the right. Finally
+$L_1-L_0=(m-2)(mb_m-a_m)/(2m)$ gives the displayed sign chart.
+The analytic ingredients, including the strict benchmark at $m=4$,
+are proved in full in Appendix~\ref{ap:transitions}.
+\end{proof}
+
+\begin{theorem}[The triangular channel crossing]\label{thm:triangular-switch}
+For $m=3$ there is a unique $\mu_*(3)>0$ such that
+$\mu_*H_3(\mu_*)=1$, equivalently $a_3(\mu_*)+b_3(\mu_*)=2$.
+For $0<\mu<\mu_*$ one has $\Lambda_1<\Lambda_\perp$; for
+$\mu>\mu_*$ the reverse inequality holds. They agree only at $\mu_*$.
+The space $\mathcal H_0$ is absent.
+\end{theorem}
+\begin{proof}
+The balance identity gives
+$(a_3+b_3)/2=(3+\mu H_3)/4$.
+On $[0,\infty)$, the function $\mu H_3(\mu)$ is continuous and strictly
+increasing from zero to infinity, since $H_3$ is positive and increasing.
+This proves the assertion. Its integral ingredients are included in
+Appendix~\ref{ap:transitions}.
+\end{proof}
+
+\subsection{The exact strict-normal shell optimum}
+
+For $m\ge3$ and $\lambda>0$, impose the strict-normal condition
+\begin{equation}\label{new:normal-gap}
+ \begin{cases}
+  \mu>\mu_{0\perp}(m),&m\ge4,\\
+  \mu>\mu_*(3),&m=3,
+ \end{cases}
+ \qquad \mu=\lambda/\sqrt\alpha.
+\end{equation}
+Equivalently $a_m(\mu)>m/2$ for $m\ge4$, and
+$a_3(\mu)+b_3(\mu)>2$ for $m=3$. These are precisely the conditions that
+the normal coefficient be strictly smaller than every in-plane coefficient
+whose space is present.
+
+\begin{theorem}[Exact optimizer on small Procrustes shells]\label{thm:normal-shell}
+Assume \eqref{new:normal-gap}. There is $\rho_0=\rho_0(m,\lambda)>0$
+such that, for every $d\ge m$, every unit regular simplex
+$V=[v_1\ \cdots\ v_m]$ in $\R^d$, and every $0<\rho<\rho_0$, the minimum
+of $\delta_\lambda(X)=\Pc(G_\Delta;\lambda)-\Pc(G_X;\lambda)$ over all
+unit configurations with $d_P(X,V)=\rho$ is attained precisely by the
+orthogonal images of
+\begin{equation}\label{new:normal-minimizer}
+ N_i=\kappa v_i+\sqrt{1-\kappa^2}\,z,\qquad
+ \kappa=1-\frac{\rho^2}{2m},\qquad
+ \|z\|=1,\quad z\perp\operatorname{span}\{v_i\}.
+\end{equation}
+The normal $z$ may be chosen once for all these radii. Different choices
+of $z$ give the same orthogonal orbit. The minimal deficit is exactly
+\begin{equation}\label{new:exact-deficit}
+ \delta_{\min}(\rho)=
+ \Pc(G_\Delta;\lambda)-
+ \Pc\left(G_\Delta;\lambda\left(1-\frac{\rho^2}{2m}\right)\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Appendix~\ref{ap:normal} supplies the complete geometric argument.
+The centered square root
+$T=(\alpha PG_XP)^{1/2}$ satisfies, on a uniform neighborhood,
+$d_P(X,V)^2=2m-2\tr(T)/\alpha$.
+On the shell $\tau=\rho^2$, write $T=\kappa P+D$, where
+$D$ is symmetric, centered and trace-free.
+The covariance reconstructed from $(\tau,D)$ defines a smooth
+extension of the decoding deficit. Permutation symmetry makes $D=0$
+stationary for every small $\tau$.
+Its Hessian at $(0,0)$ is positive definite under \eqref{new:normal-gap};
+the precise coefficients and the square-root coordinate normalization
+are derived in Appendix~\ref{ap:normal}.
+Continuity then gives a strict quadratic lower bound near this ray.
+Every sufficiently small actual shell lies in that neighborhood.
+Thus $D=0$ is its unique minimizing covariance.
+It is realized by \eqref{new:normal-minimizer}, with exact distance $\rho$,
+and equality of Gram matrices is equivalent to an orthogonal change
+of realization. A common Gaussian shift in the normal direction gives
+\eqref{new:exact-deficit}. The neighborhood estimates are made in the
+fixed $m\times m$ Gram space, so $\rho_0$ is independent of $d$ and $V$.
+\end{proof}
+
+\begin{theorem}[Quartic expansion with a sixth-order remainder]
+\label{thm:normal-taylor}
+Let $p(\lambda)=\Pc(G_\Delta;\lambda)$. This function is real analytic.
+For fixed $m\ge3$ and $\lambda>0$ satisfying \eqref{new:normal-gap},
+there are $C=C(m,\lambda)>0$ and $r=r(m,\lambda)>0$ such that
+Theorem~\ref{thm:normal-shell} holds for $0<\rho<r$ and
+\begin{align}
+ \delta_{\min}(\rho)
+ &=\frac{\lambda p'(\lambda)}{2m}\rho^2
+   -\frac{\lambda^2p''(\lambda)}{8m^2}\rho^4+\mathcal R_{m,\lambda}(\rho),
+ \label{new:quartic}\\
+ |\mathcal R_{m,\lambda}(\rho)|&\le C|\rho|^6
+       \qquad (|\rho|<r).\label{new:remainder}
+\end{align}
+For negative $\rho$, the deficit in this display denotes the even
+extension given by the right side of \eqref{new:exact-deficit}.
+All its odd derivatives at zero vanish. In particular there is no cubic
+term. The leading coefficient satisfies
+\begin{equation}\label{new:curvature-check}
+ \frac{\lambda p'(\lambda)}{2m}=\Lambda_\perp
+       =\frac{m-1}{2}C_\lambda.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+All real exponential moments of the Gaussian maximum in \eqref{eq:pc}
+are finite, so its moment generating function, and hence $p$, is real
+analytic. Taylor's theorem through the quadratic term at $\lambda$
+has error $O(|s-\lambda|^3)$.
+Substituting $s=\lambda-\lambda\rho^2/(2m)$ gives
+\eqref{new:quartic}--\eqref{new:remainder}; the sign of the quartic term
+comes from subtracting $p(s)$ from $p(\lambda)$.
+The exact expression is even in $\rho$, which gives the assertion about
+all odd derivatives. The normal covariance path has initial velocity
+$(J-I_m)/m$ in the squared radius, so its first deficit derivative is
+$C_\lambda(m-1)/2$. Differentiating the exact value gives the other side
+of \eqref{new:curvature-check}. Detailed domination and remainder
+arguments are in Appendix~\ref{ap:normal}.
+\end{proof}
+
+The equal-curvature boundary is excluded, and no claim of a finite-radius
+in-plane optimizer is made. The positive radius and remainder constant
+are existential; they do not supply an effective numerical certificate.
+The channel crossings, the strict-normal optimization theorem and the
+quantified Taylor expansion are formalized over the actual Gaussian
+integrals and orthogonal Procrustes distance. Appendix~\ref{ap:lean}
+records the exact scope, theorem correspondence and reproducible Lean
+checks; the other global bounds and numerical experiments in this paper
+are not included in that formalization.

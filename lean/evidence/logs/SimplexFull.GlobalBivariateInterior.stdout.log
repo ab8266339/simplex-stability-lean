@@ -1,0 +1,3 @@
+'SimplexFull.GlobalBivariate.pair_correlation_abs_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.slab_toReal_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.pair_rectangle_gap_interior' depends on axioms: [propext, Classical.choice, Quot.sound]

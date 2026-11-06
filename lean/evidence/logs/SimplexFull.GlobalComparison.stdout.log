@@ -1,0 +1,3 @@
+'SimplexFull.GlobalComparison.orthant_sqrt_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.orthant_linear_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.quantitative_lowerOrthant' depends on axioms: [propext, Classical.choice, Quot.sound]

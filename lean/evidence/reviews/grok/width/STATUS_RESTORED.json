@@ -1,0 +1,93 @@
+{
+  "role": "width",
+  "cwd": "width",
+  "lean": "4.31.0",
+  "mathlib": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "paper": "snapshot/paper_source/paper_main.tex",
+  "paper_modified": false,
+  "identity_status": "not_proved",
+  "this_role_lean_modules": [],
+  "compile": null,
+  "oleans_copied": [],
+  "scalar_sphere_sources_present": [],
+  "attempted": [
+    "Stopped the broad GlobalMeanWidth development in this cwd.",
+    "Located Mathlib polar measure Measure.toSphere and measurePreserving_homeomorphUnitSphereProd. Metric.sphere is the set, not the measure.",
+    "Read geometry-agent GlobalFiniteHullSupport and the normalizedGaussianWidth stack. Did not rewrite them.",
+    "Wrote this review and status. Wrote no Lean file and ran no compile."
+  ],
+  "coverage": [
+    {
+      "module": "geometry-agent/SimplexFull/GlobalMeanWidthBase.lean",
+      "owns": "normalizedGaussianWidth = 2 * configGaussianMax / gaussianRadiusMean, radius positivity for d >= 1"
+    },
+    {
+      "module": "geometry-agent/SimplexFull/GlobalMeanWidthLift.lean",
+      "owns": "orthogonal unit lift of a BallConfig"
+    },
+    {
+      "module": "geometry-agent/SimplexFull/GlobalMeanWidthNoise.lean",
+      "owns": "gaussianMaxMean_le_add"
+    },
+    {
+      "module": "geometry-agent/SimplexFull/GlobalMeanWidthGeometry.lean",
+      "owns": "lift comparison and Procrustes combination under UnitGaussianMaxBounds"
+    },
+    {
+      "module": "geometry-agent/SimplexFull/GlobalMeanWidth.lean",
+      "owns": "ball_mean_width_of_unit_bounds for normalizedGaussianWidth"
+    },
+    {
+      "module": "geometry-agent/SimplexFull/GlobalFiniteHullSupport.lean",
+      "owns": "realSupport (convexHull (range X)) = maxCoord (scoreMap X), and its stdGaussian integral equals configGaussianMax"
+    }
+  ],
+  "defects": [
+    "Stability theorems quantify normalizedGaussianWidth, the Gaussian ratio. Paper thm:width states spherical mean width via polar decomposition. That equality is not proved in the geometry modules.",
+    "integral_realSupport_convexHull_range integrates against stdGaussian, not against volume.toSphere.",
+    "ball_mean_width_of_unit_bounds still assumes UnitGaussianMaxBounds. That hypothesis is explicit and is outside the sphere identity.",
+    "scalar-agent/SimplexFull has no GlobalSphereGaussian*.lean source at review time."
+  ],
+  "api_map_for_scalar": {
+    "files": "scalar-agent/SimplexFull/GlobalSphereGaussian*.lean",
+    "import": ["SimplexFull.GlobalFiniteHullSupport"],
+    "mathlib": [
+      "Measure.toSphere",
+      "measurePreserving_homeomorphUnitSphereProd",
+      "homeomorphUnitSphereProd",
+      "volumeIoiPow",
+      "stdGaussian",
+      "map_pi_eq_stdGaussian",
+      "gaussianPDFReal",
+      "PiLp.volume_preserving_toLp"
+    ],
+    "define": {
+      "uniformSphere": "ENNReal.ofReal ((volume.toSphere).real univ)^{-1} • volume.toSphere on sphere (0 : EuclideanSpace ℝ (Fin d)) 1, for 1 ≤ d",
+      "sphericalMeanWidth": "integral of realSupport K u + realSupport K (-u) against uniformSphere, where K = convexHull ℝ (range X)"
+    },
+    "forbid": "defining sphericalMeanWidth as normalizedGaussianWidth, or assuming homogeneity or a radial-factor identity as a hypothesis",
+    "target_theorem": "sphericalMeanWidth_eq_normalizedGaussianWidth {d} (hd : 1 ≤ d) (X : Config m d) : sphericalMeanWidth X = normalizedGaussianWidth X",
+    "context": "[NeZero m]",
+    "lemma_order": [
+      "product gaussianReal density on Fin n → ℝ",
+      "push by toLp 2 to a radial stdGaussian density on EuclideanSpace",
+      "general polar integral from measurePreserving_homeomorphUnitSphereProd",
+      "prove maxCoord (scoreMap X (r • θ)) = r * maxCoord (scoreMap X θ) for 0 ≤ r, then transfer by realSupport_convexHull_range",
+      "Fubini split; the same radial integral appears in gaussianRadiusMean",
+      "I ≠ 0 from gaussianRadiusMean_pos and positive finite toSphere mass",
+      "negation preserves volume.toSphere, so the width average is twice the support average"
+    ]
+  },
+  "remaining_obligations": [
+    "Prove sphericalMeanWidth_eq_normalizedGaussianWidth in scalar-agent GlobalSphereGaussian*. This role must not open a second copy.",
+    "Discharge UnitGaussianMaxBounds in ball_mean_width_of_unit_bounds. Separate from the sphere identity."
+  ],
+  "source_sha256": {
+    "geometry-agent/SimplexFull/GlobalMeanWidthBase.lean": "99a35e19c5d0bfb2953864e6ac731b43363d4167182893abd63ab945393b8040",
+    "geometry-agent/SimplexFull/GlobalMeanWidth.lean": "83ca63748bb2b06169458eb8ec8cb81041e322f47651ad8d837e09af50e14b28",
+    "geometry-agent/SimplexFull/GlobalMeanWidthGeometry.lean": "39aee2f2688245c2a920dc3e0d90478cffd0384fe4937718af161384e1cabf16",
+    "geometry-agent/SimplexFull/GlobalMeanWidthLift.lean": "1923834228419b1d8816fef30d64fededa2e19dbb0d8c63c3b8bee1ff2205297",
+    "geometry-agent/SimplexFull/GlobalMeanWidthNoise.lean": "5296f28940d5f5525c2ed8a42df475a78e8ac168d83e0cb73dd0054b03b508ea",
+    "geometry-agent/SimplexFull/GlobalFiniteHullSupport.lean": "5e3f2015b20bedff498e868d6978fd9d04febe0904e438f39721751c779d0a08"
+  }
+}

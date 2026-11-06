@@ -1,0 +1,26 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\DensitySecond.lean:91:18: warning: This simp argument is unused:
+  matrix_inv_one
+
+Hint: Omit it from the simp argument list.
+  simp [e, q, m̵a̵t̵r̵i̵x̵_̵i̵n̵v̵_̵o̵n̵e̵,̵ ̵zero_smul, add_zero, quad_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\DensitySecond.lean:142:18: warning: This simp argument is unused:
+  matrix_inv_one
+
+Hint: Omit it from the simp argument list.
+  simp [e, q, m̵a̵t̵r̵i̵x̵_̵i̵n̵v̵_̵o̵n̵e̵,̵ ̵zero_smul, add_zero, quad_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\DensitySecond.lean:147:47: warning: This simp argument is unused:
+  matrix_inv_one
+
+Hint: Omit it from the simp argument list.
+  simp [rho, rhoPrefactor, Matrix.det_one, m̵a̵t̵r̵i̵x̵_̵i̵n̵v̵_̵o̵n̵e̵,̵ ̵quad_one, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.Covariance.hasDerivAt_deriv_rho_covLine_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.iteratedDeriv_two_rho_covLine_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.iteratedDeriv_two_rho_covLine_zero_of_trace_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

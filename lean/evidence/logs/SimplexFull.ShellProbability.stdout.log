@@ -1,0 +1,15 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\ShellProbability.lean:15:0: warning: automatically included section variable(s) unused in theorem `SimplexFull.Geometry.muFromSNR_mul_sqrt`:
+  [NeZero m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\ShellProbability.lean:18:0: warning: automatically included section variable(s) unused in theorem `SimplexFull.Geometry.muFromSNR_pos`:
+  [NeZero m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'SimplexFull.Geometry.extendedLoss_eq_decodingDeficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.extendedLoss_channelCovariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_local_extendedLoss_configPc' depends on axioms: [propext, Classical.choice, Quot.sound]

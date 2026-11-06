@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "scope": "Actual scalar Psi, inverse, curvature maximum, centroid Taylor lower bound and adaptive scalar bounds only; not the complete quantitative global Gaussian theorem.",
+  "modules": [
+    {
+      "module": "SimplexFull.GlobalScalarPsi",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarPsi.lean",
+      "source_sha256": "5ac00effd8cbfd5cadd6c3c8842ae276b6c814b1399b5caf95e36a86db02fd2e",
+      "verification": {
+        "module": "SimplexFull.GlobalScalarPsi",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalScalarPsi.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarPsi.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "5ac00effd8cbfd5cadd6c3c8842ae276b6c814b1399b5caf95e36a86db02fd2e",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalScalarPsi-20261106-155234-104442",
+        "olean_sha256": "e99471a5f662f336dd431387183f1e7f961e348a2d4a94fd5066b868f24f7b26"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalScalarCurvature",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarCurvature.lean",
+      "source_sha256": "5b6b2c7b06c8c22860b2281030310d1f015141ccb40f8b230946ddea0c26c6b3",
+      "verification": {
+        "module": "SimplexFull.GlobalScalarCurvature",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalScalarCurvature.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarCurvature.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "5b6b2c7b06c8c22860b2281030310d1f015141ccb40f8b230946ddea0c26c6b3",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalScalarCurvature-20261106-155754-729617",
+        "olean_sha256": "5292e24bfa9b1230359208970fb16ea53ab030ede31b44bf837cf9e0a2dd30ec"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalScalarTaylor",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarTaylor.lean",
+      "source_sha256": "7ddc7a13a5ed04917417f8dd47fe7f7dbdce4c3acd11d2a1b731e99bf83f879d",
+      "verification": {
+        "module": "SimplexFull.GlobalScalarTaylor",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalScalarTaylor.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarTaylor.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "7ddc7a13a5ed04917417f8dd47fe7f7dbdce4c3acd11d2a1b731e99bf83f879d",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalScalarTaylor-20261106-160516-997959",
+        "olean_sha256": "4bbcbbdbe20b183b683a16e64babbe0787c7833085f4f40bdc375fea98361718"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalScalarRange",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarRange.lean",
+      "source_sha256": "61efb456691406d01fe87e2d0b907a43e9d5a0423b192ba6edfd3512b932ca0f",
+      "verification": {
+        "module": "SimplexFull.GlobalScalarRange",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalScalarRange.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarRange.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "61efb456691406d01fe87e2d0b907a43e9d5a0423b192ba6edfd3512b932ca0f",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalScalarRange-20261106-160439-201650",
+        "olean_sha256": "7fff0ae32186d958f891335ea11828adc2f7dccca17f154ed7e6a771d4c3e398"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalScalarBounds",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarBounds.lean",
+      "source_sha256": "7200f32ecd360a4b61fbdaa7b86cbb1f8bdf04fccd63aa9e0e6ecd21224ab8db",
+      "verification": {
+        "module": "SimplexFull.GlobalScalarBounds",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalScalarBounds.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalScalarBounds.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "7200f32ecd360a4b61fbdaa7b86cbb1f8bdf04fccd63aa9e0e6ecd21224ab8db",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalScalarBounds-20261106-160750-470181",
+        "olean_sha256": "1cf93beda8b2e6407606c8ef94daace8447f0f410955b7b390604fd7f41af6f7"
+      }
+    }
+  ]
+}

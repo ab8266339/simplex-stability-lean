@@ -1,0 +1,3 @@
+'SimplexFull.GlobalComparison.witness_a_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.witness_beta_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.witness_threshold_le' depends on axioms: [propext, Classical.choice, Quot.sound]

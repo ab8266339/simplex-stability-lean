@@ -1,0 +1,10 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalMeanWidthBase.lean:38:0: warning: automatically included section variable(s) unused in theorem `SimplexFull.Geometry.scoreMap_measurePreserving`:
+  [NeZero m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'SimplexFull.Geometry.integrable_configGaussianMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.configGaussianMax_eq_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussianRadiusMean_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_maxCoord_mvg' depends on axioms: [propext, Classical.choice, Quot.sound]

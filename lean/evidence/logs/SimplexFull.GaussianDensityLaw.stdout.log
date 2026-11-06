@@ -1,0 +1,9 @@
+'SimplexFull.Covariance.map_withDensity_measurableEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.pi_gaussianReal_eq_withDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.stdGaussian_eq_withDensity_rho_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.haar_withDensity_map_detNeZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.det_toEuclideanCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.toEuclideanCLM_equiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.multivariateGaussian_eq_withDensity_rho' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

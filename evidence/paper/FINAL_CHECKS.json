@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "timestamp_utc": "2026-11-06T10:21:54.110458+00:00",
+  "construction_host": "DESKTOP-BRJD313",
+  "local_construction": false,
+  "pdf_sha256": "1dd2342414c64e420b1ceae865fa4d4eabc292f1df6c5d3c77cf7db932ea26f1",
+  "pages": 46,
+  "pdf_bytes": 594932,
+  "visual_review": {
+    "passed": true,
+    "all_pages": [
+      1,
+      46
+    ],
+    "contact_sheets": 4,
+    "detail_pages": [
+      1,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "method": "All 46 pages viewed in four contact sheets; the title and updated proof/certificate pages additionally inspected at full-page resolution.",
+    "result": "Consistent margins and page numbering. No clipping, overlapping text or missing glyphs observed. Long mathematical displays fit. The continued theorem mapping table repeats its header and remains legible. The final short page contains the remaining references."
+  },
+  "latex_warnings": [],
+  "boundary_warnings": 0,
+  "unresolved_references": [],
+  "duplicate_labels": [],
+  "manuscript_sources_sha256": {
+    "paper_main.tex": "cd3f469e018026566cb66e89ad00c994bed31387e261bef8bb002e5b5d486b81",
+    "sections/lean_verification.tex": "9f6e74569f5ef23d4999d63e134e160b9aa8311008581eb487d8a42138a228de",
+    "sections/new_results.tex": "767799a3b1609fda85c720804eaa77b7c27589cfcba6f92ef75bdc1fb91295f4",
+    "sections/normal_proof.tex": "494163b59cda4ce4f7745de7dd0756e00c21c4eec410bafe91704727c1883d57",
+    "sections/transition_proof.tex": "b677b87f0c676a550d7d199bc8789909fbc5322972db90ebf97d6e777c2ccbcb"
+  },
+  "kernel_run": "20261106-180522-470580",
+  "lean_modules": 216,
+  "audited_theorems": 91,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "independent_scope_checks": 24,
+  "scope_review_sha256": "95905a2565713d005c3e35914af204c9849bc78cda00e0e86e08d6193aa7ff89",
+  "kernel_crosscheck_sha256": "e485e67735798ec2622f177caea0a4080a9f8230a5da10ba41b0535af21b02a0",
+  "cross_review_status_sha256": "78a3f428ad4cb6e7dcabfb96f74b67a78bbae5a55814c4c5844980c184ea811d",
+  "completed_grok_sessions": 8,
+  "verifier_regression_tests": 44,
+  "lean_archive_sha256": "4e8e24831e8c56ab07523aed22c89c4ba6854726accccff2aa32c0587133896b",
+  "layout_fix": "Left-align the first column of the longtable to remove two underfull-box warnings. Independent source comparison confirms this is the only final layout change."
+}

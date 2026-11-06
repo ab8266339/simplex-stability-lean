@@ -1,0 +1,1 @@
+'SimplexFull.Covariance.contDiffAt_rho' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+'SimplexFull.GlobalComparison.tilt_gap_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.tilt_gap_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]

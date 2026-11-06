@@ -1,0 +1,195 @@
+{
+  "modules": [
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonDefs.lean",
+      "source_sha256": "8548d191842bc285e3a72ed425ab28e93aa5651e6644312b00948bdde5352215",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonDefs-20261106-171152-351251",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonDefs.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonDefs.lean"
+      ],
+      "olean_sha256": "d0430fd6077a51e9b281860b4386d4ef95b1cd60581922f55c55c5be9511a6a7"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonWitness.lean",
+      "source_sha256": "77e5e7ecf3aeb80c80a444ea1077f2114fa5f23ad65cd33961876a83c331d796",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonWitness-20261106-171627-504270",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonWitness.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonWitness.lean"
+      ],
+      "olean_sha256": "bb7980bb7718c99fce7e54294923dde960f3f2f484046f5381285a4f541ac117"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonRotation.lean",
+      "source_sha256": "1cce899287075bd1d4c83ea98107ae0a139e5fdad304d6c7a047a019137c5805",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonRotation-20261106-171414-371551",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonRotation.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonRotation.lean"
+      ],
+      "olean_sha256": "3522787abfe910d8060160b48ee015bb4931bc940bfa22eac1d78ba083ecd102"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonDoubling.lean",
+      "source_sha256": "e6563c87b152808b942458523efaf2e6caef18018098810ddb30b04c0a94364c",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonDoubling-20261106-171638-521998",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonDoubling.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonDoubling.lean"
+      ],
+      "olean_sha256": "e136ce43b35e352955249a75128d8129a2ccf3d4a99995005aa3ba45ebdb3216"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonFactors.lean",
+      "source_sha256": "40dedc575f966aee77e4fac4dabe6a309f6aeeee437995f7a7a81737e3862b89",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonFactors-20261106-171858-814234",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonFactors.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonFactors.lean"
+      ],
+      "olean_sha256": "af96e60b1e1b99dd221a38013e0d3c63020001ed370f56426cee58f213d992d2"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonBox.lean",
+      "source_sha256": "78071d6fada359a0efe0e02dbaa8be8514df0b5f2534befc10db0df3915f9be9",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonBox-20261106-172245-277131",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonBox.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonBox.lean"
+      ],
+      "olean_sha256": "1c0b8ec28db2dd63026b8fbffecc9a39693448a3c0c5a3e3f46ae5a29ecd943e"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonTilt.lean",
+      "source_sha256": "afc40ce597dc6c1c07e890392b0e24a3f32a3549c0d5229b8d003563b42292c1",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonTilt-20261106-172257-225112",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonTilt.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonTilt.lean"
+      ],
+      "olean_sha256": "fab343ad537812fc43010fc8a04de3ffbdc069c576f769b32a17d916e986a2b1"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonActual.lean",
+      "source_sha256": "c242066249f81d40a435d86e90dca08529e848a46f01fd0f0adc982948b941e0",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparisonActual-20261106-172528-338585",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparisonActual.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparisonActual.lean"
+      ],
+      "olean_sha256": "c3c61f175a81b6fede6d7094900b59bf38006ba5eec10457c765207a14fc2714"
+    },
+    {
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparison.lean",
+      "source_sha256": "bcd7064747863e5ca8752a8894caaf508701d4e4203000072ad132ce4b62ab97",
+      "unchanged_during_compile": true,
+      "exit_code": 0,
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalComparison-20261106-172539-394652",
+      "command": [
+        "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+        "-j",
+        "2",
+        "-t",
+        "0",
+        "-R",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent",
+        "-o",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalComparison.olean",
+        "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalComparison.lean"
+      ],
+      "olean_sha256": "9eeca6dd7b2ecc83509cfb3d9f0767cc7ceacb72ed30fa1e80bb712aa04c19cd"
+    }
+  ],
+  "final_theorems": [
+    "orthant_sqrt_comparison",
+    "orthant_linear_comparison",
+    "quantitative_lowerOrthant"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "sources_frozen": true
+}

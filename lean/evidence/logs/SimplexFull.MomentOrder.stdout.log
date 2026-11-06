@@ -1,0 +1,8 @@
+'SimplexFull.tiltWeight_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.order_strictMono_Phi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.order_tendsto_Phi_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.order_exists_Phi_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.order_integral_covIntegrand_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.order_integral_covIntegrand_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.b_lt_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.b_mono_nat' depends on axioms: [propext, Classical.choice, Quot.sound]

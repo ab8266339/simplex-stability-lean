@@ -1,0 +1,5 @@
+'SimplexFull.Covariance.maxCoord_coordPerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.quad_submatrix_coordPerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.rho_submatrix_coordPerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.exp_maxCoord_rho_submatrix_coordPerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.rhoExpectation_submatrix_perm' depends on axioms: [propext, Classical.choice, Quot.sound]

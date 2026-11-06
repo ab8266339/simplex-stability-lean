@@ -1,0 +1,29 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\LayerCake.lean:10:8: warning: automatically included section variable(s) unused in theorem `_private.SimplexFull.LayerCake.0.SimplexFull.tailKernel_section_integrable`:
+  [MeasurableSpace X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\LayerCake.lean:15:8: warning: automatically included section variable(s) unused in theorem `_private.SimplexFull.LayerCake.0.SimplexFull.tailKernel_section_integral`:
+  [MeasurableSpace X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\LayerCake.lean:27:56: warning: This simp argument is unused:
+  abs_mul
+
+Hint: Omit it from the simp argument list.
+  simp [tailKernel, apply_ite norm, Real.norm_eq_abs, abs_m̵u̵l̵,̵ ̵a̵b̵s̵_̵of_pos (Real.exp_pos _)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\LayerCake.lean:31:8: warning: automatically included section variable(s) unused in theorem `_private.SimplexFull.LayerCake.0.SimplexFull.tailKernel_integrable`:
+  [SFinite nu]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [SFinite nu] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'SimplexFull.integral_exp_comp_eq_integral_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integral_exp_comp_eq_neg_integral_sublevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_exp_mul_integral_sublevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integral_exp_max_eq_neg_integral_orthant' depends on axioms: [propext, Classical.choice, Quot.sound]

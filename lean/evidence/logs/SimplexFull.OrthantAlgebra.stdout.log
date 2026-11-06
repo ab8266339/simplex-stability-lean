@@ -1,0 +1,21 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantAlgebra.lean:120:15: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only [if_p̵o̵s̵ ̵r̵f̵l̵,̵ ̵i̵f̵_̵neg h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantAlgebra.lean:173:13: warning: This simp argument is unused:
+  hij.symm
+
+Hint: Omit it from the simp argument list.
+  simp [hij,̵ ̵h̵i̵j̵.̵s̵y̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.Covariance.quadMoment_zeroDiagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.quadMoment_mul_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.quadSquareMoment_symm_zeroDiagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.quad_center_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.quadDensityCoeffMoment_truncGauss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.secondOrderMoment_div_qsq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.secondOrderMoment_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]

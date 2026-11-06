@@ -1,0 +1,2 @@
+'SimplexFull.Covariance.quad_inv_eq_norm_inv_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.rho_inv_sqrt_transform' depends on axioms: [propext, Classical.choice, Quot.sound]

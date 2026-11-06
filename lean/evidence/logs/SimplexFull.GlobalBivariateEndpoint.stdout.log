@@ -1,0 +1,15 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEndpoint.lean:13:21: warning: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEndpoint.lean:86:85: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GlobalBivariateEndpoint.lean:87:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'SimplexFull.GlobalBivariate.pair_endpoint_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.rectangleIntegral_half_le_min_slab' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,14 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantProduct.lean:159:88: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'SimplexFull.Covariance.measurePreserving_eucEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrableOn_orthant_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_orthant_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrable_coordMonomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrableOn_orthant_coordMonomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_orthant_coordMonomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_coordMonomial_eq_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_orthant_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.moment1D_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.moment1D_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.moment1D_two' depends on axioms: [propext, Classical.choice, Quot.sound]

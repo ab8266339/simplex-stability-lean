@@ -1,0 +1,600 @@
+\section{Proof of the exact normal-shell theorem}\label{ap:normal}
+
+We prove Theorems~\ref{thm:normal-shell} and~\ref{thm:normal-taylor}.
+Throughout, $m\ge3$, $n=m-1$, $\alpha=n/m$,
+$J=\one\one^{\mathsf T}$, $P=I_m-J/m$, and $G_\Delta=P/\alpha$.
+The reference configuration $V=[v_1\ \cdots\ v_m]$ satisfies
+$V^{\mathsf T}V=G_\Delta$, and $d\ge m$.
+Fix $\lambda>0$ and put $\mu=\lambda/\sqrt\alpha$.
+The scalar results in Appendix~\ref{ap:transitions} give the strict normal
+regime: $a_m(\mu)>m/2$ if $m\ge4$, and
+$a_3(\mu)+b_3(\mu)>2$ if $m=3$.
+
+We use coordinates on the positive square root of the centered Gram matrix.
+They give a polynomial parametrization of the extended shell objective;
+no differentiable choice of eigenvectors or implicit shell equation is needed.
+The objective is extended to a full neighborhood in a fixed finite-dimensional
+matrix space before it is restricted to realizable configurations.
+
+\subsection{A smooth extension of the actual decoding deficit}\label{ng:smooth}
+
+For a centered Gaussian vector $\xi$ with covariance $G$, the success
+probability of a unit configuration is
+\begin{equation}\label{ng:pc}
+ \Pc(G;\lambda)=\frac{e^{-\lambda^2/2}}m
+                 \E e^{\lambda\max_i\xi_i}.
+\end{equation}
+This formula is valid when $G$ is singular. If $Z$ is a standard Gaussian
+in the signal space, the score vector
+$(\langle x_i,Z\rangle)_{i=1}^m$ has exactly covariance $G$.
+
+Let $b$ be an independent standard real Gaussian. The vector
+$\sqrt\alpha\,\xi+m^{-1/2}b\one$ has covariance
+$R=\alpha G+J/m$. Since $\mu\sqrt\alpha=\lambda$,
+\[
+ \E_R e^{\mu\max_i X_i}
+   =e^{\mu^2/(2m)}\E_G e^{\lambda\max_i\xi_i},
+ \qquad
+ e^{-\mu^2/2}e^{\mu^2/(2m)}=e^{-\lambda^2/2}.
+\]
+Consequently the actual deficit is the restriction of
+\begin{equation}\label{ng:extended-loss}
+ \mathcal F_\lambda(R)=
+ \frac{e^{-\mu^2/2}}m
+ \left(\E_{I_m}e^{\mu\max_i Z_i}
+             -\E_R e^{\mu\max_i X_i}\right):
+ \qquad
+ \mathcal F_\lambda(\alpha G+J/m)
+   =\Pc(G_\Delta;\lambda)-\Pc(G;\lambda).
+\end{equation}
+The expectation defining this extension makes sense for every positive
+definite symmetric $R$ near $I_m$, including matrices for which
+$(R-J/m)/\alpha$ is not positive semidefinite.
+
+Here is the regularity justification used below. On a closed covariance
+neighborhood satisfying
+\begin{equation}\label{ng:covariance-window}
+ \tfrac12 I_m\preceq R\preceq2I_m,
+\end{equation}
+write
+\[
+ p_R(x)=(2\pi)^{-m/2}(\det R)^{-1/2}
+                  \exp(-x^{\mathsf T}R^{-1}x/2).
+\]
+A derivative of order $k$ in the covariance entries is
+$P_{k,R}(x)p_R(x)$, where $P_{k,R}$ is a polynomial of degree at most $2k$
+whose coefficients are uniformly bounded on this neighborhood. Hence
+\begin{equation}\label{ng:domination}
+ |\partial_R^\beta p_R(x)|
+ \le K_\beta(1+\norm{x}^{2|\beta|})e^{-\norm{x}^2/4}.
+\end{equation}
+Multiplication by $e^{\mu\max_i x_i}\le e^{\mu\norm{x}}$ preserves
+integrability. Dominated differentiation therefore proves that
+$\mathcal F_\lambda$ is smooth on a smaller neighborhood.
+In particular it is $C^2$ jointly in all its covariance parameters, and
+its third derivatives are locally bounded. All these neighborhoods and
+bounds depend only on $m$ and $\lambda$.
+
+For clarity, both bounds in \eqref{ng:covariance-window} are used:
+the upper bound supplies the uniform Gaussian decay in
+\eqref{ng:domination}. The argument estimates derivatives of the density,
+rather than asserting a polynomial bound, uniform in $x$, on a density ratio.
+
+\subsection{The first two covariance variations}\label{ng:variation}
+
+Let $A=A^{\mathsf T}$ have zero diagonal, and set
+\[
+ S(A)=\sum_{i<j}A_{ij}=\tfrac12\one^{\mathsf T}A\one,
+ \qquad N(A)=\norm{A}_F^2,\qquad R_1(A)=\norm{A\one}^2.
+\]
+We recall the scalar notation
+\[
+ q(c)=\frac{\phi(c)}{\Phi(c)},\qquad h(c)=c+q(c),\qquad
+ \sigma(c)=1-q(c)h(c),\qquad k(c)=\phi(c)^2\Phi(c)^{m-2},
+\]
+and define the positive weight and its moments by
+\begin{align}
+ \omega_\lambda(c)&=\frac{\mu e^{-\mu^2/2}}m e^{\mu c}k(c),
+       & C_\lambda&=\int_{\R}\omega_\lambda(c)\,dc,\label{ng:weight}\\
+ A_\lambda&=\int_{\R}\omega_\lambda(c)h(c)^2\,dc,
+       & B_\lambda&=\int_{\R}\omega_\lambda(c)\sigma(c)\,dc.\nonumber
+\end{align}
+Thus $C_\lambda>0$, $A_\lambda/C_\lambda=a_m(\mu)$, and
+$B_\lambda/C_\lambda=b_m(\mu)$.
+
+\begin{lemma}[Full covariance expansion]\label{ng:covariance-expansion}
+For symmetric zero-diagonal $A$ near zero,
+\begin{align}
+ \mathcal F_\lambda(I_m+A)
+ &=C_\lambda S(A)+\frac{A_\lambda}{4}N(A)
+      -\frac{C_\lambda-B_\lambda}{2}R_1(A)\nonumber\\
+ &\quad+\frac{S(A)^2}{2}
+            \int_{\R}\omega_\lambda(c)q(c)^2\,dc
+       +O(\norm{A}_F^3).
+ \label{ng:full-expansion}
+\end{align}
+The remainder is uniform on a sufficiently small matrix neighborhood.
+\end{lemma}
+
+\begin{proof}
+At the identity, the density Taylor coefficients are
+\begin{align}
+ p_{I_m+A}(x)
+ =p_{I_m}(x)\bigl[
+  1+\tfrac12x^{\mathsf T}Ax+\tfrac14N(A)
+   +\tfrac18(x^{\mathsf T}Ax)^2
+   -\tfrac12x^{\mathsf T}A^2x\bigr]+\mathcal R_A(x).
+ \label{ng:density-expansion}
+\end{align}
+This follows by expanding $(I_m+A)^{-1}$ and
+$-\tfrac12\log\det(I_m+A)$, using $\tr A=0$.
+The density differentiation argument above gives, after shrinking the
+neighborhood,
+\[
+ |\mathcal R_A(x)|
+ \le K\norm{A}_F^3(1+\norm{x}^6)e^{-\norm{x}^2/4}.
+\]
+It thus also gives the integrated third-order remainder.
+
+We identify the coefficients by integrating over $(-\infty,c]^m$.
+The three one-dimensional truncated moments needed are
+\[
+ \int_{-\infty}^c\phi=\Phi(c),\qquad
+ \int_{-\infty}^c x\phi(x)\,dx=-\phi(c),\qquad
+ \int_{-\infty}^c x^2\phi(x)\,dx=\Phi(c)-c\phi(c).
+\]
+The linear coefficient of $A_{ij}$, $i<j$, is $k(c)$.
+For the quadratic coefficients, an edge square $A_{ij}^2$ contributes
+$c^2k(c)/2$; a product of distinct edges with one common vertex contributes
+$-c q(c)k(c)$; and a product of disjoint edges contributes $q(c)^2k(c)$.
+These assertions follow directly from \eqref{ng:density-expansion}:
+the corresponding polynomials are
+\[
+ \tfrac12(1-x_i^2)(1-x_j^2),\qquad
+ (x_i^2-1)x_jx_\ell,\qquad x_ix_jx_\ell x_s,
+\]
+respectively. Each product of distinct edges is counted once.
+
+Put $Q_e=\sum_{i<j}A_{ij}^2=N(A)/2$, and denote the sums of adjacent
+and disjoint edge products by $U_e$ and $W_e$. Then
+\[
+ R_1(A)=2Q_e+2U_e,\qquad
+ S(A)^2=Q_e+2U_e+2W_e.
+\]
+Substitution gives the fixed-$c$ expansion
+\begin{align}
+ \frac{F_{I_m+A}(c)-\Phi(c)^m}{k(c)}
+ =S(A)+\frac{h(c)^2}{4}N(A)
+    -\frac{q(c)h(c)}2R_1(A)
+    +\frac{q(c)^2}2S(A)^2+O_c(\norm{A}_F^3).
+ \label{ng:orthant-expansion}
+\end{align}
+
+We justify the subsequent integration, including its sign. Expressing
+the expectations through the distribution of the maximum gives
+\begin{equation}\label{ng:layer-cake}
+ \E_{I_m}e^{\mu\max_i Z_i}-\E_R e^{\mu\max_i X_i}
+   =\mu\int_{\R}e^{\mu c}\bigl(F_R(c)-\Phi(c)^m\bigr)\,dc.
+\end{equation}
+One may obtain it by integration by parts, or by applying Fubini to the
+difference of the two laws, which has total mass zero. The same argument
+applies to a positive-order covariance derivative of the density:
+its integral over all of $\R^m$ is zero. For $c\ge0$, its integral over
+$(-\infty,c]^m$ is minus its integral over the complementary set, which is
+contained in $\{\norm{x}\ge c\}$. For $c\le0$, the orthant itself lies in
+$\{\norm{x}\ge|c|\}$. Formula~\eqref{ng:domination} therefore bounds each
+first or second orthant derivative by
+$K(1+|c|^N)e^{-c^2/8}$. This remains integrable after multiplication by
+$e^{\mu c}$. It validates Fubini and differentiation of
+\eqref{ng:layer-cake} through order two.
+
+Multiply the explicitly displayed normalized coefficients in
+\eqref{ng:orthant-expansion} by the full weight $\omega_\lambda(c)$,
+which includes $k(c)$, and integrate. Since $qh=1-\sigma$, this yields
+\eqref{ng:full-expansion}. The bound
+$q(c)\le |c|+\sqrt{2/\pi}$ ensures finiteness of the $q^2$ coefficient.
+The integrated remainder comes from the smooth density argument, not
+from integrating an unspecified fixed-$c$ remainder.
+\end{proof}
+
+\subsection{Compression and its exact inverse}\label{ng:compression}
+
+Identify operators on $H=\one^\perp$ with symmetric $m\times m$ matrices
+$C$ satisfying $PC=CP=C$. Define the linear map
+\begin{equation}\label{ng:uncompress}
+ \mathcal U(C)_{ij}=C_{ij}-\tfrac12(C_{ii}+C_{jj}).
+\end{equation}
+It has zero diagonal, and direct multiplication gives
+\begin{equation}\label{ng:inverse}
+ P\mathcal U(C)P=C,\qquad
+ \mathcal U(PAP)=A
+ \quad\text{if }A=A^{\mathsf T},\ \diag A=0.
+\end{equation}
+For the second identity, write $a=A\one$ and
+$s=\one^{\mathsf T}A\one$. The entries of $PAP$ are
+$A_{ij}-(a_i+a_j)/m+s/m^2$, and its diagonal entries are
+$-2a_i/m+s/m^2$; \eqref{ng:uncompress} cancels the extra terms.
+Since a centered matrix has zero total entry sum,
+\begin{equation}\label{ng:trace-sum}
+ S(\mathcal U(C))=-\frac m2\tr C.
+\end{equation}
+
+The shape space used in this appendix is
+\[
+ \mathcal D_m=\{D=D^{\mathsf T}:PD=DP=D,\ \tr D=0\}.
+\]
+If $D\in\mathcal D_m$ and $B=\mathcal U(D)$, then $S(B)=0$ and $D=PBP$.
+Writing $b=B\one$, we have $\one^{\mathsf T}b=0$ and
+\[
+ D=B-\frac1m(b\one^{\mathsf T}+\one b^{\mathsf T}).
+\]
+Expansion of the squared Frobenius norm gives the useful exact identity
+\begin{equation}\label{ng:metric-identity}
+ \tr(D^2)=\norm{D}_F^2
+       =N(B)-\frac2mR_1(B).
+\end{equation}
+
+\subsection{The actual Procrustes infimum and a uniform neighborhood}
+\label{ng:procrustes}
+
+For unit configurations define
+\[
+ d_P(X,V)^2=\inf_{U\in O(d)}\norm{X-UV}_F^2.
+\]
+This is the actual configuration distance. The following calculation
+both evaluates the infimum near a simplex and exhibits an attaining
+orthogonal map.
+
+Let $G=X^{\mathsf T}X$, and set
+\begin{equation}\label{ng:root}
+ T=(\alpha PGP)^{1/2},\qquad K=T+(I_m-P).
+\end{equation}
+The square root is positive semidefinite, $PT=TP=T$, and $T^2=\alpha PGP$.
+Assume for the moment that $K$ is invertible. Put
+\[
+ W=XPK^{-1}.
+\]
+The regular Gram identity implies $V\one=0$.
+The matrix $K$ preserves $H$ and its orthogonal complement; on these
+spaces it acts as $T$ and the identity, respectively. Consequently
+\[
+ W^{\mathsf T}W
+ =K^{-1}PGPK^{-1}=\alpha^{-1}P=G_\Delta,
+ \qquad WP=W,\qquad XP=WT.
+\]
+Configurations with the same Gram matrix are related by an orthogonal
+map of the ambient space. Indeed, sending the columns of one to those
+of the other defines an isometry between their spans: the Gram equality
+makes the map well-defined and preserves every inner product.
+An orthogonal extension over the complementary subspaces gives an element
+of $O(d)$. Thus $W=U_*V$ for some $U_*\in O(d)$.
+
+For any other $Y=UV$, the matrices $Y$ and $W$ are centered and have Gram
+matrix $P/\alpha$. Positivity of $T$ gives
+\[
+ 0\le\tr\!\left(T(W-Y)^{\mathsf T}(W-Y)\right)
+   =\frac2\alpha\tr T-2\tr(TW^{\mathsf T}Y).
+\]
+Because $XP=WT$ and $YP=Y$, the last trace equals
+$\langle X,Y\rangle_F$. It is at most $\tr T/\alpha$,
+with equality at $Y=W$. Since $\norm X_F^2=\norm V_F^2=m$, we obtain
+\begin{equation}\label{ng:distance}
+ d_P(X,V)^2=2m-\frac2\alpha\tr T.
+\end{equation}
+In particular the infimum is attained in the situation used here.
+
+We now verify uniformly when this situation applies. If
+$\norm{X-UV}_F^2=e$, then, for each pair of indices,
+\[
+ |G_{ij}-(G_\Delta)_{ij}|
+ \le\norm{x_i-Uv_i}+\norm{x_j-Uv_j}\le2\sqrt e.
+\]
+Taking a sequence approaching the infimum gives
+\begin{equation}\label{ng:gram-enclosure}
+ \norm{G-G_\Delta}_{\mathrm{op}}
+ \le\norm{G-G_\Delta}_F\le2m\,d_P(X,V).
+\end{equation}
+The bound is independent of $d$ and $V$.
+
+On the cone of positive semidefinite $m\times m$ matrices, the maps
+\[
+ G\longmapsto(\alpha PGP)^{1/2}+(I_m-P),\qquad
+ G\longmapsto\alpha G+J/m
+\]
+are continuous and take the value $I_m$ at $G_\Delta$.
+Invertibility is an open condition. The second map is positive
+semidefinite on this cone, so invertibility makes it positive definite.
+There is therefore an $\varepsilon_m>0$, in this fixed matrix space,
+such that both required conclusions hold when
+$\norm{G-G_\Delta}_{\mathrm{op}}<\varepsilon_m$.
+Together with \eqref{ng:gram-enclosure}, this supplies a positive
+Procrustes neighborhood depending only on $m$. We have used continuity
+of the square root on the positive cone, including at the singular
+matrix $P$, but have not differentiated that square root.
+
+\subsection{Polynomial square-root coordinates and enclosure}
+\label{ng:chart}
+
+Put $\tau=\rho^2$ and
+\[
+ \kappa=\kappa(\tau)=1-\frac{\tau}{2m}.
+\]
+If $X$ is on a sufficiently small actual shell $d_P(X,V)^2=\tau$,
+\eqref{ng:distance} gives $\tr T=(m-1)\kappa$. Hence
+\begin{equation}\label{ng:actual-deviation}
+ D=T-\kappa P\in\mathcal D_m.
+\end{equation}
+Conversely, on the fixed vector space $\mathcal D_m$ define the polynomial
+maps
+\begin{equation}\label{ng:polynomial-chart}
+ C_\tau(D)=(\kappa P+D)^2-P,\qquad
+ R_\tau(D)=I_m+\mathcal U(C_\tau(D)),\qquad
+ f_\tau(D)=\mathcal F_\lambda(R_\tau(D)).
+\end{equation}
+For $(\tau,D)$ near $(0,0)$, $R_\tau(D)$ is positive definite and
+$f_\tau(D)$ is jointly $C^2$. This definition permits all small
+$D\in\mathcal D_m$, irrespective of whether the corresponding Gram
+matrix is realizable.
+
+Every actual sufficiently small shell is represented by this chart.
+Indeed, for its $D$ in \eqref{ng:actual-deviation},
+\[
+ C_\tau(D)=T^2-P=P(\alpha G-P)P.
+\]
+The matrix $\alpha G-P$ has zero diagonal. The inverse identity
+\eqref{ng:inverse} gives the exact reconstruction
+\begin{equation}\label{ng:reconstruction}
+ R_\tau(D)=\alpha G+J/m.
+\end{equation}
+There is also a quantitative enclosure that uses no modulus of continuity
+for the square root. Since the columns of $X$ are unit vectors,
+\begin{align*}
+ \tr(T^2)
+ &=\alpha\tr(PGP)
+   =\alpha\left(m-\frac{\norm{\sum_i x_i}^2}{m}\right)
+   \le m-1,\\
+ \norm D_F^2
+ &=\tr(T^2)-\kappa^2(m-1)
+   \le(m-1)(1-\kappa^2)\le\tau.
+\end{align*}
+Thus
+\begin{equation}\label{ng:whole-shell-enclosure}
+ \norm D_{\mathrm{op}}\le\norm D_F\le\rho
+\end{equation}
+for every configuration on every sufficiently small positive shell.
+The entire feasible shell, not just a chosen smooth path through the
+simplex, is covered.
+
+\subsection{Stationarity and the exact shell Hessian}\label{ng:hessian}
+
+Conjugation by a permutation matrix preserves $P$, $\mathcal D_m$,
+the map $\mathcal U$, and the chart \eqref{ng:polynomial-chart}.
+If $X\sim N(0,R)$ and $Q$ is a permutation matrix, then
+$QX\sim N(0,QRQ^{\mathsf T})$, while $\max_i(QX)_i=\max_iX_i$.
+Together with the equivariance of the chart, this proves that $f_\tau$
+is permutation invariant.
+For each sufficiently small fixed $\tau$, its differential at zero is
+an invariant linear functional on $\mathcal D_m$. The average of any
+$D\in\mathcal D_m$ under all permutations is a matrix $aI_m+bJ$.
+Centeredness gives $a+mb=0$, while zero trace gives $a+b=0$.
+Since $m>1$, both coefficients vanish. Applying the invariant functional
+to this average proves
+\begin{equation}\label{ng:stationarity}
+ \mathrm d f_\tau(0)[D]=0\qquad(D\in\mathcal D_m).
+\end{equation}
+
+We compute the Hessian at $(\tau,D)=(0,0)$.
+Fix $D\in\mathcal D_m$ and write $B=\mathcal U(D)$ and
+$L=\mathcal U(D^2)$. The polynomial chart gives exactly
+\[
+ R_0(tD)=I_m+2tB+t^2L.
+\]
+Here $S(B)=0$ and, by \eqref{ng:trace-sum},
+$S(L)=-m\tr(D^2)/2$.
+Substitution in \eqref{ng:full-expansion} yields
+\begin{equation}\label{ng:Q}
+ f_0(tD)=t^2 Q(D)+O(t^3),\qquad
+ Q(D)=-\frac{mC_\lambda}{2}\tr(D^2)
+      +A_\lambda N(B)-2(C_\lambda-B_\lambda)R_1(B).
+\end{equation}
+The $S(A)^2$ term of the full expansion is of order $t^4$ here.
+It is needed in the general covariance expansion but contributes
+nothing to this Hessian. Since $f_0$ is $C^2$,
+\begin{equation}\label{ng:actual-hessian}
+ \mathrm d^2 f_0(0)[D,D]=2Q(D).
+\end{equation}
+This follows either by the second derivative chain rule or by comparing
+the $t^2$ Taylor coefficient. No remainder symbol is differentiated.
+
+For comparison with the in-plane sectors, write $b=B\one$ and set
+\[
+ (B_1)_{ii}=0,\qquad
+ (B_1)_{ij}=\frac{b_i+b_j}{m-2}\ (i\ne j),\qquad B_0=B-B_1.
+\]
+Since $\one^{\mathsf T}b=0$, these matrices satisfy
+$B_0\one=0$, $B_1\one=b$, and $\langle B_0,B_1\rangle_F=0$.
+Direct summation also gives
+$\norm{B_1}_F^2=2\norm b^2/(m-2)$.
+Define
+\[
+ E_0=\frac{\norm{B_0}_F^2}{4\alpha},\qquad
+ E_1=\frac{\norm b^2}{m-2}.
+\]
+They are nonnegative and vanish together only when $D=0$. Moreover,
+\[
+ N(B)=4\alpha E_0+2E_1,\qquad R_1(B)=(m-2)E_1.
+\]
+For $m=3$, the symmetric zero-diagonal row-zero matrix $B_0$ is zero:
+its three row equations force all three off-diagonal entries to vanish.
+Thus $E_0=0$ in that case.
+
+With
+\[
+ \Lambda_0=\alpha A_\lambda,\qquad
+ \Lambda_1=\frac{A_\lambda+(m-2)B_\lambda}{2},\qquad
+ \Lambda_\perp=\frac{m-1}{2}C_\lambda,
+\]
+identities \eqref{ng:metric-identity} and \eqref{ng:Q} give
+\begin{equation}\label{ng:hessian-gaps}
+ Q(D)=4\bigl[(\Lambda_0-\Lambda_\perp)E_0
+               +(\Lambda_1-\Lambda_\perp)E_1\bigr],
+ \qquad
+ \mathrm d^2 f_0(0)[D,D]
+   =8\bigl[(\Lambda_0-\Lambda_\perp)E_0
+               +(\Lambda_1-\Lambda_\perp)E_1\bigr].
+\end{equation}
+The factors in this display are part of the coordinate normalization:
+the covariance velocity in the present chart is $2B$, and the Hessian
+is twice the quadratic Taylor coefficient.
+
+The scalar gap assumptions make \eqref{ng:hessian-gaps} positive definite.
+One can see the required quantitative coercivity without any additional
+representation-theoretic argument. Formula~\eqref{ng:metric-identity}
+reduces \eqref{ng:Q} to
+\begin{equation}\label{ng:raw-coercivity}
+ Q(D)=\left(A_\lambda-\frac m2C_\lambda\right)N(B)
+                       +(2B_\lambda-C_\lambda)R_1(B).
+\end{equation}
+For $m\ge4$, Appendix~\ref{ap:transitions} gives
+$b_m(\mu)>1/2$ for $\mu\ge0$, while the strict normal regime gives
+$a_m(\mu)>m/2$. Both coefficients in \eqref{ng:raw-coercivity}
+are positive, and $N(B)\ge\norm D_F^2$.
+For $m=3$, $R_1(B)=N(B)/2$, so
+\[
+ Q(D)=(A_\lambda+B_\lambda-2C_\lambda)N(B),
+\]
+again with a positive coefficient. In either case there is a
+$\gamma=\gamma(m,\lambda)>0$ such that
+$Q(D)\ge\gamma\norm D_F^2$ for every $D\in\mathcal D_m$.
+
+\subsection{Uniform convexity and the equality orbit}\label{ng:minimum}
+
+Continuity of the Hessian of the joint $C^2$ map $(\tau,D)\mapsto f_\tau(D)$,
+together with \eqref{ng:actual-hessian}, gives positive numbers
+$\tau_*$, $\delta$, and $\eta$, depending only on $m$ and $\lambda$, such that
+\[
+ \mathrm d^2f_\tau(D)[H,H]\ge\eta\norm H_F^2
+ \quad\text{if }|\tau|<\tau_*,\ \norm D_F<\delta,\
+                       H\in\mathcal D_m.
+\]
+Shrink the neighborhoods if necessary to keep the covariance positive
+definite. The ball in $\mathcal D_m$ is convex. Integrating the second
+derivative along $t\mapsto tD$, and using \eqref{ng:stationarity}, gives
+\begin{equation}\label{ng:strict-minimum}
+ f_\tau(D)-f_\tau(0)
+ =\int_0^1(1-t)\,\mathrm d^2 f_\tau(tD)[D,D]\,dt
+ \ge\frac\eta2\norm D_F^2.
+\end{equation}
+In particular, $f_\tau(D)=f_\tau(0)$ holds if and only if $D=0$.
+
+Choose $\rho_0>0$ smaller than $\sqrt{2m}$, $\sqrt{\tau_*}$,
+$\delta$, and the uniform Procrustes neighborhood from
+Subsection~\ref{ng:procrustes}. These choices involve only $m$ and
+$\lambda$, before $d$ or $V$ is selected.
+By \eqref{ng:whole-shell-enclosure}, every actual unit configuration on
+a shell $0<\rho<\rho_0$ satisfies the hypotheses of
+\eqref{ng:strict-minimum}. By \eqref{ng:reconstruction} and
+\eqref{ng:extended-loss}, its value $f_{\rho^2}(D)$ is its actual
+decoding deficit.
+
+It remains to verify attainment and identify every equality case.
+Since $\mathcal U(P)=I_m-J$, the point $D=0$ has
+\[
+ R_{\rho^2}(0)=\kappa^2I_m+(1-\kappa^2)J,\qquad
+ G_\kappa=\kappa^2G_\Delta+(1-\kappa^2)J,
+ \quad \kappa=1-\frac{\rho^2}{2m}\in(0,1).
+\]
+The span of $V$ has dimension $m-1$, so $d\ge m$ provides a unit
+$z\perp\operatorname{span}\{v_i\}$. Define
+\begin{equation}\label{ng:normal-realization}
+ N_i=\kappa v_i+\sqrt{1-\kappa^2}\,z.
+\end{equation}
+These are unit vectors and have Gram matrix $G_\kappa$.
+Their centered square root is $T=\kappa P$, so $K$ is invertible and
+\eqref{ng:distance} gives
+\[
+ d_P(N,V)^2=2m(1-\kappa)=\rho^2.
+\]
+Thus the minimizer of the extended problem is feasible in the original
+problem. Its Gram matrix has eigenvalues $\kappa^2/\alpha$ on $H$
+and $m(1-\kappa^2)$ on $\operatorname{span}\{\one\}$, so it has rank $m$.
+
+For an arbitrary configuration on this shell, equality in the deficit
+bound forces $D=0$ by \eqref{ng:strict-minimum}, hence $G=G_\kappa$ by
+reconstruction. The same-Gram isometry argument in
+Subsection~\ref{ng:procrustes} then gives precisely the $O(d)$ orbit
+of \eqref{ng:normal-realization}. Conversely every configuration on
+this orbit has the same Gram matrix and success probability.
+Different choices of the unit normal, and permutations of the regular
+simplex vertices, produce the same orbit. This proves the equality
+assertion and the uniform radius statement of
+Theorem~\ref{thm:normal-shell}.
+
+\subsection{The exact value and the sixth-order remainder}\label{ng:taylor}
+
+Let $\xi\sim N(0,G_\Delta)$ and let $b$ be an independent standard real
+Gaussian. The vector
+$\kappa\xi+\sqrt{1-\kappa^2}\,b\one$ has covariance $G_\kappa$.
+For $\kappa\ge0$, its coordinate maximum is
+$\kappa\max_i\xi_i+\sqrt{1-\kappa^2}\,b$.
+Using the Gaussian moment-generating function in \eqref{ng:pc} yields
+\begin{equation}\label{ng:exact-value}
+ \Pc(G_\kappa;\lambda)
+   =\frac{e^{-\lambda^2/2}}m
+      e^{\lambda^2(1-\kappa^2)/2}
+      \E e^{\lambda\kappa\max_i\xi_i}
+   =\Pc(G_\Delta;\lambda\kappa).
+\end{equation}
+This proves the exact optimal value, with all prefactors included.
+
+Write $p(s)=\Pc(G_\Delta;s)$ using the expectation formula as a real
+extension in $s$. This extension is smooth. Indeed, if
+$M=\max_i\xi_i$, then each coordinate $\xi_i$ is Gaussian and
+$|M|\le\max_i|\xi_i|$. Therefore
+$\E(|M|^k e^{L|M|})<\infty$ for every fixed $k$ and $L$.
+On compact $s$-intervals these moments dominate all the derivatives of
+$e^{-s^2/2}\E e^{sM}/m$. In particular $p$ is $C^3$ near $\lambda$,
+with bounds depending only on $m$ and $\lambda$.
+
+Choose $u>0$ and $M_3>0$ such that
+$|p'''(s)|\le M_3$ whenever $|s-\lambda|\le u$.
+For $h=\lambda\rho^2/(2m)$ small enough, Taylor's theorem gives
+\[
+ \left|p(\lambda)-p(\lambda-h)
+       -p'(\lambda)h+\frac12p''(\lambda)h^2\right|
+       \le\frac{M_3}{6}|h|^3.
+\]
+Together with \eqref{ng:exact-value}, this proves
+\begin{equation}\label{ng:O6}
+ \delta_{\min}(\rho)
+ =\frac{\lambda p'(\lambda)}{2m}\rho^2
+    -\frac{\lambda^2p''(\lambda)}{8m^2}\rho^4+O(\rho^6).
+\end{equation}
+More explicitly, after decreasing $\rho_0$ if necessary there is a
+$C>0$, depending only on $m$ and $\lambda$, such that
+\begin{equation}\label{ng:quantified-remainder}
+ \left|\delta_{\min}(\rho)
+       -\frac{\lambda p'(\lambda)}{2m}\rho^2
+       +\frac{\lambda^2p''(\lambda)}{8m^2}\rho^4\right|
+ \le C|\rho|^6,\qquad 0<\rho<\rho_0.
+\end{equation}
+For example the Taylor argument permits $C=M_3\lambda^3/(48m^3)$
+on a sufficiently small interval. The same estimate holds on a
+two-sided interval for the real extension
+$p(\lambda)-p(\lambda(1-\rho^2/(2m)))$.
+
+That exact extension is even in $\rho$, so every odd derivative at zero
+vanishes. In particular there is no cubic term; this follows from the
+exact value, not from dropping an uncomputed cubic remainder.
+The kernel-checked Taylor argument proves the same quantified
+$O(\rho^6)$ statement by applying the order-three Taylor little-$o$
+theorem, adding back its cubic coefficient to obtain
+$O(h^3)$ after the quadratic polynomial, and composing with
+$h=-\lambda\rho^2/(2m)$. It thus verifies the full sixth-order bound,
+in addition to the parity identity.
+
+The proof uses strict positivity of the existing in-plane curvature
+gaps. At a threshold where one such gap vanishes,
+\eqref{ng:strict-minimum} is not supplied by this argument.
+No assertion about that degenerate case, or an effective numerical
+lower bound for $\rho_0$, is part of the theorem.

@@ -1,0 +1,4 @@
+'SimplexFull.GlobalComparison.Rotation.doubling_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.Rotation.doubling_lower_of_indicator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

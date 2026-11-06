@@ -1,0 +1,8 @@
+'SimplexFull.Geometry.ball_normalized_width_bounds_of_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.ball_normalized_width_procrustes_of_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.ball_normalized_width_unused_energy_of_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.ball_mean_width_of_unit_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

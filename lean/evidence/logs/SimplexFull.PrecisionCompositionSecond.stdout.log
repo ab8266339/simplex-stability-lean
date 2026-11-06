@@ -1,0 +1,1 @@
+'SimplexFull.Covariance.hasDerivAt_deriv_precisionComp_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

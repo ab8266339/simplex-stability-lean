@@ -1,0 +1,7 @@
+'SimplexFull.Geometry.trace_sqrt_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.trace_sqrt_eq_chartKappa' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.procrustesTau_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.shellDeviation_mem_shellSpace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.frobSq_shellDeviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.shellCovariance_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.shell_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]

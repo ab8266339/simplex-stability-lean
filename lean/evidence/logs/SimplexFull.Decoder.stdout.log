@@ -1,0 +1,8 @@
+'SimplexFull.continuous_maxCoord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.measurable_maxCoord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.exp_mul_maxCoord_le_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_exp_mul_coord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_exp_mul_maxCoord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_exp_mul_maxCoord_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integral_exp_maxCoord_stdGaussian_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.decodingSuccess_linearImageCov' depends on axioms: [propext, Classical.choice, Quot.sound]

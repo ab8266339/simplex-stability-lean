@@ -1,0 +1,3 @@
+'SimplexFull.Geometry.uniformRootCompletionGram_continuousOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_uniform_gram_unit_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_uniform_geometric_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,19 @@
+{
+  "name": "concrete-simplex-lean-global-20261106",
+  "date": "2026-11-06",
+  "modules": 216,
+  "audited_theorems": 91,
+  "verification_run": "20261106-180522-470580",
+  "lean": "4.31.0",
+  "mathlib": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "old_local_modules_unchanged": 94,
+  "vendored_modules": 52,
+  "construction_host": "DESKTOP-BRJD313",
+  "local_construction": false,
+  "scope": "Exact global Gaussian/decoder/geometry/rank/energy/spherical mean-width plus original local Taylor/crossing results"
+}

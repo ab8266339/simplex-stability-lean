@@ -1,0 +1,63 @@
+{
+  "status": "audited_no_defect",
+  "rewrote_modules": false,
+  "recompiled_this_session": false,
+  "counterexamples": [],
+  "defects": [],
+  "remaining_obligations": [],
+  "scope": {
+    "paper": "section 2 Lemma rectangle, display (eq:rectangle), bivariate reduction included",
+    "final_theorem": "SimplexFull.GlobalRectangle.symmetricRectangle_gap",
+    "coefficient": "ell^2 * exp(-4*T^2/3) * (2*Phi ell - 1)^(m-2) / (4*pi*m*(m-1))",
+    "bivariate_constant": "ell^2/(4*pi) * exp(-4*T^2/3) * rho^2",
+    "assumptions": "m >= 2, R PSD, unit diagonal, 0 < ell, every radius in [ell, T]",
+    "includes": ["rho = 1", "rho = -1", "singular PSD", "m = 2", "m > 2"],
+    "conditional_law": "regression residual N(0, 1-rho^2), bridged to rectangleIntegral for |rho| < 1 and to the min slab at |rho| = 1",
+    "plackett": "HasDerivAt of the compact conditional integral by dominated differentiation, then spatial FTC to corners, then the sinh closed form",
+    "frob": "max off-diagonal square times m(m-1) dominates the squared Frobenius norm",
+    "axioms_printed": ["propext", "Classical.choice", "Quot.sound"]
+  },
+  "sources": [
+    {
+      "file": "foundation-audit/SimplexFull/GlobalRectangleQuantitative.lean",
+      "sha256": "4a8075ed3cc814dd14d01418be4d7bad7ca64ca2935b33509c5bf6b330c1812c",
+      "exit_code": 0
+    },
+    {
+      "file": "foundation-audit/SimplexFull/GlobalRectangleAssembly.lean",
+      "sha256": "2dc53b12aa4feaf25fed888d62aba6f87c49c1eda43738db229d27d14f861613",
+      "exit_code": 0
+    },
+    {
+      "file": "foundation-audit/SimplexFull/GlobalBivariateCalculus.lean",
+      "sha256": "16d34d1d183ded9be286c324c592bf41667a490c22df754844a6ebc5d3f226be",
+      "exit_code": 0
+    },
+    {
+      "file": "foundation-audit/SimplexFull/GlobalBivariateProbability.lean",
+      "sha256": "a5418ecdfcd04b44622df9deb91abc2418251883c3f6d694664b7db0e357d8da",
+      "exit_code": 0,
+      "note": "byte-identical to coordinator/SimplexFull/GlobalBivariateProbability.lean"
+    },
+    {
+      "file": "foundation-audit/SimplexFull/GlobalBivariateEstimate.lean",
+      "sha256": "78dbec165b416f3101a3d68d21b81994dc54fe678c972936030c70486e94a6fe",
+      "exit_code": 0
+    },
+    {
+      "file": "foundation-audit/SimplexFull/GlobalBivariateInterior.lean",
+      "sha256": "2fd6ce894796a573902ba3c60991133397349a95fe43cc40c86570ce210cfd30",
+      "exit_code": 0
+    },
+    {
+      "file": "foundation-audit/SimplexFull/GlobalRectangleBound.lean",
+      "sha256": "0b0713a725920cd3f71ed7c4f71699502dd6cb7cb78517977331c002417a798f",
+      "exit_code": 0
+    },
+    {
+      "file": "coordinator/SimplexFull/GlobalBivariateEndpoint.lean",
+      "sha256": "4474715a20fcadf562d4bd1058116565d5663f8e15416105d320ad2e665f0d9b",
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+'SimplexFull.Geometry.orthoOrbit_of_actualDeviation_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.actualDeviation_eq_of_gram_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.actualDeviation_eq_zero_of_orthoOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.actualDeviation_eq_zero_iff_orthoOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.configPc_eq_of_orthoOrbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalShell_maximizes_configPc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_normalShell_maximizes_configPc' depends on axioms: [propext, Classical.choice, Quot.sound]

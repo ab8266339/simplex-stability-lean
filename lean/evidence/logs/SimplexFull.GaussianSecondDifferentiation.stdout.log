@@ -1,0 +1,12 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\GaussianSecondDifferentiation.lean:33:0: warning: automatically included section variable(s) unused in theorem `SimplexFull.Covariance.precision_prefactor_one_ne_zero`:
+  [NeZero m]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero m] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'SimplexFull.Covariance.second_fderiv_rhoExpectation_one_trace_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.second_fderiv_rhoExpectation_one_zeroDiagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

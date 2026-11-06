@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.shellCovarianceOnSpace_zero_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.shellLoss_hessian_sqChart' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "scope": "Full actual Gaussian global applications: exact cg Gram decoding, cP Procrustes decoding, arbitrary-rank positive deficit, unit Gaussian support bounds and ball normalized-Gaussian mean-width estimates. No target CDF or hunit assumptions. Separate identification with a sphere surface integral is outside this certificate.",
+  "entrypoints": [
+    "SimplexFull.GlobalApplication.thresholdDeficit_ge_kappa",
+    "SimplexFull.GlobalApplication.gaussianMaxMean_gram_penalty",
+    "SimplexFull.GlobalApplication.unitGaussianMaxBounds",
+    "SimplexFull.GlobalApplication.decodingSuccess_gram_penalty",
+    "SimplexFull.GlobalApplication.ball_gaussian_max_bounds",
+    "SimplexFull.GlobalApplication.ball_mean_width",
+    "SimplexFull.GlobalApplication.decodingSuccess_procrustes_penalty",
+    "SimplexFull.GlobalApplication.decodingSuccess_rank_penalty",
+    "SimplexFull.GlobalApplication.decodingSuccess_rank_deficiency",
+    "SimplexFull.GlobalApplication.decodingSuccess_ambient_penalty"
+  ],
+  "standard_axioms_only": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    {
+      "module": "SimplexFull.GlobalApplicationsCore",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalApplicationsCore.lean",
+      "source_sha256": "eaea2f3d3637c93d709f6a8e5ec4ceb79bacc8316c30c7bcf071c8a8b1176dce",
+      "verification": {
+        "module": "SimplexFull.GlobalApplicationsCore",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalApplicationsCore.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalApplicationsCore.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "eaea2f3d3637c93d709f6a8e5ec4ceb79bacc8316c30c7bcf071c8a8b1176dce",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalApplicationsCore-20261106-172833-525497",
+        "olean_sha256": "a26cb8d1c0b6cb1ee186dd133d056f51dbb7ea1d76a424219ec8f1a2d6e8ef9b"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalApplicationsMeanWidth",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalApplicationsMeanWidth.lean",
+      "source_sha256": "c7832df1611d0025c0fe9238b2d519f5baee954ac1bd91fc5c047a7687ce3efb",
+      "verification": {
+        "module": "SimplexFull.GlobalApplicationsMeanWidth",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalApplicationsMeanWidth.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalApplicationsMeanWidth.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "c7832df1611d0025c0fe9238b2d519f5baee954ac1bd91fc5c047a7687ce3efb",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalApplicationsMeanWidth-20261106-172918-937661",
+        "olean_sha256": "3622efc80b13a0ebe2eae6357d1fb1377d979ccd14666b1c2c384bc154ef270c"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalApplicationsDecoder",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalApplicationsDecoder.lean",
+      "source_sha256": "8a326dd79d126ee5d3ea89e00098a748f17b0edc5c08cd4829c96697990546cb",
+      "verification": {
+        "module": "SimplexFull.GlobalApplicationsDecoder",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalApplicationsDecoder.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalApplicationsDecoder.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "8a326dd79d126ee5d3ea89e00098a748f17b0edc5c08cd4829c96697990546cb",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalApplicationsDecoder-20261106-173106-246438",
+        "olean_sha256": "1c8b256eb9ee90ae194730160a60aaa80fb2ffade121e5a1f89495bb3b5bca9f"
+      }
+    }
+  ]
+}

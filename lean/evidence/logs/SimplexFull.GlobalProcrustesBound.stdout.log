@@ -1,0 +1,4 @@
+'SimplexFull.Geometry.global_procrustesSq_le_compressed_gram_centroid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.global_procrustesSq_le_gram_centroid' depends on axioms: [propext, Classical.choice, Quot.sound]

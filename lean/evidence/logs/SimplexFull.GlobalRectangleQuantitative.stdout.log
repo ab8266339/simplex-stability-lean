@@ -1,0 +1,6 @@
+'SimplexFull.GlobalRectangle.Peel.block_peel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalRectangle.rectangle_gap_ge_first_pair_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalRectangle.variance_pair_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalRectangle.pair_rectangle_eq_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalRectangle.tailProd_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalRectangle.exists_pair_sq_ge_average' depends on axioms: [propext, Classical.choice, Quot.sound]

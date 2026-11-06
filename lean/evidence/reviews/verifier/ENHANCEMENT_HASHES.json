@@ -1,0 +1,6 @@
+{
+  "verify_full.py": "f1afdcb652b394ee6272028fbbeace201ea555a5975e7607a87088af58cda419",
+  "verification_guards.py": "3882272d172fb896fec17351ba178f14efc0712ed2e2c69f01676845546cff52",
+  "test_verification_guards.py": "13f4c88069a7271a294d1c8999c73a1fd799396afe002795a8af63945aae6172",
+  "verify_full.diff": "5fc314d164bfddb4885cc10bdf7f9879452c5d389b3249118c32e1dd8aec6858"
+}

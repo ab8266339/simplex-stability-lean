@@ -1,0 +1,10 @@
+'SimplexFull.Geometry.normalTaylor_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalTaylor_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_taylor_shell_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_taylor_shell_m3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_threshold_uniform_taylor_shell_m4' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.gaussian_threshold_uniform_taylor_shell_m3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

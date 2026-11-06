@@ -1,0 +1,11 @@
+# Complete global applications: verified interfaces
+
+Sources: SimplexFull/GlobalApplicationsCore.lean, GlobalApplicationsMeanWidth.lean, GlobalApplicationsDecoder.lean. Namespace SimplexFull.GlobalApplication. All final declarations have printed standard-three-axiom reports and passed Lean -j2 -t0. VERIFIED_APPLICATIONS.json contains the ten-entry inventory and three unchanged-source compile records.
+
+Core: thresholdDeficit_ge_kappa is instantiated directly from the actual all-PSD global orthant theorem on [0,1]. gaussianMaxMean_gram_penalty proves the exact bg bound. unitGaussianMaxBounds discharges the two required mean-comparison bounds with bg=meanGramConstant and bs=GlobalTail.centroidMeanConstant. decodingSuccess_gram_penalty proves the exact cg bound for every correlation G and lambda>0. None accepts a desired CDF estimate.
+
+Mean width: ball_gaussian_max_bounds proves both the actual Gaussian lift Gram penalty and centroid-plus-unused-energy penalty for every BallConfig X and regular-simplex reference V in the same original ambient dimension. ball_mean_width combines the exact original bg,bs constants into the Procrustes and unused-energy bounds. Assumptions are m>=2,d>=m-1,BallConfig X,gram V=simplexGram. No unit-comparison hypothesis remains. The radial factor is gaussianRadiusMean d of the original ambient dimension, never d+m. These statements use normalizedGaussianWidth=2*Gaussian support expectation/radial expectation; the separate sphere surface-integral identification is not asserted by this module.
+
+Decoder: decodingSuccess_procrustes_penalty hm X V hX hV hlam has the exact constant (alpha/cg+1/(m*cs)) inverse and the actual Procrustes sInf. decodingSuccess_rank_penalty permits arbitrary correlation G with rank G<=rankBound; its realization dimension is unrestricted. decodingSuccess_rank_deficiency adds strict positivity when 1<=rankBound<m-1. decodingSuccess_ambient_penalty is the concrete Config specialization. Nonunit operational ML and Bayes energy results remain in the separately frozen GlobalCentroidDecoderEnergy module.
+
+All final application assumptions are the manuscript hypotheses. They invoke actual Gaussian probability/integral and geometry theorems, not conditional placeholders. Old local-shell/O(rho^6) results and their strict-gap hypotheses remain unchanged.

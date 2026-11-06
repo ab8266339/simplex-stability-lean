@@ -1,0 +1,7 @@
+'SimplexFull.SphereGaussian.integrable_finiteHullSupport_sphere' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.meanWidth_convexHull_eq_normalizedGaussianWidth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.ball_mean_width' depends on axioms: [propext, Classical.choice, Quot.sound]

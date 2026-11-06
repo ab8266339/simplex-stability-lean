@@ -1,0 +1,11 @@
+'SimplexFull.Covariance.integral_orthant_firstDensityCoeff_zeroDiagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.integral_firstDensityCoeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_orthant_secondDensityCoeff_moment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.integral_orthant_secondDensityCoeff_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.integral_secondDensityCoeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

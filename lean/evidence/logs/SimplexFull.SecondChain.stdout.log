@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.secondDeriv_quadPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.secondDeriv_line' depends on axioms: [propext, Classical.choice, Quot.sound]

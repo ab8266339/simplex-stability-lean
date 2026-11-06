@@ -1,0 +1,166 @@
+{
+  "role": "centroid",
+  "task": "restored independent audit",
+  "old_proof_task": "stopped",
+  "rewrote_modules": false,
+  "lean_rerun": false,
+  "lean_toolchain_in_matched_logs": "leanprover/lean4:v4.31.0",
+  "mathlib_pin_in_frozen_snapshot": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "mathlib_checkout_rehashed": false,
+  "geometry_file": null,
+  "geometry_meaning": "imported namespace Geometry.alpha, Geometry.Config, Geometry.gram",
+  "exact_eight": [
+    "SimplexFull/GlobalCentroidMatrix.lean",
+    "SimplexFull/GlobalCentroidEnergy.lean",
+    "SimplexFull/GlobalCentroidConstants.lean",
+    "SimplexFull/GlobalCentroidRows.lean",
+    "SimplexFull/GlobalCentroidPotential.lean",
+    "SimplexFull/GlobalCentroidGrowth.lean",
+    "SimplexFull/GlobalCentroidOrthant.lean",
+    "SimplexFull/GlobalCentroidConfig.lean"
+  ],
+  "paper": {
+    "file": "snapshot/paper_source/paper_main.tex",
+    "lemma": "lem:centroid",
+    "constants": "eq:eta",
+    "normalization": "eq:normalization"
+  },
+  "coverage": {
+    "psd_variational_gain": "derived in adaptive_value_centroid_gain from witness tangent, centroid_energy_lower, row-square Cauchy, and centroid_scalar_taylor",
+    "covariance_I": "centroidExcess of the identity matrix is 0; R = 1 uses lowerOrthant_ge_iid",
+    "m_eq_2": "included by 2 ≤ m; row factor m - 1 = 1; alpha * m = 1",
+    "singular": "IsWeakSimplexCov is PSD plus PSD of R - J/m; R ≠ 1 uses exists_adaptiveWitnesses_of_isWeakSimplexCov and exp_adaptive_value_le_orthant_of_ne_one; no inverse in the eight",
+    "tau_eta_M0_exact": "tau, eta, and M0 match eq:eta; alpha * m = m - 1",
+    "actual_cdf": "orthantCDF is multivariateGaussian 0 R (lowerOrthant c) toReal",
+    "target_inequality_assumed": false,
+    "forbidden_tokens_in_scalar_agent_GlobalCentroid_and_GlobalScalar": false,
+    "matched_log_axioms": ["propext", "Classical.choice", "Quot.sound"],
+    "o_rho_6_expanded_to_global": false
+  },
+  "defects": [],
+  "diagnostics": [
+    {
+      "severity": "nonblocking",
+      "item": "unused ring after field_simp",
+      "locations": [
+        "scalar-agent/SimplexFull/GlobalCentroidRows.lean:37",
+        "scalar-agent/SimplexFull/GlobalCentroidRows.lean:46",
+        "scalar-agent/SimplexFull/GlobalCentroidOrthant.lean:77"
+      ],
+      "effect": "goals already closed; matched logs exit 0"
+    }
+  ],
+  "o_rho_6": {
+    "paper": "thm:normal-taylor and paper_main.tex lines 1163-1170: m ≥ 3, |rho| < r, strict-normal chart, quartic plus C|rho|^6",
+    "frozen_lean": [
+      "snapshot/lean/SimplexFull/EvenTaylor.lean evenTaylor_bound",
+      "snapshot/lean/SimplexFull/TaylorShell.lean UniformTaylorNormalShell"
+    ],
+    "centroid_modules_mention_rho": false,
+    "paper_limit": "local Lean coverage does not include the global constants"
+  },
+  "outside_eight": [
+    "GlobalCentroidDecoder.lean",
+    "GlobalCentroidDecoderEnergy.lean",
+    "GlobalCentroidDecoderGram.lean",
+    "GlobalCentroidDecoderNormalization.lean"
+  ],
+  "decoder_scope": "statements give the c_s display of thm:code from eta; they do not state the small-shell remainder; proof bodies were not line-audited",
+  "remaining_obligations": [
+    "Do not rewrite the eight modules, GlobalScalarTaylor, GlobalScalarCurvature, or GlobalScalarPsi.",
+    "Do not treat centroid/SimplexFull/GlobalCentroidScalar.lean as the certificate.",
+    "c_g Frobenius stability and c_P Procrustes stability of thm:code remain outside this certificate.",
+    "Keep O(rho^6) local: m ≥ 3, |rho| < r, strict-normal chart.",
+    "Line-audit decoder proofs only under a separate assignment.",
+    "Rehash dependency oleans for GlobalWitnessOrthantBound, SingularWitnesses, and lowerOrthant_ge_iid if a byte-level dependency certificate is required. Entrypoint axiom prints already constrain the cone used by the hashes below.",
+    "Re-execute Lean only if a later source edit changes these hashes."
+  ],
+  "sources": [
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidMatrix.lean",
+      "sha256": "e42631143441186b552ddb007129af84c962e417fc61190a8e13550c4373a9dc",
+      "olean_sha256": "db7b740d40e5a68eb13ab57e4a448cddf0b25f7534c9e5e3e0df985584e522b2",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidMatrix-20261106-162846-445981",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidEnergy.lean",
+      "sha256": "e70a71e282009cc29c317ec062f417d3b310bec41f6fbade1c5200b819ffbeb4",
+      "olean_sha256": "0e09c3a1f40050a0ab82f312cfee28b80ca47aa73c90fff688b4f2e3aac63651",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidEnergy-20261106-162627-798150",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidConstants.lean",
+      "sha256": "cc4b6eb89aa9a14e647d6c096b139745020e877d7890fe8aca383cc8403ab505",
+      "olean_sha256": "bd5f94fb75acda1c486c3f9063c21f4323b8470d902bdd45b64ef7664fabccdb",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidConstants-20261106-162746-582756",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidRows.lean",
+      "sha256": "55906b0fec4b2dc97d19c730b6181aa6c49d284f7ee65caf864ceded2cffd3c6",
+      "olean_sha256": "6af7501fcb8907aad3ef27cc73ecf63903e6e8e0adae1f27475b4225cf1c510a",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidRows-20261106-163416-723206",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidPotential.lean",
+      "sha256": "bcefbf671069d4fc5a33a29beabbc6ca5bba73ec46620e0f5b90d6ff77142382",
+      "olean_sha256": "807b8bb7e77f2dfae1c58299d57657374c301fa6d500309e0b337bcaf8f68038",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidPotential-20261106-163545-986384",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidGrowth.lean",
+      "sha256": "c12885577096bf049e88612b9b25eb3dea92715fa50ba6f6f1d21722ce1e8ca9",
+      "olean_sha256": "6de89a4280d4d8933b9fa28f9cfc8533c7e54329acea834c58e8fe55eafb41bf",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidGrowth-20261106-165658-567015",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidOrthant.lean",
+      "sha256": "fea1a2497f2d14688af053875dd4b5da9cd75c556cb9f9eddb2952285e7900da",
+      "olean_sha256": "50c2d24ffaa03a59ebcd157a737a7fcafd4b104653c3ec71889797a4c165c2d3",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidOrthant-20261106-170332-831296",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalCentroidConfig.lean",
+      "sha256": "897ad4d73646cb002fa9721d010a79352d903baaedbd73dbe0ab8f231f4092cb",
+      "olean_sha256": "7e3c328a1ca1612378ea495299ae79496f0d26fddc31f08794832a820e264cb0",
+      "log": "scalar-agent/logs/SimplexFull.GlobalCentroidConfig-20261106-170708-471903",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalScalarTaylor.lean",
+      "sha256": "7ddc7a13a5ed04917417f8dd47fe7f7dbdce4c3acd11d2a1b731e99bf83f879d",
+      "olean_sha256": "4bbcbbdbe20b183b683a16e64babbe0787c7833085f4f40bdc375fea98361718",
+      "log": "scalar-agent/logs/SimplexFull.GlobalScalarTaylor-20261106-160516-997959",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalScalarCurvature.lean",
+      "sha256": "5b6b2c7b06c8c22860b2281030310d1f015141ccb40f8b230946ddea0c26c6b3",
+      "log": "scalar-agent/logs/SimplexFull.GlobalScalarCurvature-20261106-155754-729617",
+      "exit_code": 0,
+      "hash_matches_log": true
+    },
+    {
+      "file": "scalar-agent/SimplexFull/GlobalScalarPsi.lean",
+      "sha256": "5ac00effd8cbfd5cadd6c3c8842ae276b6c814b1399b5caf95e36a86db02fd2e",
+      "log": "scalar-agent/logs/SimplexFull.GlobalScalarPsi-20261106-155234-104442",
+      "exit_code": 0,
+      "hash_matches_log": true
+    }
+  ]
+}

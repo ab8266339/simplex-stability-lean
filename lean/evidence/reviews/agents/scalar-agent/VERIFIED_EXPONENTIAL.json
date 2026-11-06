@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "scope": "Actual probability-CDF exponential comparison with exact exp(a)-1, Gaussian decoding normalization, and full centroid decoder constant cs=W*eta. Includes actual all-correlation unit decoder predicate for ball-energy lift. Other global stability coefficients are outside this certificate.",
+  "entrypoints": [
+    "SimplexFull.GlobalTail.exp_integral_difference_ge_of_cdf_gap",
+    "SimplexFull.GlobalTail.decodingSuccess_centroid_penalty",
+    "SimplexFull.GlobalTail.unitDecoderCentroidBound"
+  ],
+  "standard_axioms_only": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    {
+      "module": "SimplexFull.GlobalTailExponential",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalTailExponential.lean",
+      "source_sha256": "bee72b4ddcf0564de425310aaf61f54317d4d6c40d57caeba9a28f0b5bad8fb1",
+      "verification": {
+        "module": "SimplexFull.GlobalTailExponential",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalTailExponential.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalTailExponential.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "bee72b4ddcf0564de425310aaf61f54317d4d6c40d57caeba9a28f0b5bad8fb1",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalTailExponential-20261106-171249-936141",
+        "olean_sha256": "4dd537880f2ca2823f1e8db3282350e39fee498e56cf9e4120ad720c15f12286"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalTailExponentialGaussian",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalTailExponentialGaussian.lean",
+      "source_sha256": "b6253ad7fb2506038e6fa3a938451443e5c49387a5f0003a6797a4a867ecde67",
+      "verification": {
+        "module": "SimplexFull.GlobalTailExponentialGaussian",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalTailExponentialGaussian.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalTailExponentialGaussian.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "b6253ad7fb2506038e6fa3a938451443e5c49387a5f0003a6797a4a867ecde67",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalTailExponentialGaussian-20261106-171657-588077",
+        "olean_sha256": "8bf6114fe25790639d5870f35c42cef9dc00a083eca4f5fabd553acece0b230a"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoderNormalization",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoderNormalization.lean",
+      "source_sha256": "f6400d6ace9844fbb1fff1f09689960b4fa2097e58e76782ec756edc4cda5c47",
+      "verification": {
+        "module": "SimplexFull.GlobalCentroidDecoderNormalization",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalCentroidDecoderNormalization.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoderNormalization.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "f6400d6ace9844fbb1fff1f09689960b4fa2097e58e76782ec756edc4cda5c47",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalCentroidDecoderNormalization-20261106-171428-300541",
+        "olean_sha256": "50f208009c14aecbe8bab78e6d707fd0ee0028a7797d983c01a205c2b84189b0"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoder",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoder.lean",
+      "source_sha256": "1def9828803b59bbb58e3f0dfe98e7be928d9232f9a82a49eb8b0c0b70a6a814",
+      "verification": {
+        "module": "SimplexFull.GlobalCentroidDecoder",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalCentroidDecoder.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoder.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "1def9828803b59bbb58e3f0dfe98e7be928d9232f9a82a49eb8b0c0b70a6a814",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalCentroidDecoder-20261106-171822-492591",
+        "olean_sha256": "4df088cad24f6b1c34a7a92a627f557aa4180ec68ba245324211c0d3b66375ba"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalCentroidDecoderGram",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoderGram.lean",
+      "source_sha256": "f4437f741257ebbea69f0ba238913e61f90c1db05ac8f56205a28f4a29efad26",
+      "verification": {
+        "module": "SimplexFull.GlobalCentroidDecoderGram",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalCentroidDecoderGram.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoderGram.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "f4437f741257ebbea69f0ba238913e61f90c1db05ac8f56205a28f4a29efad26",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalCentroidDecoderGram-20261106-172006-010022",
+        "olean_sha256": "d94537bb18caee19fb6c2dc699480cf22824bf1bbfad4c58a1b0a194ec852cdc"
+      }
+    }
+  ]
+}

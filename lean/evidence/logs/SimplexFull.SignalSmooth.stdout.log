@@ -1,0 +1,15 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\SignalSmooth.lean:30:37: warning: Variable name `hm` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\SignalSmooth.lean:34:33: warning: Variable name `hm` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'SimplexFull.integrableExpSet_maxCoord_eq_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.contDiff_decodingSuccess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.contDiff_simplexSuccess_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.contDiff_simplexSuccess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.differentiableAt_simplexSuccess' depends on axioms: [propext, Classical.choice, Quot.sound]

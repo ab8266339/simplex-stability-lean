@@ -1,0 +1,435 @@
+\section{Lean formalization and reproducibility}\label{ap:lean}
+
+\subsection{Scope of the certificate}\label{lv:scope}
+The supplementary Lean development verifies the global quantitative
+orthant comparison with its explicit constants, the separate centroid
+penalty, and their consequences for decoding, Procrustes recovery, rank
+deficiency, unused energy and mean width.  This extends the earlier
+certificate for the ordered channel-parameter crossings, the exact
+strict-normal minimizer on sufficiently small Procrustes shells, and the
+quantified $O(\rho^6)$ Taylor remainder.  All statements use the actual
+Gaussian measures, integrals and geometric distance.  The global
+comparison does not assume a witness bound, a product deficit or a
+desired CDF inequality: these are proved in the dependency chain,
+including for singular covariances.
+
+The global results hold for $m\ge2$, with $\lambda>0$ where a positive
+decoding coefficient is required.  This does not relax the separate
+hypotheses of the local results: those retain $m\ge3$, the stated strict
+curvature gap, and a sufficiently small shell radius.  The certificate
+does not cover numerical diagnostics, learning experiments or historical
+priority claims.  It does not identify finite-radius minimizers in the
+tangential regimes or on a boundary of equal curvatures.  The local
+radius and remainder constant are proved to exist; no effective numerical
+value is certified.
+
+The final library entry is \path{SimplexFull/VerifiedGlobal.lean}.
+Its dependency closure contains 216 source modules, including
+52 vendored foundation modules.  A separate audit imports this entry
+and prints the axioms of 91 selected public declarations.
+These counts describe the supplied artifact, rather than a claim that
+every sentence of the manuscript has a formal counterpart.  The formal
+and written proofs may use different intermediate lemmas.
+The original 94-module local development is retained byte for byte.
+
+\subsection{Objects and normalization}\label{lv:objects}
+The Gaussian density and distribution function are concrete definitions:
+\path{SimplexFull.phi} is Mathlib's real standard Gaussian density, and
+\path{SimplexFull.Phi} is its Lebesgue integral over $(-\infty,c]$.
+The definitions of $q,h,\sigma$ therefore have their usual analytic
+meaning.  For $m\geq3$, the normalized moments in the crossing theorems are
+defined using
+\[
+ w_{m,\mu}(c)=e^{\mu c}\phi(c)^2\Phi(c)^{m-2},
+ \qquad
+ Z_m(\mu)=\int_{\mathbb R}w_{m,\mu}(c)\,dc,
+\]
+and
+\[
+ a_m(\mu)=\frac{\int h(c)^2w_{m,\mu}(c)\,dc}{Z_m(\mu)},\qquad
+ b_m(\mu)=\frac{\int \sigma(c)w_{m,\mu}(c)\,dc}{Z_m(\mu)},\qquad
+ H_m(\mu)=\frac{\int h(c)w_{m,\mu}(c)\,dc}{Z_m(\mu)}.
+\]
+These are respectively \path{SimplexFull.a}, \path{SimplexFull.b}, and
+\path{SimplexFull.H}; their normalizer is proved positive.  The parameter
+in these integrals is $\mu=\lambda/\sqrt{\alpha}$, where
+$\alpha=(m-1)/m$.  Thus a crossing expressed in $\mu$ corresponds to the
+physical signal amplitude $\lambda=\sqrt{\alpha}\,\mu$.  The variables
+$c$, $\mu$, and $\lambda$ are not interchangeable.  For $\lambda>0$,
+\[
+ a_m(\mu)=A_\lambda/C_\lambda,\qquad
+ b_m(\mu)=B_\lambda/C_\lambda,\qquad
+ C_\lambda=\frac{\mu e^{-\mu^2/2}}{m}Z_m(\mu)>0.
+\]
+The value $\mu=0$ used in the normalized crossing arguments is an endpoint
+of the moment family, not a division by the zero-amplitude value of
+$C_\lambda$.
+
+The objective \path{SimplexFull.decodingSuccess} is defined by
+\[
+ \Pc(G;\lambda)=\frac{e^{-\lambda^2/2}}{m}
+ \int_{\mathbb R^m}e^{\lambda\max_i x_i}\,dN(0,G)(x).
+\]
+Here $N(0,G)$ is Mathlib's actual
+\path{ProbabilityTheory.multivariateGaussian}, including the singular
+simplex covariance.  Gaussian density identities for positive definite
+covariances and the common Gaussian shift identity connect the local
+analytic calculations to this definition.  The extended development also identifies this expression with the
+operational maximum-likelihood decoder for unit signals.  For signals
+of unequal energy it instead uses the class likelihood
+$\exp(\lambda\langle x_i,z\rangle-\lambda^2\|x_i\|^2/2)$ and the
+maximum-likelihood/Bayes-value identity.  The individual energy correction
+is retained when proving the unused-energy result.
+
+In the namespace \path{SimplexFull.Geometry},
+\path{simplexSuccess m} is exactly the function
+$p_m(\lambda)=\Pc(G_\Delta;\lambda)$.  The symbols $p_m'$ and $p_m''$
+in the Taylor statement are represented by \path{deriv} and
+\path{deriv (deriv (simplexSuccess m))}, rather than by independent
+coefficient variables.  The theorem
+\path{SimplexFull.contDiff_simplexSuccess} supplies genuine $C^3$
+regularity.  Its proof establishes all-real exponential integrability
+of the coordinate maximum and applies Mathlib's moment-generating-function
+analyticity theorem.  In fact, the formal regularity result is stronger
+than the order needed here.
+
+For configurations, \path{Geometry.procrustesSq X V} is defined as the
+real infimum
+\[
+ \inf_{U\in O(d)}\sum_{i=1}^m\|X_i-U V_i\|^2.
+\]
+The index type consists of linear isometric automorphisms of the whole
+Euclidean space.  Accordingly, \path{Geometry.orthoOrbit X N} expresses
+membership in the actual $O(d)$ orbit, including reflections.  The
+distance is not replaced by a chosen alignment or an auxiliary matrix
+norm.  The normal configuration is proved realizable when $d\geq m$,
+and its squared Procrustes distance is proved to equal $\rho^2$.
+
+For a finite configuration $X$, the support of its actual convex hull is
+defined as the supremum of $\langle g,y\rangle$ over
+$y\in\operatorname{conv}(\operatorname{range}X)$.  The development proves
+that this supremum is attained and equals the finite maximum of the
+scores.  The normalized sphere measure is the normalization of
+Mathlib's \path{volume.toSphere}; it is not defined through a Gaussian
+ratio.  The polar-coordinate measure-preserving map, the radial Gaussian
+density, and positive homogeneity identify twice its support average (equivalently, the average of
+$h_K(u)+h_K(-u)$) with the
+Gaussian expression $2\E\max_i\langle g,X_i\rangle/\E\|g\|$.
+The denominator is always the Gaussian radial mean in the original
+ambient dimension $d$, including when an auxiliary lift uses $d+m$
+coordinates.
+
+\subsection{Correspondence with the new theorems}\label{lv:map}
+Table~\ref{lv:table} lists the principal entry declarations.  Module paths
+are relative to \path{SimplexFull}; all declarations shown below are
+fully qualified.  The package's proof map and source index give the
+remaining dependency information.
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}p{0.70\textwidth}@{}}
+\caption{Principal mathematical statements and their Lean entry points.}
+\label{lv:table}\\
+\toprule
+Statement & Module and public declaration\\
+\midrule
+\endfirsthead
+\toprule
+Statement & Module and public declaration\\
+\midrule
+\endhead
+Theorem~\ref{thm:global}
+&
+\path{GlobalComparison.lean}:
+\path{SimplexFull.GlobalComparison.orthant_sqrt_comparison},
+\path{orthant_linear_comparison}, and
+\path{quantitative_lowerOrthant} in the same namespace.
+These use the exact $K,\kappa$ and all admissible PSD covariances.
+\\
+Quantitative rectangle and centroid bounds
+&
+\path{GlobalRectangleBound.lean}:
+\path{SimplexFull.GlobalRectangle.symmetricRectangle_gap};
+\path{GlobalCentroidConfig.lean}:
+\path{SimplexFull.GlobalCentroid.centroid_penalty}.
+\\
+Theorem~\ref{thm:code} and Corollary~\ref{cor:operational}
+&
+\path{GlobalApplicationsCore.lean} and
+\path{GlobalApplicationsDecoder.lean}:
+\path{SimplexFull.GlobalApplication.decodingSuccess_gram_penalty},
+\path{decodingSuccess_procrustes_penalty}, and
+\path{decodingSuccess_rank_deficiency} in that namespace.
+The centroid and operational unused-energy conclusions are
+\path{SimplexFull.GlobalTail.decodingSuccess_centroid_penalty} and
+\path{SimplexFull.GlobalTail.ball_decoder_unused_energy}.
+\\
+Theorem~\ref{thm:width}
+&
+\path{GlobalSphereGaussianWidth.lean}:
+\path{SimplexFull.SphereGaussian.ball_mean_width}.
+The traditional width-function integral is identified by
+\path{GlobalSphereGaussianSymmetry.lean}:
+\path{SimplexFull.SphereGaussian.widthIntegral_convexHull_eq_meanWidth}.
+The Gaussian representation is
+\path{SimplexFull.GlobalApplication.ball_mean_width}.
+\\
+Theorem~\ref{thm:ordered-switches}
+&
+\path{GaussianCrossings.lean}:
+\path{SimplexFull.gaussian_ordered_crossings}.
+The strict exclusion of the intermediate coefficient from the minimum is
+\path{SimplexFull.gaussian_middle_coefficient_not_min}.
+The complete chart and its positive-scaling form are in
+\path{CrossingSignChart.lean}:
+\path{SimplexFull.gaussian_ordered_crossings_sign_chart} and
+\path{SimplexFull.gaussian_ordered_crossings_sign_chart_scaled}.
+\\
+Theorem~\ref{thm:triangular-switch}
+&
+\path{GaussianCrossings.lean}:
+\path{SimplexFull.gaussian_triangular_unique_crossing}.
+The equivalent equation $\mu H_3(\mu)=1$ is established by
+\path{SimplexFull.gaussian_triangular_coefficient_eq_iff}.
+\\
+Theorem~\ref{thm:normal-shell}
+&
+\path{UniformNormalShell.lean}:
+\path{SimplexFull.Geometry.gaussian_uniform_exact_normal_shell_m4}
+and
+\path{SimplexFull.Geometry.gaussian_uniform_exact_normal_shell_m3}.
+The corresponding threshold versions are
+\path{SimplexFull.Geometry.gaussian_normal_threshold_uniform_shell_m4}
+and
+\path{SimplexFull.Geometry.gaussian_normal_threshold_uniform_shell_m3}.
+\\
+Theorem~\ref{thm:normal-taylor}
+&
+\path{GaussianTaylor.lean}:
+\path{SimplexFull.Geometry.normalTaylor_bound},
+\path{SimplexFull.Geometry.normalTaylor_isBigO},
+\path{SimplexFull.Geometry.gaussian_uniform_taylor_shell_m4},
+and
+\path{SimplexFull.Geometry.gaussian_uniform_taylor_shell_m3}.
+\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+For $m\geq4$, the crossing declaration asserts
+$0<t_1<t_0<t_{01}$ and uniqueness on $[0,\infty)$ of the equations
+\[
+ a_m(t_1)+(m-2)b_m(t_1)=m-1,\qquad
+ a_m(t_0)=m/2,\qquad
+ a_m(t_{01})=m b_m(t_{01}).
+\]
+The declaration \path{gaussian_ordered_crossings_sign_chart} packages
+these roots and their uniqueness together with all four open-interval
+comparisons and all three endpoint comparisons for $L_0,L_1,L_\perp$.
+Its \path{gaussian_ordered_crossings_sign_chart_scaled} companion gives the
+same chart after multiplication by any positive common factor, with the
+roots independent of that factor.  For every $\lambda>0$ one may therefore
+use $C_\lambda>0$ and $\Lambda_j=C_\lambda L_j$ to obtain the physical
+coefficient chart in Theorem~\ref{thm:ordered-switches}.  No additional
+analytic hypothesis is required.  The original crossing declaration
+instantiates the abstract comparison lemmas with the actual Gaussian moments.
+The proofs include the strict benchmark $b_4(0)>1/2$,
+monotonicity, and the integral balance identity
+$2a_m+(m-1)b_m=m+\mu H_m$.
+The case $m=3$ is handled separately: its crossing is
+$a_3+b_3=2$, and no nonzero $\mathcal H_0$ sector is introduced.
+
+The geometric conclusions are packaged as
+\path{SimplexFull.Geometry.UniformExactNormalShell} and
+\path{SimplexFull.Geometry.UniformTaylorNormalShell}.
+For fixed $m$ and $\lambda$ in the strict-normal regime, the latter has
+the quantifier order
+\[
+ \exists C>0\ \exists\rho_0>0\
+ \forall d\geq m\ \forall V\text{ with Gram }G_\Delta\
+ \exists z\
+ \forall\,0<\rho<\rho_0\
+ \forall X\text{ on the feasible shell}.
+\]
+The normal vector $z$ is unit and orthogonal to every $V_i$.
+In particular, both $C$ and $\rho_0$ are independent of the ambient
+dimension, reference embedding, and competitor.  The chosen $z$ is
+independent of $\rho$.  The final statements contain feasibility of
+$N_i=\kappa V_i+\sqrt{1-\kappa^2}\,z$, the exact optimal value, a comparison
+with every feasible $X$, and equality if and only if
+\path{Geometry.orthoOrbit X N}.  The strict-normal hypothesis is
+$a_m(\mu)>m/2$ for $m\geq4$, and $a_3(\mu)+b_3(\mu)>2$ for $m=3$.
+
+The Taylor remainder is the actual function
+\[
+ \mathcal R_{m,\lambda}(\rho)
+ =p_m(\lambda)-p_m\!\left(\lambda\left(1-\frac{\rho^2}{2m}\right)\right)
+ -\left[
+ \frac{\lambda p_m'(\lambda)}{2m}\rho^2
+ -\frac{\lambda^2p_m''(\lambda)}{8m^2}\rho^4
+ \right].
+\]
+The declaration \path{normalTaylor_bound} proves
+$|\mathcal R_{m,\lambda}(\rho)|\leq C|\rho|^6$ for $|\rho|<r$,
+with $C,r>0$.  The companion \path{normalTaylor_isBigO} states the
+corresponding two-sided big-$O$ assertion at zero.  The generic proof
+uses a third-order Taylor expansion, obtains an $O(h^3)$ quadratic
+remainder, and substitutes $h=-\lambda\rho^2/(2m)$.  Thus it proves
+$O(\rho^6)$, rather than only the $o(\rho^4)$ conclusion available
+from $C^2$ regularity.
+
+The stronger regularity declaration
+\path{SimplexFull.contDiff_simplexSuccess_top} also verifies the
+analyticity assertion.  In the pinned Mathlib version the order type of
+\path{ContDiff} is $\operatorname{WithTop}(\mathbb N_\infty)$:
+its outer $\top$ is the analytic order $\omega$, distinct from the
+smooth order $\infty$.  Applying \path{ContDiffAt.analyticAt} therefore
+gives \path{AnalyticAt} at every real argument.  A supplementary
+kernel-checked statement spells out this consequence for the actual
+multivariate Gaussian probability integral.
+
+The declaration
+\path{SimplexFull.Geometry.normalDeficit_odd_iteratedDeriv_zero}
+in \path{TaylorParity.lean} proves that every odd derivative of the exact
+deficit vanishes at zero.  Finally,
+\path{SimplexFull.Geometry.simplex_quadratic_coefficient_eq_normal_curvature}
+in \path{TaylorCoefficient.lean} identifies the leading coefficient with
+the actual normal curvature:
+\[
+ \frac{\lambda p_m'(\lambda)}{2m}
+ =\frac{m-1}{2}\,C_\lambda.
+\]
+This identity includes the conversion between $\lambda$ and $\mu$.
+
+
+\subsection{Global proof chain and assumptions}\label{lv:global}
+The scalar function $\Psi$ is defined from the actual inverse of
+$h(s)=s+q(s)$ on the positive axis.  Its monotonicity, inverse range,
+strict concavity, and derivatives are proved.  The curvature constant
+$M_0$ is the attained maximum of the actual continuous curvature
+function on the manuscript's compact interval.  In particular,
+the lower Taylor bound used in the centroid argument is not supplied
+as an external smoothness or remainder assumption.
+
+The quantitative rectangle proof starts from the true bivariate
+conditional Gaussian law.  Differentiation under the compact integral
+and the boundary derivative give the Plackett formula.  Integration
+on $[0,1/2]$, monotonicity and evenness yield the stated
+$\ell^2e^{-4T^2/3}/(4\pi)$ coefficient.  At correlation $+1$ or $-1$
+the residual Gaussian is a Dirac measure and the rectangle mass is
+the smaller marginal slab mass; no singular density is substituted.
+The actual Gaussian slab peeling argument and a maximizing
+off-diagonal pair then give the factor $m(m-1)$ and the exponent $m-2$.
+
+For Theorem~\ref{thm:global}, existence of actual adaptive witnesses,
+their compact coordinate bounds, the sum--difference Gaussian law
+and Fubini's theorem lead to the quantitative doubled-product deficit.
+The product of the normalized self-convolution factors has Gaussian
+integral at least one, including
+for PSD singular covariance by continuous regularization.
+The fixed-factor rectangle estimate on the central box gives precisely
+$K$, with exponent $2m-2$.  The correlation-matrix bound
+$\|R-I\|_F^2\le m(m-1)$ gives the manuscript's $\kappa$ by
+rationalizing the square root.  The identity covariance is handled
+directly.  The centroid proof uses the actual PSD variational value,
+the verified lower Taylor bound for $\Psi$, and the exact $\tau,\eta$.
+
+The integration bridge proves
+\[
+ \E\max Z-\E\max X
+ =\int_{\mathbb R}\bigl(F_X(c)-F_Z(c)\bigr)\,dc
+\]
+from a centered signed-tail kernel and Fubini, with integrability
+proved.  Applied to the exponential of the maximum it retains the
+exact window factor $e^\mu-1$.  Gaussian normalization at
+$R=\alpha G+J/m$ supplies the factors $\alpha^2$ and $\sqrt\alpha$.
+Consequently the final entries use
+\[
+ c_g=W\kappa\alpha^2,\quad c_s=W\eta,\quad
+ c_P=\left(\frac{\alpha}{c_g}+\frac{1}{mc_s}\right)^{-1},
+ \qquad b_g=\kappa\alpha^{3/2},\quad b_s=\eta/\sqrt\alpha.
+\]
+None of those entries retains a unit-comparison or target-CDF hypothesis.
+
+The geometric inequality is proved for vectors of arbitrary lengths
+and for the actual infimum over $O(d)$; a polar-alignment witness also
+proves attainment.  The rank corollary assumes the actual matrix rank
+bound, with its bound independent of any realization dimension.
+For ball configurations the formal proof uses mutually orthogonal
+extra coordinates.  Adding the resulting independent centered Gaussian
+noise cannot decrease the expected maximum; the corresponding likelihood
+argument proves the operational decoding comparison for nonunit signals.
+This orthogonal lift is an alternative to the shared-coordinate lift
+in the written unused-energy proof.
+
+The foundation sources from the weak-simplex and simplex-uniqueness
+developments are supplied with exact upstream commits, per-file
+provenance and their original licenses and attributions in
+\path{VENDOR_PROVENANCE.json} and \path{licenses/}.  Their imported
+closure is included in the same fresh trust-level-zero build as the
+new modules, rather than accepted through inherited project binaries.
+
+\subsection{Build and axiom audit}\label{lv:certificate}
+The released archive is
+\path{concrete-simplex-lean-global-20261106.zip}.
+Its SHA-256 digest is
+\begin{quote}\small
+\path{4e8e24831e8c56ab07523aed22c89c4ba6854726accccff2aa32c0587133896b}.
+\end{quote}
+The toolchain is Lean 4.31.0, pinned by
+\path{leanprover/lean4:v4.31.0}; the Mathlib revision is
+\begin{quote}\small
+\path{fabf563a7c95a166b8d7b6efca11c8b4dc9d911f}.
+\end{quote}
+The successful recorded run is \path{20261106-180522-470580}.
+Its \path{evidence/verification.json} records all 216 source-module
+commands and exit codes, source and compiled-file hashes, the successful
+combined import, and the final axiom audit.  All source hashes remained
+unchanged through verification.  The manuscript bundle also supplies
+the independent Grok Build and agent cross-reviews.
+
+The verifier copies the three project-source namespaces into a fresh
+snapshot and creates an initially empty output directory.  It compiles
+their explicit dependency closure in dependency order.  All inherited
+project build paths, including paths containing only a bare root module,
+are excluded from \path{LEAN_PATH}; the pinned Mathlib cache is supplied
+by Lake.  Every project source is compiled with Lean's trust level zero:
+\begin{verbatim}
+lean -j 2 -t 0 -R <snapshot/src> \
+  -o <fresh/build/Module.olean> \
+  <snapshot/src/Module.lean>
+\end{verbatim}
+The final audit imports \path{SimplexFull.VerifiedGlobal} and invokes
+\path{#print axioms} for 91 selected declarations.
+Their dependency reports contain only
+\path{propext}, \path{Classical.choice}, and \path{Quot.sound}.
+Acceptance requires exactly one recognized report per requested
+declaration.  Missing, duplicate, unexpected or nonstandard reports
+cause verification to fail.
+
+After removing comments and strings, source scanning rejects
+\path{sorry}, \path{admit}, project \path{axiom} declarations,
+\path{unsafe}, \path{native_decide} and \path{debug.skipKernelTC}.
+Import parsing rejects unknown project roots and unsupported header
+layouts instead of silently omitting them.  Positive and negative
+regression tests cover the parser, binary-path isolation and axiom
+reports.  These checks accompany, rather than replace, kernel checking.
+
+\subsection{Reproducing the verification}\label{lv:reproduce}
+After extracting the archive, install the pinned Lean toolchain with
+\path{elan} and make Python available.  From the package directory run
+\begin{verbatim}
+lake update
+lake exe cache get
+lake env python reproduce.py
+\end{verbatim}
+The Mathlib revision is fixed in \path{lakefile.toml}.
+The verifier uses \path{SimplexFull.VerifiedGlobal} and
+\path{AUDIT_THEOREMS_GLOBAL.json}, creates a fresh timestamped build,
+and returns a nonzero status on any source, compilation or axiom-audit
+failure.  The package supplies \path{PROOF_MAP_GLOBAL.md},
+\path{SOURCE_INDEX.json}, \path{SHA256SUMS.json},
+the individual compiler logs, upstream provenance and independent
+cross-reviews.  The source, compiler output and
+\path{evidence/verification.json} are the reproducibility evidence.

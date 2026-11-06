@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": {
+    "certificate_passed": true,
+    "module_count_216": true,
+    "entry_count_91": true,
+    "vendor_count_52": true,
+    "axioms_standard_three": true,
+    "all_modules_trust0_exit0": true,
+    "four_sphere_modules": true,
+    "sphere_final_audit_entries": true,
+    "archive_hash": true,
+    "paper_hash_and_run": true,
+    "paper_counts": true,
+    "sphere_factor_two_corrected": true,
+    "direct_sphere_mapping": true,
+    "Q1_product_wording": true,
+    "no_old_global_exclusion": true,
+    "main_exactly_two_authorized_text_updates": true,
+    "old_local_O6_and_quantifier_block_unchanged": true,
+    "normal_proof_unchanged": true,
+    "transition_proof_unchanged": true,
+    "original_94_lean_modules_unchanged": true,
+    "archive_certificate_matches": true,
+    "archive_all_216_source_hashes_match": true,
+    "all_replacements_once": true,
+    "sole_additional_change_longtable_raggedright": true
+  },
+  "checked_files": {
+    "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\paper-global\\paper_main.tex": "cd3f469e018026566cb66e89ad00c994bed31387e261bef8bb002e5b5d486b81",
+    "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\paper-global\\sections\\lean_verification.tex": "9f6e74569f5ef23d4999d63e134e160b9aa8311008581eb487d8a42138a228de",
+    "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\paper-global\\GLOBAL_EDIT.json": "5f16be5f4bf31ee8f138ffd7cb1235bc7d4be277a3dc4e2d46c65c7a18a7893b",
+    "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\kernel-global\\verification\\20261106-180522-470580\\verification.json": "793342aab7bc84d496542efadbb280538ad621e71e03239f46d5e85209a467fe",
+    "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\update_global_paper.py": "3dfe13bd01d1038d911d5e4aaaaf17fae1aa348431b018f7d284d4c6398a5485"
+  },
+  "certificate": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\kernel-global\\verification\\20261106-180522-470580\\verification.json",
+  "archive": "E:\\simplex-lean-full-20261106\\release\\concrete-simplex-lean-global-20261106.zip",
+  "archive_sha256": "4e8e24831e8c56ab07523aed22c89c4ba6854726accccff2aa32c0587133896b",
+  "archive_source_errors": [],
+  "scope": "Independent text/scope and hash audit. PDF layout is being rendered and reviewed separately by root. No paper, Lean, certificate or archive source was modified."
+}

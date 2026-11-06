@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "scope": "Complete operational maximum-likelihood centroid-energy and unused-energy inequalities on unit-ball configurations, and the same unused-energy Bayes-value inequality, with exact cs=W*eta and all previous conditional unit hypotheses discharged.",
+  "entrypoints": [
+    "SimplexFull.GlobalTail.ball_decoder_centroid_energy",
+    "SimplexFull.GlobalTail.ball_decoder_unused_energy",
+    "SimplexFull.GlobalTail.ball_bayes_unused_energy"
+  ],
+  "standard_axioms_only": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    {
+      "module": "SimplexFull.GlobalCentroidDecoderEnergy",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoderEnergy.lean",
+      "source_sha256": "31f6b4a5d89663d954a451a7057e30156a30e65612519c30454fbb7d3e8c2e8d",
+      "verification": {
+        "module": "SimplexFull.GlobalCentroidDecoderEnergy",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalCentroidDecoderEnergy.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalCentroidDecoderEnergy.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "31f6b4a5d89663d954a451a7057e30156a30e65612519c30454fbb7d3e8c2e8d",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalCentroidDecoderEnergy-20261106-172248-775281",
+        "olean_sha256": "9e7d484c8e9e52c3946a71dc983c6c130e787250fab39362538c321bba2e8cc3"
+      }
+    }
+  ]
+}

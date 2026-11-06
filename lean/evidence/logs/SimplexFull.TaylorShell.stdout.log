@@ -1,0 +1,1 @@
+'SimplexFull.Geometry.uniformTaylorNormalShell_of_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,1 @@
+'SimplexFull.Covariance.hasDerivAt_inv_covLine' depends on axioms: [propext, Classical.choice, Quot.sound]

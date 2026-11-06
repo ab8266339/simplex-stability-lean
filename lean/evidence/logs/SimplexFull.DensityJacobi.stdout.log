@@ -1,0 +1,5 @@
+'SimplexFull.Covariance.ds_hasDerivAt_det_covLine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.ds_hasDerivAt_deriv_det_covLine_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.ds_iteratedDeriv_two_det_covLine_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

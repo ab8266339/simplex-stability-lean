@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "scope": "Actual probability-normalized volume.toSphere surface measure, genuine polar Gaussian integration, finite-convex-hull support integral and complete spherical mean-width stability. Conventional h(u)+h(-u) width integral identified by proved Gaussian antipodal symmetry. No assumed target polar identity and no Gaussian-ratio definition of sphere measure.",
+  "entrypoints": [
+    "SimplexFull.SphereGaussian.integral_polar",
+    "SimplexFull.SphereGaussian.gaussian_integral_homogeneous",
+    "SimplexFull.SphereGaussian.normalizedSphereMeasure_isProbability",
+    "SimplexFull.SphereGaussian.sphere_integral_eq_gaussian_ratio",
+    "SimplexFull.SphereGaussian.integrable_finiteHullSupport_sphere",
+    "SimplexFull.SphereGaussian.meanWidth_convexHull_eq_normalizedGaussianWidth",
+    "SimplexFull.SphereGaussian.ball_mean_width",
+    "SimplexFull.SphereGaussian.gaussian_integral_neg_eq",
+    "SimplexFull.SphereGaussian.sphere_support_neg_integral",
+    "SimplexFull.SphereGaussian.widthIntegral_convexHull_eq_meanWidth"
+  ],
+  "standard_axioms_only": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    {
+      "module": "SimplexFull.GlobalSphereGaussianPolar",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussianPolar.lean",
+      "source_sha256": "77e79f71ede3e689220c01a27f54054bb7b7e5dfe0d1b3d85cc8639d43ee3152",
+      "verification": {
+        "module": "SimplexFull.GlobalSphereGaussianPolar",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalSphereGaussianPolar.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussianPolar.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "77e79f71ede3e689220c01a27f54054bb7b7e5dfe0d1b3d85cc8639d43ee3152",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalSphereGaussianPolar-20261106-174908-824567",
+        "olean_sha256": "b227b4d4581c33919dc7241d131da7ba73fd981acbb9c3590c9c2ade3bf8093f"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussian",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussian.lean",
+      "source_sha256": "65f8fc8b1b113af2ca5a3684d8375a441b74ac42ee935dbbf9457e0cbafd73ff",
+      "verification": {
+        "module": "SimplexFull.GlobalSphereGaussian",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalSphereGaussian.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussian.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "65f8fc8b1b113af2ca5a3684d8375a441b74ac42ee935dbbf9457e0cbafd73ff",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalSphereGaussian-20261106-175214-261817",
+        "olean_sha256": "bdcb11df8f5e8ed004af751909352b6178cc38804e3c27aac37460622ec0df62"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussianWidth",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussianWidth.lean",
+      "source_sha256": "8777146416aafb52b71735d793ab574e061096407161c0702348a847e09888cd",
+      "verification": {
+        "module": "SimplexFull.GlobalSphereGaussianWidth",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalSphereGaussianWidth.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussianWidth.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "8777146416aafb52b71735d793ab574e061096407161c0702348a847e09888cd",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalSphereGaussianWidth-20261106-175330-892962",
+        "olean_sha256": "bec1b584c465dd6dd2fa8494942436b737ea613b0989f9923cae0ae55aeaa7a0"
+      }
+    },
+    {
+      "module": "SimplexFull.GlobalSphereGaussianSymmetry",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussianSymmetry.lean",
+      "source_sha256": "ad2a4e52232876e559a2cdad4125cbb14da6843ac4720129c5fc476ddf48c477",
+      "verification": {
+        "module": "SimplexFull.GlobalSphereGaussianSymmetry",
+        "command": [
+          "c:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\bin\\lean.EXE",
+          "-j",
+          "2",
+          "-t",
+          "0",
+          "-R",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent",
+          "-o",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\build\\SimplexFull\\GlobalSphereGaussianSymmetry.olean",
+          "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\SimplexFull\\GlobalSphereGaussianSymmetry.lean"
+        ],
+        "exit_code": 0,
+        "source_sha256": "ad2a4e52232876e559a2cdad4125cbb14da6843ac4720129c5fc476ddf48c477",
+        "unchanged_during_compile": true,
+        "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\scalar-agent\\logs\\SimplexFull.GlobalSphereGaussianSymmetry-20261106-175743-822741",
+        "olean_sha256": "8b05565b576d5502e35f24dbd4da91e0b95309dbd344918e15009ab70d70dcf6"
+      }
+    }
+  ]
+}

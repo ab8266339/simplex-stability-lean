@@ -1,0 +1,131 @@
+'SimplexFull.Geometry.gaussian_uniform_exact_normal_shell_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_exact_normal_shell_m3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_normal_threshold_uniform_shell_m4' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.gaussian_normal_threshold_uniform_shell_m3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.gaussian_ordered_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_triangular_unique_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_middle_coefficient_not_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_shell_hessian_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.second_fderiv_extendedLoss_one_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.second_fderiv_rhoExpectation_one_trace_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.integral_exp_max_secondDensityCoeff_entrySum_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.decodingSuccess_eq_rho_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.decodingSuccess_commonShift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_uniform_actualShell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalShell_value_and_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.iteratedDeriv_two_rho_covLine_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.contDiff_simplexSuccess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Taylor.evenTaylor_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Taylor.evenTaylor_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalTaylor_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalTaylor_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.contDiff_normalDeficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalDeficit_odd_iteratedDeriv_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.normalDeficit_no_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_taylor_shell_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_uniform_taylor_shell_m3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_threshold_uniform_taylor_shell_m4' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.gaussian_threshold_uniform_taylor_shell_m3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.simplex_quadratic_coefficient_eq_normal_curvature' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.gaussian_ordered_crossings_sign_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_ordered_crossings_sign_chart_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplex.prekopa_leindler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplex.centered_product_of_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplex.exists_adaptiveWitnesses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplex.lowerOrthant_ge_iid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplex.coordinateMax_tail_le_iid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WeakSimplex.gramGaussianMax_mgf_le_regularSimplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexUniqueness.symmetricRectangle_gt_iid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexUniqueness.exists_adaptiveWitnesses_of_isWeakSimplexCov' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexUniqueness.lowerOrthant_gt_iid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalFoundation.decodingSuccess_gram_le_simplex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.global_procrustesSq_le_gram_centroid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_procrustesSq_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.Psi_taylor_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.centroid_scalar_taylor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.Psi_psiInv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.psiInv_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.M0_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.pair_endpoint_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalBivariate.pair_rectangle_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalRectangle.symmetricRectangle_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.normalizedSelfConvolution_product_ge_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalComparison.paperK_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.paperKappa_defect_le_sqrt_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.orthant_sqrt_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.orthant_linear_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.quantitative_lowerOrthant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.centroid_matrix_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.centroid_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_rank_deficiency_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussianRadiusMean_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.realSupport_convexHull_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.integral_realSupport_convexHull_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.integral_sub_eq_integral_cdf_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.exp_integral_difference_ge_of_cdf_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalTail.gaussianMaxMean_normalizedCovariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.gaussianMaxMean_centroid_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.decodingSuccess_centroid_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.unitDecoderCentroidBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.ball_decoder_centroid_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.ball_decoder_unused_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalTail.ball_bayes_unused_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.gaussianMaxMean_gram_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.unitGaussianMaxBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_gram_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.ball_gaussian_max_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.ball_mean_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_procrustes_penalty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_rank_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_rank_deficiency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.GlobalApplication.decodingSuccess_ambient_penalty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.integral_polar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.gaussian_integral_homogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.normalizedSphereMeasure_isProbability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.sphere_integral_eq_gaussian_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.integrable_finiteHullSupport_sphere' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.meanWidth_convexHull_eq_normalizedGaussianWidth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.SphereGaussian.ball_mean_width' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.gaussian_integral_neg_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.sphere_support_neg_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.SphereGaussian.widthIntegral_convexHull_eq_meanWidth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

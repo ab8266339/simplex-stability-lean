@@ -1,0 +1,2 @@
+'SimplexFull.GlobalScalar.threshold_envelope_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.q_le_deriv_Psi_psiInv' depends on axioms: [propext, Classical.choice, Quot.sound]

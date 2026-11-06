@@ -1,0 +1,2 @@
+'SimplexFull.GlobalApplication.ball_gaussian_max_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalApplication.ball_mean_width' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,2 @@
+'SimplexFull.Covariance.integral_orthant_twoPowers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_orthant_fourPowers' depends on axioms: [propext, Classical.choice, Quot.sound]

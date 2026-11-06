@@ -1,0 +1,3 @@
+'SimplexFull.Geometry.global_sqrt_contraction_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_frobSq_root_sub_centering_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.global_frobSq_centeredRoot_le' depends on axioms: [propext, Classical.choice, Quot.sound]

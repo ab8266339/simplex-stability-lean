@@ -1,0 +1,9 @@
+{
+  "certificate": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\kernel-global\\verification\\20261106-180522-470580\\verification.json",
+  "modules": 216,
+  "entries": 91,
+  "lean_archive": "E:\\simplex-lean-full-20261106\\release\\concrete-simplex-lean-global-20261106.zip",
+  "lean_sha256": "4e8e24831e8c56ab07523aed22c89c4ba6854726accccff2aa32c0587133896b",
+  "sphere_verified": true,
+  "original_local_sources_unchanged": true
+}

@@ -1,0 +1,4 @@
+'SimplexFull.Covariance.integrable_exp_neg_mul_sq_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrable_norm_pow_exp_max_mul_gaussian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

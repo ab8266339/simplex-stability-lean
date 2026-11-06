@@ -1,0 +1,18 @@
+'SimplexFull.exp_mul_phi_sq_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.exp_mul_phi_sq_le_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_abs_pow_exp_mul_phi_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_abs_pow_tiltWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.normalizer_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_polynomial_bound_tiltWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_tiltWeight_mu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.tiltWeight_le_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integrable_pow_mul_polynomial_bound_tiltWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Tilted.lean:232:10: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Tilted.lean:232:10: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'SimplexFull.hasDerivAt_Phi_pow_tilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_tiltWeight_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.balance_factor_identity' depends on axioms: [propext, Classical.choice, Quot.sound]

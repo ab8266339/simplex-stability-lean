@@ -1,0 +1,5 @@
+'SimplexFull.integral_weight_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integral_covIntegrand_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integral_covIntegrand_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.covNumerator_eq_mass_mul_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.covNumerator_pos' depends on axioms: [propext, Classical.choice, Quot.sound]

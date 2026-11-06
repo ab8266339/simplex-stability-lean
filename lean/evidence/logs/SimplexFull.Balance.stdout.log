@@ -1,0 +1,12 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Balance.lean:87:43: warning: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  simp only [Pi.sub_apply, Pi.add_apply,̵ ̵P̵i̵.̵m̵u̵l̵_̵a̵p̵p̵l̵y̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.bal_integrable_h' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.bal_integrable_hsq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.bal_integrable_sigma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_h_mul_tiltWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_balance_identity' depends on axioms: [propext, Classical.choice, Quot.sound]

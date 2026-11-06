@@ -1,0 +1,73 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:33:88: warning: This simp argument is unused:
+  (Ne.symm hkl)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hkl, hjl, (Ne.symm hij),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm h̵k̵l̵)̵,̵ ̵(̵N̵e̵.̵s̵y̵m̵m̵ ̵hjl), normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:33:103: warning: This simp argument is unused:
+  (Ne.symm hjl)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hkl, hjl, (Ne.symm hij),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm hkl), (̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵j̵l̵)̵,̵normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:46:105: warning: This simp argument is unused:
+  (Ne.symm hjk)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hik, hjk, (Ne.symm hij),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm hik), (̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵j̵k̵)̵,̵normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:53:75: warning: This simp argument is unused:
+  (Ne.symm hij)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hil, hkl, (Ne.symm h̵i̵j̵)̵,̵ ̵(̵N̵e̵.̵s̵y̵m̵m̵ ̵hil),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm hkl), normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:53:90: warning: This simp argument is unused:
+  (Ne.symm hil)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hil, hkl, (Ne.symm hij),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm h̵i̵l̵)̵,̵ ̵(̵N̵e̵.̵s̵y̵m̵m̵ ̵hkl), normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:53:105: warning: This simp argument is unused:
+  (Ne.symm hkl)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hil, hkl, (Ne.symm hij),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm hil), (̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵k̵l̵)̵,̵normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:60:77: warning: This simp argument is unused:
+  (Ne.symm hij)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hik, hjk, (Ne.symm h̵i̵j̵)̵,̵ ̵(̵N̵e̵.̵s̵y̵m̵m̵ ̵hik),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm hjk), normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:60:92: warning: This simp argument is unused:
+  (Ne.symm hik)
+
+Hint: Omit it from the simp argument list.
+  simp only [if_true, if_false, moment4, kronecker, hij, hik, hjk, (Ne.symm hij),
+  ̲  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲(Ne.symm h̵i̵k̵)̵,̵ ̵(̵N̵e̵.̵s̵y̵m̵m̵ ̵hjk), normMoment_two, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\OrthantMomentBridge.lean:65:23: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  simp only [if_t̵r̵u̵e̵,̵ ̵i̵f_̵f̵alse, moment4, kronecker, hij, hik, hil, hjk, hjl, hkl, normMoment_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'SimplexFull.Covariance.integral_orthant_pair_moment2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_orthant_quad_moment4' depends on axioms: [propext, Classical.choice, Quot.sound]

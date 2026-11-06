@@ -1,0 +1,6 @@
+'SimplexFull.tiltedMoment_eq_rawMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_rawMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_normalizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.hasDerivAt_tiltedMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.tiltedMoment_deriv_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.strictMono_tiltedMoment' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,34 @@
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:21:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:29:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:37:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:46:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:129:8: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:133:8: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:129:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+E:\simplex-lean-full-20261106\global-formalization-20261106\kernel-global\verification\20261106-180522-470580\src\SimplexFull\Mills.lean:133:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'SimplexFull.scalar_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.h_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.sigma_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.F_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.D_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.strictMono_sigma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.strictMono_hsq_div_sigma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.h_le_abs_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.mills_remainder_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.strictMono_hsq' depends on axioms: [propext, Classical.choice, Quot.sound]

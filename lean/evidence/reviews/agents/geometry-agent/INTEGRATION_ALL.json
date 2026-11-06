@@ -1,0 +1,202 @@
+{
+  "modules": [
+    {
+      "module": "SimplexFull.GlobalProcrustes",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalProcrustes.lean",
+      "source_sha256": "4e38bf70e0ac7396863567224fe61afcce5ab3a662f733cdf7465bc350586179",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalProcrustes.olean",
+      "olean_sha256": "71a7e79fd0baed44304ca7046bb87d3e00a9f15b1bb16d157038f94b5b9b8fbb",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalProcrustes-20261106-155159-237453",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalProcrustesDecomp",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalProcrustesDecomp.lean",
+      "source_sha256": "ad595fc62e865689218c460a0b94fda31fc596767a9b340900e9925088ca4370",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalProcrustesDecomp.olean",
+      "olean_sha256": "f95c41e2d3c3e1d74af2edbfcd2d23709553289f5ecb547e8e5166c85ff655cc",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalProcrustesDecomp-20261106-155209-243148",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalProjectionContraction",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalProjectionContraction.lean",
+      "source_sha256": "90f5f70b9e0ac191017f2004ec4cdcce308cd271e2e791dedeb65d6f97114606",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalProjectionContraction.olean",
+      "olean_sha256": "05c5e29409f59a45297529cb55417c27edfc90ae315874ab4f65cfbbcfdbc234",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalProjectionContraction-20261106-155411-340248",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalSqrtContraction",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalSqrtContraction.lean",
+      "source_sha256": "67431f57b2795b83a16416233e5788a44c4eacd93b924a0139ef66ab174c4fc7",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalSqrtContraction.olean",
+      "olean_sha256": "261b225df91111b5fbb7a22f61acc04f2e510f378d837113e57afb2e913bb4b7",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalSqrtContraction-20261106-155903-964768",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalProcrustesBound",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalProcrustesBound.lean",
+      "source_sha256": "bd17c96378c06ec21fb5ecb9012d4dc245a4a3cea23e35d0e4f47d118be34a68",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalProcrustesBound.olean",
+      "olean_sha256": "a8e7d8ef1cf147cda9dc77e908cfe71dcfc99139a023c828a0e1a586d401912b",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalProcrustesBound-20261106-160113-527024",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalRankBound",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalRankBound.lean",
+      "source_sha256": "605ba76eab7b64dc48ee50b1a6768aa8103636fb5915d09e90e18d87852e5caf",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalRankBound.olean",
+      "olean_sha256": "e33aacbfbea937e6cc087e2f2266f5413f817a3135e776f9054137ca18ff4232",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalRankBound-20261106-161131-061946",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthBase",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalMeanWidthBase.lean",
+      "source_sha256": "99a35e19c5d0bfb2953864e6ac731b43363d4167182893abd63ab945393b8040",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalMeanWidthBase.olean",
+      "olean_sha256": "77507df73217a53e3d3a884ad24d7f3be02280df93f163b2fc43f9320e353b22",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalMeanWidthBase-20261106-162321-000031",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthLift",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalMeanWidthLift.lean",
+      "source_sha256": "1923834228419b1d8816fef30d64fededa2e19dbb0d8c63c3b8bee1ff2205297",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalMeanWidthLift.olean",
+      "olean_sha256": "a9048b12a49b2509d25207cc2cb7700387b8e5139b7818afba00323c504d7b38",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalMeanWidthLift-20261106-162651-579195",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthNoise",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalMeanWidthNoise.lean",
+      "source_sha256": "5296f28940d5f5525c2ed8a42df475a78e8ac168d83e0cb73dd0054b03b508ea",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalMeanWidthNoise.olean",
+      "olean_sha256": "327ac1613793624c70924c6c5d4a64fc3542ede3eea5b3955fa5cbeeb52ce464",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalMeanWidthNoise-20261106-163019-584269",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidthGeometry",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalMeanWidthGeometry.lean",
+      "source_sha256": "39aee2f2688245c2a920dc3e0d90478cffd0384fe4937718af161384e1cabf16",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalMeanWidthGeometry.olean",
+      "olean_sha256": "e811d7413bb29d141a645999b90aba918ee95f3cfb27ca5bfd1536ed2e53d0e4",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalMeanWidthGeometry-20261106-163153-034295",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalMeanWidth",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalMeanWidth.lean",
+      "source_sha256": "83ca63748bb2b06169458eb8ec8cb81041e322f47651ad8d837e09af50e14b28",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalMeanWidth.olean",
+      "olean_sha256": "2cf13f199cc721975caa2e7d294f552fc1a78494de8ed0ab15043080fb8de493",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalMeanWidth-20261106-163342-767504",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalEnergyBase",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalEnergyBase.lean",
+      "source_sha256": "814a6be3daa6785e41db744c4a2ab5ec38fafcd56edd6beb8e6f189e7d46fcfa",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalEnergyBase.olean",
+      "olean_sha256": "b2eb433dd46f261e3a808d895e7982f3f2680be84f147b5e9b98a287cd814030",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalEnergyBase-20261106-165536-878489",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalEnergyNoise",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalEnergyNoise.lean",
+      "source_sha256": "0bc37374ef718b6f09f32d945eb97e6fd11a914e6f259522e97cefd6c02cdb51",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalEnergyNoise.olean",
+      "olean_sha256": "c3454c39feb1fe8d8e2f2a209ad9e69b0d9599b1e8219bd4036508fc3045dd31",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalEnergyNoise-20261106-165718-696301",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "SimplexFull.GlobalEnergy",
+      "source": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull\\GlobalEnergy.lean",
+      "source_sha256": "2fd920cae5170aaedf16ab7a9e8fa5c9b316a215810860caac43826ff92396e8",
+      "olean": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\build\\SimplexFull\\GlobalEnergy.olean",
+      "olean_sha256": "79ffdd80a7fb22d9c15a568b3acda5db6d6f20aa1329384b47e78bb2db608e67",
+      "log_base": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\geometry-agent\\SimplexFull.GlobalEnergy-20261106-165931-829468",
+      "trust": 0,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "complete_scope": "actual global geometry and rank; actual width and nonunit ML likelihood lift/noise chains; quantitative transfers conditional only on the explicitly named unit bounds",
+  "main_theorem": "SimplexFull.Geometry.global_procrustesSq_le_gram_centroid"
+}

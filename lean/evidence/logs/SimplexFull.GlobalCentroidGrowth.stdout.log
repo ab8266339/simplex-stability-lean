@@ -1,0 +1,2 @@
+'SimplexFull.GlobalCentroid.sum_trial_Psi_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalCentroid.adaptive_value_centroid_gain' depends on axioms: [propext, Classical.choice, Quot.sound]

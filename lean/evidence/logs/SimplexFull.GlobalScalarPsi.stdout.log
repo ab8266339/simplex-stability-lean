@@ -1,0 +1,6 @@
+'SimplexFull.GlobalScalar.hasDerivAt_psiPull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.strictMono_psiPull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.h_lt_inv_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.exists_h_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.hasDerivAt_hInv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalScalar.hasDerivAt_Psi' depends on axioms: [propext, Classical.choice, Quot.sound]

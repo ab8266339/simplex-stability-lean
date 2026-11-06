@@ -1,0 +1,11 @@
+'SimplexFull.Covariance.integral_withDensity_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrable_withDensity_rho_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_stdGaussian_eq_rho_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integral_multivariateGaussian_eq_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrable_multivariateGaussian_iff_rho' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Covariance.integral_rho_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrable_rho_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.integrable_exp_maxCoord_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Covariance.decodingSuccess_eq_rho_integral' depends on axioms: [propext, Classical.choice, Quot.sound]

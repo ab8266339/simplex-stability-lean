@@ -1,0 +1,14 @@
+{
+  "original_sha256": "f39531a29a54c421e4d1cd95d82c1f5e3da4c52e5152af9e0e7cc78c120b30ee",
+  "source_origin": "E:\\simplex-lean-full-20261106\\input\\paper_main.tex",
+  "updated_main": "E:\\simplex-lean-full-20261106\\paper\\paper_main.tex",
+  "preserved_original": "E:\\simplex-lean-full-20261106\\paper\\source-original\\paper_main.tex",
+  "construction_host": "DESKTOP-BRJD313",
+  "local_construction": false,
+  "new_sections": [
+    "sections/new_results.tex",
+    "sections/transition_proof.tex",
+    "sections/normal_proof.tex",
+    "sections/lean_verification.tex"
+  ]
+}

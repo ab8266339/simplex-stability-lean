@@ -1,0 +1,11 @@
+'SimplexFull.Geometry.Convexity.norm_vertical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Convexity.hessian_continuous_of_contDiff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.Convexity.hessian_continuousOn_of_contDiffOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.Convexity.exists_local_quadratic_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Convexity.hessianForm_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Convexity.hessianForm_lower_of_opNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.Convexity.exists_hessianForm_lower' depends on axioms: [propext, Classical.choice, Quot.sound]

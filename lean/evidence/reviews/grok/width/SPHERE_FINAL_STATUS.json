@@ -1,0 +1,46 @@
+{
+  "role": "width",
+  "audit": "sphere-final",
+  "verdict": "accepted",
+  "lean": "4.31.0",
+  "compile": "-j 2 -t 0",
+  "axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "namespace": "SimplexFull.SphereGaussian",
+  "identity": {
+    "measure": "normalizedSphereMeasure d = (volume.toSphere univ)^{-1} • volume.toSphere",
+    "sphere": "Metric.sphere (0 : EuclideanSpace Real (Fin d)) 1",
+    "dimension": "[NeZero d], equivalent to 1 <= d",
+    "theorem": "meanWidth (convexHull Real (range X)) = Geometry.normalizedGaussianWidth X",
+    "hypotheses_of_equality": ["NeZero m", "NeZero d", "X : Geometry.Config m d"],
+    "homogeneity": "hypothesis of gaussian_integral_homogeneous and sphere_integral_eq_gaussian_ratio; discharged for the hull by finiteHullSupport_homogeneous",
+    "radial_factor": "radialFirstMoment is defined and proved equal to gaussianRadiusMean / sphereMass",
+    "ambient_factor": "ball_mean_width keeps 2 / gaussianRadiusMean d for the configuration ambient d"
+  },
+  "ball_mean_width_hypotheses": ["2 <= m", "m - 1 <= d", "Geometry.BallConfig X", "Geometry.gram V = Geometry.simplexGram m"],
+  "two_sided_width": "widthIntegral_convexHull_eq_meanWidth equates the h(u)+h(-u) average with meanWidth",
+  "integrability_note": "integral_polar, gaussian_integral_homogeneous, and sphere_integral_eq_gaussian_ratio have no Integrable hypothesis, so the Bochner default 0 applies off the integrable class. The convex-hull integrand is continuous on a compact sphere, and integrable_finiteHullSupport_sphere records that fact.",
+  "linter_warnings": [
+    "unused section variable NeZero d in rho_one_radial",
+    "unused simp argument Covariance.matrix_inv_one in rho_one_radial",
+    "unused section variable NeZero d in gaussian_integral_neg_eq"
+  ],
+  "source_sha256": {
+    "scalar-agent/SimplexFull/GlobalSphereGaussianPolar.lean": "77e79f71ede3e689220c01a27f54054bb7b7e5dfe0d1b3d85cc8639d43ee3152",
+    "scalar-agent/SimplexFull/GlobalSphereGaussian.lean": "65f8fc8b1b113af2ca5a3684d8375a441b74ac42ee935dbbf9457e0cbafd73ff",
+    "scalar-agent/SimplexFull/GlobalSphereGaussianWidth.lean": "8777146416aafb52b71735d793ab574e061096407161c0702348a847e09888cd",
+    "scalar-agent/SimplexFull/GlobalSphereGaussianSymmetry.lean": "ad2a4e52232876e559a2cdad4125cbb14da6843ac4720129c5fc476ddf48c477"
+  },
+  "olean_sha256": {
+    "GlobalSphereGaussianPolar.olean": "b227b4d4581c33919dc7241d131da7ba73fd981acbb9c3590c9c2ade3bf8093f",
+    "GlobalSphereGaussian.olean": "bdcb11df8f5e8ed004af751909352b6178cc38804e3c27aac37460622ec0df62",
+    "GlobalSphereGaussianWidth.olean": "bec1b584c465dd6dd2fa8494942436b737ea613b0989f9923cae0ae55aeaa7a0",
+    "GlobalSphereGaussianSymmetry.olean": "8b05565b576d5502e35f24dbd4da91e0b95309dbd344918e15009ab70d70dcf6"
+  },
+  "logs": {
+    "GlobalSphereGaussianPolar": "scalar-agent/logs/SimplexFull.GlobalSphereGaussianPolar-20261106-174908-824567",
+    "GlobalSphereGaussian": "scalar-agent/logs/SimplexFull.GlobalSphereGaussian-20261106-175214-261817",
+    "GlobalSphereGaussianWidth": "scalar-agent/logs/SimplexFull.GlobalSphereGaussianWidth-20261106-175330-892962",
+    "GlobalSphereGaussianSymmetry": "scalar-agent/logs/SimplexFull.GlobalSphereGaussianSymmetry-20261106-175743-822741"
+  },
+  "exit_code": 0
+}

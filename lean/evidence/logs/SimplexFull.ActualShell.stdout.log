@@ -1,0 +1,7 @@
+'SimplexFull.Geometry.l2_opNorm_le_sqrt_frobSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.l2_opNorm_sq_le_frobSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_frobSq_opNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_actualShell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.exists_actualShell_opNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.centeredRoot_normalConfig' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.actualDeviation_normalConfig' depends on axioms: [propext, Classical.choice, Quot.sound]

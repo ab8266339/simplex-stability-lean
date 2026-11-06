@@ -1,0 +1,3 @@
+'SimplexFull.GlobalComparison.normalizedSelfConvolution_product_ge_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,1252 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs,longtable,array,microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Explicit Stability of the Weak Simplex Bound},
+  pdfauthor={Research draft}}
+\Urlmuskip=0mu plus 1mu
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Id}{I_m}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\Pc}{P_{\mathrm c}}
+\title{Explicit Stability of the Weak Simplex Bound}
+\author{Research draft}
+\date{6 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Equal-energy Gaussian signaling uses the regular simplex as an optimal reference
+when the signal dimension permits it. Quantifying geometric recovery from a
+small decoding deficit requires a bound that remains valid near singular
+Gram matrices. We give explicit global quadratic bounds for Gram and vertex
+distance at every fixed positive channel parameter, together with a separate
+centroid penalty. A configuration-metric expansion separates two in-plane
+sectors from a transverse centroid sector and identifies the local least-loss
+directions. We prove unique ordered channel-parameter crossings and identify
+the exact minimizers on all sufficiently small Procrustes shells in the
+strict-normal regime, uniformly in the ambient dimension. Their minimal
+deficit has an explicit quartic expansion with a sixth-order remainder.
+The global bounds, mean-width stability, transition and small-shell
+results, including the remainder, are formalized in Lean. For four- and 16-signal constellations, directional coefficients
+predict central perturbation losses more accurately in aggregate than two
+scalar controls across 108 tested cells. A separate 20-run learning comparison
+attributes improved matched-decoder performance to ordinary simplex Gram
+regularization, rather than to a new optimization method. The evaluated global
+recovery constants range from approximately $10^{-39}$ to $10^{-234}$ and
+give no practical finite-precision geometry certificate. The results provide
+an explicit mathematical rate and a directional local diagnostic, while
+practical certification requires sharper constants and effective numerical
+bounds for the local radius and remainder constant.
+\end{abstract}
+
+\section{Setting and the quantitative question}
+Fix $m\ge2$, put $n=m-1$, $\alpha=n/m$, $J=\one\one^{\mathsf T}$ and
+$P=I_m-J/m$. The regular unit simplex has Gram matrix $G_\Delta=P/\alpha$.
+For a correlation matrix $G$ (positive semidefinite with unit diagonal), define
+\begin{equation}\label{eq:normalization}
+ R=\alpha G+J/m,\qquad
+ \mathcal A_m=\{R:\diag R=\one,\ R-J/m\succeq0\}.
+\end{equation}
+Thus $G=G_\Delta$ corresponds to $R=I_m$. Write
+\[
+ F_R(c)=\Pp\{X_i\le c\text{ for all }i\},\qquad X\sim N(0,R),
+ \quad D_R(c)=F_R(c)-\Phi(c)^m,
+\]
+where $\Phi$ and $\phi$ are the standard normal distribution and density.
+We use the comparison $D_R(c)\ge0$ proved in \cite{Mulgund}, as well as its
+centered product inequality and variational construction. Pointwise strictness was established independently by Su et al.\ \cite{Su}
+and by Mulgund, whose v4 explicitly records this parallel development
+\cite[Remark 2.3 and Appendix B]{MulgundLatest}. Su et al.\ also explicitly
+suggest a quantitative deficit estimate. The present argument replaces a
+strict positive gap by a computable lower bound. We cite v2 for the particular
+product and variational statements used in the proof, not as a description
+of the current state of Mulgund's work.
+
+For unit signals $x_1,\ldots,x_m$ in $\R^d$, let $G_{ij}=\langle x_i,x_j\rangle$
+and consider $Y=\lambda x_I+Z$, with $I$ uniform, $Z\sim N(0,I_d)$, and $\lambda>0$.
+Maximum-likelihood decoding gives the identity
+\begin{equation}\label{eq:pc}
+ \Pc(G;\lambda)=\frac{e^{-\lambda^2/2}}m
+       \E e^{\lambda\max_i\xi_i},\qquad \xi\sim N(0,G).
+\end{equation}
+All deficits below compare to the unit centered regular simplex at the same
+operating parameter. The integer $m$ is the number of signals, and $d$ is the
+ambient dimension of the signal space. Decoding constants and unnormalized
+expected-maximum constants depend on $m$ and, for decoding, on $\lambda$, but
+not on $d$. Only those constants are called uniform in the signal-space
+dimension. The normalized mean-width lower bound \eqref{eq:width-stability}
+retains the factor $2/\E\norm g$ for $g\sim N(0,I_d)$, and that prefactor
+depends on $d$. No positive lower constant uniform in $m$, and no positive
+lower constant uniform over all positive channel parameters, is asserted.
+
+Local optimality of simplex codes is classical.
+Litvak attributes fixed-parameter local maximality to Balakrishnan
+\cite[Theorem 2.5]{Litvak}, whose original article is \cite{Balakrishnan}.
+Weber already expresses the general second variation through repeated,
+adjacent and disjoint edge pairs \cite[Lemma 5.8, equation (5.102)]{Weber}.
+His three quadratic invariants are the squared edge norm, squared total row
+sum and sum of squared row sums. On his feasible zero-total-sum face,
+the row sums vanish and (5.105) gives the restricted form used in Theorem 5.5.
+Equations (5.107)--(5.108) integrate the distribution-function variation into
+the decoding functional. Thus edge-type decomposition and local simplex
+optimality are established antecedents of the calculation below.
+We claim no priority for these local ideas or for the existence of a Hessian.
+Our global quantitative contribution is the specified rate and its
+conversion into configuration distance. The local formulas supply explicit
+normalization and feasible-sequence criteria for using that rate.
+Section~\ref{sec:new-results} additionally proves unique channel transitions
+and an exact, rather than only second-order, optimizer on small shells in
+the strict-normal regime. Its complete analytic and geometric proofs are
+in Appendices~\ref{ap:transitions} and~\ref{ap:normal}; the precise scope of
+the Lean verification is given in Appendix~\ref{ap:lean}.
+
+Mean-width stability under John/L\"owner ellipsoid constraints \cite{BFH}
+concerns a different admissible class. The unsmoothed comparison in
+\cite[Theorem 1.1]{MulgundFull} dominates Gaussian maxima at every real
+threshold and characterizes equality at positive thresholds.
+Its equality statement does not extend to every nonpositive threshold.
+We use the cited comparison and centered product inequality as inputs.
+Quantitative Gaussian correlation inequalities also predate this work
+\cite{DNS}. Our rectangle estimate is a specialized input.
+
+Friedland, Gu\'edon, and Souli \cite{FGS} prove an explicit stability theorem
+for a different functional. For $\beta\in\R$ they set
+$Z_\beta(X)=\sum_{i=1}^N e^{\beta X_i}$, where $X$ is centered Gaussian with
+unit variances and correlation matrix $C\in E_N$. The set $E_N$ consists of
+all $N\times N$ correlation matrices, and $\Delta_N$ is the regular-simplex
+correlation. That matrix equals $G_\Delta$. The symbol $\beta$ in this
+discussion is theirs, not the scalar in \eqref{eq:bounds}. Their coefficients
+$\mu_{N,q,\beta}$ and $\eta_{N,q,\beta}$ are not the constants $\mu$ and
+$\eta$ in \eqref{eq:codeconstants} and \eqref{eq:eta}.
+
+Their Theorem~1.1 is a phase transition of generalized $L_q$-means, for every
+real $q$, every real $\beta$, and every $C\in E_N$. The simplex correlation
+maximizes $\|Z_\beta(X)\|_q$ when $q<1$. The mean equals $N e^{\beta^2/2}$
+for every such $C$ when $q=1$. The simplex correlation minimizes the mean
+when $q>1$. The quantitative statement is narrower. Theorem~1.3 requires
+$q>1$ and $\beta\neq 0$, and concludes
+\[
+ \E[Z_\beta(X)^q]-\E[Z_\beta(S)^q]
+ \ge \eta_{N,q,\beta}\,\one^{\mathsf T}C\one
+  +\frac{\mu_{N,q,\beta}}{2}\norm{C-\Delta_N}_F^2,
+\]
+where $S\sim N(0,\Delta_N)$ and both coefficients are positive. The summand
+$\eta_{N,q,\beta}\,\one^{\mathsf T}C\one$ measures centroid defect, and the
+Frobenius summand measures shape defect. The
+same modulus $\mu_{N,q,\beta}$, their (15), is the strong-convexity modulus
+of $C\mapsto\E[Z_\beta(X)^q]$ on all of $E_N$ in their Theorem~1.2. Their
+(15) and (16) vanish at $\beta=0$, so both the modulus and the two stability
+terms are zero in that case. Theorem~1.1 remains valid at $\beta=0$, where
+$Z_0$ is the constant $N$.
+
+The estimates below are not those statements. Since
+$\alpha G_\Delta=P=I_m-J/m$, the normalization \eqref{eq:normalization} gives
+$R-I_m=\alpha(G-G_\Delta)$ and identifies $\mathcal A_m$ with the image of
+$E_m$. Since $\Delta_m=G_\Delta$, it follows that
+$\norm{R-I_m}_F=\alpha\norm{G-\Delta_m}_F$. The constant
+$\kappa_{m,[u,v]}$ depends on a compact threshold interval and is not
+$\mu_{N,q,\beta}$. Theorem~1.3 controls moments of order $q>1$ of $Z_\beta$
+on $E_N$. The deficit $D_R(c)$ is an orthant probability on $\mathcal A_m$,
+uniform for $c$ in a compact interval, and the bound includes singular $R$.
+The inequality $D_R(c)\ge 0$ has the direction of their Corollary~1.5 applied
+to the indicator of $(-\infty,c]$. That corollary assumes a correlation
+matrix $R$ with $R-J/N\succeq 0$, which is the class $\mathcal A_N$ with
+their $N$ equal to the number of signals $m$. Remark~1.6 records the
+resulting non-strict bound as generalizing an orthant inequality of Mulgund.
+The corollary does not give a quadratic rate. For a Gram matrix of unit
+vectors, their centroid summand and Lemma~\ref{lem:centroid} both control
+$\norm{\sum_i x_i}^2=\one^{\mathsf T}G\one$, through different functionals
+and different coefficients. Decoding and mean-width stability below concern
+$\E e^{\lambda\max_i\xi_i}$ and $\E\max_i\xi_i$. They record that
+$\beta^{-1}\E\log Z_\beta$ tends to $\E\max_i X_i$ as $\beta\to+\infty$. At
+$q=0$, Theorem~1.1 compares $\E\log Z_\beta$ at fixed $\beta$. Theorem~1.3
+covers neither statement, because it assumes $q>1$. The full-class local
+liminf, including the split between $m=3$ and $m\ge 4$, is not a conclusion
+of Theorem~1.1 or Theorem~1.3.
+
+\begin{proposition}[What compactness supplies]\label{prop:compactness}
+Let $\mathcal K$ be a compact metric space, $Z\subset\mathcal K$ a nonempty
+closed set, and $f:\mathcal K\to[0,\infty)$ continuous with zero set exactly
+$Z$. Then $f(x_j)\to0$ implies $d(x_j,Z)\to0$. If, in addition,
+$f(x)\ge a\,d(x,Z)^2$ whenever $d(x,Z)<\rho$, with $a,\rho>0$,
+then there exists $b>0$ such that $f(x)\ge b\,d(x,Z)^2$ on $\mathcal K$.
+\end{proposition}
+\begin{proof}
+For each $\epsilon>0$, compactness gives a positive minimum of $f$ on
+$\{d(x,Z)\ge\epsilon\}$ whenever that set is nonempty. This proves the
+first assertion. For the second, let $M=\max_{\mathcal K}d(x,Z)$.
+If $M=0$ or the set $\{d(x,Z)\ge\rho\}$ is empty, the assertion is
+immediate. Otherwise its minimum $\eta$ is positive, and
+$b=\min\{a,\eta/M^2\}$ works.
+\end{proof}
+For fixed $m$, the correlation-matrix domain is compact. The analogous
+vertex formulation uses a fixed ambient space and the closed simplex orbit.
+Thus a nonexplicit global quadratic bound is a standard consequence of
+uniqueness and a local quadratic bound in the \emph{same} metric.
+Uniqueness and compactness alone give no power law. Nor are the Gram and
+vertex metrics locally equivalent at the rank-deficient simplex, as
+Section~\ref{sec:spectrum} shows through an explicit transverse example.
+These distinctions delimit the role of our global proof and constants.
+
+\section{Explicit constants and the global comparison}
+Define the scalar functions
+\begin{equation}\label{eq:scalar}
+ r(s)=\frac{\phi(s)}{\Phi(s)},\qquad H(s)=s+r(s),\qquad
+ \Psi(H(s))=\log\Phi(s)+\frac12r(s)^2.
+\end{equation}
+The map $H:\R\to(0,\infty)$ is an increasing bijection.
+Moreover $\Psi:(0,\infty)\to(-\infty,0)$ is an increasing, strictly concave
+bijection, with
+\begin{equation}\label{eq:psi-derivative}
+ \Psi'(H(s))=r(s),\quad
+ \Psi''(H(s))=-\frac{r(s)H(s)}{1-r(s)H(s)}<0.
+\end{equation}
+The denominator is the variance of a standard normal conditioned on $Z\le s$.
+These scalar identities also fix the meaning of the one-dimensional inverses
+and maximizations used in our constants.
+
+Fix a finite interval $[u,v]$, allowing $u=v$, and set
+\begin{align}
+ L_0&=m\log\Phi(u),&
+ \beta&=\Psi^{-1}(L_0),& A_0&=\Psi'(\beta),\notag\\
+ B_0&=v+\sqrt{-2L_0/m}+\sqrt{-2\alpha L_0},&
+ \ell&=\beta/\sqrt2,& T&=\sqrt2 B_0+\ell.\label{eq:bounds}
+\end{align}
+All these quantities are finite, and $\beta,\ell,B_0,T,A_0$ are positive.
+For $t>0$ put $b(t)=2\Phi(t)-1$. Define
+\begin{equation}\label{eq:K}
+ K_{m,[u,v]}=
+ \frac{e^{-mA_0\beta}\ell^2e^{-4T^2/3}b(\ell)^{2m-2}}
+      {4\pi m(m-1)},\qquad
+ \kappa_{m,[u,v]}=
+ \frac{\Phi(u)^m K_{m,[u,v]}}
+      {1+\sqrt{1+K_{m,[u,v]}m(m-1)}}.
+\end{equation}
+
+\begin{theorem}[Global quantitative comparison]\label{thm:global}
+For every $R\in\mathcal A_m$ and $c\in[u,v]$,
+\begin{equation}\label{eq:global}
+ D_R(c)\ge\Phi(u)^m\left(\sqrt{1+K_{m,[u,v]}\norm{R-I_m}_F^2}-1\right)
+ \ge\kappa_{m,[u,v]}\norm{R-I_m}_F^2.
+\end{equation}
+The conclusion includes singular $R$.
+\end{theorem}
+
+We first quantify the two-coordinate input. Its conversion to a full rectangle
+uses the Gaussian correlation inequality \cite{Royen}.
+\begin{lemma}[Quantitative rectangle gap]\label{lem:rectangle}
+Let $V\sim N(0,S)$, where $S$ is any $m\times m$ correlation matrix, possibly
+singular. If $t_i\in[\ell,T]$, with $0<\ell\le T<\infty$, then
+\begin{equation}\label{eq:rectangle}
+ \Pp\{|V_i|\le t_i\ \forall i\}-\prod_i b(t_i)
+ \ge \frac{\ell^2e^{-4T^2/3}b(\ell)^{m-2}}{4\pi m(m-1)}
+       \norm{S-I_m}_F^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a bivariate standard normal with correlation $\rho$, let
+$B_\rho(a,b)=\Pp\{|V_1|\le a,|V_2|\le b\}$.
+This is even in $\rho$. Differentiating the Gaussian integral (equivalently,
+integrating $\partial_\rho f_\rho=\partial_x\partial_y f_\rho$) gives, for $0<\rho<1$,
+\[
+ \partial_\rho B_\rho(a,b)=
+ \frac{2}{\pi\sqrt{1-\rho^2}}
+ e^{-(a^2+b^2)/(2(1-\rho^2))}
+ \sinh\!\left(\frac{\rho ab}{1-\rho^2}\right).
+\]
+For $a,b\in[\ell,T]$ and $0\le\rho\le1/2$, this derivative is at least
+$(2\ell^2/\pi)e^{-4T^2/3}\rho$. It is nonnegative on $[0,1)$, so integration gives
+\[
+ B_\rho(a,b)-b(a)b(b)
+ \ge \frac{\ell^2}{\pi}e^{-4T^2/3}\min\{|\rho|,1/2\}^2
+ \ge \frac{\ell^2}{4\pi}e^{-4T^2/3}\rho^2.
+\]
+Continuity extends this non-strict quantitative inequality to $|\rho|=1$;
+the rectangle boundary has zero probability since the marginals have no atoms.
+Choose $i<j$ with maximal $S_{ij}^2$. Group this two-coordinate rectangle
+with the remaining symmetric slabs using the Gaussian correlation inequality.
+Its deficit is multiplied by at least $b(\ell)^{m-2}$.
+Finally $\max_{i<j}S_{ij}^2\ge\norm{S-I_m}_F^2/[m(m-1)]$.
+For singular $S$, apply the correlation inequality to the linear preimages of
+these sets under a representation $V=TW$ with nondegenerate $W$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:global}]
+Represent $G=(R-J/m)/\alpha$ by unit vectors $x_i$. We recall precisely the
+two inputs from \cite{Mulgund}. The centered product inequality says
+\begin{equation}\label{eq:product}
+ \E\prod_i f_i(Y_i)\ge\prod_i\int f_i\,d\gamma_1
+\end{equation}
+for any Gaussian correlation matrix of $Y$, and bounded nonnegative
+log-concave factors with positive Gaussian integrals and zero Gaussian first
+moments. The adaptive tilts arise from maximizing
+\[
+ \mathcal J_c(q,w)=\sum_i\Psi(q+\alpha\langle x_i,w\rangle)
+             -\frac\alpha2\norm w^2-\frac m2(q-c)^2
+\]
+on the domain where all scalar arguments are positive. Its maximizer has
+\begin{equation}\label{eq:tilt}
+b_i=H(s_i)=c+(Ra)_i,\quad a_i=r(s_i),\qquad
+ \mathcal J_*\ge m\log\Phi(c)\ge L_0.
+\end{equation}
+For clarity, stationarity of the strictly concave variational functional gives
+$w_*=\sum_i a_i x_i$ and $q_*-c=m^{-1}\sum_i a_i$, and hence
+\[
+ \mathcal J_*=\sum_i\Psi(b_i)-\tfrac12 a^{\mathsf T}Ra.
+\]
+The maximizer exists in the positive-argument domain: the quadratic terms
+control infinity, whereas $\Psi(y)\to-\infty$ as $y\downarrow0$.
+We now extract bounds not requiring any inverse of $R$.
+Since every summand $\Psi(b_i)$ and both negative quadratic terms are
+nonpositive, $\Psi(b_i)\ge L_0$. Thus $b_i\ge\beta$ and $a_i\le A_0$.
+The quadratic penalty is at most $-L_0$, whence
+\[
+ |q-c|\le\sqrt{-2L_0/m},\quad
+ \norm w\le\sqrt{-2L_0/\alpha},\quad b_i\le B_0.
+\]
+In particular $B_0>0$.
+
+Let $f_i(z)=e^{a_i z}\mathbf1_{z\le b_i}$,
+$\mu_i=\int f_i\,d\gamma_1=e^{\Psi(b_i)}<1$, and $h_i=f_i/\mu_i$.
+They are centered in Gaussian first moment. For
+\[
+ (Dh)(u)=\int h((u+v)/\sqrt2)h((u-v)/\sqrt2)\,d\gamma_1(v),
+\]
+write $Q_0=\E_R\prod_i h_i(X_i)$ and $Q_1=\E_R\prod_i(Dh_i)(X_i)$.
+Taking independent $X,X'\sim N(0,R)$ and setting
+$U=(X+X')/\sqrt2$, $V=(X-X')/\sqrt2$, the vectors $U,V$ are independent
+with covariance $R$. Conditional on $U=u$, the factors become
+\begin{equation}\label{eq:intervalfactor}
+ h_i((u_i+v_i)/\sqrt2)h_i((u_i-v_i)/\sqrt2)
+ =\mu_i^{-2}e^{\sqrt2 a_i u_i}
+   \mathbf1_{|v_i|\le\sqrt2 b_i-u_i}.
+\end{equation}
+On $\mathcal B=\{|U_i|\le\ell\ \forall i\}$ all radii belong to $[\ell,T]$.
+The product of the weights in \eqref{eq:intervalfactor} is at least
+$e^{-\sqrt2 mA_0\ell}=e^{-mA_0\beta}$. The symmetric rectangle inequality
+gives $\Pp(\mathcal B)\ge b(\ell)^m$, even for singular $R$.
+Lemma~\ref{lem:rectangle} therefore yields
+\begin{equation}\label{eq:selfgap}
+ Q_0^2-Q_1\ge K_{m,[u,v]}\norm{R-I_m}_F^2.
+\end{equation}
+Outside $\mathcal B$ the conditional difference remains nonnegative:
+use the ordinary rectangle inequality when all radii are positive; if a
+radius is negative both products vanish, and a zero radius also has zero
+mass because every coordinate marginal is continuous.
+
+Each $Dh_i$ is bounded and log-concave, has unit Gaussian integral and zero
+Gaussian first moment. The integral and moment assertions follow by the same
+orthogonal change of two independent scalar Gaussian variables; log-concavity
+follows by integration of a log-concave function. Thus \eqref{eq:product} gives
+$Q_1\ge1$. The Gaussian change of measure and \eqref{eq:tilt} give the exact identity
+\[
+ F_R(c)=e^{\mathcal J_*}Q_0.
+\]
+This identity is valid for singular $R$ as well: write $X=TZ$ with
+$Z$ standard Gaussian in the rank of $R$ and tilt by
+$T^{\mathsf T}a$. The shifted vector is $X+Ra$, and $b-Ra=c\one$;
+no inverse covariance or full-dimensional density is used.
+Consequently $F_R(c)\ge\Phi(c)^m\sqrt{1+K_{m,[u,v]}\norm{R-I_m}_F^2}$.
+Subtract $\Phi(c)^m$ and use $\Phi(c)^m\ge\Phi(u)^m$.
+Finally $\norm{R-I_m}_F^2\le m(m-1)$, since $|R_{ij}|\le1$.
+Rationalizing the square root proves \eqref{eq:global}.
+\end{proof}
+
+\section{A centroid estimate and decoding stability}
+For the rest of the global consequences use the interval $[0,1]$ and abbreviate
+$\kappa=\kappa_{m,[0,1]}$. Define
+\begin{equation}\label{eq:eta}
+ M_0=\max_{y\in[H(0)/2,\,3H(1)/2]}(-\Psi''(y)),\quad
+ \tau=\min\left\{\frac{H(0)}{2\alpha m},
+                    \frac{r(1)}{1+M_0\alpha m}\right\},\quad
+ \eta=2^{-m}\frac{\alpha r(1)\tau}{2}>0.
+\end{equation}
+
+\begin{lemma}[Centroid penalty]\label{lem:centroid}
+For unit vectors $x_i$ with Gram matrix $G$ and $R$ as in
+\eqref{eq:normalization}, set $s_X=\sum_i x_i$. For $0\le c\le1$,
+\begin{equation}\label{eq:centroid}
+ D_R(c)\ge\eta\norm{s_X}^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+In the variational functional use $q=H(c)$ and $w=\tau s_X$.
+Since $\norm{s_X}\le m$, the scalar displacements
+$z_i=\alpha\tau\langle x_i,s_X\rangle$ obey $|z_i|\le H(0)/2$.
+Taylor's theorem on the interval in \eqref{eq:eta} gives
+\[
+ \Psi(H(c)+z_i)\ge\Psi(H(c))+r(c)z_i-M_0z_i^2/2.
+\]
+Now $\sum_i z_i=\alpha\tau\norm{s_X}^2$ and
+$\sum_i z_i^2\le\alpha^2\tau^2m\norm{s_X}^2$.
+Subtracting the value at $(H(c),0)$ gives
+\[
+ \mathcal J_* -m\log\Phi(c)
+ \ge\alpha\left(r(c)\tau-\frac{\tau^2}{2}(1+M_0\alpha m)\right)\norm{s_X}^2
+ \ge\frac{\alpha r(1)\tau}{2}\norm{s_X}^2.
+\]
+Use $F_R(c)\ge e^{\mathcal J_*}$, $e^z-1\ge z$, and $\Phi(c)^m\ge2^{-m}$.
+\end{proof}
+
+Let $\mu=\lambda/\sqrt\alpha$ and put
+\begin{equation}\label{eq:codeconstants}
+ W_{m,\lambda}=\frac{e^{-\mu^2/2}}m(e^\mu-1),\qquad
+ c_g=W_{m,\lambda}\kappa\alpha^2,\quad
+ c_s=W_{m,\lambda}\eta,\quad
+ c_P=\left(\frac\alpha{c_g}+\frac1{mc_s}\right)^{-1}.
+\end{equation}
+These constants are positive for every fixed $m\ge2$ and $\lambda>0$.
+
+\begin{theorem}[Quantitative recovery of a simplex]\label{thm:code}
+Let $G$ be the Gram matrix of $m$ unit signals and
+$\delta_\lambda(G)=\Pc(G_\Delta;\lambda)-\Pc(G;\lambda)$. Then
+\begin{equation}\label{eq:code-stability}
+ \delta_\lambda(G)\ge c_g\norm{G-G_\Delta}_F^2,\qquad
+ \delta_\lambda(G)\ge c_s\norm{\textstyle\sum_i x_i}^2.
+\end{equation}
+If the ambient dimension is at least $m-1$, fix a regular simplex matrix
+$V=[v_1\ \cdots\ v_m]$ in that space, and define
+\[
+ d_P(X,\Delta)^2=\min_{U\in O(d)}\sum_i\norm{x_i-Uv_i}^2.
+\]
+Then
+\begin{equation}\label{eq:procrustes-stability}
+ \delta_\lambda(G)\ge c_P d_P(X,\Delta)^2.
+\end{equation}
+In particular $\delta_\lambda(G)\le\varepsilon$ implies
+$d_P(X,\Delta)\le\sqrt{\varepsilon/c_P}$.
+\end{theorem}
+\begin{proof}
+Add an independent scalar $B\sim N(0,1/n)$ and set
+$X_i'=\sqrt\alpha(\xi_i+B)$. Its covariance is $R$ and
+\[
+ \E e^{\mu\max_i X_i'}=e^{\lambda^2/(2n)}\E e^{\lambda\max_i\xi_i}.
+\]
+For the simplex the transformed coordinates are independent standard normals.
+All the exponential moments are finite. Integrating their tail probabilities gives
+\[
+ \E e^{\mu\max_i Z_i}-\E e^{\mu\max_i X_i'}
+ =\mu\int_{\R}e^{\mu c}D_R(c)\,dc.
+\]
+The integrand is nonnegative everywhere by the known comparison. Restrict it
+to $[0,1]$, use Theorem~\ref{thm:global} or Lemma~\ref{lem:centroid}, and then
+use \eqref{eq:pc}. The prefactor becomes
+$m^{-1}e^{-\lambda^2/2-\lambda^2/(2n)}=m^{-1}e^{-\mu^2/2}$.
+This proves \eqref{eq:code-stability}.
+
+For completeness, the geometric conversion is quantitative linear algebra.
+Let $X=[x_1\ \cdots\ x_m]$ and let $\lambda_1,\ldots,\lambda_n$ be the
+eigenvalues of $PGP$ on $\one^\perp$, including zeros. The cross matrix $XV^{\mathsf T}$ has nonzero singular values
+$\sqrt{\lambda_j/\alpha}$, with zeros added as necessary.
+The orthogonal Procrustes formula follows by maximizing
+$\tr(U^{\mathsf T}XV^{\mathsf T})$ over $O(d)$.
+Alignment and the orthogonality of centered and constant columns give
+\begin{align*}
+ d_P(X,\Delta)^2
+ &=\frac{\norm{s_X}^2}{m}
+       +\sum_{j=1}^n(\sqrt{\lambda_j}-\alpha^{-1/2})^2\\
+ &\le\frac{\norm{s_X}^2}{m}
+       +\alpha\norm{PGP-G_\Delta}_F^2
+ \le\frac{\norm{s_X}^2}{m}+\alpha\norm{G-G_\Delta}_F^2.
+\end{align*}
+The first inequality uses
+$(\sqrt t-\sqrt a)^2\le(t-a)^2/a$ for $t\ge0,a>0$.
+Applying the two separate deficit bounds proves \eqref{eq:procrustes-stability}.
+Relabeling is already included: every permutation of regular-simplex vertices
+extends to an orthogonal symmetry.
+\end{proof}
+
+\begin{corollary}[Insufficient dimension and unused energy]\label{cor:operational}
+If the unit-signal Gram matrix has rank at most $d<m-1$, with $d\ge1$, then
+\begin{equation}\label{eq:rank}
+ \delta_\lambda(G)\ge c_gm^2\left(\frac1d-\frac1{m-1}\right).
+\end{equation}
+For arbitrary signals $\norm{x_i}\le1$, define the deficit using the actual
+maximum-likelihood success probability (not the equal-energy formula
+\eqref{eq:pc}). Then, regardless of whether the original channel permits an additional
+use,
+\begin{equation}\label{eq:slack}
+ \Pc(G_\Delta;\lambda)-\Pc(\{x_i\};\lambda)
+ \ge c_s\sum_i(1-\norm{x_i}^2).
+\end{equation}
+\end{corollary}
+\begin{proof}
+Using $\tr G=m$,
+\[
+ \norm{G-G_\Delta}_F^2
+ =\tr(G^2)-\frac{m^2}{m-1}+\frac{2}{m-1}\one^{\mathsf T}G\one
+ \ge\frac{m^2}{d}-\frac{m^2}{m-1}.
+\]
+Here $\tr(G^2)\ge(\tr G)^2/d$ and $\one^{\mathsf T}G\one\ge0$.
+For the energy claim, use the following lift only as a mathematical
+comparison (it imposes no additional-channel-use assumption on the code):
+lift the codewords to
+$\widetilde x_i=(x_i,q_i)$, $q_i=\sqrt{1-\norm{x_i}^2}\ge0$.
+The augmented signals have unit norm, and their optimal success probability
+is no smaller because the receiver may ignore the additional observation.
+Apply the centroid inequality in \eqref{eq:code-stability} and note
+$\norm{\sum_i\widetilde x_i}^2\ge(\sum_iq_i)^2\ge\sum_iq_i^2$.
+\end{proof}
+
+\section{Mean width of arbitrary inscribed simplices}
+Set
+\begin{equation}\label{eq:meanconstants}
+ b_g=\kappa\alpha^{3/2},\qquad b_s=\eta/\sqrt\alpha.
+\end{equation}
+For any correlation matrix $G$ the same distribution-function integration,
+without the exponential weight, proves
+\begin{equation}\label{eq:mean-unit}
+ \E\max_i\xi_i^\Delta-\E\max_i\xi_i
+ \ge b_g\norm{G-G_\Delta}_F^2,\qquad
+ \E\max_i\xi_i^\Delta-\E\max_i\xi_i
+ \ge b_s\norm{\textstyle\sum_i x_i}^2.
+\end{equation}
+Indeed the expectation gap of the transformed maxima is
+$\int_\R D_R(c)\,dc$, and the common added Gaussian has mean zero.
+
+\begin{theorem}[Mean-width stability in a ball]\label{thm:width}
+Let $y_1,\ldots,y_m\in B_2^d$ with $d\ge m-1$, let
+$K=\operatorname{conv}\{y_i\}$, and let $\Delta$ be a unit regular simplex
+in the same ambient space. Use normalized spherical mean width, so that
+$w(K)=2\E\max_i\langle g,y_i\rangle/\E\norm g$ for $g\sim N(0,I_d)$.
+Then
+\begin{equation}\label{eq:width-stability}
+ w(\Delta)-w(K)
+ \ge \frac{2}{\E\norm g}
+          \left(\frac\alpha{b_g}+\frac1{b_s}\right)^{-1}
+          d_P([y_i],\Delta)^2.
+\end{equation}
+Also the unnormalized expected-maximum deficit is at least
+$b_s\sum_i(1-\norm{y_i}^2)$.
+\end{theorem}
+\begin{proof}
+Put $d_i=1-\norm{y_i}^2$ and lift to unit vectors
+$\widehat y_i=(y_i,\sqrt{d_i}e_i)$ using mutually orthogonal new coordinates.
+Conditional Jensen implies that adding these independent mean-zero noises
+cannot decrease the expected maximum. Write $G=(\langle y_i,y_j\rangle)$,
+$\widehat G=G+\diag(d_i)$,
+$T_g=\norm{\widehat G-G_\Delta}_F^2$, and
+$T_s=\norm{\sum_i y_i}^2+\sum_i d_i$.
+The original expected-maximum deficit $\delta_w$ is at least $b_gT_g$ and
+at least $b_sT_s$ by \eqref{eq:mean-unit}. The Procrustes argument in the
+previous proof applies to vectors of any lengths, and hence
+\begin{align*}
+ d_P([y_i],\Delta)^2
+ &\le\alpha\norm{G-G_\Delta}_F^2+\norm{\textstyle\sum_i y_i}^2/m\\
+ &=\alpha\left(T_g+\sum_i d_i^2\right)+\norm{\textstyle\sum_i y_i}^2/m
+ \le\alpha T_g+T_s,
+\end{align*}
+since $0\le d_i\le1$. Thus
+$d_P^2\le(\alpha/b_g+1/b_s)\delta_w$.
+The polar decomposition of a standard Gaussian gives \eqref{eq:width-stability}.
+\end{proof}
+
+\section{Sharp local coefficients and optimal exponents}
+The explicit global constants are deliberately conservative. The exact local
+coefficient is much simpler and identifies a distinction between $m=3$ and
+$m\ge4$.
+
+\begin{theorem}[Sharp local common-threshold coefficient]\label{thm:local}
+Fix a finite $c$, and write $p=\Phi(c)$, $q=r(c)$, $h=c+q$, and
+$k=\phi(c)^2p^{m-2}$. For $m\ge3$,
+\begin{equation}\label{eq:sharp}
+ \liminf_{\substack{R\to I_m,\ R\in\mathcal A_m\\R\ne I_m}}
+   \frac{D_R(c)}{\norm{R-I_m}_F^2}
+ =\begin{cases}
+    k(1+ch)/4,&m=3,\\
+    kh^2/4,&m\ge4.
+   \end{cases}
+\end{equation}
+Both constants are positive. For $m=2$ the sharp behavior is linear:
+$D_R(c)/\norm{R-I_2}_F\to\phi(c)^2/\sqrt2$.
+\end{theorem}
+\begin{proof}
+Put $A=R-I_m$, $S=\sum_{i<j}A_{ij}$,
+$Q=\sum_{i<j}A_{ij}^2=\norm A_F^2/2$, and $r_A=A\one$.
+The Gaussian density is smooth in $A$ near zero and its first three derivatives
+are bounded by an integrable polynomial times a Gaussian. Differentiation
+under the integral over the fixed lower orthant is therefore justified.
+For off-diagonal covariance entries, the first derivative at independence is
+$k$. The second-order Taylor contributions for a repeated edge, two edges
+sharing one endpoint, and two disjoint edges are respectively
+\[
+ \tfrac12 c^2\phi(c)^2p^{m-2}A_{ij}^2,\quad
+ -c\phi(c)^3p^{m-3}A_{ij}A_{ik},\quad
+ \phi(c)^4p^{m-4}A_{ij}A_{k\ell}.
+\]
+Each unordered pair of distinct edges is counted once. The sums of products
+over adjacent and disjoint pairs are
+$\norm{r_A}^2/2-Q$ and $(S^2+Q-\norm{r_A}^2)/2$, respectively.
+Consequently
+\begin{equation}\label{eq:taylor}
+ \frac{D_{I_m+A}(c)}k
+ =S+\frac{h^2}{2}Q-\frac{qh}{2}\norm{r_A}^2
+       +\frac{q^2}{2}S^2+O(\norm A_F^3).
+\end{equation}
+For $m=3$ there are no disjoint pairs; the displayed combined formula still
+holds because the corresponding combinatorial sum is zero.
+
+Feasibility means $L=P+A\succeq0$. Since $L\one=r_A$, the spectral inequality
+$L^2\preceq\lambda_{\max}(L)L$ gives
+\begin{equation}\label{eq:feasible}
+ S\ge0,\qquad \norm{r_A}^2\le2(1+\norm A_{\mathrm{op}})S.
+\end{equation}
+Also $\sigma=1-qh>0$ is a truncated-normal variance.
+Equations \eqref{eq:taylor}--\eqref{eq:feasible} imply, for sufficiently small
+feasible $A$,
+\[
+ D_{I_m+A}(c)\ge k\left(\frac\sigma2 S+\frac{h^2}{4}Q\right).
+\]
+Thus sequences with $S/Q\to\infty$ have an infinite deficit quotient.
+On sequences with $S=O(Q)$, \eqref{eq:feasible} yields
+$S\ge\norm{r_A}^2/2+o(Q)$ and hence
+\begin{equation}\label{eq:local-lower}
+ D_{I_m+A}(c)/k\ge\tfrac12 h^2Q
+                       +\tfrac12\sigma\norm{r_A}^2+o(Q).
+\end{equation}
+For $m\ge4$ this gives the lower coefficient $kh^2/4$.
+It is attained by $A=tD$, where $D$ is symmetric with
+$D_{12}=D_{34}=1$, $D_{23}=D_{14}=-1$, and all other entries zero.
+Then $D\one=0$, so $P+tD\succeq0$ for sufficiently small $|t|$.
+
+For $m=3$ there is the identity $\norm{r_A}^2=Q+S^2$.
+Equation \eqref{eq:local-lower} gives the lower coefficient
+$k(h^2+\sigma)/4=k(1+ch)/4$.
+To attain it, take a regular simplex $v_i\in\R^{m-1}$, a unit vector
+$u\perp v_1$, and replace only $v_1$ by $v_1(t)=\cos(t)v_1+\sin(t)u$.
+For the resulting $A=\alpha(G(t)-G_\Delta)$ one computes exactly
+\[
+ S=\alpha(1-\cos t),\quad
+ Q=\frac{\alpha^2}{m-1}\big((1-\cos t)^2+m\sin^2t\big),\quad
+ \norm{r_A}^2=2S.
+\]
+Thus $Q=\alpha t^2+O(t^4)$ and the desired quotient follows from
+\eqref{eq:taylor}. Positivity follows from $h^2+\sigma>0$.
+For $m=2$, feasibility is $R_{12}=\rho\ge0$ and the first derivative at
+$\rho=0$ is $\phi(c)^2$, whereas $\norm{R-I_2}_F=\sqrt2\rho$.
+\end{proof}
+
+\begin{corollary}[Optimal powers]\label{cor:optimal}
+For $m\ge3$, the power two of the Frobenius distance in the common-threshold
+bound and in decoding Gram stability cannot be replaced by any smaller
+positive power with a uniform positive constant near the simplex.
+For $m\ge3$, the power two of the coordinate distance in \eqref{eq:procrustes-stability}
+is likewise optimal, including when signals are restricted to dimension $m-1$.
+\end{corollary}
+\begin{proof}
+Use the one-vertex rotation from the proof of Theorem~\ref{thm:local}.
+It gives $\norm{G(t)-G_\Delta}_F=\Theta(|t|)$ and $S=O(t^2)$.
+The normalized covariance $R(t)$ remains near $I_m$, where expectations of
+$e^{\mu\max_i X_i}$ are twice differentiable by Gaussian-density domination.
+Permutation symmetry makes their first derivative a constant times the sum
+of the off-diagonal perturbations. That sum has zero first derivative along
+this path. The decoding deficit is therefore $O(t^2)$, and the lower bound
+in Theorem~\ref{thm:code} makes it $\Theta(t^2)$.
+The same argument applies to the fixed-threshold deficit.
+Moreover $\norm{G-G_\Delta}_F\le2\sqrt m\,d_P(X,\Delta)$ for unit columns,
+while the displayed rotation itself gives $d_P=O(|t|)$. Hence $d_P=\Theta(|t|)$.
+No estimate with a power below two can hold on this path.
+\end{proof}
+
+\section{Second variation in the configuration metric}\label{sec:spectrum}
+
+The Frobenius normalization in Theorem~\ref{thm:local} is different from the
+metric of signal configurations.  We record the distinction explicitly.
+The calculation is a reformulation of local second variation, not a
+claim of priority for local optimality or the existence of a
+second-variation calculation.
+
+We first complete the minimum-direction statement in the Gram metric.
+For a feasible sequence $A=R-I_m\to0$, let $\zeta\ge0$ be the Schur slack
+defined in Lemma~\ref{rem:quotient}. For $m\ge4$ the sharp quotient in
+Theorem~\ref{thm:local} is attained exactly when
+$\|A\one\|^2+\zeta=o(\|A\|_F^2)$. Thus its nonzero limiting directions
+are all symmetric zero-diagonal, zero-row-sum matrices, with no excess
+second-order Schur slack. For $m=3$ the corresponding condition is
+$\zeta=o(\|A\|_F^2)$: all nonzero critical tangent directions can attain
+the minimum. These conditions follow from the positive coefficients of
+$\|A\one\|^2$ and $\zeta$ in the expansions below, which specify the
+second-order feasibility condition as well as the first-order direction.
+
+Fix a unit regular simplex $V=[v_1\ \cdots\ v_m]$ in $\R^d$, $d\ge n=m-1$,
+and set $E=\operatorname{span}\{v_i\}$ and $r=d-n$.  The configuration space
+is $(S^{d-1})^m$, with squared tangent norm $\|U\|_F^2=\sum_i\|u_i\|^2$.
+At $V$ the rotation directions are $U=\Omega V$, $\Omega^{\mathsf T}=-\Omega$.
+Their orthogonal complement will be called the horizontal tangent space.
+Write
+\[
+ \mathcal H=\{B=B^{\mathsf T}:\diag B=0,\ \one^{\mathsf T}B\one=0\}.
+\]
+For $m\ge3$ this space has the orthogonal decomposition
+\[
+ \mathcal H=\mathcal H_0\oplus\mathcal H_1,\qquad
+ \mathcal H_0=\{B\in\mathcal H:B\one=0\},
+\]
+where $\mathcal H_1$ consists of the matrices
+$B_{ij}=a_i+a_j$ for $i\ne j$, $B_{ii}=0$, and $a\perp\one$.
+The dimensions are $m(m-3)/2$ and $m-1$, respectively. For $m=3$, $\mathcal H_0=
+\{0\}$.
+
+\begin{theorem}[Horizontal second variation and its minimum]\label{thm:spectrum}
+Fix a finite $c$, and retain $k,h,q$ from Theorem~\ref{thm:local}; put
+$\sigma=1-qh>0$.  For $m\ge3$ the horizontal tangent space is the orthogonal
+sum of the lifts of $\mathcal H_0$, the lifts of $\mathcal H_1$, and the
+normal-centroid space $\{z\one^{\mathsf T}:z\in E^\perp\}$.
+For a twice differentiable sphere path with horizontal initial velocity
+$U=U_0+U_1+U_\perp$,
+\begin{equation}\label{eq:spectrum-cdf}
+ D_{R(t)}(c)=t^2\left(
+ k\alpha h^2\|U_0\|_F^2+
+ \frac{k}{2}\bigl[h^2+(m-2)\sigma\bigr]\|U_1\|_F^2+
+ \frac{k(m-1)}2\|U_\perp\|_F^2\right)+o(t^2).
+\end{equation}
+Thus the Hessian eigenvalues are twice the three displayed coefficients,
+with multiplicities $m(m-3)/2$, $m-1$, and $r$, omitting zero-dimensional
+spaces.  On the full tangent space there is also the zero eigenvalue, of
+multiplicity $n(n-1)/2+nr$, precisely the rotation directions.
+
+The exact local coefficient of $D_R(c)$ relative to $d_P(X,\Delta)^2$ is
+the minimum of the coefficients in \eqref{eq:spectrum-cdf} whose spaces
+are present.  All minimum directions are precisely the direct sum of the
+spaces with that minimum coefficient, modulo rotations and the residual
+simplex symmetries.  In particular:
+\begin{itemize}
+\item If $m\ge4$ and $d=n$, the minimizing space is $\mathcal H_0$ when
+$h^2<m\sigma$, $\mathcal H_1$ when $h^2>m\sigma$, and their direct sum
+when equality holds.
+\item If $m\ge4$ and $d\ge m$, the minimum is
+$k\alpha\min\{h^2,m/2\}$.  The minimizing space is $\mathcal H_0$ when
+$h^2<m/2$, the normal-centroid space when $h^2>m/2$, and their direct sum
+when equality holds.  The $\mathcal H_1$ coefficient is strictly larger
+than this minimum for every finite $c$.
+\item If $m=3$ and $d=2$, all nonzero horizontal directions minimize,
+with coefficient $k(1+ch)/2$.  If $m=3$ and $d\ge3$, compare this
+coefficient to $k$: the two minimizing spaces are selected by $ch<1$,
+$ch>1$, or their direct sum at $ch=1$.
+\end{itemize}
+For $m=2$ and $d\ge2$, only the normal-centroid space remains, with
+coefficient $\phi(c)^2/2$ and horizontal multiplicity $d-1$.  For $m=2$,
+$d=1$, the configuration space is locally discrete and there is no
+nonconstant local variation.
+\end{theorem}
+
+\begin{proof}
+Let $X(t)$ be a sphere path with $X(0)=V$, $X'(0)=U$, and
+$A(t)=\alpha(X(t)^{\mathsf T}X(t)-G_\Delta)$.  Its initial Gram velocity is
+\[
+ B=A'(0)=\alpha(V^{\mathsf T}U+U^{\mathsf T}V)\in\mathcal H.
+\]
+Since $S(t)=\alpha\|X(t)\one\|^2/2$ exactly,
+\[
+ S(t)=\frac\alpha2t^2\|U\one\|^2+o(t^2),\qquad
+ B\one=\alpha V^{\mathsf T}U\one.
+\]
+Using $VV^{\mathsf T}=\alpha^{-1}I_E$ and separating the normal projection
+$U_N$ of $U$, equation~\eqref{eq:taylor} therefore gives
+\begin{equation}\label{eq:intrinsic-quadratic}
+ \frac{D_{R(t)}(c)}{kt^2}
+ =\frac{h^2}{4}\|B\|_F^2+
+   \frac\sigma2\|B\one\|^2+
+   \frac\alpha2\|U_N\one\|^2+o(1).
+\end{equation}
+In particular the first variation vanishes and the second variation does
+not depend on acceleration.
+
+Every $B\in\mathcal H$ has the unique horizontal in-plane lift
+\[
+ U_B=\frac12VB+\frac1{2m}V(B\one)\one^{\mathsf T}.
+\]
+Direct multiplication proves its tangency, horizontality, and prescribed
+Gram velocity.  Its squared norm is
+\begin{equation}\label{eq:horizontal-metric}
+ \|U_B\|_F^2
+ =\frac1{4\alpha}\|B\|_F^2+
+   \frac1{2m\alpha}\|B\one\|^2.
+\end{equation}
+The remaining horizontal vectors are exactly $z\one^{\mathsf T}$ with
+$z\in E^\perp$: all normal matrices with zero column sum are rotation
+directions.  The two in-plane spaces are orthogonal both in Frobenius
+Gram norm and in \eqref{eq:horizontal-metric}.  On $\mathcal H_0$ the
+metric is $\|B\|_F^2/(4\alpha)$.  On $\mathcal H_1$,
+\[
+ \|B\one\|^2=\frac{m-2}{2}\|B\|_F^2,\qquad
+ \|U_B\|_F^2=\frac12\|B\|_F^2.
+\]
+For $U_\perp=z\one^{\mathsf T}$ one has
+$\|U_\perp\one\|^2=m\|U_\perp\|_F^2$.
+Substitution proves the spectrum.  Every listed direction is attainable:
+use the independent spherical geodesics
+\[
+ x_i(t)=\cos(t\|u_i\|)v_i+
+       \frac{\sin(t\|u_i\|)}{\|u_i\|}u_i,
+\]
+with the continuous interpretation when $u_i=0$.  Furthermore
+$d_P(X(t),\Delta)^2=t^2\|U\|_F^2+o(t^2)$ for horizontal $U$.
+The path-free argument below justifies the corresponding local infimum
+over arbitrary sequences, rather than only over differentiable paths.
+
+To verify the stated ordering when $m\ge4$ and the normal space is
+present, use $h'=\sigma$ and $\sigma'=q(h^2-\sigma)$.  Put
+$f=\sigma-h^2/m$.  At a zero of $f$,
+\[
+ f'=\frac{h}{m^2}\bigl(m(m-1)-(m+1)h^2\bigr)>0
+ \quad\hbox{if }h^2\le m/2.
+\]
+The elementary Gaussian-tail asymptotics give $\sigma/h^2\to1$ as
+$c\to-\infty$.  Hence a first downward crossing is impossible and
+$\sigma>h^2/m$ whenever $h^2\le m/2$.  At $h^2=m/2$ this gives
+$\sigma>1/2$.  Subsequently $\sigma$ cannot cross down through $1/2$,
+because $\sigma'=q(h^2-1/2)>0$ on that boundary.  These two strict
+inequalities imply that the $\mathcal H_1$ coefficient exceeds the
+smaller of the other two coefficients.  The other comparisons follow
+by subtraction; for $m=3$, $h^2+\sigma=1+ch$.
+
+For $m=2$, write $A_{12}=\rho\ge0$.  Then
+$D_R(c)=\phi(c)^2\rho+O(\rho^2)$ and the exact Procrustes formula is
+$d_P^2=4(1-\sqrt{1-\rho})=2\rho+O(\rho^2)$.
+\end{proof}
+
+\begin{lemma}[Feasible-sequence expansion]\label{rem:quotient}
+Let $m\ge3$ and let $X$ be a unit-column configuration approaching the
+simplex orbit in $\R^d$, with $d\ge n$. Put $A=R-I_m$, $e=\one/\sqrt m$
+and $C=PAP|_{e^\perp}$. Define
+\[
+ \zeta=e^{\mathsf T}Ae-(PAe)^{\mathsf T}(I+C)^{-1}(PAe),\qquad
+ B=A-\frac{2S}{m(m-1)}(J-I_m),\qquad b=B\one.
+\]
+For $i\ne j$, set $(B_1)_{ij}=(b_i+b_j)/(m-2)$, set $(B_1)_{ii}=0$
+and put $B_0=B-B_1$. Then $\zeta\ge0$, $B_j\in\mathcal H_j$ and
+\[
+ E_0=\frac{\|B_0\|_F^2}{4\alpha},\qquad
+ E_1=\frac{\|B_1\|_F^2}{2},\qquad E_\perp=\frac\zeta\alpha
+\]
+satisfy
+\begin{align}
+ d_P^2&=E_0+E_1+E_\perp+o(d_P^2),\label{eq:sequence-metric}\\
+ D_R(c)&=k\alpha h^2E_0+
+ \frac{k}{2}[h^2+(m-2)\sigma]E_1+
+ \frac{k(m-1)}2E_\perp+o(d_P^2).\label{eq:sequence-deficit}
+\end{align}
+Here $\zeta=0$ if and only if $\rank G=n$. In particular $E_\perp=0$
+when $d=n$. The remainders apply to arbitrary feasible sequences.
+\end{lemma}
+\begin{proof}
+In the orthogonal splitting $\R e\oplus e^\perp$, the matrix $P+A$ has blocks
+\[
+ P+A=\begin{pmatrix}a&v^{\mathsf T}\\v&I+C\end{pmatrix},
+ \qquad a=2S/m,\quad v=PAe.
+\]
+The lower block is positive definite near $A=0$. The Schur complement
+therefore gives positivity exactly when $\zeta\ge0$ and rank $n$ exactly
+when $\zeta=0$. Since $\|v\|^2=\|A\one\|^2/m-4S^2/m^2$, expansion of
+$(I+C)^{-1}$ gives
+\begin{equation}\label{eq:schur-sum}
+ S=\frac12\|A\one\|^2+\frac m2\zeta+
+ O(\|A\|_F^3+S^2).
+\end{equation}
+The exact Procrustes formula from Theorem~\ref{thm:code} is
+\[
+ d_P^2=2m-\frac2\alpha\tr\sqrt{I+C}.
+\]
+Since $\tr C=-2S/m$, its matrix square-root expansion gives
+\[
+ d_P^2=\frac{2S}{m\alpha}+\frac{\|C\|_F^2}{4\alpha}
+       +O(\|A\|_F^3).
+\]
+The block decomposition also gives
+\[
+ \|C\|_F^2=\|A\|_F^2-\frac2m\|A\one\|^2+
+                   \frac{4S^2}{m^2}.
+\]
+Substitution of \eqref{eq:schur-sum} yields
+\begin{equation}\label{eq:schur-metric}
+ d_P^2=\frac\zeta\alpha+\frac{\|A\|_F^2}{4\alpha}
+       +\frac{\|A\one\|^2}{2m\alpha}
+       +O(\|A\|_F^3+S^2).
+\end{equation}
+To control this remainder in the configuration metric, align $V$ to a
+minimizer of $d_P$. Then
+$S=\alpha\|(X-V)\one\|^2/2\le\alpha m d_P^2/2$ and
+$\|A\|_F\le2\alpha\sqrt m\,d_P$.
+Thus the remainder is $o(d_P^2)$ uniformly for fixed $m$.
+Moreover $A-B=O(S)$, so replacing $A$ by $B$ in the quadratic terms
+changes them by $o(d_P^2)$.
+Orthogonality of $B_0,B_1$ and
+$\|B_1\one\|^2=(m-2)\|B_1\|_F^2/2$ now prove
+\eqref{eq:sequence-metric}.
+Substituting \eqref{eq:schur-sum} into \eqref{eq:taylor} gives
+\[
+ D_R(c)/k=\frac{h^2}{4}\|A\|_F^2+
+       \frac\sigma2\|A\one\|^2+\frac m2\zeta+o(d_P^2).
+\]
+The same orthogonal decomposition proves \eqref{eq:sequence-deficit}.
+\end{proof}
+
+Because the three energies are nonnegative, a feasible sequence attains the
+minimum quotient exactly when its higher-coefficient energies sum to
+$o(d_P^2)$. This proves the arbitrary-sequence claim in
+Theorem~\ref{thm:spectrum}. The rotation-and-permutation quotient itself
+need not be smooth. Its tangent cone is
+$(\mathcal H\oplus E^\perp)/(S_m\times O(r))$ with the horizontal metric.
+For $r>0$, the normal-centroid component becomes a radial half-line in the
+quotient, while its horizontal multiplicity remains $r$.
+
+The distinction between Gram and configuration metrics is explicit when
+$d\ge m$. For a unit normal $z\perp E$, set
+$x_i(t)=\sqrt{1-t^2}\,v_i+tz$. Then
+\[
+ A=t^2(J-I_m),\qquad
+ d_P^2=2m(1-\sqrt{1-t^2})=mt^2+O(t^4),\qquad
+ \Big\|\sum_i x_i(t)\Big\|^2=m^2t^2.
+\]
+The squared Gram defect has order $t^4$, whereas the squared configuration
+distance has order $t^2$. The separate centroid term controls this transverse path.
+
+\begin{corollary}[Decoding and mean-width second variations]\label{cor:spectrum-integrated}
+Let $\mu=\lambda/\sqrt\alpha$ and define
+\[
+ \omega_\lambda(c)=\frac{\mu e^{-\mu^2/2}}m
+ e^{\mu c}\phi(c)^2\Phi(c)^{m-2},\qquad
+ A_\lambda=\int_\R\omega_\lambda h^2,\quad
+ B_\lambda=\int_\R\omega_\lambda\sigma,\quad
+ C_\lambda=\int_\R\omega_\lambda.
+\]
+All three constants are finite and positive.  The quadratic coefficients
+of the decoding deficit on the three horizontal spaces are exactly
+\[
+ \Lambda_0=\alpha A_\lambda,\qquad
+ \Lambda_1=\frac{A_\lambda+(m-2)B_\lambda}{2},\qquad
+ \Lambda_\perp=\frac{m-1}{2}C_\lambda.
+\]
+The local coefficient relative to $d_P^2$ is their minimum over spaces
+present, and every minimum direction belongs to the direct sum of the
+spaces attaining that minimum.  Theorems~\ref{thm:ordered-switches} and~\ref{thm:triangular-switch}
+below determine the ordering of these decoding coefficients at every positive
+channel parameter.
+
+Relative to the Gram Frobenius norm, the exact decoding coefficient is
+\[
+ \liminf_{G\to G_\Delta,\ G\ne G_\Delta}
+ \frac{\delta_\lambda(G)}{\|G-G_\Delta\|_F^2}
+ =\begin{cases}
+ \alpha^2(A_\lambda+B_\lambda)/4,&m=3,\\
+ \alpha^2 A_\lambda/4,&m\ge4.
+ \end{cases}
+\]
+These coefficients are attainable in dimension $n$.  For $m=2$,
+\[
+ \frac{\delta_\lambda(G)}{\|G-G_\Delta\|_F}
+ \longrightarrow\frac{\lambda\phi(\lambda)}{4\sqrt2},
+ \qquad
+ \frac{\delta_\lambda(G)}{d_P^2}
+ \longrightarrow\frac{\lambda\phi(\lambda)}4
+\]
+along nonconstant configurations in dimension at least two.
+
+For $m\ge3$, the same assertions for the unnormalized expected-maximum deficit hold
+after replacing $\omega_\lambda(c)$ by
+$\omega_w(c)=\phi(c)^2\Phi(c)^{m-2}/\sqrt\alpha$.
+For normalized spherical mean width, multiply all coefficients by
+$2/\E\|g\|$, $g\sim N(0,I_d)$.
+For $m=2$ in dimension at least two, the expected-maximum deficit has
+local coefficients $\phi(0)/(2\sqrt2)$ relative to
+$\|G-G_\Delta\|_F$ and $\phi(0)/2$ relative to $d_P^2$.
+\end{corollary}
+\begin{proof}
+Use the integral identities already established in the manuscript.
+Near $R=I_m$, covariance-density derivatives through order three are
+bounded by a polynomial times a fixed nondegenerate Gaussian density.
+Their products with $e^{\mu\max_i x_i}$, or with $\max_i x_i$, remain
+integrable.  Thus differentiating the expectations twice is justified,
+and their Taylor coefficients equal the displayed integrals.  Equivalently,
+differentiate the distribution-function identities with a common
+integrable domination: for negative $c$ bound the fixed orthant integral
+by a Gaussian tail, and for positive $c$ use that each derivative density
+has total integral zero and integrate over the complementary tail.
+This also proves convergence of the coefficient integrals.
+
+Integrating the path-free expansion in Lemma~\ref{rem:quotient}, or
+applying this density Taylor expansion directly, proves the coordinate
+coefficients and their minimum criterion.  For the Gram coefficients,
+the expansion is
+\[
+ \delta_\lambda(G)
+ =\frac{A_\lambda}{4}\|A\|_F^2+
+   \frac{B_\lambda}{2}\|A\one\|^2+
+   \frac{mC_\lambda}{2}\zeta+o(\|A\|_F^2)
+\]
+on sequences with $S=O(\|A\|_F^2)$.  Sequences for which
+$S/\|A\|_F^2\to\infty$ have divergent deficit quotient, by the positive
+centroid bound already proved.  For $m\ge4$ the lower coefficient is
+attained by a nonzero row-zero Gram direction with zero Schur slack.
+For $m=3$ use
+$\|A\one\|^2=\|A\|_F^2/2+S^2$ and a rank-two feasible path.
+Finally $\|A\|_F=\alpha\|G-G_\Delta\|_F$.
+For $m=2$ the exact success probability is
+$\Phi(\lambda\sqrt{1-\rho})$, $\rho=A_{12}$; the stated constants follow
+by differentiation and the Procrustes formula above.
+\end{proof}
+
+\input{sections/new_results}
+
+\section{Finite-dimensional decoding diagnostics}\label{sec:application}
+The local coefficients describe directional sensitivity near a simplex.
+We test that use separately from fixed-budget learning and from the numerical
+size of the global recovery constant. All comparisons use the channel in
+\eqref{eq:pc}, uniform messages and unit-energy codewords.
+
+\subsection{Directional prediction}
+We use $(m,d)=(4,3)$ and $(16,15)$, with $\lambda\in\{1,2,3\}$.
+For each of the two in-plane sectors, three independently generated tangent
+directions have unit configuration Frobenius norm. Spherical geodesics preserve
+each codeword's energy. At amplitudes $t\in\{0.05,0.10,0.20\}$, the target is
+the central average $[\delta_\lambda(X(t))+\delta_\lambda(X(-t))]/2$.
+The predictor is $\Lambda_jt^2$ for a direction in sector $j$.
+Two scalar controls replace $\Lambda_j$ by its dimension-weighted average or
+by the equally weighted average of the two sectors.
+These controls measure the effect of discarding direction information.
+
+The resulting 108 cells use eight independently randomized Sobol integrations,
+with $2^{11}$ points per replicate. Table~\ref{tab:directional} reports mean
+absolute prediction error over 18 cells per row.
+The scalar controls have the same displayed aggregate error on this balanced
+grid, although their cellwise predictions differ.
+The directional predictor has smaller aggregate error in every row.
+This comparison does not establish a uniform cellwise ordering.
+For one four-signal cell at $\lambda=3$ and $t=0.20$, its error is
+$2.54\times10^{-5}$, compared with $1.99\times10^{-5}$ for the equal-sector control.
+
+\begin{table}[htbp]
+\centering
+\caption{Mean absolute error for the central decoding-loss prediction.
+Each row aggregates both in-plane sectors, three directions and three channel parameters.}
+\label{tab:directional}
+\begin{tabular}{rrrrr}
+\toprule
+$m$ & $t$ & Directional & Dimension-weighted & Equal-sector\\
+\midrule
+4 & 0.05 & $3.89\times10^{-8}$ & $3.25\times10^{-6}$ & $3.25\times10^{-6}$\\
+4 & 0.10 & $6.68\times10^{-7}$ & $1.31\times10^{-5}$ & $1.31\times10^{-5}$\\
+4 & 0.20 & $1.09\times10^{-5}$ & $5.43\times10^{-5}$ & $5.43\times10^{-5}$\\
+16 & 0.05 & $4.47\times10^{-8}$ & $1.08\times10^{-5}$ & $1.08\times10^{-5}$\\
+16 & 0.10 & $1.88\times10^{-7}$ & $4.31\times10^{-5}$ & $4.31\times10^{-5}$\\
+16 & 0.20 & $1.01\times10^{-6}$ & $1.73\times10^{-4}$ & $1.73\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Central averaging removes odd-order terms and changes the prediction target.
+For a four-signal direction at $\lambda=2$ and $t=0.20$, the two losses are
+$0.0026961$ and $0.0023393$. Their average is $0.0025177$, while the quadratic
+prediction is $0.0025202$. A one-sided tolerance requires a separate remainder bound.
+All 108 losses exceed five estimated integration standard errors.
+That check resolves the loss, rather than the much smaller prediction residual.
+Eight prespecified higher-resolution checks have paired difference intervals
+containing zero. Their differences can still exceed the residuals in
+Table~\ref{tab:directional}. At $m=16$ and $\lambda=2$, one checked direction
+changes by $-1.48\times10^{-7}$ at $t=0.05$ and by $-2.37\times10^{-6}$ at $t=0.20$.
+The table therefore supports a coarse directional diagnostic, without a
+certified residual, improvement factor or higher-order coefficient.
+
+\subsection{A fixed-budget learning comparison}
+We adapt the communication autoencoder of O'Shea and Hoydis
+\cite[Section III-A and Table IV]{OSheaHoydis} to the two dimensions above.
+The encoder uses a dense layer of width $m$ with rectified linear activation,
+a linear layer of width $d$ and per-codeword energy normalization.
+The decoder uses a dense layer of width $m$ with rectified linear activation
+and a softmax output of width $m$.
+Training minimizes cross-entropy at $E_b/N_0=7$ dB, where
+$E_b/N_0=\lambda^2/(2\log_2m)$.
+An additional arm uses the ordinary simplex Gram mean-square penalty with
+weight $0.1$. This penalty follows from the known optimal geometry.
+The local decoding Hessian is not a cross-entropy Hessian or an Adam preconditioner.
+
+Five paired initializations per dimension use identical message and noise streams.
+Both arms use double precision and Adam with learning rate $0.001$ for 1200 steps.
+The batch size is 256 for the first 600 steps and 1024 for the remaining 600 steps.
+Every run contributes its final checkpoint, with no seed or checkpoint selection.
+These 20 runs complete a fixed budget, without an optimization-convergence claim.
+The dimensions differ from the original autoencoder's $(16,7)$ example.
+
+Table~\ref{tab:learning} evaluates each learned codebook with matched
+maximum-likelihood decoding. Block error rate is one minus decoding success
+probability. Each interval is a paired Student-$t$ interval over five training
+initializations, evaluated pointwise without multiplicity correction.
+The eight mean differences favor the Gram penalty under this budget.
+Both arms retain a gap from the ideal simplex.
+The learned decoder is a different endpoint. In two of the five 16-signal pairs,
+its estimated error increases at all four tested channel parameters.
+Cross-initialization paired intervals for that decoder were not evaluated,
+so the comparison establishes no end-to-end decoder improvement.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Mean matched-decoder block error rate over five paired initializations.
+The interval is for the Gram-penalized arm minus the baseline.}
+\label{tab:learning}
+\begin{tabular}{rrrrrl}
+\toprule
+$m$ & $\lambda$ & Baseline & Gram penalty & Simplex & Paired 95\% interval\\
+\midrule
+4 & 1 & 0.421808 & 0.403936 & 0.399550 & $[-0.032181,-0.003562]$\\
+4 & 2 & 0.151550 & 0.127305 & 0.121023 & $[-0.043128,-0.005362]$\\
+4 & 3 & 0.034736 & 0.022434 & 0.019231 & $[-0.021918,-0.002685]$\\
+4 & 4.47744 & 0.001919 & 0.000667 & 0.000375 & $[-0.002372,-0.000131]$\\
+16 & 1 & 0.749215 & 0.746866 & 0.729857 & $[-0.003146,-0.001552]$\\
+16 & 2 & 0.434459 & 0.428081 & 0.383069 & $[-0.008566,-0.004190]$\\
+16 & 3 & 0.165418 & 0.158813 & 0.116521 & $[-0.008638,-0.004573]$\\
+16 & 6.33206 & 0.0003243 & 0.0002622 & 0.0000273 & $[-0.0000924,-0.0000318]$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Evaluation retains independent direct Gaussian sampling with 100000 trials
+per codebook and channel parameter. The integration evaluation uses eight
+randomized Sobol replicates with $2^{12}$ points each.
+Training variability and integration variability remain distinct sources of uncertainty.
+The computations used four CPU workers under Linux, Python 3.11.16,
+NumPy 2.2.0, SciPy 1.17.1, PyTorch 2.8.0 and mpmath 1.3.0.
+No timing comparison is made.
+
+\subsection{Size of the global recovery constant}
+The explicit constant in \eqref{eq:codeconstants} is positive but very small.
+Table~\ref{tab:global-constant} evaluates a conservative partition envelope
+for its scalar maximization. Repeating the $\lambda=2$ cases at 80 and 120
+decimal digits gives consistent values. Such agreement is not outward-rounded
+interval certification.
+
+\begin{table}[htbp]
+\centering
+\caption{Numerical values of the explicit global Procrustes constant $c_P$.}
+\label{tab:global-constant}
+\begin{tabular}{rrrr}
+\toprule
+$m$ & $\lambda=1$ & $\lambda=2$ & $\lambda=3$\\
+\midrule
+4 & $2.1293\times10^{-39}$ & $1.2026\times10^{-39}$ & $1.4640\times10^{-40}$\\
+16 & $4.6152\times10^{-233}$ & $3.5491\times10^{-233}$ & $7.5743\times10^{-234}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At $\lambda=2$, certifying $d_P\le0.1$ through this inverse bound would
+require a reliable deficit upper bound of $1.20\times10^{-41}$ for four signals,
+or $3.55\times10^{-235}$ for 16 signals.
+These values are far below the precision of the empirical estimates.
+The explicit global bound supplies a rate, while practical geometric recovery
+requires sharper constants and an effective numerical lower bound for the local transition radius.
+
+\section{Conclusion and limitations}
+The explicit comparison controls Gram defect and centroid displacement,
+including singular configurations. Together they give a global quadratic
+configuration bound at fixed $m$ and positive $\lambda$.
+The local expansion identifies the feasible least-loss sectors in the
+configuration metric. Numerical diagnostics support its aggregate use for
+small central perturbations of four- and 16-signal constellations.
+The normalized Gaussian moment family has three unique ordered crossings
+for $m\ge4$ and a separate unique crossing for $m=3$.
+In the strict-normal regime the finite-radius small-shell optimizer is
+exactly the common-normal deformation, up to orthogonal equivalence.
+Its deficit has a quartic expansion with a quantified $O(\rho^6)$
+remainder and no odd Taylor terms. The radius and remainder constant
+depend only on $m$ and $\lambda$, not on the embedding dimension.
+The global comparison, recovery and mean-width results, together with
+the transition, strict-normal optimization and remainder results, have
+been checked in Lean over the actual Gaussian integrals. The global
+constants are included; numerical diagnostics and experimental claims
+remain outside the certificate.
+
+The global constants deteriorate rapidly with the number of signals.
+Their numerical values provide no practical geometry certificate in the
+tested cases. Practical recovery needs sharper constants, an effective numerical lower
+bound for the local transition radius, computable remainder bounds,
+and controlled integration error.
+The fixed-budget learning comparison concerns known Gram regularization
+and matched decoding. Its decoder and convergence limitations remain separate
+from the mathematical stability result.
+The rank penalty quantifies a gap from the unrestricted simplex value,
+without identifying the optimal rank-constrained constellation.
+The channel model assumes equal message probabilities and isotropic Gaussian
+noise. Fading, synchronization, channel estimation and constrained modulation
+alphabets require separate analysis.
+
+\appendix
+\numberwithin{theorem}{section}
+\numberwithin{equation}{section}
+\input{sections/transition_proof}
+\input{sections/normal_proof}
+\input{sections/lean_verification}
+
+\begin{thebibliography}{99}
+\bibitem{Mulgund} A. Mulgund,
+\emph{Stochastic Domination of Gaussian Maxima: A Resolution of the Weak
+Simplex Conjecture}, arXiv:2607.14087. The non-strict product and adaptive
+tilting inputs used here are in v2, 20 July 2026, Theorem 4.1 and Proposition 5.2.
+\url{https://arxiv.org/abs/2607.14087v2}.
+\bibitem{Su} M. Su, K. Yang, H. Xu, and Chih-Lin I,
+\emph{The Equality Cases of the Weak Simplex Conjecture},
+arXiv:2608.19093v1, 19 August 2026.
+\url{https://arxiv.org/abs/2608.19093}.
+\bibitem{Royen} T. Royen,
+\emph{A simple proof of the Gaussian correlation conjecture extended to
+some multivariate gamma distributions}, Far East Journal of Theoretical
+Statistics 48 (2014), 139--145. \url{https://arxiv.org/abs/1408.1028}.
+\bibitem{Litvak} A. E. Litvak,
+\emph{Around the simplex mean width conjecture}, in Analytic Aspects of
+Convexity, Springer INdAM Series 25 (2018), 73--84.
+\url{https://www.math.ualberta.ca/~alexandr/OrganizedPapers/AL-simp-wv.pdf}.
+\bibitem{BFH} K. J. B\"or\"oczky, F. Fodor, and D. Hug,
+\emph{Strengthened inequalities for the mean width and the \(\ell\)-norm},
+Journal of the London Mathematical Society (2) 104 (2021), no. 1, 233--268.
+\url{https://doi.org/10.1112/jlms.12429}.
+\bibitem{MulgundFull} A. Mulgund,
+\emph{Stochastic Domination of Gaussian Maxima by the Regular Simplex},
+arXiv:2609.28452v2, 27 September 2026.
+\url{https://arxiv.org/abs/2609.28452v2}.
+\bibitem{MulgundLatest} A. Mulgund,
+\emph{Stochastic Domination of Gaussian Maxima: A Resolution of the Weak
+Simplex Conjecture}, arXiv:2607.14087v4, 21 August 2026.
+\url{https://arxiv.org/abs/2607.14087v4}.
+\bibitem{Balakrishnan} A. V. Balakrishnan,
+\emph{A contribution to the sphere-packing problem of communication theory},
+Journal of Mathematical Analysis and Applications 3 (1961), 485--506.
+\url{https://doi.org/10.1016/0022-247X(61)90072-5}.
+\bibitem{LandauSlepian} H. J. Landau and D. Slepian,
+\emph{On the optimality of the regular simplex code},
+Bell System Technical Journal 45 (1966), 1247--1272.
+\url{https://doi.org/10.1002/j.1538-7305.1966.tb01696.x}.
+
+\bibitem{DNS} A. De, S. Nadimpalli, and R. A. Servedio,
+\emph{Quantitative Correlation Inequalities via Semigroup Interpolation},
+12th Innovations in Theoretical Computer Science Conference (ITCS 2021),
+LIPIcs 185, Article 69.
+\url{https://doi.org/10.4230/LIPIcs.ITCS.2021.69}.
+\bibitem{FGS} O. Friedland, O. Gu\'edon and F. Souli,
+\emph{On partition functions of Gaussian random variables},
+arXiv:2609.38904v1, 30 September 2026.
+\url{https://arxiv.org/abs/2609.38904v1}.
+\bibitem{Weber} C. L. Weber,
+\emph{Signal design for space communication channels, part I},
+USCEE-129 / NASA-CR-78972, 1 February 1965.
+\url{https://ntrs.nasa.gov/citations/19660030423}.
+\bibitem{OSheaHoydis} T. O'Shea and J. Hoydis,
+\emph{An Introduction to Deep Learning for the Physical Layer},
+IEEE Transactions on Cognitive Communications and Networking 3 (2017),
+563--575. \url{https://arxiv.org/abs/1702.00832v2}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,6 @@
+'SimplexFull.Geometry.global_procrustesSq_le_lift_errors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.configGaussianMax_le_orthogonalUnitLift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SimplexFull.Geometry.ball_gaussian_max_bounds_of_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.ball_gaussian_max_procrustes_of_unit' depends on axioms: [propext, Classical.choice, Quot.sound]

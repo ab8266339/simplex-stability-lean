@@ -1,0 +1,2 @@
+'SimplexFull.Geometry.gaussian_shell_hessian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.Geometry.gaussian_shell_hessian_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]

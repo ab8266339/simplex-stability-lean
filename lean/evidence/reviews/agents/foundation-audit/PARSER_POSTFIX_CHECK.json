@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "time": "2026-11-06T17:47:17.785546",
+  "checks": [
+    {
+      "source": "import\n Mathlib.Data.Real.Basic",
+      "rejected": true,
+      "message": "Unsupported multiline import header"
+    },
+    {
+      "source": "module\npublic meta import Lean.Meta.Basic",
+      "rejected": true,
+      "message": "Unsupported import modifiers/layout: public meta import Lean.Meta.Basic"
+    },
+    {
+      "source": "module\npublic meta import Unverified.Proof",
+      "rejected": true,
+      "message": "Unsupported import modifiers/layout: public meta import Unverified.Proof"
+    },
+    {
+      "source": "module\nmeta import Lean.Meta.Basic",
+      "rejected": true,
+      "message": "Unsupported import modifiers/layout: meta import Lean.Meta.Basic"
+    },
+    {
+      "source": "module\npublic\nimport Mathlib",
+      "rejected": true,
+      "message": "Unsupported Lean header: public"
+    }
+  ],
+  "normal_import": [
+    "SimplexFull.A"
+  ],
+  "kernel_bypass": [
+    "debug.skipKernelTC"
+  ],
+  "source_audit_sha256": "494835267f09fc99b40a4b2db8e4e72cd4b210fbaa99de3d4c6e01288114cf9e",
+  "verifier_sha256": "f8cee4e2daaf46c25167bbc0966fa76944a2ee0c413ae9c5a48c900e31a3745a",
+  "lean_syntax_source": "C:\\Users\\admin\\.elan\\toolchains\\leanprover--lean4---v4.31.0\\src\\lean\\Lean\\Parser\\Module\\Syntax.lean:20",
+  "method": "Direct code inspection and independent calls on concretely Lean-accepted header probes; not inferred only from coordinator tests."
+}

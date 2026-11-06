@@ -1,0 +1,470 @@
+{
+  "pdf": "E:\\simplex-lean-full-20261106\\global-formalization-20261106\\paper-global\\build\\paper_main.pdf",
+  "sha256": "1dd2342414c64e420b1ceae865fa4d4eabc292f1df6c5d3c77cf7db932ea26f1",
+  "pages": 46,
+  "size_bytes": 594932,
+  "page_geometry": [
+    {
+      "page": 1,
+      "characters": 2996,
+      "overflow": []
+    },
+    {
+      "page": 2,
+      "characters": 4154,
+      "overflow": []
+    },
+    {
+      "page": 3,
+      "characters": 3131,
+      "overflow": []
+    },
+    {
+      "page": 4,
+      "characters": 2249,
+      "overflow": []
+    },
+    {
+      "page": 5,
+      "characters": 2533,
+      "overflow": []
+    },
+    {
+      "page": 6,
+      "characters": 2066,
+      "overflow": []
+    },
+    {
+      "page": 7,
+      "characters": 2384,
+      "overflow": []
+    },
+    {
+      "page": 8,
+      "characters": 2225,
+      "overflow": []
+    },
+    {
+      "page": 9,
+      "characters": 3363,
+      "overflow": []
+    },
+    {
+      "page": 10,
+      "characters": 2583,
+      "overflow": []
+    },
+    {
+      "page": 11,
+      "characters": 2279,
+      "overflow": []
+    },
+    {
+      "page": 12,
+      "characters": 2035,
+      "overflow": []
+    },
+    {
+      "page": 13,
+      "characters": 2824,
+      "overflow": []
+    },
+    {
+      "page": 14,
+      "characters": 1692,
+      "overflow": []
+    },
+    {
+      "page": 15,
+      "characters": 3005,
+      "overflow": []
+    },
+    {
+      "page": 16,
+      "characters": 3259,
+      "overflow": []
+    },
+    {
+      "page": 17,
+      "characters": 3501,
+      "overflow": []
+    },
+    {
+      "page": 18,
+      "characters": 3070,
+      "overflow": []
+    },
+    {
+      "page": 19,
+      "characters": 2125,
+      "overflow": []
+    },
+    {
+      "page": 20,
+      "characters": 1981,
+      "overflow": []
+    },
+    {
+      "page": 21,
+      "characters": 1308,
+      "overflow": []
+    },
+    {
+      "page": 22,
+      "characters": 1887,
+      "overflow": []
+    },
+    {
+      "page": 23,
+      "characters": 1930,
+      "overflow": []
+    },
+    {
+      "page": 24,
+      "characters": 2097,
+      "overflow": []
+    },
+    {
+      "page": 25,
+      "characters": 2739,
+      "overflow": []
+    },
+    {
+      "page": 26,
+      "characters": 2161,
+      "overflow": []
+    },
+    {
+      "page": 27,
+      "characters": 1634,
+      "overflow": []
+    },
+    {
+      "page": 28,
+      "characters": 1615,
+      "overflow": []
+    },
+    {
+      "page": 29,
+      "characters": 1543,
+      "overflow": []
+    },
+    {
+      "page": 30,
+      "characters": 1568,
+      "overflow": []
+    },
+    {
+      "page": 31,
+      "characters": 2010,
+      "overflow": []
+    },
+    {
+      "page": 32,
+      "characters": 2262,
+      "overflow": []
+    },
+    {
+      "page": 33,
+      "characters": 1949,
+      "overflow": []
+    },
+    {
+      "page": 34,
+      "characters": 2651,
+      "overflow": []
+    },
+    {
+      "page": 35,
+      "characters": 1981,
+      "overflow": []
+    },
+    {
+      "page": 36,
+      "characters": 2177,
+      "overflow": []
+    },
+    {
+      "page": 37,
+      "characters": 2235,
+      "overflow": []
+    },
+    {
+      "page": 38,
+      "characters": 2603,
+      "overflow": []
+    },
+    {
+      "page": 39,
+      "characters": 3025,
+      "overflow": []
+    },
+    {
+      "page": 40,
+      "characters": 3128,
+      "overflow": []
+    },
+    {
+      "page": 41,
+      "characters": 3079,
+      "overflow": []
+    },
+    {
+      "page": 42,
+      "characters": 3128,
+      "overflow": []
+    },
+    {
+      "page": 43,
+      "characters": 3465,
+      "overflow": []
+    },
+    {
+      "page": 44,
+      "characters": 3088,
+      "overflow": []
+    },
+    {
+      "page": 45,
+      "characters": 2793,
+      "overflow": []
+    },
+    {
+      "page": 46,
+      "characters": 540,
+      "overflow": []
+    }
+  ],
+  "boundary_warnings": 0,
+  "latex_warnings": [],
+  "outline": [
+    [
+      1,
+      "Setting and the quantitative question",
+      1
+    ],
+    [
+      1,
+      "Explicit constants and the global comparison",
+      3
+    ],
+    [
+      1,
+      "A centroid estimate and decoding stability",
+      5
+    ],
+    [
+      1,
+      "Mean width of arbitrary inscribed simplices",
+      7
+    ],
+    [
+      1,
+      "Sharp local coefficients and optimal exponents",
+      8
+    ],
+    [
+      1,
+      "Second variation in the configuration metric",
+      9
+    ],
+    [
+      1,
+      "Unique channel transitions and exact small-shell minimizers",
+      14
+    ],
+    [
+      2,
+      "A tilted Gaussian family",
+      14
+    ],
+    [
+      2,
+      "The exact strict-normal shell optimum",
+      15
+    ],
+    [
+      1,
+      "Finite-dimensional decoding diagnostics",
+      16
+    ],
+    [
+      2,
+      "Directional prediction",
+      16
+    ],
+    [
+      2,
+      "A fixed-budget learning comparison",
+      17
+    ],
+    [
+      2,
+      "Size of the global recovery constant",
+      18
+    ],
+    [
+      1,
+      "Conclusion and limitations",
+      18
+    ],
+    [
+      1,
+      "Proof of the channel transitions",
+      19
+    ],
+    [
+      2,
+      "Scalar differential identities",
+      19
+    ],
+    [
+      2,
+      "The zero-locus derivatives",
+      20
+    ],
+    [
+      2,
+      "Mills expansion with a bounded remainder",
+      22
+    ],
+    [
+      2,
+      "First-zero argument",
+      24
+    ],
+    [
+      2,
+      "Differentiation under the integral and strict covariance",
+      25
+    ],
+    [
+      2,
+      "The four-signal benchmark",
+      26
+    ],
+    [
+      2,
+      "The balance identity and the initial values",
+      28
+    ],
+    [
+      2,
+      "Growth and the ordered crossings",
+      29
+    ],
+    [
+      2,
+      "Ordering of the decoding curvatures",
+      31
+    ],
+    [
+      2,
+      "The triangular case",
+      32
+    ],
+    [
+      1,
+      "Proof of the exact normal-shell theorem",
+      32
+    ],
+    [
+      2,
+      "A smooth extension of the actual decoding deficit",
+      32
+    ],
+    [
+      2,
+      "The first two covariance variations",
+      33
+    ],
+    [
+      2,
+      "Compression and its exact inverse",
+      34
+    ],
+    [
+      2,
+      "The actual Procrustes infimum and a uniform neighborhood",
+      35
+    ],
+    [
+      2,
+      "Polynomial square-root coordinates and enclosure",
+      36
+    ],
+    [
+      2,
+      "Stationarity and the exact shell Hessian",
+      37
+    ],
+    [
+      2,
+      "Uniform convexity and the equality orbit",
+      38
+    ],
+    [
+      2,
+      "The exact value and the sixth-order remainder",
+      39
+    ],
+    [
+      1,
+      "Lean formalization and reproducibility",
+      39
+    ],
+    [
+      2,
+      "Scope of the certificate",
+      39
+    ],
+    [
+      2,
+      "Objects and normalization",
+      40
+    ],
+    [
+      2,
+      "Correspondence with the new theorems",
+      41
+    ],
+    [
+      2,
+      "Global proof chain and assumptions",
+      43
+    ],
+    [
+      2,
+      "Build and axiom audit",
+      44
+    ],
+    [
+      2,
+      "Reproducing the verification",
+      45
+    ]
+  ],
+  "metadata": {
+    "format": "PDF 1.7",
+    "title": "Explicit Stability of the Weak Simplex Bound",
+    "author": "Research draft",
+    "subject": "",
+    "keywords": "",
+    "creator": "LaTeX with hyperref",
+    "producer": "pdfTeX-1.40.27",
+    "creationDate": "D:20261106181838+08'00'",
+    "modDate": "D:20261106181838+08'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "detail_pages": [
+    1,
+    39,
+    40,
+    41,
+    43,
+    44,
+    45
+  ],
+  "contact_sheets": 4
+}

@@ -1,0 +1,2 @@
+'SimplexFull.integral_Iic_id_mul_phi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.integral_Iic_sq_mul_phi' depends on axioms: [propext, Classical.choice, Quot.sound]

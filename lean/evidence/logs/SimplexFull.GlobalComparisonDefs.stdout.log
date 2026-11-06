@@ -1,0 +1,2 @@
+'SimplexFull.GlobalComparison.logFloor_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.GlobalComparison.capB_pos' depends on axioms: [propext, Classical.choice, Quot.sound]

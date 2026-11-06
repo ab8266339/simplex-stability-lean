@@ -1,0 +1,6 @@
+'SimplexFull.gaussian_triangular_switch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_triangular_unique_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_b_gt_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_a_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_ordered_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SimplexFull.gaussian_middle_coefficient_not_min' depends on axioms: [propext, Classical.choice, Quot.sound]
